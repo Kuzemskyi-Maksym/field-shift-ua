@@ -907,6 +907,24 @@ function openPlan(id, scroll) {
   if (scroll) document.getElementById("plan").scrollIntoView({behavior: "smooth"});
 }
 
+// D29: найм збирання для нової техніки — ціна з ≥ 2 джерел; без даних — «немає перевірених даних»; модель не змінюється
+const mln1 = v => nf(v / 1e6, 1);
+function hireHTML(h) {
+  if (!h) return "";
+  let t = h.items.map(i => `<br>Найм збирання: ≈ ${nf(i.min_uah_ha)}–${nf(i.max_uah_ha)} грн/га`).filter((v, k, a) => a.indexOf(v) === k).join("");
+  t += h.missing_uk.map(g => `<br>Найм збирання (${pesc(g)}): немає перевірених даних`).join("");
+  if (h.margin4_p50_lo != null)
+    t += `<br><b>Маржа за 4 роки з урахуванням найму: P50 від ${mln1(h.margin4_p50_lo)} до ${mln1(h.margin4_p50_hi)} млн грн</b> (без найму ${mln1(h.margin4_p50_old)} млн грн)`;
+  return t;
+}
+function hireSources(S) {
+  const src = new Map();
+  S.forEach(s => (s.hire ? s.hire.items : []).forEach(i => i.sources.forEach(x => src.set(x.url, x))));
+  if (!src.size) return "";
+  return `<br>Ціни найму збирання — джерела: ` + [...src.values()].map(x => `<a href="${pesc(x.url)}" target="_blank" rel="noopener">${pesc(new URL(x.url).hostname)}</a> (${x.date.split("-").reverse().join(".")})`).join(", ") +
+    `; чи входить пальне — у джерелах не вказано. Оцінка за ринковими цінами послуг; фактична ціна залежить від регіону й домовленості.`;
+}
+
 function drawPlan() {
   const base = PLANS[pState.id], demo = PDEMO[pState.id], P = pState.demo && demo ? demo : base;
   ptabs.attr("aria-pressed", p => p.id === pState.id);
@@ -947,7 +965,7 @@ function drawPlan() {
       <h3>${SNAME[s.name] || s.name}${s.conf !== common ? `<span class="badge ${s.conf}">${CONF[s.conf] || s.conf}</span>` : ""}${m.viol > 0 ? `<span class="badge viol">порушує №164 (${m.viol})</span>` : ""}</h3>
       <div class="legend">${SHINT[s.name] || ""}${s.name === "current" && P.history_src ? ` · історія: ${esc(P.history_src.source)}, поле #${P.history_src.fid}` : ""}</div>
       <div class="strip">${s.seq.map((c, i) => `<div class="cell ${KCELL[(s.cal[i] || {}).kind] || ""}" title="${P.run.plan_start_year + i}: ${pesc(c)}">${pesc(c)}<small>${String(P.run.plan_start_year + i).slice(2)}</small></div>`).join("")}</div>
-      ${s.mach && s.name !== "current" ? (s.mach.text ? `<div class="mach">${pesc(s.mach.text)}</div>` : `<div class="mach ok">наявної техніки достатньо</div>`) : ""}
+      ${s.mach && s.name !== "current" ? (s.mach.text ? `<div class="mach">${pesc(s.mach.text)}${hireHTML(s.hire)}</div>` : `<div class="mach ok">наявної техніки достатньо</div>`) : ""}
       ${bar}${m.fallow_nc ? `<div class="legend">пар без витрат — маржа завищена</div>` : ""}
       ${dd != null ? `<div class="pdelta ${dd < 0 ? "neg" : "ok"}">демо: ${dd >= 0 ? "+" : "−"}${tis(Math.abs(dd))} тис. до основної (${pesc(b0.seq.join(" → "))})</div>` : ""}
     </button>`;
@@ -959,7 +977,7 @@ function drawPlan() {
   d3.select("#pmach").html(mc ? `<b>Техніка для збирання.</b> Наявну техніку визначено з того, що росло на полі за HLS 2021–2025
     (культуру з космосу не видно — це припущення, підтвердіть): ${mc.owned_flags.length ? pesc(mc.owned_flags.map(f => f.replace(/^\d{4}: /, "")).filter((v, i, a) => a.indexOf(v) === i).join("; ")) : "немає даних"}.
     ${own ? `Картка «${SNAME.own_machinery}» — найкраща за маржею сівозміна без нової техніки${own.vs && own.vs.d_field ? `: ${own.vs.d_field.p50 >= 0 ? "+" : "−"}${nf(Math.abs(own.vs.d_field.p50) / 1e6, 2)} млн грн за 4 роки до поточної (P50)` : ""}.` : "Сівозміни без нової техніки серед допустимих немає."}
-    Бейдж «потрібна нова техніка» — обмеження, а не заборона: техніку можна взяти в оренду або замовити послугу збирання.` : "");
+    Бейдж «потрібна нова техніка» — обмеження, а не заборона: техніку можна взяти в оренду або замовити послугу збирання.${hireSources(S)}` : "");
   const s = S.find(z => z.name === pState.sel);
   d3.select("#pmkt").html(mktHTML(P.id, [{id: n.crop, uk: n.crop_uk}, ...(s ? s.crops.map((c, i) => ({id: c, uk: s.seq[i]})) : [])]));
   drawGantt(P, s);
@@ -967,7 +985,7 @@ function drawPlan() {
   drawMoney(P, s);
   drawMenu(P);
   const r = P.run;
-  d3.select("#prun").html(`Зріз цін: ${pesc(r.prices_snapshot)} · витрати: ${pesc(r.cost_column)} (${r.cost_year}) · ранжування: ${pesc(r.ranking_mode)} · commit моделі: ${pesc(r.model_commit)}<br>
+  d3.select("#prun").html(`Зріз цін: ${pesc(r.prices_snapshot)} · витрати: ${pesc(r.cost_column)} (${r.cost_year}) · ранжування: ${pesc(r.ranking_mode)} · commit моделі: <code>${pesc(r.model_commit)}</code><br>
     Модель: FAO-56 + водний баланс + Ky; ціни й витрати — Держстат 2025; дохід без субсидій і податків.`);
 }
 

@@ -2706,6 +2706,34 @@
 "s0609": {
 "uk": "Поле ## · # га",
 "en": "Field ## · # ha"
+},
+"s0610": {
+"uk": "Найм збирання: ≈ #–# грн/га",
+"en": "Hired harvesting: ≈ #–# UAH/ha"
+},
+"s0611": {
+"uk": "Найм збирання (§): немає перевірених даних",
+"en": "Hired harvesting (§): no verified data"
+},
+"s0612": {
+"uk": "Маржа за # роки з урахуванням найму: P# від # до # млн грн",
+"en": "Margin over # years incl. hired harvesting: P# from # to # M UAH"
+},
+"s0613": {
+"uk": "(без найму # млн грн)",
+"en": "(without hiring # M UAH)"
+},
+"s0614": {
+"uk": "Ціни найму збирання — джерела:",
+"en": "Hired harvesting prices — sources:"
+},
+"s0615": {
+"uk": "(#.#.#); чи входить пальне — у джерелах не вказано. Оцінка за ринковими цінами послуг; фактична ціна залежить від регіону й домовленості.",
+"en": "(#.#.#); whether fuel is included is not stated in the sources. Estimate based on market service prices; the actual price depends on the region and the agreement."
+},
+"s0616": {
+"uk": "Зріз цін: DSSU_# · витрати: full_cost_uah_ha (#) · ранжування: margin · commit моделі:",
+"en": "Price snapshot: DSSU_# · costs: full_cost_uah_ha (#) · ranking: margin · model commit:"
 }
 }
 }

@@ -148,6 +148,8 @@ def field_plan(o: dict, commit: str) -> dict:
         if s.get("machinery"):                                   # D27: бейдж техніки (без сирих id груп)
             mc = s["machinery"]
             st["mach"] = dict(new=mc["new_uk"], text=mc["text"], owned_flags=mc["owned_flags"], note=mc["note"])
+            if mc["new"]:
+                st["hire"] = hire_block(s, mc["new"], o.get("area_ha"))
         S.append(st)
     first = o["strategies"][0]["explain"] if o["strategies"] else {}
     r = o["ranking"]
@@ -189,6 +191,56 @@ def humanize(o, key=None):
     if isinstance(o, list):
         return [humanize(v, key) for v in o]
     return human(o)
+
+
+HIRE_CSV = ROOT / "data" / "raw" / "market" / "harvest_service_prices.csv"
+HIRE_NOTE = "Оцінка за ринковими цінами послуг; фактична ціна залежить від регіону й домовленості"
+
+
+def hire_prices() -> dict:
+    """D29: ціни найму збирання за культурою — лише якщо є ≥ 2 різні джерела (URL); діапазон = min..max усіх рядків."""
+    import csv
+    rows = list(csv.DictReader(open(HIRE_CSV, encoding="utf-8"))) if HIRE_CSV.exists() else []
+    out = {}
+    for c in {r["crop"] for r in rows}:
+        rc = [r for r in rows if r["crop"] == c and r["source_url"].startswith("http")]
+        if len({r["source_url"] for r in rc}) >= 2:
+            out[c] = dict(min=min(float(r["min_uah_ha"]) for r in rc), max=max(float(r["max_uah_ha"]) for r in rc),
+                          sources=[dict(source=r["source"], url=r["source_url"], date=r["date"], fuel=r["includes_fuel"])
+                                   for r in rc])
+    return out
+
+
+HIRE = hire_prices()
+MACH = yaml.safe_load(open(ROOT / "model" / "machinery.yaml", encoding="utf-8"))["groups"]
+
+
+def hire_block(s: dict, new_groups: list, area: float | None) -> dict:
+    """Найм збирання для нових груп техніки: ціна з джерелом × площа × кількість сезонів; без даних — no_data (без оцінки).
+    Маржа за 4 роки з наймом = стара P50 на полі − витрати найму (діапазон min..max ціни). Модель не змінюється."""
+    items, missing, cost_min, cost_max = [], [], 0.0, 0.0
+    for g in new_groups:
+        crops = [c for c in MACH[g]["crops"] if c in s["sequence"]]
+        n = sum(1 for c in s["sequence"] if c in crops)
+        priced = [c for c in crops if c in HIRE]
+        if not crops or len(priced) < len(crops):
+            missing.append(MACH[g]["name_uk"])
+            continue
+        for c in priced:
+            k = sum(1 for x in s["sequence"] if x == c)
+            p = HIRE[c]
+            items.append(dict(group_uk=MACH[g]["name_uk"], crop=c, seasons=k, min_uah_ha=p["min"], max_uah_ha=p["max"],
+                              sources=p["sources"]))
+            if area:
+                cost_min += area * p["min"] * k
+                cost_max += area * p["max"] * k
+    tf = ((s["metrics"].get("money") or {}).get("total_field") or {})
+    out = dict(items=items, missing_uk=missing, note=HIRE_NOTE)
+    if not missing and items and area and tf.get("p50") is not None:
+        out["margin4_p50_lo"] = round(tf["p50"] - cost_max)
+        out["margin4_p50_hi"] = round(tf["p50"] - cost_min)
+        out["margin4_p50_old"] = tf["p50"]
+    return out
 
 
 def main():
