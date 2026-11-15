@@ -1,0 +1,21 @@
+# Пресети сценаріїв — фіксовані сівозміни для «Меню сценаріїв» (#plan). Оцінюються тим самим оптимізатором без пошуку
+# (як «поточна»): та сама модель, ціни, витрати. Культура без параметрів / т/га / ціни / календаря → результат null з причиною.
+# Ротація з N полів у плані K = 4 роки: роки плану = поля 1..K по колу (поле стартує з 1-го поля ротації).
+sources:
+  NNC_IZ: "ННЦ «Інститут землеробства НААН» — органічні сівозміни-кандидати (картка Карлівки на сайті, site/template.html)"
+  SITE_NORMS: "site/template.html, блок «Норматив №164» — PRESETS"
+  MENTORS: "фідбек менторів 14.11.2026 — сівозміни з культур, для яких у моделі є дані"
+
+# Назва культури на сайті, якої немає однозначно в model/crops.yaml → варіанти; для №164 норма однакова (rules.yaml norm_group)
+ambiguous:
+  barley: {name_uk: Ячмінь, variants: [winter_barley, spring_barley], note: "на сайті не уточнено озимий чи ярий; norm_group barley — одна норма №164"}
+
+presets:
+  - {id: nnc_1, name_uk: "ННЦ №1: соя → пшениця яра → просо", rotation: [soybean, spring_wheat, millet], src: NNC_IZ}
+  - {id: nnc_2, name_uk: "ННЦ №2: соя → пшениця яра → гречка", rotation: [soybean, spring_wheat, buckwheat], src: NNC_IZ}
+  - {id: cherkasy, name_uk: "Черкаська ДСГДС: соя → кукурудза → кукурудза", rotation: [soybean, maize, maize], src: SITE_NORMS}
+  # обчислювані сівозміни з культур, для яких є дані (фідбек менторів 14.11.2026); календарний конфлікт — показуємо причину
+  - {id: ww_sun, name_uk: "Пшениця озима ↔ соняшник (типова практика)", rotation: [winter_wheat, sunflower], src: SITE_NORMS}
+  - {id: maize_soy_ww_sun, name_uk: "Кукурудза → соя → пшениця озима → соняшник", rotation: [maize, soybean, winter_wheat, sunflower], src: MENTORS}
+  - {id: soy_ww_maize_pea, name_uk: "Соя → пшениця озима → кукурудза → горох", rotation: [soybean, winter_wheat, maize, pea], src: MENTORS}
+  - {id: ww_sun_maize_soy, name_uk: "Пшениця озима → соняшник → кукурудза → соя", rotation: [winter_wheat, sunflower, maize, soybean], src: MENTORS}

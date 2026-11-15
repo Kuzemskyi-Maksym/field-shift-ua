@@ -1,0 +1,391 @@
+# Field Shift — параметри культур для симулятора й оптимізатора.
+#
+# ПРАВИЛО: кожне число має поле src (ключ із sources) і, за потреби, note.
+# Відсутнє значення = рядок "TODO". Культура з TODO в обов'язковому параметрі
+# не потрапляє в оптимізацію (model/crops.py → звіт «заблоковано»).
+#
+# Значення перенесено з сирих HTML-таблиць FAO (не з пам'яті), 12.11.2026.
+# Правила вибору з діапазонів — у rules_of_choice; кожне застосування підписане в note.
+
+sources:
+  FAO56_T11: "FAO-56 (Allen et al., 1998), Table 11 — Lengths of crop development stages. https://www.fao.org/4/X0490E/x0490e0b.htm"
+  FAO56_T12: "FAO-56, Table 12 — Single (time-averaged) crop coefficients Kc. https://www.fao.org/4/X0490E/x0490e0b.htm"
+  FAO56_T22: "FAO-56, Table 22 — Max effective rooting depth Zr and depletion fraction p. https://www.fao.org/4/X0490E/x0490e0e.htm"
+  FAO56_T24: "FAO-56, Table 24 — Seasonal yield response factors Ky (from FAO-33). https://www.fao.org/4/X0490E/x0490e0e.htm"
+  FAO66_T1: "FAO-66 (Steduto et al., 2012), ch. 2, Table 1 — Seasonal Ky values from FAO-33. https://www.fao.org/4/i2800e/i2800e02.pdf"
+  FAO66_T2: "FAO-66, ch. 2, Table 2 — Ky FAO-33 vs IAEA, column FAO Tr-0000. https://www.fao.org/4/i2800e/i2800e02.pdf"
+  FAO56_CH11: "FAO-56, Chapter 11 — ETc during non-growing periods: bare soil / residue Kc = Kc_ini (Fig. 29–30). https://www.fao.org/4/X0490E/x0490e0h.htm"
+  FAO56_A7: "FAO-56, Annex 7 — Eq. 7-1…7-10, parameters reproducing Fig. 29/30a/30b. https://www.fao.org/4/X0490E/x0490e0o.htm"
+  NAAN_R2R3: "TODO — календарі сівби/збирання НААН по зонах, передають R2/R3"
+  # календар сівби — data/raw/calendar_sources.yaml (цитати, сторінки)
+  ISGP2026_POSIV: "Рижук С.М., Савчук О.І. та ін. Рекомендації щодо сівби озимих… ІСГП НААН; Житомирська ОДА, 2026. https://www.isgpnaan.org/upload/rekomendatsii-posiv-2026.pdf"
+  ISGP2026_VPR: "Рижук С.М., Савчук О.І. та ін. Рекомендації з проведення весняно-польових робіт 2026. ІСГП НААН, 2026. https://isgpnaan.org/upload/1-rekomendatsii-vpr-2026.pdf"
+  YURIEV2023_OSIN: "Особливості проведення осіннього комплексу польових робіт… Інститут рослинництва ім. В.Я. Юр'єва НААН, 2023, розд. 5, с. 18. https://yuriev.com.ua/assets/files/navchalni-posibnyky/osinnij-kompleks-2023.pdf"
+  YURIEV2019_VPR: "Агротехнологічна стратегія проведення весняно-польових робіт… 2019. Інститут рослинництва ім. В.Я. Юр'єва НААН. https://yuriev.com.ua/assets/files/knigi/vpr-2019.pdf"
+  IZZ2018_OZYMI: "Вожегова Р.А., Заєць С.О., Коваленко А.М. та ін. Агротехнологічні вимоги до сівби озимих культур під урожай 2019 року у Південному Степу України. ІЗЗ НААН, 2018. https://dspace.mnau.edu.ua/jspui/bitstream/123456789/4638/1/Ahrotekhnolohichni%20umovy_2019.pdf"
+  HLS_PHENO: "Наші дані: HLS 30 м, 250 полів, 2016–2025 — data/raw/hls_phenology_by_oblast.csv (клас W, медіана областей зони); фази з NDVI полів, не з агрономічних джерел"
+  POWER_TSOIL1: "NASA POWER daily, community=AG, TSOIL1 — Soil Temperatures Layer 1, 0.018–0.0988 m (MERRA-2); data/raw/power/tsoil_<вузол>.csv (scripts/fetch_power.py --tsoil)"
+  BASELINE_V0: "baseline_model.py v0 — ЗАГЛУШКА без джерела (орієнтовний календар); дозволена лише з прапорцем --allow-stubs і лише для дат календаря"
+  STUB_NO_SOURCE: "заглушка без джерела — лише дати календаря, лише з --allow-stubs, лише для прототипу до 13.11.2026; дата = місяць сівби з того самого рядка FAO-56 Т11, що й довжини фаз, день 15 (або 01 для «March/Apr»)"
+
+rules_of_choice:
+  zr: "Беремо ВЕРХНЮ межу діапазону Табл. 22: примітка 1 — «larger values for modeling soil water stress or for rainfed conditions»."
+  kc_range_fn9: "Примітка 9 до Табл. 12: «lower values are for rainfed crops having less dense plant populations» → беремо нижню (богара)."
+  kc_range_fn10: "Примітка 10: «higher value is for hand-harvested crops» → беремо нижню (механізоване збирання)."
+  kc_range_fn11: "Примітка 11: друге Kc_end — після висихання зерна в полі (~18%) → беремо друге."
+  kc_group_ini: "Порожня клітинка Kc_ini у рядку культури = значення рядка групи в Табл. 12 (так влаштована таблиця)."
+  t11_row: "Табл. 11 дає кілька рядків по регіонах; беремо найближчий за широтою/кліматом. Довжини фаз — НЕ для України: прапорець до заміни даними R2/R3."
+  range_no_footnote: "Діапазон без примітки (напр., сорго Kc_mid 1.00–1.10, соя Ldev 30/35) → середина діапазону (для днів — ціле вниз), поле midpoint: true → прапорець."
+  winter_hls_stages: "Озимі: stage_dates = [greenup, peak, senes − L_late, senes] з HLS (клас W, медіана медіан областей зони, DOY, округлення .5 вгору); greenup = перша дата NDVI>0.5 → кінець ini; peak NDVI → кінець dev; senes = перша дата NDVI<0.35 після піку → кінець late (≈ дозрівання); L_late = 25 д — FAO-56 Т11 Winter Wheat (єдина довжина з FAO, бо NDVI не дає початку дозрівання). Прапорець «фази з NDVI полів»."
+  spring_dynamic_sow: "Ярі з sow: dynamic — дата сівби в кожному році погоди = перший день ≥ not_before, коли ковзна 5-денна середня (день і 4 попередні) TSOIL1 ≥ threshold_c; немає TSOIL1 → T2M з прапорцем. Збирання = сівба + Σ stages_days FAO-56 Т11."
+  winter_calendar: "Для озимих фази задаються датами calendar.<zone>.stage_dates (кінці ini/dev/mid/late, наступний рік після сівби); stages_days FAO-56 Т11 для озимих НЕ використовується (Айдахо: збирання ~09-01 — не Україна)."
+  kc_climate: "FAO-56 рівн. 62 (Kc_mid) і 65 (Kc_end, лише якщо Kc_end(Tab) ≥ 0.45): u2 і RHmin — середні за фазу mid / late; RHmin за рівн. 63 = 100·e°(Tdew)/e°(Tmax) з POWER T2MDEW і T2M_MAX; межі 1≤u2≤6, 20≤RHmin≤80; h — Табл. 12 (h_m)."
+
+zones: [steppe, forest_steppe, polissia]
+
+crops:
+
+  winter_wheat:
+    name_uk: Пшениця озима
+    season: winter
+    group: cereal_winter
+    n_fixing: false
+    kc_ini: {value: 0.4, src: FAO56_T12, note: "Winter Wheat — with frozen soils (зими в Україні з промерзанням)"}
+    kc_mid: {value: 1.15, src: FAO56_T12}
+    kc_end: {value: 0.25, src: FAO56_T12, note: "діапазон 0.25–0.4, прим. 10 → нижня (механізоване)"}
+    stages_days: {value: [160, 75, 75, 25], src: FAO56_T11, note: "Winter Wheat, Idaho USA, сівба October; не Україна"}
+    h_m: {value: 1, src: FAO56_T12, note: "Maximum Crop Height — Winter Wheat with frozen soils, h=1; для рівн. 62/65"}
+    ky: {value: 1.0, src: FAO66_T2, sensitivity: [1.05], note: "рішення 12.11: 1.00 за FAO-66 Табл. 2 (FAO Tr-0000); FAO-56 Т24 і FAO-66 Т1 дають 1.05 — у чутливості"}
+    zr_m: {value: 1.8, src: FAO56_T22, note: "діапазон 1.5–1.8, верхня межа"}
+    p: {value: 0.55, src: FAO56_T22}
+    calendar:
+      steppe: {sow: "09-28", window: ["09-15", "10-10"], src: IZZ2018_OZYMI, page: 18, stage_dates: ["04-08", "05-21", "06-11", "07-06"], stage_src: HLS_PHENO}
+      forest_steppe: {sow: "09-18", window: ["09-10", "09-25"], src: YURIEV2023_OSIN, page: 18, stage_dates: ["04-18", "06-01", "06-29", "07-24"], stage_src: HLS_PHENO, note: "Харківська обл. (Лісостеп); допустимий до 01.10"}
+      polissia: {sow: "09-18", window: ["09-15", "09-22"], src: ISGP2026_POSIV, page: 10, stage_dates: ["04-02", "05-31", "07-12", "08-06"], stage_src: HLS_PHENO}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  winter_barley:
+    name_uk: Ячмінь озимий
+    season: winter
+    group: cereal_winter
+    n_fixing: false
+    kc_ini: {value: 0.3, src: FAO56_T12, note: "Barley; Kc_ini з рядка групи i. Cereals"}
+    kc_mid: {value: 1.15, src: FAO56_T12}
+    kc_end: {value: 0.25, src: FAO56_T12}
+    stages_days: {value: TODO, src: FAO56_T11, note: "у Табл. 11 немає рядка для озимого ячменю помірних широт"}
+    h_m: {value: 1, src: FAO56_T12, note: "Maximum Crop Height — Barley; для рівн. 62/65"}
+    ky: {value: TODO, src: FAO56_T24, note: "ячменю немає в Табл. 24 / FAO-66 Табл. 1"}
+    zr_m: {value: 1.5, src: FAO56_T22, note: "Barley 1.0–1.5, верхня межа"}
+    p: {value: 0.55, src: FAO56_T22}
+    calendar:
+      steppe: {sow: "09-25", window: ["09-20", "10-01"], src: IZZ2018_OZYMI, page: 31, stage_dates: ["04-08", "05-21", "06-11", "07-06"], stage_src: HLS_PHENO, note: "північ Південного Степу; південь (Березівка) — 01–10.10"}
+      forest_steppe: {sow: TODO, src: NAAN_R2R3, note: "calendar_sources.yaml: джерела для Лісостепу не знайдено"}
+      polissia: {sow: "09-25", window: ["09-20", "09-30"], src: ISGP2026_POSIV, page: 17, stage_dates: ["04-02", "05-31", "07-12", "08-06"], stage_src: HLS_PHENO}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  rye:
+    name_uk: Жито озиме
+    season: winter
+    group: cereal_winter
+    n_fixing: false
+    kc_ini: {value: TODO, src: FAO56_T12, note: "жита (зернового) немає в Табл. 12 (є лише Rye Grass hay — інша культура)"}
+    kc_mid: {value: TODO, src: FAO56_T12}
+    kc_end: {value: TODO, src: FAO56_T12}
+    stages_days: {value: TODO, src: FAO56_T11}
+    h_m: {value: TODO, src: FAO56_T12}
+    ky: {value: TODO, src: FAO56_T24}
+    zr_m: {value: TODO, src: FAO56_T22}
+    p: {value: TODO, src: FAO56_T22}
+    calendar:
+      steppe: {sow: "09-20", window: ["09-11", "09-30"], src: IZZ2018_OZYMI, page: 33, stage_dates: ["04-08", "05-21", "06-11", "07-06"], stage_src: HLS_PHENO}
+      forest_steppe: {sow: TODO, src: NAAN_R2R3, note: "calendar_sources.yaml: джерела для Лісостепу не знайдено"}
+      polissia: {sow: "09-15", window: ["09-10", "09-20"], src: ISGP2026_POSIV, page: 20, stage_dates: ["04-02", "05-31", "07-12", "08-06"], stage_src: HLS_PHENO}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  spring_barley:
+    name_uk: Ячмінь ярий
+    season: spring
+    group: cereal_spring
+    n_fixing: false
+    kc_ini: {value: 0.3, src: FAO56_T12, note: "Kc_ini групи i. Cereals"}
+    kc_mid: {value: 1.15, src: FAO56_T12}
+    kc_end: {value: 0.25, src: FAO56_T12}
+    stages_days: {value: [20, 25, 60, 30], src: FAO56_T11, note: "Barley/Oats/Wheat, March/Apr, 35–45° широти; Україна 45–52°"}
+    h_m: {value: 1, src: FAO56_T12, note: "Maximum Crop Height — Barley; для рівн. 62/65"}
+    ky: {value: TODO, src: FAO56_T24, note: "ячменю немає в Табл. 24 / FAO-66 Табл. 1"}
+    zr_m: {value: 1.5, src: FAO56_T22}
+    p: {value: 0.55, src: FAO56_T22}
+    calendar: {steppe: {sow: TODO, src: NAAN_R2R3}, forest_steppe: {sow: TODO, src: NAAN_R2R3}, polissia: {sow: TODO, src: NAAN_R2R3}}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  oats:
+    name_uk: Овес
+    season: spring
+    group: cereal_spring
+    n_fixing: false
+    kc_ini: {value: 0.3, src: FAO56_T12, note: "Kc_ini групи i. Cereals"}
+    kc_mid: {value: 1.15, src: FAO56_T12}
+    kc_end: {value: 0.25, src: FAO56_T12}
+    stages_days: {value: [20, 25, 60, 30], src: FAO56_T11, note: "Barley/Oats/Wheat, March/Apr, 35–45°"}
+    h_m: {value: 1, src: FAO56_T12, note: "Maximum Crop Height — Oats; для рівн. 62/65"}
+    ky: {value: TODO, src: FAO56_T24, note: "вівса немає в Табл. 24 / FAO-66 Табл. 1"}
+    zr_m: {value: 1.5, src: FAO56_T22}
+    p: {value: 0.55, src: FAO56_T22}
+    calendar: {steppe: {sow: TODO, src: NAAN_R2R3}, forest_steppe: {sow: TODO, src: NAAN_R2R3}, polissia: {sow: TODO, src: NAAN_R2R3}}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  spring_wheat:
+    name_uk: Пшениця яра
+    season: spring
+    group: cereal_spring
+    n_fixing: false
+    kc_ini: {value: 0.3, src: FAO56_T12, note: "Kc_ini групи i. Cereals"}
+    kc_mid: {value: 1.15, src: FAO56_T12}
+    kc_end: {value: 0.25, src: FAO56_T12, note: "0.25–0.4, прим. 10 → нижня"}
+    stages_days: {value: [20, 25, 60, 30], src: FAO56_T11, note: "Barley/Oats/Wheat, March/Apr, 35–45°"}
+    h_m: {value: 1, src: FAO56_T12, note: "Maximum Crop Height — Spring Wheat; для рівн. 62/65"}
+    ky: {value: 1.15, src: FAO56_T24, note: "= FAO66_T1 = FAO66_T2"}
+    zr_m: {value: 1.5, src: FAO56_T22}
+    p: {value: 0.55, src: FAO56_T22}
+    sow_rule: {var: TSOIL1, threshold_c: 4, mean_days: 5, not_before: "03-01", src: ISGP2026_VPR, page: 25, flag: "поріг гороху (4 °C) застосовано до ранніх ярих: джерела дають «ранні строки, щойно дозволяє стан ґрунту» без температури", quote: "Ранні ярі зернові слід сіяти у ранні строки, як тільки дозволяє стан ґрунту (ISGP2026, с. 18)"}
+    calendar:
+      steppe: {sow: dynamic, src: ISGP2026_VPR}
+      forest_steppe: {sow: dynamic, src: ISGP2026_VPR}
+      polissia: {sow: dynamic, src: ISGP2026_VPR}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  maize:
+    name_uk: Кукурудза
+    season: spring
+    group: row_late
+    n_fixing: false
+    kc_ini: {value: 0.3, src: FAO56_T12, note: "Kc_ini групи i. Cereals"}
+    kc_mid: {value: 1.20, src: FAO56_T12}
+    kc_end: {value: 0.35, src: FAO56_T12, note: "0.60–0.35, прим. 11 → друге (досушування в полі)"}
+    stages_days: {value: [30, 40, 50, 50], src: FAO56_T11, note: "Maize (grain), Idaho USA, April; baseline v0 мав [25,40,45,35]"}
+    h_m: {value: 2, src: FAO56_T12, note: "Maximum Crop Height — Maize, Field (grain); для рівн. 62/65"}
+    ky: {value: 1.25, src: FAO56_T24}
+    zr_m: {value: 1.7, src: FAO56_T22, note: "1.0–1.7, верхня"}
+    p: {value: 0.55, src: FAO56_T22}
+    sow_rule: {var: TSOIL1, threshold_c: 10, mean_days: 5, not_before: "03-01", src: ISGP2026_VPR, page: 33, soil_t_c: [10, 12], quote: "Оптимальний термін сівби … коли температура на глибині 10 см сягає значення 10–12 С", check_window: {zones: [forest_steppe, polissia], window: ["04-25", "05-05"]}}
+    calendar:
+      steppe: {sow: dynamic, src: ISGP2026_VPR}
+      forest_steppe: {sow: dynamic, src: ISGP2026_VPR}
+      polissia: {sow: dynamic, src: ISGP2026_VPR}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  maize_silage:
+    name_uk: Кукурудза на силос
+    season: spring
+    group: forage
+    n_fixing: false
+    kc_ini: {value: 0.3, src: FAO56_T12, note: "Kc_ini групи i. Cereals"}
+    kc_mid: {value: TODO, src: FAO56_T12, note: "силосної кукурудзи немає в Табл. 12"}
+    kc_end: {value: TODO, src: FAO56_T12}
+    stages_days: {value: TODO, src: FAO56_T11}
+    h_m: {value: TODO, src: FAO56_T12}
+    ky: {value: TODO, src: FAO56_T24, note: "Maize 1.25 — для зерна; для силосу джерела немає"}
+    zr_m: {value: 1.7, src: FAO56_T22, note: "рядок Maize, Field — коренева система та сама"}
+    p: {value: 0.55, src: FAO56_T22}
+    calendar: {steppe: {sow: TODO, src: NAAN_R2R3}, forest_steppe: {sow: TODO, src: NAAN_R2R3}, polissia: {sow: TODO, src: NAAN_R2R3}}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  sunflower:
+    name_uk: Соняшник
+    season: spring
+    group: row_late
+    n_fixing: false
+    dries_soil: true
+    kc_ini: {value: 0.35, src: FAO56_T12, note: "Kc_ini групи h. Oil Crops"}
+    kc_mid: {value: 1.0, src: FAO56_T12, note: "1.0–1.15, прим. 9 → нижня (богара)"}
+    kc_end: {value: 0.35, src: FAO56_T12}
+    stages_days: {value: [25, 35, 45, 25], src: FAO56_T11, note: "Sunflower, April/May, Medit.; California"}
+    h_m: {value: 2.0, src: FAO56_T12, note: "Maximum Crop Height — Sunflower; для рівн. 62/65"}
+    ky: {value: 0.95, src: FAO56_T24}
+    zr_m: {value: 1.5, src: FAO56_T22, note: "0.8–1.5, верхня"}
+    p: {value: 0.45, src: FAO56_T22}
+    sow_rule: {var: TSOIL1, threshold_c: 10, mean_days: 5, not_before: "03-01", src: ISGP2026_VPR, page: 35, soil_t_c: [8, 12], quote: "Коли ґрунт на глибині загортання насіння прогріється до 8–10 С (ISGP2026, с. 35); 10–12 оС (Yuriev2019, с. 34)"}
+    calendar:
+      steppe: {sow: dynamic, src: ISGP2026_VPR}
+      forest_steppe: {sow: dynamic, src: ISGP2026_VPR}
+      polissia: {sow: dynamic, src: ISGP2026_VPR}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  sorghum:
+    name_uk: Сорго
+    season: spring
+    group: row_late
+    n_fixing: false
+    kc_ini: {value: 0.3, src: FAO56_T12, note: "Kc_ini групи i. Cereals"}
+    kc_mid: {value: 1.05, src: FAO56_T12, midpoint: true, note: "Sorghum grain 1.00–1.10 без примітки → середина"}
+    kc_end: {value: 0.55, src: FAO56_T12}
+    stages_days: {value: [20, 35, 40, 30], src: FAO56_T11, note: "Sorghum, May/June, USA/Pakis./Med."}
+    h_m: {value: 1.5, src: FAO56_T12, midpoint: true, note: "Maximum Crop Height — Sorghum grain 1-2 без примітки → середина; для рівн. 62/65"}
+    ky: {value: 0.9, src: FAO56_T24}
+    zr_m: {value: 2.0, src: FAO56_T22, note: "grain 1.0–2.0, верхня"}
+    p: {value: 0.55, src: FAO56_T22}
+    calendar: {steppe: {sow: TODO, src: NAAN_R2R3}, forest_steppe: {sow: TODO, src: NAAN_R2R3}, polissia: {sow: TODO, src: NAAN_R2R3}}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  millet:
+    name_uk: Просо
+    season: spring
+    group: row_late
+    n_fixing: false
+    kc_ini: {value: 0.3, src: FAO56_T12, note: "Kc_ini групи i. Cereals"}
+    kc_mid: {value: 1.00, src: FAO56_T12}
+    kc_end: {value: 0.30, src: FAO56_T12}
+    stages_days: {value: [20, 30, 55, 35], src: FAO56_T11, note: "Millet, April, Central USA"}
+    h_m: {value: 1.5, src: FAO56_T12, note: "Maximum Crop Height — Millet; для рівн. 62/65"}
+    ky: {value: TODO, src: FAO56_T24, note: "проса немає в Табл. 24 / FAO-66 Табл. 1"}
+    zr_m: {value: 2.0, src: FAO56_T22, note: "1.0–2.0, верхня"}
+    p: {value: 0.55, src: FAO56_T22}
+    calendar: {steppe: {sow: TODO, src: NAAN_R2R3}, forest_steppe: {sow: TODO, src: NAAN_R2R3}, polissia: {sow: TODO, src: NAAN_R2R3}}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  soybean:
+    name_uk: Соя
+    season: spring
+    group: legume
+    n_fixing: true
+    kc_ini: {value: 0.4, src: FAO56_T12, note: "Kc_ini групи e. Legumes"}
+    kc_mid: {value: 1.15, src: FAO56_T12}
+    kc_end: {value: 0.50, src: FAO56_T12}
+    stages_days: {value: [20, 32, 60, 25], src: FAO56_T11, midpoint: true, note: "Soybeans, May, Central USA; Ldev 30/35 без примітки → 32.5, ціле вниз (rules_of_choice.range_no_footnote)"}
+    h_m: {value: 0.75, src: FAO56_T12, midpoint: true, note: "Maximum Crop Height — Soybeans 0.5-1.0 без примітки → середина; для рівн. 62/65"}
+    ky: {value: 0.85, src: FAO56_T24}
+    zr_m: {value: 1.3, src: FAO56_T22, note: "0.6–1.3, верхня"}
+    p: {value: 0.50, src: FAO56_T22}
+    sow_rule: {var: TSOIL1, threshold_c: 10, mean_days: 5, not_before: "03-01", src: ISGP2026_VPR, page: 22, soil_t_c: [8, 14], quote: "ґрунт на глибині 10 см прогрівається до 8–10оС (ISGP2026, с. 22); 12-14 оС (Yuriev2019, с. 31)", check_window: {zones: [forest_steppe, polissia], window: ["04-25", "05-10"]}, note: "пороги джерел різні: 8–10 і 12–14 — у чутливість"}
+    calendar:
+      steppe: {sow: dynamic, src: ISGP2026_VPR}
+      forest_steppe: {sow: dynamic, src: ISGP2026_VPR}
+      polissia: {sow: dynamic, src: ISGP2026_VPR}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  pea:
+    name_uk: Горох
+    season: spring
+    group: legume
+    n_fixing: true
+    kc_ini: {value: 0.4, src: FAO56_T12, note: "Peas Dry/Seed; Kc_ini групи e. Legumes"}
+    kc_mid: {value: 1.15, src: FAO56_T12}
+    kc_end: {value: 0.30, src: FAO56_T12, note: "Dry/Seed"}
+    stages_days: {value: [15, 25, 35, 15], src: FAO56_T11, note: "Peas, May, Europe (Табл. 11 не розрізняє fresh/dry)"}
+    h_m: {value: 0.5, src: FAO56_T12, note: "Maximum Crop Height — Peas Dry/Seed; для рівн. 62/65"}
+    ky: {value: 1.15, src: FAO56_T24, note: "у джерелі надруковано «1,15»"}
+    zr_m: {value: 1.0, src: FAO56_T22, note: "Dry/Seed 0.6–1.0, верхня"}
+    p: {value: 0.40, src: FAO56_T22, note: "Dry/Seed"}
+    sow_rule: {var: TSOIL1, threshold_c: 4, mean_days: 5, not_before: "03-01", src: ISGP2026_VPR, page: 25, soil_t_c: [4, 10], quote: "Висівають горох у надранні строки за … температури ґрунту 4–10°С"}
+    calendar:
+      steppe: {sow: dynamic, src: ISGP2026_VPR}
+      forest_steppe: {sow: dynamic, src: ISGP2026_VPR}
+      polissia: {sow: dynamic, src: ISGP2026_VPR}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  chickpea:
+    name_uk: Нут
+    season: spring
+    group: legume
+    n_fixing: true
+    kc_ini: {value: 0.4, src: FAO56_T12, note: "Kc_ini групи e. Legumes"}
+    kc_mid: {value: 1.00, src: FAO56_T12}
+    kc_end: {value: 0.35, src: FAO56_T12}
+    stages_days: {value: TODO, src: FAO56_T11, note: "нуту немає в Табл. 11"}
+    h_m: {value: 0.4, src: FAO56_T12, note: "Maximum Crop Height — Chick pea; для рівн. 62/65"}
+    ky: {value: TODO, src: FAO56_T24, note: "нуту немає в Табл. 24 / FAO-66 Табл. 1"}
+    zr_m: {value: 1.0, src: FAO56_T22, note: "0.6–1.0, верхня"}
+    p: {value: 0.50, src: FAO56_T22}
+    calendar: {steppe: {sow: TODO, src: NAAN_R2R3}, forest_steppe: {sow: TODO, src: NAAN_R2R3}, polissia: {sow: TODO, src: NAAN_R2R3}}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  winter_rapeseed:
+    name_uk: Ріпак озимий
+    season: winter
+    group: oil_winter
+    n_fixing: false
+    kc_ini: {value: 0.35, src: FAO56_T12, note: "Kc_ini групи h. Oil Crops"}
+    kc_mid: {value: 1.0, src: FAO56_T12, note: "Rapeseed, Canola 1.0–1.15, прим. 9 → нижня"}
+    kc_end: {value: 0.35, src: FAO56_T12}
+    stages_days: {value: TODO, src: FAO56_T11, note: "ріпаку немає в Табл. 11"}
+    h_m: {value: 0.6, src: FAO56_T12, note: "Maximum Crop Height — Rapeseed, Canola; для рівн. 62/65"}
+    ky: {value: TODO, src: FAO56_T24, note: "ріпаку немає в Табл. 24 / FAO-66 Табл. 1"}
+    zr_m: {value: 1.5, src: FAO56_T22, note: "1.0–1.5, верхня"}
+    p: {value: 0.60, src: FAO56_T22}
+    calendar:
+      steppe: {sow: "09-05", window: ["09-01", "09-10"], src: IZZ2018_OZYMI, page: 35, stage_dates: ["04-08", "05-21", "06-11", "07-06"], stage_src: HLS_PHENO}
+      forest_steppe: {sow: TODO, src: NAAN_R2R3, note: "calendar_sources.yaml: джерела для Лісостепу не знайдено"}
+      polissia: {sow: "08-20", window: ["08-15", "08-25"], src: ISGP2026_POSIV, page: 25, stage_dates: ["04-02", "05-31", "07-12", "08-06"], stage_src: HLS_PHENO, note: "загальна рекомендація, не окремо для Полісся"}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  flax:
+    name_uk: Льон
+    season: spring
+    group: oil_spring
+    n_fixing: false
+    kc_ini: {value: 0.35, src: FAO56_T12, note: "Kc_ini групи g. Fibre Crops"}
+    kc_mid: {value: 1.10, src: FAO56_T12}
+    kc_end: {value: 0.25, src: FAO56_T12}
+    stages_days: {value: [25, 35, 50, 40], src: FAO56_T11, note: "Flax, April, Europe"}
+    h_m: {value: 1.2, src: FAO56_T12, note: "Maximum Crop Height — Flax; для рівн. 62/65"}
+    ky: {value: TODO, src: FAO56_T24, note: "льону немає в Табл. 24 / FAO-66 Табл. 1"}
+    zr_m: {value: 1.5, src: FAO56_T22, note: "1.0–1.5, верхня"}
+    p: {value: 0.50, src: FAO56_T22}
+    calendar: {steppe: {sow: TODO, src: NAAN_R2R3}, forest_steppe: {sow: TODO, src: NAAN_R2R3}, polissia: {sow: TODO, src: NAAN_R2R3}}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  sugar_beet:
+    name_uk: Буряк цукровий
+    season: spring
+    group: technical
+    n_fixing: false
+    kc_ini: {value: 0.35, src: FAO56_T12}
+    kc_mid: {value: 1.20, src: FAO56_T12}
+    kc_end: {value: 0.70, src: FAO56_T12, note: "прим. 5: без поливу в останній місяць; до 1.0 за значних дощів"}
+    stages_days: {value: [50, 40, 50, 40], src: FAO56_T11, note: "Sugarbeet, April, Idaho USA"}
+    h_m: {value: 0.5, src: FAO56_T12, note: "Maximum Crop Height — Sugar Beet; для рівн. 62/65"}
+    ky: {value: 1.0, src: FAO56_T24}
+    zr_m: {value: 1.2, src: FAO56_T22, note: "0.7–1.2, верхня"}
+    p: {value: 0.55, src: FAO56_T22}
+    calendar:
+      steppe:        {sow: "04-15", src: STUB_NO_SOURCE, status: stub, note: "Sugarbeet, Idaho, April → 04-15"}
+      forest_steppe: {sow: "04-15", src: STUB_NO_SOURCE, status: stub, note: "Sugarbeet, Idaho, April → 04-15"}
+      polissia:      {sow: "04-15", src: STUB_NO_SOURCE, status: stub, note: "Sugarbeet, Idaho, April → 04-15"}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  alfalfa:
+    name_uk: Люцерна
+    season: perennial
+    group: forage
+    n_fixing: true
+    kc_ini: {value: 0.40, src: FAO56_T12, note: "Alfalfa Hay — averaged cutting effects"}
+    kc_mid: {value: 0.95, src: FAO56_T12, note: "averaged cutting effects (прим. 13)"}
+    kc_end: {value: 0.90, src: FAO56_T12}
+    stages_days: {value: TODO, src: FAO56_T11, note: "Табл. 11: ini 10, dev 30, далі var. — сезон від останнього −4°C навесні до першого −4°C восени; потрібна реалізація багаторічної культури"}
+    h_m: {value: 0.7, src: FAO56_T12, note: "Maximum Crop Height — Alfalfa Hay averaged cutting effects; для рівн. 62/65"}
+    ky: {value: 1.1, src: FAO56_T24}
+    zr_m: {value: 2.0, src: FAO56_T22, note: "for hay 1.0–2.0, верхня"}
+    p: {value: 0.55, src: FAO56_T22}
+    calendar: {steppe: {sow: TODO, src: NAAN_R2R3}, forest_steppe: {sow: TODO, src: NAAN_R2R3}, polissia: {sow: TODO, src: NAAN_R2R3}}
+    feed: {me_mj_kg: TODO, cp_pct: TODO, src: TODO}
+
+  black_fallow:
+    name_uk: Чорний пар
+    season: none
+    group: fallow
+    n_fixing: false
+    kc_method: {value: fao56_annex7, src: FAO56_CH11, note: "Kc голого ґрунту = Kc_ini за рівн. 7-3 (FAO56_A7) з погоди вікна; див. model/soils.yaml"}
+    calendar: {steppe: {sow: none, src: FAO56_CH11}, forest_steppe: {sow: none, src: FAO56_CH11}, polissia: {sow: none, src: FAO56_CH11}}
+    feed: {me_mj_kg: none, cp_pct: none, src: "не корм"}
+
+  green_manure:
+    name_uk: Сидерат (гірчиця/редька олійна)
+    season: cover
+    group: cover
+    n_fixing: false
+    kc_ini: {value: TODO, src: FAO56_T12, note: "у Табл. 12 є лише Radish (овочева) — інша культура"}
+    kc_mid: {value: TODO, src: FAO56_T12}
+    kc_end: {value: TODO, src: FAO56_T12}
+    stages_days: {value: TODO, src: FAO56_T11}
+    calendar: {steppe: {sow: TODO, src: NAAN_R2R3}, forest_steppe: {sow: TODO, src: NAAN_R2R3}, polissia: {sow: TODO, src: NAAN_R2R3}}
+    feed: {me_mj_kg: none, cp_pct: none, src: "не корм"}

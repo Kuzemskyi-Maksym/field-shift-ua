@@ -1,0 +1,2711 @@
+{
+"names": {
+"Пшениця озима": "Winter wheat",
+"пшениця озима": "winter wheat",
+"Ячмінь озимий": "Winter barley",
+"ячмінь озимий": "winter barley",
+"Жито озиме": "Winter rye",
+"жито озиме": "winter rye",
+"Ячмінь ярий": "Spring barley",
+"ячмінь ярий": "spring barley",
+"Овес": "Oats",
+"овес": "oats",
+"Пшениця яра": "Spring wheat",
+"пшениця яра": "spring wheat",
+"Кукурудза": "Maize",
+"кукурудза": "maize",
+"Кукурудза на силос": "Silage maize",
+"кукурудза на силос": "silage maize",
+"Соняшник": "Sunflower",
+"соняшник": "sunflower",
+"Сорго": "Sorghum",
+"сорго": "sorghum",
+"Просо": "Millet",
+"просо": "millet",
+"Соя": "Soybean",
+"соя": "soybean",
+"Горох": "Pea",
+"горох": "pea",
+"Нут": "Chickpea",
+"нут": "chickpea",
+"Ріпак озимий": "Winter rapeseed",
+"ріпак озимий": "winter rapeseed",
+"Льон": "Flax",
+"льон": "flax",
+"Буряк цукровий": "Sugar beet",
+"буряк цукровий": "sugar beet",
+"Люцерна": "Alfalfa",
+"люцерна": "alfalfa",
+"Чорний пар": "Bare fallow",
+"чорний пар": "bare fallow",
+"Сидерат (гірчиця/редька олійна)": "Green manure (mustard/oil radish)",
+"сидерат (гірчиця/редька олійна)": "green manure (mustard/oil radish)",
+"Ангола": "Angola",
+"Албанія": "Albania",
+"Об'єднані Арабські Емірати": "United Arab Emirates",
+"Австрія": "Austria",
+"Бельгія": "Belgium",
+"Буркіна-Фасо": "Burkina Faso",
+"Бангладеш": "Bangladesh",
+"Болгарія": "Bulgaria",
+"Бахрейн": "Bahrain",
+"Швейцарія": "Switzerland",
+"Китай": "China",
+"Кот-Д'Івуар": "Côte d'Ivoire",
+"Камерун": "Cameroon",
+"Демократична Республіка Конго": "DR Congo",
+"Колумбія": "Colombia",
+"Кіпр": "Cyprus",
+"Чехія": "Czechia",
+"Німеччина": "Germany",
+"Джибуті": "Djibouti",
+"Данія": "Denmark",
+"Алжир": "Algeria",
+"Єгипет": "Egypt",
+"Еритрея": "Eritrea",
+"Іспанія": "Spain",
+"Естонія": "Estonia",
+"Ефіопія": "Ethiopia",
+"Франція": "France",
+"Габон": "Gabon",
+"Сполучене Королівство Великої Британії та Північної Ірландії": "United Kingdom",
+"Грузія": "Georgia",
+"Гана": "Ghana",
+"Греція": "Greece",
+"Хорватія": "Croatia",
+"Угорщина": "Hungary",
+"Індонезія": "Indonesia",
+"Індія": "India",
+"Ірландія": "Ireland",
+"Іран (Ісламська Республіка)": "Iran",
+"Ірак": "Iraq",
+"Ізраїль": "Israel",
+"Італія": "Italy",
+"Йорданія": "Jordan",
+"Казахстан": "Kazakhstan",
+"Кенія": "Kenya",
+"Камбоджа": "Cambodia",
+"Республіка Корея": "South Korea",
+"Кувейт": "Kuwait",
+"Ліван": "Lebanon",
+"Лівія": "Libya",
+"Шри-Ланка": "Sri Lanka",
+"Литва": "Lithuania",
+"Латвія": "Latvia",
+"Марокко": "Morocco",
+"Республіка Молдова": "Moldova",
+"Мадагаскар": "Madagascar",
+"Мексика": "Mexico",
+"Північна Македонія": "North Macedonia",
+"Малі": "Mali",
+"Мальта": "Malta",
+"М'янма": "Myanmar",
+"Мозамбік": "Mozambique",
+"Мавританія": "Mauritania",
+"Малайзія": "Malaysia",
+"Нігерія": "Nigeria",
+"Нідерланди": "Netherlands",
+"Норвегія": "Norway",
+"Непал": "Nepal",
+"Оман": "Oman",
+"Пакистан": "Pakistan",
+"Філіппіни": "Philippines",
+"Польща": "Poland",
+"Португалія": "Portugal",
+"Катар": "Qatar",
+"Румунія": "Romania",
+"Російська Федерація": "Russia",
+"Саудівська Аравія": "Saudi Arabia",
+"Судан": "Sudan",
+"Сенегал": "Senegal",
+"Сингапур": "Singapore",
+"Сомалі": "Somalia",
+"Сербія": "Serbia",
+"Словаччина": "Slovakia",
+"Словенія": "Slovenia",
+"Сейшельські Острови": "Seychelles",
+"Сирійська Арабська Республіка": "Syria",
+"Таїланд": "Thailand",
+"Туніс": "Tunisia",
+"Туреччина": "Türkiye",
+"Тайвань, Провінція Китаю": "Taiwan",
+"Об'єднана Республіка Танзанія": "Tanzania",
+"Уганда": "Uganda",
+"США": "United States",
+"В'єтнам": "Vietnam",
+"Ємен": "Yemen",
+"Білорусь": "Belarus",
+"Чорногорія": "Montenegro",
+"Туркменистан": "Turkmenistan",
+"Вірменія": "Armenia",
+"Азербайджан": "Azerbaijan",
+"Чилі": "Chile",
+"Коста-Рика": "Costa Rica",
+"Фінляндія": "Finland",
+"Гібралтар": "Gibraltar",
+"Гонконг, Особливий адміністративний район Китаю": "Hong Kong",
+"Японія": "Japan",
+"Киргизстан": "Kyrgyzstan",
+"Сент-Кітс і Невіс": "Saint Kitts and Nevis",
+"Ліберія": "Liberia",
+"Люксембург": "Luxembourg",
+"Маршаллові Острови": "Marshall Islands",
+"Малаві": "Malawi",
+"Швеція": "Sweden",
+"Узбекистан": "Uzbekistan",
+"Британські Віргінські Острови": "Virgin Islands, British",
+"Канада": "Canada",
+"Південна Африка": "South Africa",
+"Боснія і Герцеговина": "Bosnia and Herzegovina",
+"Пуерто-Рико": "Puerto Rico",
+"Антигуа і Барбуда": "Antigua and Barbuda",
+"Австралія": "Australia",
+"Бурунді": "Burundi",
+"Бенін": "Benin",
+"Беліз": "Belize",
+"Бермудські Острови": "Bermuda",
+"Бразилія": "Brazil",
+"Барбадос": "Barbados",
+"Ботсвана": "Botswana",
+"Центральноафриканська Республіка": "Central African Republic",
+"Конго": "Congo",
+"Острови Кука": "Cook Islands",
+"Комори": "Comoros",
+"Куба": "Cuba",
+"Кюрасао": "Curaçao",
+"Домініканська Республіка": "Dominican Republic",
+"Еквадор": "Ecuador",
+"Гвінея": "Guinea",
+"Гваделупа": "Guadeloupe",
+"Гамбія": "Gambia",
+"Екваторіальна Гвінея": "Equatorial Guinea",
+"Гренада": "Grenada",
+"Французька Гвіана": "French Guiana",
+"Гаяна": "Guyana",
+"Гаїті": "Haiti",
+"Ісландія": "Iceland",
+"Мальдіви": "Maldives",
+"Монголія": "Mongolia",
+"Мартиніка": "Martinique",
+"Маврикій": "Mauritius",
+"Майотта": "Mayotte",
+"Нова Каледонія": "New Caledonia",
+"Нігер": "Niger",
+"Нова Зеландія": "New Zealand",
+"Панама": "Panama",
+"Перу": "Peru",
+"Палау": "Palau",
+"Держава Палестина": "Palestine",
+"Французька Полінезія": "French Polynesia",
+"Реюньйон": "Réunion",
+"Руанда": "Rwanda",
+"Сьєрра-Леоне": "Sierra Leone",
+"Сальвадор": "El Salvador",
+"Південний Судан": "South Sudan",
+"Суринам": "Suriname",
+"Того": "Togo",
+"Сент-Вінсент і Гренадіни": "Saint Vincent and the Grenadines",
+"Венесуела (Боліварська Республіка)": "Venezuela",
+"Вануату": "Vanuatu",
+"Кабо-Верде": "Cabo Verde",
+"Фіджі": "Fiji",
+"Таджикистан": "Tajikistan",
+"Тринідад і Тобаго": "Trinidad and Tobago",
+"Лаоська Народно-Демократична Республіка": "Laos",
+"АР Крим": "AR Crimea",
+"Черкаська": "Cherkasy",
+"Чернігівська": "Chernihiv",
+"Чернівецька": "Chernivtsi",
+"Дніпропетровська": "Dnipropetrovsk",
+"Донецька": "Donetsk",
+"Івано-Франківська": "Ivano-Frankivsk",
+"Харківська": "Kharkiv",
+"Херсонська": "Kherson",
+"Хмельницька": "Khmelnytskyi",
+"Кіровоградська": "Kirovohrad",
+"Київська": "Kyiv",
+"м. Київ": "Kyiv City",
+"Луганська": "Luhansk",
+"Львівська": "Lviv",
+"Миколаївська": "Mykolaiv",
+"Одеська": "Odesa",
+"Полтавська": "Poltava",
+"Рівненська": "Rivne",
+"м. Севастополь": "Sevastopol City",
+"Сумська": "Sumy",
+"Тернопільська": "Ternopil",
+"Вінницька": "Vinnytsia",
+"Волинська": "Volyn",
+"Закарпатська": "Zakarpattia",
+"Запорізька": "Zaporizhzhia",
+"Житомирська": "Zhytomyr",
+"Березівка": "Berezivka",
+"Арбузинка": "Arbuzynka",
+"Карлівка": "Karlivka",
+"Калинівка": "Kalynivka",
+"Волинь": "Volyn",
+"Одеса": "Odesa",
+"Чорноморськ": "Chornomorsk",
+"Південний": "Pivdennyi",
+"Ізмаїл": "Izmail",
+"Рені": "Reni",
+"Ягодин": "Yahodyn",
+"Шегині": "Shehyni",
+"Ужгород": "Uzhhorod",
+"Чоп": "Chop",
+"Рава-Руська": "Rava-Ruska",
+"Поточна практика": "Current practice",
+"Максимум маржі": "Max margin",
+"Мінімум ризику": "Min risk",
+"Збалансована": "Balanced",
+"Вода (степ)": "Water (steppe)",
+"З наявною технікою": "With existing machinery",
+"зернозбиральний комбайн із зерновою жаткою": "combine with grain header",
+"кукурудзяна жатка": "corn header",
+"соняшникова жатка": "sunflower header",
+"бурякозбиральний комплекс": "sugar-beet harvester",
+"кормозбиральний комбайн (силос)": "forage harvester (silage)"
+},
+"strings": {
+"s0000": {
+"uk": "# · §",
+"en": "# · §"
+},
+"s0001": {
+"uk": "# га",
+"en": "# ha"
+},
+"s0002": {
+"uk": "# з #",
+"en": "# of #"
+},
+"s0003": {
+"uk": "# км",
+"en": "# km"
+},
+"s0004": {
+"uk": "# млн",
+"en": "# M"
+},
+"s0005": {
+"uk": "# млн грн",
+"en": "# M UAH"
+},
+"s0006": {
+"uk": "# млн грн /",
+"en": "# M UAH /"
+},
+"s0007": {
+"uk": "# мм",
+"en": "# mm"
+},
+"s0008": {
+"uk": "# полів, медіана",
+"en": "# fields, median"
+},
+"s0009": {
+"uk": "# роки поспіль",
+"en": "# years in a row"
+},
+"s0010": {
+"uk": "# тис. грн",
+"en": "# thousand UAH"
+},
+"s0011": {
+"uk": "# тис. грн /",
+"en": "# thousand UAH /"
+},
+"s0012": {
+"uk": "# точок",
+"en": "# points"
+},
+"s0013": {
+"uk": "#+ га: # полів",
+"en": "#+ ha: # fields"
+},
+"s0014": {
+"uk": "#-пільна з соняшником",
+"en": "#-field rotation with sunflower"
+},
+"s0015": {
+"uk": "#-тя культура, т/га",
+"en": "#th crop, t/ha"
+},
+"s0016": {
+"uk": "#.# мм/добу (ECOSTRESS) · модель #.#",
+"en": "#.# mm/day (ECOSTRESS) · model #.#"
+},
+"s0017": {
+"uk": "#.# мм/добу (ECOSTRESS) · модель #.# · проліт на світанку/в сутінках",
+"en": "#.# mm/day (ECOSTRESS) · model #.# · dawn/dusk overpass"
+},
+"s0018": {
+"uk": "#: # мм, спекотних днів #",
+"en": "#: # mm, hot days #"
+},
+"s0019": {
+"uk": "#: §",
+"en": "#: §"
+},
+"s0020": {
+"uk": "#: накопичено # млн грн (P# # млн грн · P# млн грн)",
+"en": "#: cumulative # M UAH (P# # M UAH · P# M UAH)"
+},
+"s0021": {
+"uk": "#: накопичено # млн грн (P# # тис. грн · P# млн грн)",
+"en": "#: cumulative # M UAH (P# # thousand UAH · P# M UAH)"
+},
+"s0022": {
+"uk": "#: накопичено # млн грн (P# млн грн · P# млн грн)",
+"en": "#: cumulative # M UAH (P# M UAH · P# M UAH)"
+},
+"s0023": {
+"uk": "#: накопичено # млн грн (P# тис. грн · P# млн грн)",
+"en": "#: cumulative # M UAH (P# thousand UAH · P# M UAH)"
+},
+"s0024": {
+"uk": "#: накопичено # тис. грн (P# # тис. грн · P# млн грн)",
+"en": "#: cumulative # thousand UAH (P# # thousand UAH · P# M UAH)"
+},
+"s0025": {
+"uk": "#: накопичено # тис. грн (P# # тис. грн · P# тис. грн)",
+"en": "#: cumulative # thousand UAH (P# # thousand UAH · P# thousand UAH)"
+},
+"s0026": {
+"uk": "#: накопичено # тис. грн (P# тис. грн · P# млн грн)",
+"en": "#: cumulative # thousand UAH (P# thousand UAH · P# M UAH)"
+},
+"s0027": {
+"uk": "#: накопичено # тис. грн (P# тис. грн · P# тис. грн)",
+"en": "#: cumulative # thousand UAH (P# thousand UAH · P# thousand UAH)"
+},
+"s0028": {
+"uk": "#: озимих #, ярових # з # полів з HLS",
+"en": "#: winter #, spring # of # fields with HLS"
+},
+"s0029": {
+"uk": "#: пік NDVI #.# (##)",
+"en": "#: NDVI peak #.# (##)"
+},
+"s0030": {
+"uk": "#–# га: # полів",
+"en": "#–# ha: # fields"
+},
+"s0031": {
+"uk": "#–# пікселі",
+"en": "#–# pixels"
+},
+"s0032": {
+"uk": "#–# роки поспіль",
+"en": "#–# years in a row"
+},
+"s0033": {
+"uk": "(§; авто (вантажні), залізниця)",
+"en": "(§; road (trucks), rail)"
+},
+"s0034": {
+"uk": "(§; авто)",
+"en": "(§; road)"
+},
+"s0035": {
+"uk": "(техніку можна й орендувати).",
+"en": "(machinery can also be rented)."
+},
+"s0036": {
+"uk": "(у сухий бік # млн грн), не окупається.",
+"en": "(dry side # M UAH), does not pay back."
+},
+"s0037": {
+"uk": "(у сухий бік # млн грн), не окупається. Поточна без порушень №#. Достовірність: висока.",
+"en": "(dry side # M UAH), does not pay back. Current practice has no No. # violations. Confidence: high."
+},
+"s0038": {
+"uk": "(у сухий бік # млн грн), не окупається; «§» (§ → § → § → §)",
+"en": "(dry side # M UAH), does not pay back; «§» (§ → § → § → §)"
+},
+"s0039": {
+"uk": "(у сухий бік # млн грн), окупається з #.",
+"en": "(dry side # M UAH), pays back from #."
+},
+"s0040": {
+"uk": "(у сухий бік # млн грн), окупається з #. Поточна без порушень №#. Достовірність: висока.",
+"en": "(dry side # M UAH), pays back from #. Current practice has no No. # violations. Confidence: high."
+},
+"s0041": {
+"uk": "(у сухий бік # млн грн), окупається з #; «§» (§ → § → § → §)",
+"en": "(dry side # M UAH), pays back from #; «§» (§ → § → § → §)"
+},
+"s0042": {
+"uk": "(у сухий бік # тис. грн), не окупається.",
+"en": "(dry side # thousand UAH), does not pay back."
+},
+"s0043": {
+"uk": "(у сухий бік # тис. грн), окупається з #. Поточна без порушень №#. Достовірність: висока.",
+"en": "(dry side # thousand UAH), pays back from #. Current practice has no No. # violations. Confidence: high."
+},
+"s0044": {
+"uk": "(у сухий бік # тис. грн), окупається з #; «§» (§ → § → § → §)",
+"en": "(dry side # thousand UAH), pays back from #; «§» (§ → § → § → §)"
+},
+"s0045": {
+"uk": "(у сухий бік +# млн грн), окупається з #.",
+"en": "(dry side +# M UAH), pays back from #."
+},
+"s0046": {
+"uk": "(у сухий бік +# млн грн), окупається з #; «§» (§ → § → § → §)",
+"en": "(dry side +# M UAH), pays back from #; «§» (§ → § → § → §)"
+},
+"s0047": {
+"uk": "(у сухий бік +# тис. грн), окупається з #.",
+"en": "(dry side +# thousand UAH), pays back from #."
+},
+"s0048": {
+"uk": "(у сухий бік +# тис. грн), окупається з #. Поточна без порушень №#. Достовірність: висока.",
+"en": "(dry side +# thousand UAH), pays back from #. Current practice has no No. # violations. Confidence: high."
+},
+"s0049": {
+"uk": "(у сухий бік +# тис. грн), окупається з #; «§» (§ → § → § → §)",
+"en": "(dry side +# thousand UAH), pays back from #; «§» (§ → § → § → §)"
+},
+"s0050": {
+"uk": "+# млн грн",
+"en": "+# M UAH"
+},
+"s0051": {
+"uk": "+# тис. грн",
+"en": "+# thousand UAH"
+},
+"s0052": {
+"uk": ", P# # млн грн (плюс на # з #); «§»",
+"en": ", P# # M UAH (positive on # of #); «§»"
+},
+"s0053": {
+"uk": ", P# # млн грн (плюс на # з #; нова техніка потрібна на # полях); «§»",
+"en": ", P# # M UAH (positive on # of #; new machinery needed on # fields); «§»"
+},
+"s0054": {
+"uk": ", P# +# млн грн (плюс на # з #); «§»",
+"en": ", P# +# M UAH (positive on # of #); «§»"
+},
+"s0055": {
+"uk": ", P# +# млн грн (плюс на # з #; нова техніка потрібна на # полях); «§»",
+"en": ", P# +# M UAH (positive on # of #; new machinery needed on # fields); «§»"
+},
+"s0056": {
+"uk": ", тис. грн/га",
+"en": ", thousand UAH/ha"
+},
+"s0057": {
+"uk": ". За # роки не окупається. Гірша за поточну в #, #, #, #.",
+"en": ". Does not pay back in # years. Worse than current in #, #, #, #."
+},
+"s0058": {
+"uk": ". За # роки не окупається. Гірша за поточну в #, #.",
+"en": ". Does not pay back in # years. Worse than current in #, #."
+},
+"s0059": {
+"uk": ". За # роки не окупається. Гірша за поточну в #.",
+"en": ". Does not pay back in # years. Worse than current in #."
+},
+"s0060": {
+"uk": ". Окупається з #.",
+"en": ". Pays back from #."
+},
+"s0061": {
+"uk": ". Окупається з #. Гірша за поточну в #, #.",
+"en": ". Pays back from #. Worse than current in #, #."
+},
+"s0062": {
+"uk": ". Окупається з #. Гірша за поточну в #.",
+"en": ". Pays back from #. Worse than current in #."
+},
+"s0063": {
+"uk": "/ # млн грн",
+"en": "/ # M UAH"
+},
+"s0064": {
+"uk": "ECOSTRESS — прилад NASA JPL на МКС; спостереження нерегулярні через орбіту МКС.",
+"en": "ECOSTRESS is a NASA JPL instrument on the ISS; observations are irregular because of the ISS orbit."
+},
+"s0065": {
+"uk": "ECOSTRESS; ○ — проліт на світанку/в сутінках (не порівнюємо). #: n = # денних прольотів, кореляція r = #.",
+"en": "ECOSTRESS; ○ — dawn/dusk overpass (not compared). #: n = # daytime overpasses, correlation r = #."
+},
+"s0066": {
+"uk": "ECOSTRESS; ○ — проліт на світанку/в сутінках (не порівнюємо). #: n = # денних прольотів, кореляція r = —.",
+"en": "ECOSTRESS; ○ — dawn/dusk overpass (not compared). #: n = # daytime overpasses, correlation r = —."
+},
+"s0067": {
+"uk": "ETa моделі, мм/добу (культура з HLS: §) ·",
+"en": "Model ETa, mm/day (crop from HLS: §) ·"
+},
+"s0068": {
+"uk": "HLS # м: ще не запитано (зараз у запиті пілот і # найбільших полів області).",
+"en": "HLS # m: not requested yet (the request covers the pilot and the # largest fields of the oblast)."
+},
+"s0069": {
+"uk": "HLS # м: є ряд NDVI #–# (# точок за #+ м від межі).",
+"en": "HLS # m: NDVI series #–# available (# points at #+ m from the edge)."
+},
+"s0070": {
+"uk": "MODIS # м у пілотній точці:",
+"en": "MODIS # m at the pilot point:"
+},
+"s0071": {
+"uk": "NASA POWER, #–# порівняно з #–#",
+"en": "NASA POWER, #–# compared with #–#"
+},
+"s0072": {
+"uk": "NDVI MODIS змішує це поле з сусідами (≈ # пікс.) — потрібен HLS # м.",
+"en": "MODIS NDVI mixes this field with its neighbours (≈ # px) — HLS # m is needed."
+},
+"s0073": {
+"uk": "NDVI MODIS придатний: поле ≈ # пікселів, HLS дасть деталь усередині.",
+"en": "MODIS NDVI is usable: the field is ≈ # pixels, HLS gives detail inside it."
+},
+"s0074": {
+"uk": "P# # · P# · P# тис. грн/га",
+"en": "P# # · P# · P# thousand UAH/ha"
+},
+"s0075": {
+"uk": "P# # млн грн",
+"en": "P# # M UAH"
+},
+"s0076": {
+"uk": "P# +# млн грн",
+"en": "P# +# M UAH"
+},
+"s0077": {
+"uk": "P# · P# · P# тис. грн/га",
+"en": "P# · P# · P# thousand UAH/ha"
+},
+"s0078": {
+"uk": "SMAP # км",
+"en": "SMAP # km"
+},
+"s0079": {
+"uk": "SMAP # км ·",
+"en": "SMAP # km ·"
+},
+"s0080": {
+"uk": "STUB: календар polissia — заглушка без джерела (STUB_NO_SOURCE)",
+"en": "STUB: polissia calendar is a placeholder without a source (STUB_NO_SOURCE)"
+},
+"s0081": {
+"uk": "TAW цього поля: FAO# Т# мм/м проти SoilGrids wv # мм/м (до #.# м) — перевірити",
+"en": "TAW of this field: FAO# Table # mm/m vs SoilGrids wv # mm/m (to #.# m) — check"
+},
+"s0082": {
+"uk": "Yx: Держстат (data\\raw\\yield\\derzhstat_yield.csv), калібрування A — відхилення від ТЗ A# (docs/decisions.md D#)",
+"en": "Yx: SSSU (data\\raw\\yield\\derzhstat_yield.csv), calibration A — deviation from spec A# (docs/decisions.md D#)"
+},
+"s0083": {
+"uk": "pig: FCR або ціна — TODO/без source",
+"en": "pig: FCR or price — TODO/no source"
+},
+"s0084": {
+"uk": "stages_days: середина діапазону без примітки FAO",
+"en": "stages_days: middle of the range, no FAO footnote"
+},
+"s0085": {
+"uk": "§",
+"en": "§"
+},
+"s0086": {
+"uk": "§ #",
+"en": "§ #"
+},
+"s0087": {
+"uk": "§ (P#), смуга — від сухого (P#) до вологого (P#) сценарію. Накопичена маржа на полі, грн; рахується окремо в кожному з # років погоди, тож P# суми ≠ сума P# по роках.",
+"en": "§ (P#), band — from the dry (P#) to the wet (P#) scenario. Cumulative margin on the field, UAH; computed separately in each of # weather years, so P# of the sum ≠ sum of P# by year."
+},
+"s0088": {
+"uk": "§ (P#), смуга — від сухого (P#) до вологого (P#) сценарію. Накопичена маржа на полі, грн; рахується окремо в кожному з # років погоди, тож P# суми ≠ сума P# по роках. Пар — без витрат (маржа завищена).",
+"en": "§ (P#), band — from the dry (P#) to the wet (P#) scenario. Cumulative margin on the field, UAH; computed separately in each of # weather years, so P# of the sum ≠ sum of P# by year. Fallow has no costs (margin overstated)."
+},
+"s0089": {
+"uk": "§ (боби) · УКТЗЕД #",
+"en": "§ (beans) · HS code #"
+},
+"s0090": {
+"uk": "§ · #",
+"en": "§ · #"
+},
+"s0091": {
+"uk": "§ · # полів",
+"en": "§ · # fields"
+},
+"s0092": {
+"uk": "§ · § · # полів",
+"en": "§ · § · # fields"
+},
+"s0093": {
+"uk": "§ · УКТЗЕД #",
+"en": "§ · HS code #"
+},
+"s0094": {
+"uk": "§ · дата-заглушка",
+"en": "§ · placeholder date"
+},
+"s0095": {
+"uk": "§ · поле ##",
+"en": "§ · field ##"
+},
+"s0096": {
+"uk": "§ ДСГДС: § → § × #",
+"en": "§ Experimental Station: § → § × #"
+},
+"s0097": {
+"uk": "§ ДСГДС: § → § → §",
+"en": "§ Experimental Station: § → § → §"
+},
+"s0098": {
+"uk": "§ з HLS: § → § → § → §.",
+"en": "§ from HLS: § → § → § → §."
+},
+"s0099": {
+"uk": "§ у цій стратегії заборонений: немає витрат на пар з джерелом",
+"en": "§ is not allowed in this strategy: no sourced cost for fallow"
+},
+"s0100": {
+"uk": "§ через # р. після попереднього посіву → урожай ×#.# (насичення сівозміни, Кохан та ін., #, § ДСГДС)",
+"en": "§ # yr after the previous sowing → yield ×#.# (rotation saturation, Kohan et al., #, § Experimental Station)"
+},
+"s0101": {
+"uk": "§ → § → §",
+"en": "§ → § → §"
+},
+"s0102": {
+"uk": "§ → § → § → §",
+"en": "§ → § → § → §"
+},
+"s0103": {
+"uk": "§ → § → Гречка → §",
+"en": "§ → § → Buckwheat → §"
+},
+"s0104": {
+"uk": "§ → § → гречка",
+"en": "§ → § → buckwheat"
+},
+"s0105": {
+"uk": "§ ↔ § (типова практика)",
+"en": "§ ↔ § (typical practice)"
+},
+"s0106": {
+"uk": "§, § обл.",
+"en": "§, § oblast"
+},
+"s0107": {
+"uk": "§, §, #: факт #.#, модель #.#",
+"en": "§, §, #: actual #.#, model #.#"
+},
+"s0108": {
+"uk": "§:",
+"en": "§:"
+},
+"s0109": {
+"uk": "§: «§ на зерно»; середнє по # обл.",
+"en": "§: «§ for grain»; average of # oblasts"
+},
+"s0110": {
+"uk": "§: «§ фабричний»; середнє по # обл.",
+"en": "§: «§ factory»; average of # oblasts"
+},
+"s0111": {
+"uk": "§: «Пшениця» без поділу на озиму/яру; середнє по # обл.",
+"en": "§: «Wheat» without winter/spring split; average of # oblasts"
+},
+"s0112": {
+"uk": "§: ПРАПОРЕЦЬ: Держстат дає ціну «Пшениця» без поділу на озиму/яру; середнє по # обл.",
+"en": "§: FLAG: SSSU gives the «Wheat» price without winter/spring split; average of # oblasts"
+},
+"s0113": {
+"uk": "§: заблоковано параметрами моделі — ky: TODO (проса немає в Табл. # / FAO# Табл. #); calendar.forest_steppe.sow: TODO (R#/R#)",
+"en": "§: blocked by model parameters — ky: TODO (no millet in Table # / FAO# Table #); calendar.forest_steppe.sow: TODO (R#/R#)"
+},
+"s0114": {
+"uk": "§: заблоковано параметрами моделі — ky: TODO (проса немає в Табл. # / FAO# Табл. #); calendar.polissia.sow: TODO (R#/R#)",
+"en": "§: blocked by model parameters — ky: TODO (no millet in Table # / FAO# Table #); calendar.polissia.sow: TODO (R#/R#)"
+},
+"s0115": {
+"uk": "§: заблоковано параметрами моделі — ky: TODO (проса немає в Табл. # / FAO# Табл. #); calendar.steppe.sow: TODO (R#/R#)",
+"en": "§: blocked by model parameters — ky: TODO (no millet in Table # / FAO# Table #); calendar.steppe.sow: TODO (R#/R#)"
+},
+"s0116": {
+"uk": "§: середня внутрішня ціна, базис у джерелі не вказано",
+"en": "§: average domestic price, basis not stated in the source"
+},
+"s0117": {
+"uk": "§: середнє по # обл.",
+"en": "§: average of # oblasts"
+},
+"s0118": {
+"uk": "§: №# не нормує",
+"en": "§: not regulated by No. #"
+},
+"s0119": {
+"uk": "«?» MODIS HLS визначив.",
+"en": "«?» MODIS resolved by HLS."
+},
+"s0120": {
+"uk": "«Не менше ніж через N років» читаємо буквально: між двома посівами культури мають пройти щонайменше N інших років. Кукурудзу норматив дозволяє #–# роки поспіль. Для пшениці ярої та чорного пару окремого строку немає. Фактичну сівозміну пілотного поля перевіримо, коли HLS NDVI покаже культури, а не лише «озима/ярова».",
+"en": "«At least N years later» is read literally: at least N other years must pass between two sowings of a crop. The regulation allows maize #–# years in a row. Spring wheat and bare fallow have no separate interval. The actual rotation of the pilot field will be checked once HLS NDVI shows crops, not only «winter/spring»."
+},
+"s0121": {
+"uk": "· норма #–#%",
+"en": "· norm #–#%"
+},
+"s0122": {
+"uk": "· норма #–#% (не вирощується)",
+"en": "· norm #–#% (not grown)"
+},
+"s0123": {
+"uk": "· норма #–#% — забагато",
+"en": "· norm #–#% — too much"
+},
+"s0124": {
+"uk": "· норма #–#% — замало",
+"en": "· norm #–#% — too little"
+},
+"s0125": {
+"uk": "Альтернативи з досліду",
+"en": "Alternatives from the trial"
+},
+"s0126": {
+"uk": "Без даних для т/га (у стратегіях не брали участі): §, §, §, §, §, §, §, §, §, §, §, §",
+"en": "No data for t/ha (not used in strategies): §, §, §, §, §, §, §, §, §, §, §, §"
+},
+"s0127": {
+"uk": "Без даних для т/га (у стратегіях не брали участі): §, §, §, §, §, §, §, §, §, §, §, §, §",
+"en": "No data for t/ha (not used in strategies): §, §, §, §, §, §, §, §, §, §, §, §, §"
+},
+"s0128": {
+"uk": "Валовий дохід, тис. грн/га на рік*",
+"en": "Gross income, thousand UAH/ha per year*"
+},
+"s0129": {
+"uk": "Випаровування з МКС (ECOSTRESS # м)",
+"en": "Evapotranspiration from the ISS (ECOSTRESS # m)"
+},
+"s0130": {
+"uk": "Випаровування: ECOSTRESS проти моделі",
+"en": "Evapotranspiration: ECOSTRESS vs the model"
+},
+"s0131": {
+"uk": "Вода з ґрунту #–# см за ротацію, мм*",
+"en": "Soil water #–# cm per rotation, mm*"
+},
+"s0132": {
+"uk": "Волога ґрунту SMAP — спільна для",
+"en": "SMAP soil moisture — shared by"
+},
+"s0133": {
+"uk": "Вузол NASA POWER",
+"en": "NASA POWER node"
+},
+"s0134": {
+"uk": "Віддалити",
+"en": "Zoom out"
+},
+"s0135": {
+"uk": "Відкрити модель поля",
+"en": "Open the field model"
+},
+"s0136": {
+"uk": "Відкрити рекомендацію",
+"en": "Open the recommendation"
+},
+"s0137": {
+"uk": "Відносний врожай за водним стресом, #–#: смуга від сухого (P#) до вологого (P#) року, риска — типовий",
+"en": "Relative yield under water stress, #–#: band from the dry (P#) to the wet (P#) year, tick — typical"
+},
+"s0138": {
+"uk": "Відстань",
+"en": "Distance"
+},
+"s0139": {
+"uk": "Вікна з реальними полями",
+"en": "Windows with real fields"
+},
+"s0140": {
+"uk": "Гречка",
+"en": "Buckwheat"
+},
+"s0141": {
+"uk": "Гречка: немає в model/crops.yaml (Kc, Ky, фази, календар)",
+"en": "Buckwheat: not in model/crops.yaml (Kc, Ky, stages, calendar)"
+},
+"s0142": {
+"uk": "Демо: підтвердити, що соняшнику не було (#)",
+"en": "Demo: confirm there was no sunflower (#)"
+},
+"s0143": {
+"uk": "Джерела:",
+"en": "Sources:"
+},
+"s0144": {
+"uk": "Джерела: Держстат: зовнішня торгівля товарами за країнами (SDMX), #–#; координати портів і пунктів пропуску — Вікіпедія; відстань дорогою — OSRM (дані OpenStreetMap). Логістику в маржу стратегій не враховано.",
+"en": "Sources: SSSU: foreign trade in goods by country (SDMX), #–#; coordinates of ports and border crossings — Wikipedia; road distance — OSRM (OpenStreetMap data). Logistics is not included in the strategy margins."
+},
+"s0145": {
+"uk": "Джерела: Держстат: зовнішня торгівля товарами за країнами (SDMX), #–#; координати портів і пунктів пропуску — Вікіпедія; відстань дорогою — OSRM (дані OpenStreetMap); тариф — Укрвантаж АГРО via Latifundist.com; ціни CPT порт і EXW елеватор — Електронна зернова біржа (graintrade.com.ua). Логістику в маржу стратегій не враховано.",
+"en": "Sources: SSSU: foreign trade in goods by country (SDMX), #–#; coordinates of ports and border crossings — Wikipedia; road distance — OSRM (OpenStreetMap data); tariff — Ukrvantazh AGRO via Latifundist.com; CPT port and EXW elevator prices — Ukrainian Grain Exchange (graintrade.com.ua). Logistics is not included in the strategy margins."
+},
+"s0146": {
+"uk": "Джерела: Держстат: зовнішня торгівля товарами за країнами (SDMX), #–#; координати портів і пунктів пропуску — Вікіпедія; відстань дорогою — OSRM (дані OpenStreetMap); ціни CPT порт і EXW елеватор — Електронна зернова біржа (graintrade.com.ua). Логістику в маржу стратегій не враховано.",
+"en": "Sources: SSSU: foreign trade in goods by country (SDMX), #–#; coordinates of ports and border crossings — Wikipedia; road distance — OSRM (OpenStreetMap data); CPT port and EXW elevator prices — Ukrainian Grain Exchange (graintrade.com.ua). Logistics is not included in the strategy margins."
+},
+"s0147": {
+"uk": "Джерела: Держстат: зовнішня торгівля товарами за країнами (SDMX), #–#; координати портів і пунктів пропуску — Вікіпедія; відстань по прямій — розрахунок за координатами. Логістику в маржу стратегій не враховано.",
+"en": "Sources: SSSU: foreign trade in goods by country (SDMX), #–#; coordinates of ports and border crossings — Wikipedia; straight-line distance — computed from coordinates. Logistics is not included in the strategy margins."
+},
+"s0148": {
+"uk": "Джерела: Держстат: зовнішня торгівля товарами за країнами (SDMX), #–#; координати портів і пунктів пропуску — Вікіпедія; відстань по прямій — розрахунок за координатами; тариф — Укрвантаж АГРО via Latifundist.com; ціни CPT порт і EXW елеватор — Електронна зернова біржа (graintrade.com.ua). Логістику в маржу стратегій не враховано.",
+"en": "Sources: SSSU: foreign trade in goods by country (SDMX), #–#; coordinates of ports and border crossings — Wikipedia; straight-line distance — computed from coordinates; tariff — Ukrvantazh AGRO via Latifundist.com; CPT port and EXW elevator prices — Ukrainian Grain Exchange (graintrade.com.ua). Logistics is not included in the strategy margins."
+},
+"s0149": {
+"uk": "Джерела: Держстат: зовнішня торгівля товарами за країнами (SDMX), #–#; координати портів і пунктів пропуску — Вікіпедія; відстань по прямій — розрахунок за координатами; ціни CPT порт і EXW елеватор — Електронна зернова біржа (graintrade.com.ua). Логістику в маржу стратегій не враховано.",
+"en": "Sources: SSSU: foreign trade in goods by country (SDMX), #–#; coordinates of ports and border crossings — Wikipedia; straight-line distance — computed from coordinates; CPT port and EXW elevator prices — Ukrainian Grain Exchange (graintrade.com.ua). Logistics is not included in the strategy margins."
+},
+"s0150": {
+"uk": "Достовірність стратегій — висока достовірність (окрім позначених на картці).",
+"en": "Strategy confidence — high (except where marked on a card)."
+},
+"s0151": {
+"uk": "Достовірність стратегій — висока достовірність.",
+"en": "Strategy confidence — high."
+},
+"s0152": {
+"uk": "Достовірність: висока.",
+"en": "Confidence: high."
+},
+"s0153": {
+"uk": "Дохід на # мм води, тис. грн*",
+"en": "Income per # mm of water, thousand UAH*"
+},
+"s0154": {
+"uk": "Дунай (§ або §)",
+"en": "Danube (§ or §)"
+},
+"s0155": {
+"uk": "Ефект у грошах: § проти поточної",
+"en": "Effect in money: § vs current"
+},
+"s0156": {
+"uk": "За # роки проти поточної, на полі # га: «§»",
+"en": "Over # years vs current, on a # ha field: «§»"
+},
+"s0157": {
+"uk": "За # роки: # млн грн",
+"en": "Over # years: # M UAH"
+},
+"s0158": {
+"uk": "За # роки: # тис. грн",
+"en": "Over # years: # thousand UAH"
+},
+"s0159": {
+"uk": "За # роки: +# млн грн",
+"en": "Over # years: +# M UAH"
+},
+"s0160": {
+"uk": "За # роки: +# тис. грн",
+"en": "Over # years: +# thousand UAH"
+},
+"s0161": {
+"uk": "Загальні витрати води за ротацію, мм*",
+"en": "Total water use per rotation, mm*"
+},
+"s0162": {
+"uk": "Західний кордон (пункт пропуску до ЄС)",
+"en": "Western border (crossing to the EU)"
+},
+"s0163": {
+"uk": "Збіг з MODIS:",
+"en": "Agreement with MODIS:"
+},
+"s0164": {
+"uk": "Зернові та зернобобові:",
+"en": "Cereals and grain legumes:"
+},
+"s0165": {
+"uk": "Зона досліду ННЦ «ІЗ НААН»",
+"en": "Trial zone of NSC «Institute of Agriculture NAAS»"
+},
+"s0166": {
+"uk": "Зріз цін: DSSU_# · витрати: full_cost_uah_ha (#) · ранжування: margin · commit моделі: #a#ab-dirty",
+"en": "Price snapshot: DSSU_# · costs: full_cost_uah_ha (#) · ranking: margin · model commit: #a#ab-dirty"
+},
+"s0167": {
+"uk": "Зсув клімату",
+"en": "Climate shift"
+},
+"s0168": {
+"uk": "Календар: §",
+"en": "Calendar: §"
+},
+"s0169": {
+"uk": "Карта України з пілотними полями і сітками даних",
+"en": "Map of Ukraine with pilot fields and data grids"
+},
+"s0170": {
+"uk": "Карта меж реальних полів у вікні навколо пілотної точки",
+"en": "Map of real field boundaries in a window around the pilot point"
+},
+"s0171": {
+"uk": "Клімат поля зсувається. Сівозміна теж має",
+"en": "The field's climate is shifting. So should the rotation"
+},
+"s0172": {
+"uk": "Клітинка SMAP # км",
+"en": "SMAP # km cell"
+},
+"s0173": {
+"uk": "Колір полів:",
+"en": "Field colour:"
+},
+"s0174": {
+"uk": "Компроміс «гроші проти води»:",
+"en": "Trade-off «money vs water»:"
+},
+"s0175": {
+"uk": "Країна",
+"en": "Country"
+},
+"s0176": {
+"uk": "Куди везти: # варіанти",
+"en": "Where to deliver: # options"
+},
+"s0177": {
+"uk": "Куди йде українська продукція, #: усього # млн дол., # млн т, ≈ # дол./т.",
+"en": "Where Ukrainian produce goes, #: total # M USD, # Mt, ≈ # USD/t."
+},
+"s0178": {
+"uk": "Куди продати · §",
+"en": "Where to sell · §"
+},
+"s0179": {
+"uk": "Куди продати · §, §",
+"en": "Where to sell · §, §"
+},
+"s0180": {
+"uk": "Куди продати · §, §, §",
+"en": "Where to sell · §, §, §"
+},
+"s0181": {
+"uk": "Куди продати · §, §, §, §",
+"en": "Where to sell · §, §, §, §"
+},
+"s0182": {
+"uk": "Культура",
+"en": "Crop"
+},
+"s0183": {
+"uk": "Лише опади сезону",
+"en": "Season rainfall only"
+},
+"s0184": {
+"uk": "Лісостеповий регіон (§, §). Строки повернення культури на поле — жорстке правило: стратегію, що його порушує, застосунок не пропонує, а для фактичної — показує порушення. Частки культур норматив задає для господарства загалом, тож для одного поля це лише попередження.",
+"en": "Forest-steppe region (§, §). Crop return intervals are a hard rule: the app never proposes a strategy that breaks them, and for the actual rotation it shows the violation. Crop shares are set by the regulation for the whole farm, so for a single field they are only a warning."
+},
+"s0185": {
+"uk": "Макуха і шрот олійних · УКТЗЕД #",
+"en": "Oil cake and meal · HS code #"
+},
+"s0186": {
+"uk": "Маржа на полі за # роки, P# / P# / P#",
+"en": "Field margin over # years, P# / P# / P#"
+},
+"s0187": {
+"uk": "Маржа першого року: P#",
+"en": "First-year margin: P#"
+},
+"s0188": {
+"uk": "Мартинюк І. В., Цимбал Я. С. та ін. Теоретичні основи формування і функціонування короткоротаційних сівозмін за ведення органічного землеробства в умовах Лісостепу України. Вінниця: ТВОРИ, #.",
+"en": "Martyniuk I. V., Tsymbal Ya. S. et al. Theoretical foundations of short-rotation crop rotations in organic farming in the Forest-Steppe of Ukraine. Vinnytsia: TVORY, #."
+},
+"s0189": {
+"uk": "Маршрут",
+"en": "Route"
+},
+"s0190": {
+"uk": "Межі з набору NASA Harvest Ukraine Field Boundary Delineation # (Sadeh et al., Scientific Data, #; CC BY #.#), спрощені до ±# м. Колір — розмір поля відносно пікселя MODIS (# м ≈ # га) або що росло в обраний рік за HLS # м (пілот і # найбільших полів вікна). Сині точки — де ми беремо HLS # м NDVI. Червоний контур — пілотне поле моделі.",
+"en": "Boundaries from NASA Harvest Ukraine Field Boundary Delineation # (Sadeh et al., Scientific Data, #; CC BY #.#), simplified to ±# m. Colour — field size relative to a MODIS pixel (# m ≈ # ha) or what grew in the selected year by HLS # m (pilot and the # largest fields of the window). Blue dots — where we take HLS # m NDVI. Red outline — the model's pilot field."
+},
+"s0191": {
+"uk": "Межі полів, на які накладаються дані",
+"en": "Field boundaries the data are mapped onto"
+},
+"s0192": {
+"uk": "Межі часток для Лісостепу взято з правового дзеркала, де таблиця зламана: відповідність колонкам відновлено за порядком значень. Перед захистом звірити з zakon.rada.gov.ua.",
+"en": "The crop-share limits for the Forest-Steppe come from a legal mirror where the table is broken: columns were restored by the order of values. To be checked against zakon.rada.gov.ua before the defence."
+},
+"s0193": {
+"uk": "Меню сценаріїв",
+"en": "Scenario menu"
+},
+"s0194": {
+"uk": "Метод",
+"en": "Method"
+},
+"s0195": {
+"uk": "Ми порівнюємо маршрути за відстанню, тарифом із джерелом і ризиками. Зведеної оцінки не даємо — вибір залежить від умов покупця на дату продажу.",
+"en": "We compare routes by distance, sourced tariff and risks. We give no combined score — the choice depends on the buyer's terms on the day of sale."
+},
+"s0196": {
+"uk": "Модель для цього поля не рахувалась: портфель — лише # найбільших полів вікна з рядом HLS (без історії поля немає поточної практики).",
+"en": "The model was not run for this field: the portfolio covers only the # largest fields of the window with an HLS series (without field history there is no current practice)."
+},
+"s0197": {
+"uk": "Модель, #: §",
+"en": "Model, #: §"
+},
+"s0198": {
+"uk": "Модель: FAO# (випаровування) + водний баланс ґрунту + коефіцієнт Ky. Календар сівби, Ky і запас вологи поки орієнтовні; спеку і заморозки не враховано.",
+"en": "Model: FAO# (evapotranspiration) + soil water balance + Ky coefficient. Sowing calendar, Ky and water holding are still approximate; heat and frost are not included."
+},
+"s0199": {
+"uk": "Модель: FAO# + водний баланс + Ky; ціни й витрати — Держстат #; дохід без субсидій і податків.",
+"en": "Model: FAO# + water balance + Ky; prices and costs — SSSU #; income without subsidies and taxes."
+},
+"s0200": {
+"uk": "Морський порт Великої Одеси",
+"en": "Sea port of Greater Odesa"
+},
+"s0201": {
+"uk": "ННЦ №#: § → § → §",
+"en": "NSC No. #: § → § → §"
+},
+"s0202": {
+"uk": "ННЦ №#: § → § → гречка",
+"en": "NSC No. #: § → § → buckwheat"
+},
+"s0203": {
+"uk": "На ту саму дату порт платив за кукурудзу на # грн/т більше, ніж елеватор (Електронна зернова біржа, #.#.#). Чи окупиться доставка — залежить від тарифу.",
+"en": "On the same date the port paid # UAH/t more for maize than the elevator (Ukrainian Grain Exchange, #.#.#). Whether delivery pays off depends on the tariff."
+},
+"s0204": {
+"uk": "Наблизити",
+"en": "Zoom in"
+},
+"s0205": {
+"uk": "Найбільший запас вологи на кінець ротації при прийнятній маржі в сухий рік. Маржа: P# / P# / P# тис. грн/га/рік.",
+"en": "Largest soil-water reserve at the end of the rotation with an acceptable margin in a dry year. Margin: P# / P# / P# thousand UAH/ha/year."
+},
+"s0206": {
+"uk": "Найвища маржа в сухий рік (P#). Маржа: P# / P# / P# тис. грн/га/рік.",
+"en": "Highest margin in a dry year (P#). Margin: P# / P# / P# thousand UAH/ha/year."
+},
+"s0207": {
+"uk": "Найвища маржа в типовий рік серед сівозмін, для яких не потрібна нова техніка збирання (наявна — з того, що росло на полі за HLS #–#). Це обмеження, а не заборона: техніку можна взяти в оренду або замовити послугу збирання. Маржа: P# # / P# / P# тис. грн/га/рік.",
+"en": "Highest margin in a typical year among rotations that need no new harvest machinery (owned — from what grew on the field by HLS #–#). This is a constraint, not a ban: machinery can be rented or harvesting hired. Margin: P# # / P# / P# thousand UAH/ha/year."
+},
+"s0208": {
+"uk": "Найвища маржа в типовий рік серед сівозмін, для яких не потрібна нова техніка збирання (наявна — з того, що росло на полі за HLS #–#). Це обмеження, а не заборона: техніку можна взяти в оренду або замовити послугу збирання. Маржа: P# / P# / P# тис. грн/га/рік.",
+"en": "Highest margin in a typical year among rotations that need no new harvest machinery (owned — from what grew on the field by HLS #–#). This is a constraint, not a ban: machinery can be rented or harvesting hired. Margin: P# / P# / P# thousand UAH/ha/year."
+},
+"s0209": {
+"uk": "Найвища маржа в типовий рік. Маржа: P# # / P# / P# тис. грн/га/рік.",
+"en": "Highest margin in a typical year. Margin: P# # / P# / P# thousand UAH/ha/year."
+},
+"s0210": {
+"uk": "Найвища маржа в типовий рік. Маржа: P# / P# / P# тис. грн/га/рік.",
+"en": "Highest margin in a typical year. Margin: P# / P# / P# thousand UAH/ha/year."
+},
+"s0211": {
+"uk": "Найкращий баланс маржі, ризику сухого року, вологи й ґрунту (ваги: маржа #.#, ризик #.#, вода #.#, ґрунт #.# — з optimize.yaml). Маржа: P# # / P# / P# тис. грн/га/рік.",
+"en": "Best balance of margin, dry-year risk, water and soil (weights: margin #.#, risk #.#, water #.#, soil #.# — from optimize.yaml). Margin: P# # / P# / P# thousand UAH/ha/year."
+},
+"s0212": {
+"uk": "Найкращий баланс маржі, ризику сухого року, вологи й ґрунту (ваги: маржа #.#, ризик #.#, вода #.#, ґрунт #.# — з optimize.yaml). Маржа: P# / P# / P# тис. грн/га/рік.",
+"en": "Best balance of margin, dry-year risk, water and soil (weights: margin #.#, risk #.#, water #.#, soil #.# — from optimize.yaml). Margin: P# / P# / P# thousand UAH/ha/year."
+},
+"s0213": {
+"uk": "Накопичена маржа на полі: поточна і обрана стратегія",
+"en": "Cumulative margin on the field: current vs selected strategy"
+},
+"s0214": {
+"uk": "Наступний сезон # · § · поле ##, § обл. · # га",
+"en": "Next season # · § · field ##, § oblast · # ha"
+},
+"s0215": {
+"uk": "Наступний сезон # · §, § обл. · # га",
+"en": "Next season # · §, § oblast · # ha"
+},
+"s0216": {
+"uk": "Насіння соняшнику · УКТЗЕД #",
+"en": "Sunflower seed · HS code #"
+},
+"s0217": {
+"uk": "Наша модель (FAO# + Ky)",
+"en": "Our model (FAO# + Ky)"
+},
+"s0218": {
+"uk": "Наявну техніку визначено з того, що росло на полі за HLS #–#\n    (культуру з космосу не видно — це припущення, підтвердіть): озимі → зернова жатка; пізні ярі (схоже на кукурудзу) → §.\n    Картка «§» — найкраща за маржею сівозміна без нової техніки: # млн грн за # роки до поточної (P#).\n    Бейдж «потрібна нова техніка» — обмеження, а не заборона: техніку можна взяти в оренду або замовити послугу збирання.",
+"en": "Owned machinery is inferred from what grew on the field by HLS #–# (crops cannot be seen from space — this is an assumption, please confirm): winter crops → grain header; late spring crops (likely maize) → §. Card «§» — the highest-margin rotation without new machinery: # M UAH over # years vs current (P#). The «new machinery needed» badge is a constraint, not a ban: machinery can be rented or harvesting hired."
+},
+"s0219": {
+"uk": "Наявну техніку визначено з того, що росло на полі за HLS #–#\n    (культуру з космосу не видно — це припущення, підтвердіть): озимі → зернова жатка; ранні ярі (можливо §) → § можлива; ярі без уточнення (можливо §) → § можлива.\n    Картка «§» — найкраща за маржею сівозміна без нової техніки: # млн грн за # роки до поточної (P#).\n    Бейдж «потрібна нова техніка» — обмеження, а не заборона: техніку можна взяти в оренду або замовити послугу збирання.",
+"en": "Owned machinery is inferred from what grew on the field by HLS #–# (crops cannot be seen from space — this is an assumption, please confirm): winter crops → grain header; early spring crops (possibly §) → § possible; spring crops, unspecified (possibly §) → § possible. Card «§» — the highest-margin rotation without new machinery: # M UAH over # years vs current (P#). The «new machinery needed» badge is a constraint, not a ban: machinery can be rented or harvesting hired."
+},
+"s0220": {
+"uk": "Наявну техніку визначено з того, що росло на полі за HLS #–#\n    (культуру з космосу не видно — це припущення, підтвердіть): пізні ярі (схоже на кукурудзу) → §; озимі → зернова жатка.\n    Картка «§» — найкраща за маржею сівозміна без нової техніки: # млн грн за # роки до поточної (P#).\n    Бейдж «потрібна нова техніка» — обмеження, а не заборона: техніку можна взяти в оренду або замовити послугу збирання.",
+"en": "Owned machinery is inferred from what grew on the field by HLS #–# (crops cannot be seen from space — this is an assumption, please confirm): late spring crops (likely maize) → §; winter crops → grain header. Card «§» — the highest-margin rotation without new machinery: # M UAH over # years vs current (P#). The «new machinery needed» badge is a constraint, not a ban: machinery can be rented or harvesting hired."
+},
+"s0221": {
+"uk": "Наявну техніку визначено з того, що росло на полі за HLS #–#\n    (культуру з космосу не видно — це припущення, підтвердіть): пізні ярі (схоже на кукурудзу) → §; озимі → зернова жатка.\n    Картка «§» — найкраща за маржею сівозміна без нової техніки: +# млн грн за # роки до поточної (P#).\n    Бейдж «потрібна нова техніка» — обмеження, а не заборона: техніку можна взяти в оренду або замовити послугу збирання.",
+"en": "Owned machinery is inferred from what grew on the field by HLS #–# (crops cannot be seen from space — this is an assumption, please confirm): late spring crops (likely maize) → §; winter crops → grain header. Card «§» — the highest-margin rotation without new machinery: +# M UAH over # years vs current (P#). The «new machinery needed» badge is a constraint, not a ban: machinery can be rented or harvesting hired."
+},
+"s0222": {
+"uk": "Наявну техніку визначено з того, що росло на полі за HLS #–#\n    (культуру з космосу не видно — це припущення, підтвердіть): пізні ярі (схоже на кукурудзу) → §; озимі → зернова жатка; ранні ярі (можливо §) → § можлива.\n    Картка «§» — найкраща за маржею сівозміна без нової техніки: +# млн грн за # роки до поточної (P#).\n    Бейдж «потрібна нова техніка» — обмеження, а не заборона: техніку можна взяти в оренду або замовити послугу збирання.",
+"en": "Owned machinery is inferred from what grew on the field by HLS #–# (crops cannot be seen from space — this is an assumption, please confirm): late spring crops (likely maize) → §; winter crops → grain header; early spring crops (possibly §) → § possible. Card «§» — the highest-margin rotation without new machinery: +# M UAH over # years vs current (P#). The «new machinery needed» badge is a constraint, not a ban: machinery can be rented or harvesting hired."
+},
+"s0223": {
+"uk": "Норма",
+"en": "Norm"
+},
+"s0224": {
+"uk": "Норматив · постанова КМУ №# від #.#.#",
+"en": "Regulation · Cabinet of Ministers Resolution No. # of #.#.#"
+},
+"s0225": {
+"uk": "О",
+"en": "W"
+},
+"s0226": {
+"uk": "О — озима/рання (зелена у квітні), Яр — ярова, зібрана рано (ймовірно § або ярі зернові), Яп — ярова, зелена в серпні (ймовірно § або §). Підтипи — гіпотеза за формою кривої, не культура.",
+"en": "W — winter/early (green in April), Se — spring, harvested early (likely § or spring cereals), Sl — spring, green in August (likely § or §). Subtypes are a hypothesis from the curve shape, not the crop."
+},
+"s0227": {
+"uk": "Обласна врожайність Держстату, # області × # культури × # роки (",
+"en": "SSSU oblast yields, # oblasts × # crops × # years ("
+},
+"s0228": {
+"uk": "Область",
+"en": "Oblast"
+},
+"s0229": {
+"uk": "Обмеження і прапорці (#)",
+"en": "Constraints and flags (#)"
+},
+"s0230": {
+"uk": "Озима в поточній сіється після пізньої ярої — у моделі пізніше за рекомендований строк, тож урожай поточної може бути занижено.",
+"en": "In the current practice the winter crop is sown after a late spring crop — later than recommended in the model, so the current yield may be understated."
+},
+"s0231": {
+"uk": "Органічні сівозміни ННЦ «ІЗ НААН»",
+"en": "Organic rotations of NSC «Institute of Agriculture NAAS»"
+},
+"s0232": {
+"uk": "Перевірка моделі",
+"en": "Model check"
+},
+"s0233": {
+"uk": "Перший рік стратегії «§» (§ → § → § → §). Найкращий баланс маржі, ризику сухого року, вологи й ґрунту (ваги: маржа #.#, ризик #.#, вода #.#, ґрунт #.# — з optimize.yaml).",
+"en": "First year of strategy «§» (§ → § → § → §). Best balance of margin, dry-year risk, water and soil (weights: margin #.#, risk #.#, water #.#, soil #.# — from optimize.yaml)."
+},
+"s0234": {
+"uk": "Площа",
+"en": "Area"
+},
+"s0235": {
+"uk": "Повертається",
+"en": "Returns"
+},
+"s0236": {
+"uk": "Погода — спільна для",
+"en": "Weather — shared by"
+},
+"s0237": {
+"uk": "Показник",
+"en": "Indicator"
+},
+"s0238": {
+"uk": "Поле",
+"en": "Field"
+},
+"s0239": {
+"uk": "Поле ##",
+"en": "Field ##"
+},
+"s0240": {
+"uk": "Поле ## · пілот",
+"en": "Field ## · pilot"
+},
+"s0241": {
+"uk": "Поле в зоні досліду ННЦ «ІЗ НААН». Органічні сівозміни",
+"en": "Field in the trial zone of NSC «Institute of Agriculture NAAS». Organic rotations"
+},
+"s0242": {
+"uk": "Поля NASA Harvest:",
+"en": "NASA Harvest fields:"
+},
+"s0243": {
+"uk": "Поля NASA Harvest: # у # областях",
+"en": "NASA Harvest fields: # in # oblasts"
+},
+"s0244": {
+"uk": "Помилка, %",
+"en": "Error, %"
+},
+"s0245": {
+"uk": "Порт проти елеватора",
+"en": "Port vs elevator"
+},
+"s0246": {
+"uk": "Портфель вікна (модель, # полів з HLS):",
+"en": "Window portfolio (model, # fields with HLS):"
+},
+"s0247": {
+"uk": "Порядок років, ρ",
+"en": "Year ranking, ρ"
+},
+"s0248": {
+"uk": "Порівняно з поточною",
+"en": "Compared with current"
+},
+"s0249": {
+"uk": "Поточна заробляє більше на",
+"en": "Current earns more by"
+},
+"s0250": {
+"uk": "Примітка",
+"en": "Note"
+},
+"s0251": {
+"uk": "Прогноз моделі проти фактичної врожайності",
+"en": "Model forecast vs actual yield"
+},
+"s0252": {
+"uk": "Прогноз проти факту",
+"en": "Forecast vs actual"
+},
+"s0253": {
+"uk": "Пшениця · УКТЗЕД #",
+"en": "Wheat · HS code #"
+},
+"s0254": {
+"uk": "Пшениця → § → §",
+"en": "Wheat → § → §"
+},
+"s0255": {
+"uk": "Пшениця ↔ §",
+"en": "Wheat ↔ §"
+},
+"s0256": {
+"uk": "Пікселів HLS # м (за площею)",
+"en": "HLS # m pixels (by area)"
+},
+"s0257": {
+"uk": "Пікселів MODIS # м (за площею)",
+"en": "MODIS # m pixels (by area)"
+},
+"s0258": {
+"uk": "Пілотне поле",
+"en": "Pilot field"
+},
+"s0259": {
+"uk": "Пілотні поля, сітки даних NASA над Україною і базова модель водного стресу культур. Оберіть поле на карті, щоб побачити, як змінився його клімат, що на ньому росло і наскільки посуха б'є по врожаю.",
+"en": "Pilot fields, NASA data grids over Ukraine and a baseline crop water-stress model. Pick a field on the map to see how its climate has changed, what grew on it and how hard drought hits the yield."
+},
+"s0260": {
+"uk": "Пілотні точки моделі",
+"en": "Model pilot points"
+},
+"s0261": {
+"uk": "Реальні поля · NASA Harvest #",
+"en": "Real fields · NASA Harvest #"
+},
+"s0262": {
+"uk": "Рекомендація моделі · маржа, вода, норматив №#",
+"en": "Model recommendation · margin, water, regulation No. #"
+},
+"s0263": {
+"uk": "Рентабельність за Держстатом:",
+"en": "Profitability by SSSU:"
+},
+"s0264": {
+"uk": "Ризик посухи для культур",
+"en": "Drought risk for crops"
+},
+"s0265": {
+"uk": "Ризики",
+"en": "Risks"
+},
+"s0266": {
+"uk": "Роздільність даних",
+"en": "Data resolution"
+},
+"s0267": {
+"uk": "Розмір полів по всій області",
+"en": "Field sizes across the oblast"
+},
+"s0268": {
+"uk": "Розподіл полів за площею",
+"en": "Field size distribution"
+},
+"s0269": {
+"uk": "Ряд NDVI поля з HLS",
+"en": "Field NDVI series from HLS"
+},
+"s0270": {
+"uk": "Рік #",
+"en": "Year #"
+},
+"s0271": {
+"uk": "Ріпак",
+"en": "Rapeseed"
+},
+"s0272": {
+"uk": "Ріпак:",
+"en": "Rapeseed:"
+},
+"s0273": {
+"uk": "Річні опади #–#",
+"en": "Annual rainfall #–#"
+},
+"s0274": {
+"uk": "Річні опади, мм. Темні стовпці — роки нижче медіани.",
+"en": "Annual rainfall, mm. Dark bars — years below the median."
+},
+"s0275": {
+"uk": "Середнє попередніх років",
+"en": "Average of previous years"
+},
+"s0276": {
+"uk": "Скинути масштаб",
+"en": "Reset zoom"
+},
+"s0277": {
+"uk": "Скільки точок кожного датасету припадає на область",
+"en": "How many points of each dataset fall in an oblast"
+},
+"s0278": {
+"uk": "Смуга — від сухого (P#) до вологого (P#) року за # роками погоди, риска — типовий рік (P#); від'ємне — червоним. Натисніть картку, щоб побачити календар і пояснення.",
+"en": "Band — from the dry (P#) to the wet (P#) year over # weather years, tick — typical year (P#); negative in red. Click a card to see the calendar and explanation."
+},
+"s0279": {
+"uk": "Соняшникова олія · УКТЗЕД #",
+"en": "Sunflower oil · HS code #"
+},
+"s0280": {
+"uk": "Статус",
+"en": "Status"
+},
+"s0281": {
+"uk": "Стаціонарний дослід #–#, чорнозем типовий, Лівобережний Лісостеп. Середнє за # років; значення з позначкою * пораховані командою з таблиць звіту.",
+"en": "Long-term trial #–#, typical chernozem, Left-Bank Forest-Steppe. Average over # years; values marked * were computed by the team from the report tables."
+},
+"s0282": {
+"uk": "Стратегії: маржа, тис. грн/га на рік",
+"en": "Strategies: margin, thousand UAH/ha per year"
+},
+"s0283": {
+"uk": "Строки повернення",
+"en": "Return intervals"
+},
+"s0284": {
+"uk": "Сума P# полів, не P# суми: поля вікна мають спільну погоду. На # полях фактична практика має озиму після пізньої ярої — у моделі її сівба пізніша за рекомендовану, урожай поточної може бути занижено. Результат є для всіх полів.",
+"en": "Sum of field P#, not P# of the sum: the window's fields share the same weather. On # fields the actual practice has a winter crop after a late spring crop — the model sows it later than recommended, so the current yield may be understated. Results exist for all fields."
+},
+"s0285": {
+"uk": "Сушені бобові (у т. ч. §) · УКТЗЕД #",
+"en": "Dried pulses (incl. §) · HS code #"
+},
+"s0286": {
+"uk": "Сценарій",
+"en": "Scenario"
+},
+"s0287": {
+"uk": "Сівозміна по роках",
+"en": "Rotation by year"
+},
+"s0288": {
+"uk": "Тариф",
+"en": "Tariff"
+},
+"s0289": {
+"uk": "Техніка для збирання.",
+"en": "Harvest machinery."
+},
+"s0290": {
+"uk": "Технічні, усього:",
+"en": "Industrial crops, total:"
+},
+"s0291": {
+"uk": "Топ# разом — #% вартості. Експорт усього, млн дол.: # — #; # — #; # — #; # — #.",
+"en": "Top # together — #% of value. Total exports, M USD: # — #; # — #; # — #; # — #."
+},
+"s0292": {
+"uk": "Топ# разом — #% вартості. Експорт усього, млн дол.: # — #; # — #; # — #; # — #. Код УКТЗЕД # — макуха й інші тверді залишки олійних (крім сої), не лише соняшнику.",
+"en": "Top # together — #% of value. Total exports, M USD: # — #; # — #; # — #; # — #. HS code # — oil cake and other solid residues of oilseeds (except soybean), not only sunflower."
+},
+"s0293": {
+"uk": "Топ# разом — #% вартості. Експорт усього, млн дол.: # — #; # — #; # — #; # — #. Код УКТЗЕД # — усі сушені бобові (§, сочевиця, §, квасоля тощо), не лише §.",
+"en": "Top # together — #% of value. Total exports, M USD: # — #; # — #; # — #; # — #. HS code # — all dried pulses (§, lentils, §, beans etc.), not only §."
+},
+"s0294": {
+"uk": "Точка — центр клітинки сітки. Погода NASA POWER — #–# точок на область, тобто клімат на рівні району; різницю між полями дають супутникові NDVI і ґрунт (# м).",
+"en": "A point is the centre of a grid cell. NASA POWER weather is #–# points per oblast, i.e. district-level climate; differences between fields come from satellite NDVI and soil (# m)."
+},
+"s0295": {
+"uk": "УВАГА: «§» збиткова в області (§ обл.) за Держстатом, # (#.#%) — рентабельність Держстату — за # рік, маржа моделі — медіана # років погоди; маржа моделі для цієї культури може бути завищена",
+"en": "WARNING: «§» is loss-making in the oblast (§ oblast) by SSSU, # (#.#%) — SSSU profitability is for #, the model margin is the median of # weather years; the model margin for this crop may be overstated"
+},
+"s0296": {
+"uk": "Україна експортує § майже лише переробленим: у # р. насіння — # млн дол., олія — # млн дол., макуха і шрот олійних (УКТЗЕД #) — # млн дол. Тож § фермер зазвичай продає олійному заводу в Україні, а не в порт.",
+"en": "Ukraine exports § almost only processed: in # seed — # M USD, oil — # M USD, oil cake and meal (HS code #) — # M USD. So a farmer usually sells § to an oil plant in Ukraine, not to a port."
+},
+"s0297": {
+"uk": "Урожай § / §, т/га",
+"en": "Yield § / §, t/ha"
+},
+"s0298": {
+"uk": "Фіксовані сівозміни, оцінені тією самою моделлю без пошуку (як поточна): маржа на полі за # роки #–#, P# / P# / P# за # роками погоди. Ротацію з #–# полів повторено по колу. § — з урахуванням насичення сівозміни (§ ДСГДС). Культура без параметрів, т/га, ціни чи календаря — «немає даних», нічого не підставляємо.",
+"en": "Fixed rotations evaluated by the same model without search (like current practice): field margin over # years #–#, P# / P# / P# over # weather years. A rotation of #–# fields is repeated in a cycle. § — with rotation saturation (§ Experimental Station). A crop without parameters, t/ha, price or calendar — «no data», nothing is substituted."
+},
+"s0299": {
+"uk": "Це пілотне поле: для нього вже пораховані зсув клімату, сівозміна з NDVI і ризик посухи.",
+"en": "This is a pilot field: climate shift, rotation from NDVI and drought risk are already computed for it."
+},
+"s0300": {
+"uk": "Ціни — на #.#.#, тариф — тиждень до #.#.#: дати різні.",
+"en": "Prices — on #.#.#, tariff — week to #.#.#: different dates."
+},
+"s0301": {
+"uk": "Частка",
+"en": "Share"
+},
+"s0302": {
+"uk": "Частки культур у сівозміні",
+"en": "Crop shares in the rotation"
+},
+"s0303": {
+"uk": "Чи допускає норматив таку сівозміну",
+"en": "Does the regulation allow this rotation"
+},
+"s0304": {
+"uk": "Чому не повторювати поточну",
+"en": "Why not repeat the current practice"
+},
+"s0305": {
+"uk": "Чому ця стратегія",
+"en": "Why this strategy"
+},
+"s0306": {
+"uk": "Що перевірити агроному",
+"en": "What an agronomist should check"
+},
+"s0307": {
+"uk": "Що росло в точці · MODIS # м (для порівняння)",
+"en": "What grew at the point · MODIS # m (for comparison)"
+},
+"s0308": {
+"uk": "Що росло на полі · HLS # м",
+"en": "What grew on the field · HLS # m"
+},
+"s0309": {
+"uk": "Що росло на полі за HLS — точка порівняння. Маржа: P# # / P# / P# тис. грн/га/рік.",
+"en": "What grew on the field by HLS — the comparison point. Margin: P# # / P# / P# thousand UAH/ha/year."
+},
+"s0310": {
+"uk": "Що росло на полі за HLS — точка порівняння. Маржа: P# / P# / P# тис. грн/га/рік.",
+"en": "What grew on the field by HLS — the comparison point. Margin: P# / P# / P# thousand UAH/ha/year."
+},
+"s0311": {
+"uk": "Що сіяти: рекомендація на #–#",
+"en": "What to sow: recommendation for #–#"
+},
+"s0312": {
+"uk": "Я",
+"en": "S"
+},
+"s0313": {
+"uk": "Які дані NASA вже прив'язані",
+"en": "What NASA data are already linked"
+},
+"s0314": {
+"uk": "Яп",
+"en": "Sl"
+},
+"s0315": {
+"uk": "Яр",
+"en": "Se"
+},
+"s0316": {
+"uk": "Ячмінь",
+"en": "Barley"
+},
+"s0317": {
+"uk": "без культури",
+"en": "no crop"
+},
+"s0318": {
+"uk": "бер",
+"en": "Mar"
+},
+"s0319": {
+"uk": "бобові · ▨ § · пунктир — дата-заглушка (календар зони без джерела). Ярі сіються щороку, коли ґрунт прогрівся до порогу: дата — медіана # років, у дужках — розкид P#–P#. Озимі року # сіються восени #.",
+"en": "legumes · ▨ § · dashed — placeholder date (zone calendar without a source). Spring crops are sown each year once the soil warms to the threshold: date — median of # years, in brackets — spread P#–P#. Winter crops of year # are sown in autumn #."
+},
+"s0320": {
+"uk": "бобові · ▨ §. Озимі року # сіються восени #.",
+"en": "legumes · ▨ §. Winter crops of year # are sown in autumn #."
+},
+"s0321": {
+"uk": "бобові · ▨ §. Ярі сіються щороку, коли ґрунт прогрівся до порогу: дата — медіана # років, у дужках — розкид P#–P#. Озимі року # сіються восени #.",
+"en": "legumes · ▨ §. Spring crops are sown each year once the soil warms to the threshold: date — median of # years, in brackets — spread P#–P#. Winter crops of year # are sown in autumn #."
+},
+"s0322": {
+"uk": "бобові після бобових у стратегіях — правило-каркас без джерела (rules.yaml), оцінити",
+"en": "legumes after legumes in strategies — skeleton rule without a source (rules.yaml), to be assessed"
+},
+"s0323": {
+"uk": "в",
+"en": "in"
+},
+"s0324": {
+"uk": "вер",
+"en": "Sep"
+},
+"s0325": {
+"uk": "витрати §: продукт Держстату: BEET_SUGAR",
+"en": "costs §: SSSU product: BEET_SUGAR"
+},
+"s0326": {
+"uk": "витрати §: продукт Держстату: CORN_GRAIN",
+"en": "costs §: SSSU product: CORN_GRAIN"
+},
+"s0327": {
+"uk": "витрати §: продукт Держстату: CROP_LEGUM_DRIED; ціна PEAS, витрати CROP_LEGUM_DRIED",
+"en": "costs §: SSSU product: CROP_LEGUM_DRIED; price PEAS, costs CROP_LEGUM_DRIED"
+},
+"s0328": {
+"uk": "витрати §: продукт Держстату: SEED_SUNFLOWER",
+"en": "costs §: SSSU product: SEED_SUNFLOWER"
+},
+"s0329": {
+"uk": "витрати §: продукт Держстату: SOYBEANS",
+"en": "costs §: SSSU product: SOYBEANS"
+},
+"s0330": {
+"uk": "витрати §: продукт Держстату: WHEAT; без поділу на озимі/ярі",
+"en": "costs §: SSSU product: WHEAT; no winter/spring split"
+},
+"s0331": {
+"uk": "витрати на пар не враховано — маржа послідовності з паром завищена (пар = # грн замість від'ємної)",
+"en": "fallow costs not included — the margin of a sequence with fallow is overstated (fallow = # UAH instead of negative)"
+},
+"s0332": {
+"uk": "витрати на пар не враховано: витрат на § з джерелом немає (у Держстаті немає) — маржа пару = null; у маржі послідовності пар = # грн (без доходу і без витрат), тобто завищена",
+"en": "fallow costs not included: no sourced costs for § (none in SSSU) — fallow margin = null; in the sequence margin fallow = # UAH (no income and no costs), i.e. overstated"
+},
+"s0333": {
+"uk": "волога на кінець",
+"en": "moisture at the end"
+},
+"s0334": {
+"uk": "волога на кінець ротації #% TAW (поточна #%)",
+"en": "soil water at the end of rotation #% TAW (current #%)"
+},
+"s0335": {
+"uk": "вологий #",
+"en": "wet #"
+},
+"s0336": {
+"uk": "відфільтровано # префіксів «§ → §»: пшениця після кукурудзи на зерно — пізня сівба / потрібна інша культура",
+"en": "filtered # prefixes «§ → §»: wheat after grain maize — late sowing / another crop needed"
+},
+"s0337": {
+"uk": "гречка #",
+"en": "buckwheat #"
+},
+"s0338": {
+"uk": "гру",
+"en": "Dec"
+},
+"s0339": {
+"uk": "гілка «соняшнику не було» дає ті самі стратегії",
+"en": "the «no sunflower» branch gives the same strategies"
+},
+"s0340": {
+"uk": "д",
+"en": "d"
+},
+"s0341": {
+"uk": "дані · #",
+"en": "data · #"
+},
+"s0342": {
+"uk": "демо: +# тис. до основної (§ → § → § → §)",
+"en": "demo: +# thousand vs main (§ → § → § → §)"
+},
+"s0343": {
+"uk": "дефіцит води # мм/сезон до поточної",
+"en": "water deficit # mm/season vs current"
+},
+"s0344": {
+"uk": "дефіцит води +# мм/сезон до поточної",
+"en": "water deficit +# mm/season vs current"
+},
+"s0345": {
+"uk": "днів зі спекою ≥ # °C · зараз #",
+"en": "days with heat ≥ # °C · now #"
+},
+"s0346": {
+"uk": "до поточної, P#",
+"en": "vs current, P#"
+},
+"s0347": {
+"uk": "довжини фаз FAO# Т# для іншого регіону (Barley/Oats/Wheat, March/Apr, #–#°)",
+"en": "FAO# Table # stage lengths for another region (Barley/Oats/Wheat, March/Apr, #–#°)"
+},
+"s0348": {
+"uk": "довжини фаз FAO# Т# для іншого регіону (Maize (grain), Idaho USA, April; baseline v# мав [#,#])",
+"en": "FAO# Table # stage lengths for another region (Maize (grain), Idaho USA, April; baseline v# had [#,#])"
+},
+"s0349": {
+"uk": "довжини фаз FAO# Т# для іншого регіону (Peas, May, Europe (Табл. # не розрізняє fresh/dry))",
+"en": "FAO# Table # stage lengths for another region (Peas, May, Europe (Table # does not separate fresh/dry))"
+},
+"s0350": {
+"uk": "довжини фаз FAO# Т# для іншого регіону (Soybeans, May, Central USA; Ldev #/# без примітки → #.#, ціле вниз (rules_of_choice.range_no_footnote))",
+"en": "FAO# Table # stage lengths for another region (Soybeans, May, Central USA; Ldev #/# without footnote → #.#, integer down (rules_of_choice.range_no_footnote))"
+},
+"s0351": {
+"uk": "довжини фаз FAO# Т# для іншого регіону (Sugarbeet, April, Idaho USA)",
+"en": "FAO# Table # stage lengths for another region (Sugarbeet, April, Idaho USA)"
+},
+"s0352": {
+"uk": "довжини фаз FAO# Т# для іншого регіону (Sunflower, April/May, Medit.; California)",
+"en": "FAO# Table # stage lengths for another region (Sunflower, April/May, Medit.; California)"
+},
+"s0353": {
+"uk": "дол./т",
+"en": "USD/t"
+},
+"s0354": {
+"uk": "дорогою",
+"en": "by road"
+},
+"s0355": {
+"uk": "ефект для Лісостепу; для Степу й Полісся застосовано без локального досліду",
+"en": "effect for the Forest-Steppe; applied to the Steppe and Polissia without a local trial"
+},
+"s0356": {
+"uk": "ефект попередника не враховано",
+"en": "previous-crop effect not included"
+},
+"s0357": {
+"uk": "жов",
+"en": "Oct"
+},
+"s0358": {
+"uk": "з # полів вікна (клітинка POWER #° × #°): клімат району, не поля.",
+"en": "of # fields in the window (POWER cell #° × #°): district climate, not the field."
+},
+"s0359": {
+"uk": "за # роки, але порушує №#; втрата від хвороб врахована за дослідом Полтавської ДСГДС (насичення сівозміни соняшником: урожай ×#–#).",
+"en": "over # years, but breaks No. #; disease loss is included from the Poltava Experimental Station trial (sunflower rotation saturation: yield ×#–#)."
+},
+"s0360": {
+"uk": "запас вологи на кінець ротації, частка TAW",
+"en": "soil water at the end of rotation, share of TAW"
+},
+"s0361": {
+"uk": "запас вологи на кінець ротації: поточна #% TAW — рекомендована #% TAW",
+"en": "soil water at the end of rotation: current #% TAW — recommended #% TAW"
+},
+"s0362": {
+"uk": "календар · #",
+"en": "calendar · #"
+},
+"s0363": {
+"uk": "календар: сівба § (рік #) раніше за збирання попередньої культури — неможливо з поточними датами",
+"en": "calendar: sowing § (year #) before the previous crop is harvested — impossible with the current dates"
+},
+"s0364": {
+"uk": "календарі сівби для зони polissia — заглушки (STUB), потрібні дати R#/R#",
+"en": "sowing calendars for the polissia zone are placeholders (STUB), dates from R#/R# needed"
+},
+"s0365": {
+"uk": "канал «корм» вимкнено (немає видів із джерелами)",
+"en": "«feed» channel off (no livestock species with sources)"
+},
+"s0366": {
+"uk": "кві",
+"en": "Apr"
+},
+"s0367": {
+"uk": "комплексне удобрення дає +#–#% урожаю, але забирає більше вологи з ґрунту; гречка найприбутковіша і найбільш водомістка. Даних по окремих роках у звіті немає, тож діапазон «сухий / вологий рік» для цих сівозмін рахує наша модель.",
+"en": "complex fertilisation gives +#–#% yield but takes more water from the soil; buckwheat is the most profitable and the most water-hungry. The report has no data by year, so the «dry / wet year» range for these rotations is computed by our model."
+},
+"s0368": {
+"uk": "лип",
+"en": "Jul"
+},
+"s0369": {
+"uk": "лис",
+"en": "Nov"
+},
+"s0370": {
+"uk": "лист",
+"en": "Nov"
+},
+"s0371": {
+"uk": "логістика: потрібен цукровий завод у радіусі доставки; витрати доставки — у повній собівартості Держстату середні по області",
+"en": "logistics: a sugar plant within delivery distance is needed; delivery costs are in the SSSU full cost, averaged over the oblast"
+},
+"s0372": {
+"uk": "логістику не враховано — одна ціна на культуру",
+"en": "logistics not included — one price per crop"
+},
+"s0373": {
+"uk": "лют",
+"en": "Feb"
+},
+"s0374": {
+"uk": "лісостеп, захід · #.#°, #.#° · висота # м (SRTM)",
+"en": "forest-steppe, west · #.#°, #.#° · elevation # m (SRTM)"
+},
+"s0375": {
+"uk": "лісостеп, схід · #.#°, #.#° · висота # м (SRTM)",
+"en": "forest-steppe, east · #.#°, #.#° · elevation # m (SRTM)"
+},
+"s0376": {
+"uk": "маржа в типовий рік (P#): # тис. грн/га/рік до поточної",
+"en": "typical-year margin (P#): # thousand UAH/ha/year vs current"
+},
+"s0377": {
+"uk": "маржа в типовий рік (P#): +# тис. грн/га/рік до поточної",
+"en": "typical-year margin (P#): +# thousand UAH/ha/year vs current"
+},
+"s0378": {
+"uk": "маржа поточної вища, але не враховує наслідків порушень №# (хвороби, висушення ґрунту) — штраф у маржу не закладено",
+"en": "the current margin is higher but ignores the consequences of No. # violations (disease, soil drying) — no penalty is included in the margin"
+},
+"s0379": {
+"uk": "маржа, вода і ґрунт разом — рекомендація",
+"en": "margin, water and soil together — recommendation"
+},
+"s0380": {
+"uk": "матриця попередників НААН не заповнена",
+"en": "NAAS predecessor matrix not filled in"
+},
+"s0381": {
+"uk": "медіана площі",
+"en": "median area"
+},
+"s0382": {
+"uk": "менше # пікселя MODIS",
+"en": "less than # MODIS pixel"
+},
+"s0383": {
+"uk": "менші за # піксель MODIS. Площа полів # тис. га.",
+"en": "smaller than # MODIS pixel. Field area # thousand ha."
+},
+"s0384": {
+"uk": "менші судна й перевалка, рівень води в річці, черги суден на Дунаї",
+"en": "smaller ships and transhipment, river water level, ship queues on the Danube"
+},
+"s0385": {
+"uk": "менші судна й перевалка, рівень води в річці, черги суден на Дунаї; маршрут OSRM може проходити через Молдову; кордон і черги не враховано",
+"en": "smaller ships and transhipment, river water level, ship queues on the Danube; the OSRM route may pass through Moldova; border and queues not included"
+},
+"s0386": {
+"uk": "модель, т/га",
+"en": "model, t/ha"
+},
+"s0387": {
+"uk": "морозних днів за рік",
+"en": "frost days per year"
+},
+"s0388": {
+"uk": "морський коридор: воєнні ризики для суден і портів, страхування, черги на під'їздах до портів у сезон",
+"en": "sea corridor: war risks for ships and ports, insurance, queues at port approaches in season"
+},
+"s0389": {
+"uk": "на полі # га (у сухий бік, P#: # млн грн); рік #:",
+"en": "on a # ha field (dry side, P#: # M UAH); year #:"
+},
+"s0390": {
+"uk": "на полі # га (у сухий бік, P#: # тис. грн); рік #:",
+"en": "on a # ha field (dry side, P#: # thousand UAH); year #:"
+},
+"s0391": {
+"uk": "на полі # га (у сухий бік, P#: +# млн грн); рік #:",
+"en": "on a # ha field (dry side, P#: +# M UAH); year #:"
+},
+"s0392": {
+"uk": "на полі # га (у сухий бік, P#: +# тис. грн); рік #:",
+"en": "on a # ha field (dry side, P#: +# thousand UAH); year #:"
+},
+"s0393": {
+"uk": "найбільше вологи на кінець ротації; пар дозволено",
+"en": "most soil water at the end of rotation; fallow allowed"
+},
+"s0394": {
+"uk": "найвища маржа без нової техніки збирання",
+"en": "highest margin without new harvest machinery"
+},
+"s0395": {
+"uk": "найвища маржа в типовий рік",
+"en": "highest margin in a typical year"
+},
+"s0396": {
+"uk": "найгірші роки: #, #, # · у сухий рік #%",
+"en": "worst years: #, #, # · in a dry year #%"
+},
+"s0397": {
+"uk": "найкраща маржа в сухий рік",
+"en": "best margin in a dry year"
+},
+"s0398": {
+"uk": "наявної техніки достатньо",
+"en": "owned machinery is enough"
+},
+"s0399": {
+"uk": "не брали участі в стратегіях (немає т/га): §, §, §, §, §, §, §, §, §, §, §, §",
+"en": "not used in strategies (no t/ha): §, §, §, §, §, §, §, §, §, §, §, §"
+},
+"s0400": {
+"uk": "не брали участі в стратегіях (немає т/га): §, §, §, §, §, §, §, §, §, §, §, §, §",
+"en": "not used in strategies (no t/ha): §, §, §, §, §, §, §, §, §, §, §, §, §"
+},
+"s0401": {
+"uk": "не нормується",
+"en": "not regulated"
+},
+"s0402": {
+"uk": "не поспіль",
+"en": "not in a row"
+},
+"s0403": {
+"uk": "не розглядались (немає параметрів з джерелом): §, §, §, §, §, §, §, §, §, §, §, §",
+"en": "not considered (no sourced parameters): §, §, §, §, §, §, §, §, §, §, §, §"
+},
+"s0404": {
+"uk": "немає HLS",
+"en": "no HLS"
+},
+"s0405": {
+"uk": "немає даних експорту",
+"en": "no export data"
+},
+"s0406": {
+"uk": "немає даних:",
+"en": "no data:"
+},
+"s0407": {
+"uk": "немає обласної врожайності Держстату (§) для: §, §, §, §, §, §, §, §, §, §, §, §",
+"en": "no SSSU oblast yield (§) for: §, §, §, §, §, §, §, §, §, §, §, §"
+},
+"s0408": {
+"uk": "немає обласної врожайності Держстату (§) для: §, §, §, §, §, §, §, §, §, §, §, §, §",
+"en": "no SSSU oblast yield (§) for: §, §, §, §, §, §, §, §, §, §, §, §, §"
+},
+"s0409": {
+"uk": "немає перевіреного тарифу",
+"en": "no verified tariff"
+},
+"s0410": {
+"uk": "немає результату моделі (поле поза # полями з HLS або без поточної / даних)",
+"en": "no model result (field outside the # fields with HLS, or no current practice / data)"
+},
+"s0411": {
+"uk": "немає ціни обох базисів з одного джерела",
+"en": "no price for both bases from one source"
+},
+"s0412": {
+"uk": "низька достовірність",
+"en": "low confidence"
+},
+"s0413": {
+"uk": "норматив · #",
+"en": "regulation · #"
+},
+"s0414": {
+"uk": "озима / рання",
+"en": "winter / early"
+},
+"s0415": {
+"uk": "озимі ·",
+"en": "winter ·"
+},
+"s0416": {
+"uk": "озимі в році # (§) не розглядались: дата сівби вже минула (###); якщо поле засіяне — вкажіть sown_winter_crop",
+"en": "winter crops in year # (§) not considered: sowing date has passed (###); if the field is sown, set sown_winter_crop"
+},
+"s0417": {
+"uk": "опади за рік · зараз # мм",
+"en": "rainfall per year · now # mm"
+},
+"s0418": {
+"uk": "п",
+"en": "p"
+},
+"s0419": {
+"uk": "пар без витрат — маржа завищена",
+"en": "fallow without costs — margin overstated"
+},
+"s0420": {
+"uk": "пар). Рік, що перевіряється, не входив у калібрування.",
+"en": "fallow). The year being checked was not in the calibration."
+},
+"s0421": {
+"uk": "параметри культур: FAO#/FAO# (model/crops.yaml)",
+"en": "crop parameters: FAO#/FAO# (model/crops.yaml)"
+},
+"s0422": {
+"uk": "перша культура «Збалансованої» стратегії, #",
+"en": "first crop of the «Balanced» strategy, #"
+},
+"s0423": {
+"uk": "площа поля, га",
+"en": "field area, ha"
+},
+"s0424": {
+"uk": "по прямій",
+"en": "straight line"
+},
+"s0425": {
+"uk": "по прямій (haversine) — без урахування доріг; реальний шлях довший",
+"en": "straight line (haversine) — roads not included; the real route is longer"
+},
+"s0426": {
+"uk": "повна собівартість § § #: # грн/га — викид (>×# від медіани #), взято медіану по областях",
+"en": "full cost § § #: # UAH/ha — outlier (>×# the median #), median across oblasts used"
+},
+"s0427": {
+"uk": "повна собівартість §: # грн/га (§, #, Держстат, підприємства)",
+"en": "full cost §: # UAH/ha (§, #, SSSU, enterprises)"
+},
+"s0428": {
+"uk": "погода: NASA POWER, вузол (#.#, #.#) (#–#, # сценаріїв), висота клітинки POWER",
+"en": "weather: NASA POWER, node (#.#, #.#) (#–#, # scenarios), POWER cell elevation"
+},
+"s0429": {
+"uk": "полів (клітинка # км).",
+"en": "fields (# km cell)."
+},
+"s0430": {
+"uk": "полів. Потенціал за # роки проти поточної (сума полів): «§»",
+"en": "fields. Potential over # years vs current (sum of fields): «§»"
+},
+"s0431": {
+"uk": "понад # пікселі",
+"en": "more than # pixels"
+},
+"s0432": {
+"uk": "попередник не підтверджений: § у # (S/early, не підтверджено) — план розраховано для цієї (суворішої) гілки",
+"en": "previous crop not confirmed: § in # (S/early, not confirmed) — the plan is computed for this (stricter) branch"
+},
+"s0433": {
+"uk": "попередник: § → § — «bad» за правилом «бобові після бобових; №# не порушує (норма по культурі)», джерело TODO (лише прапорець)",
+"en": "previous crop: § → § — «bad» by the rule «legumes after legumes; No. # not broken (norm per crop)», source TODO (flag only)"
+},
+"s0434": {
+"uk": "порушення №#",
+"en": "No. # violations"
+},
+"s0435": {
+"uk": "порушення №#: поточна # (№#: § # роки поспіль у році плану #; норма ≤ #) — рекомендована (balanced) #",
+"en": "No. # violations: current # (No. #: § # years in a row in plan year #; norm ≤ #) — recommended (balanced) #"
+},
+"s0436": {
+"uk": "порушення №#: поточна # (№#: § у році плану # — через # р. після посіву (рік плану #); норма ≥ #) — рекомендована (balanced) #",
+"en": "No. # violations: current # (No. #: § in plan year # — # yr after sowing (plan year #); norm ≥ #) — recommended (balanced) #"
+},
+"s0437": {
+"uk": "порушення №#: поточна # (№#: § у році плану # — через # р. після посіву (рік плану #); норма ≥ #; №#: § у році плану # — через # р. після посіву (рік плану #); норма ≥ #) — рекомендована (balanced) #",
+"en": "No. # violations: current # (No. #: § in plan year # — # yr after sowing (plan year #); norm ≥ #; No. #: § in plan year # — # yr after sowing (plan year #); norm ≥ #) — recommended (balanced) #"
+},
+"s0438": {
+"uk": "порушення №#: №#: § # роки поспіль у році плану #; норма ≤ #",
+"en": "No. # violations: No. #: § # years in a row in plan year #; norm ≤ #"
+},
+"s0439": {
+"uk": "порушення №#: №#: § у році плану # — через # р. після посіву (рік плану #); норма ≥ #",
+"en": "No. # violations: No. #: § in plan year # — # yr after sowing (plan year #); norm ≥ #"
+},
+"s0440": {
+"uk": "порушує №# (#)",
+"en": "breaks No. # (#)"
+},
+"s0441": {
+"uk": "потенціал: «§» − поточна, грн за # роки",
+"en": "potential: «§» − current, UAH over # years"
+},
+"s0442": {
+"uk": "поточна",
+"en": "current"
+},
+"s0443": {
+"uk": "поточна порушує №#",
+"en": "current breaks No. #"
+},
+"s0444": {
+"uk": "поточна порушує №# (#)",
+"en": "current breaks No. # (#)"
+},
+"s0445": {
+"uk": "поточна практика (P#) ·",
+"en": "current practice (P#) ·"
+},
+"s0446": {
+"uk": "поточна стратегія — припущення за класами HLS (W→§, S/early і S/''→§, S/late→§, F→пар), потребує підтвердження фермера",
+"en": "current strategy — an assumption from HLS classes (W→§, S/early and S/''→§, S/late→§, F→fallow), needs the farmer's confirmation"
+},
+"s0447": {
+"uk": "поточна сівозміна порушує №# — ризик хвороб і висушення ґрунту",
+"en": "the current rotation breaks No. # — risk of disease and soil drying"
+},
+"s0448": {
+"uk": "поточна — за роками #–#",
+"en": "current — by years #–#"
+},
+"s0449": {
+"uk": "потрібна нова техніка: §",
+"en": "new machinery needed: §"
+},
+"s0450": {
+"uk": "прототип · дані NASA POWER, MODIS, SMAP",
+"en": "prototype · NASA POWER, MODIS, SMAP data"
+},
+"s0451": {
+"uk": "пшениця після кукурудзи на зерно — пізня сівба / потрібна інша культура",
+"en": "wheat after grain maize — late sowing / another crop needed"
+},
+"s0452": {
+"uk": "результат для # полів, # га з # га; поточна практика порушує №# на",
+"en": "results for # fields, # ha of # ha; current practice breaks No. # on"
+},
+"s0453": {
+"uk": "рекомендація # (модель)",
+"en": "recommendation # (model)"
+},
+"s0454": {
+"uk": "рентабельність «§» в області (§ обл.) за Держстатом, #: #% (рентабельність Держстату — за # рік; маржа моделі — P# за # роками погоди)",
+"en": "profitability of «§» in the oblast (§ oblast) by SSSU, #: #% (SSSU profitability — for #; model margin — P# over # weather years)"
+},
+"s0455": {
+"uk": "рентабельність «§» в області (§ обл.) за Держстатом, #: #.#% (рентабельність Держстату — за # рік; маржа моделі — P# за # роками погоди)",
+"en": "profitability of «§» in the oblast (§ oblast) by SSSU, #: #.#% (SSSU profitability — for #; model margin — P# over # weather years)"
+},
+"s0456": {
+"uk": "розмір відносно пікселя MODIS",
+"en": "size relative to a MODIS pixel"
+},
+"s0457": {
+"uk": "років; ще",
+"en": "years; also"
+},
+"s0458": {
+"uk": "ротація з # полів; роки плану = поля #–#",
+"en": "rotation of # fields; plan years = fields #–#"
+},
+"s0459": {
+"uk": "ротація з # полів; роки плану = поля #–# по колу · №#: § у році плану # — через # р. після посіву (рік плану #); норма ≥ #",
+"en": "rotation of # fields; plan years = fields #–# in a cycle · No. #: § in plan year # — # yr after sowing (plan year #); norm ≥ #"
+},
+"s0460": {
+"uk": "ротація з # полів; роки плану = поля #–# по колу · №#: § у році плану # — через # р. після посіву (рік плану #); норма ≥ #; №#: § у році плану # — через # р. після посіву (рік плану #); норма ≥ #",
+"en": "rotation of # fields; plan years = fields #–# in a cycle · No. #: § in plan year # — # yr after sowing (plan year #); norm ≥ #; No. #: § in plan year # — # yr after sowing (plan year #); norm ≥ #"
+},
+"s0461": {
+"uk": "рік #",
+"en": "year #"
+},
+"s0462": {
+"uk": "рік # ще не в HLS — підтвердіть культуру #",
+"en": "year # is not in HLS yet — confirm the crop #"
+},
+"s0463": {
+"uk": "самозабезпечення кормом не рахується: немає даних тваринництва і потреби стада (ТЗ A#)",
+"en": "feed self-sufficiency not computed: no livestock data or herd needs (spec A#)"
+},
+"s0464": {
+"uk": "сер",
+"en": "Aug"
+},
+"s0465": {
+"uk": "середня достовірність",
+"en": "medium confidence"
+},
+"s0466": {
+"uk": "середня температура",
+"en": "mean temperature"
+},
+"s0467": {
+"uk": "старт",
+"en": "start"
+},
+"s0468": {
+"uk": "степ · #.#°, #.#° · висота # м (SRTM)",
+"en": "steppe · #.#°, #.#° · elevation # m (SRTM)"
+},
+"s0469": {
+"uk": "сухий #",
+"en": "dry #"
+},
+"s0470": {
+"uk": "сухий степ · #.#°, #.#° · висота # м (SRTM)",
+"en": "dry steppe · #.#°, #.#° · elevation # m (SRTM)"
+},
+"s0471": {
+"uk": "сівба #.# (#.#–#.#) → збирання #.#",
+"en": "sowing #.# (#.#–#.#) → harvest #.#"
+},
+"s0472": {
+"uk": "сівба #.# → збирання #.#",
+"en": "sowing #.# → harvest #.#"
+},
+"s0473": {
+"uk": "сівба #.# → збирання #.# · дата-заглушка",
+"en": "sowing #.# → harvest #.# · placeholder date"
+},
+"s0474": {
+"uk": "сівба: поріг гороху (# °C) застосовано до ранніх ярих: джерела дають «ранні строки, щойно дозволяє стан ґрунту» без температури",
+"en": "sowing: the pea threshold (# °C) is applied to early spring crops: sources give «early dates, as soon as soil allows» without a temperature"
+},
+"s0475": {
+"uk": "січ",
+"en": "Jan"
+},
+"s0476": {
+"uk": "т",
+"en": "t"
+},
+"s0477": {
+"uk": "тис. т",
+"en": "kt"
+},
+"s0478": {
+"uk": "точка порівняння",
+"en": "comparison point"
+},
+"s0479": {
+"uk": "точки HLS",
+"en": "HLS points"
+},
+"s0480": {
+"uk": "точок",
+"en": "points"
+},
+"s0481": {
+"uk": "тра",
+"en": "May"
+},
+"s0482": {
+"uk": "трав",
+"en": "May"
+},
+"s0483": {
+"uk": "фази озимих з NDVI полів (HLS, медіана областей зони), не з агрономічних джерел; L_late # д — FAO# Т#",
+"en": "winter crop stages from field NDVI (HLS, median of the zone's oblasts), not from agronomic sources; L_late # d — FAO# Table #"
+},
+"s0484": {
+"uk": "факт, т/га (область)",
+"en": "actual, t/ha (oblast)"
+},
+"s0485": {
+"uk": "фактична практика з HLS: озима після пізньої ярої; у моделі сівба пізніша за рекомендовану (рік #: # дн. після оптимуму, поза вікном джерела) — врожай може бути занижено",
+"en": "actual practice from HLS: winter crop after a late spring crop; the model sows later than recommended (year #: # days after the optimum, outside the source window) — yield may be understated"
+},
+"s0486": {
+"uk": "ціна §: # грн/т, avg_domestic, ###, зріз DSSU_#",
+"en": "price §: # UAH/t, avg_domestic, ###, snapshot DSSU_#"
+},
+"s0487": {
+"uk": "ціна §: #.# грн/т, avg_domestic, ###, зріз DSSU_#",
+"en": "price §: #.# UAH/t, avg_domestic, ###, snapshot DSSU_#"
+},
+"s0488": {
+"uk": "ціни й витрати · #",
+"en": "prices and costs · #"
+},
+"s0489": {
+"uk": "ціни: data/raw/prices_derzhstat.csv, зріз DSSU_#; ринок: data/market/*; корм: model/livestock.yaml",
+"en": "prices: data/raw/prices_derzhstat.csv, snapshot DSSU_#; market: data/market/*; feed: model/livestock.yaml"
+},
+"s0490": {
+"uk": "частка «§» #% поза #–#% (сайт; для одного поля — орієнтир)",
+"en": "share «§» #% outside #–#% (site; for one field — a guide)"
+},
+"s0491": {
+"uk": "частка «Зернові та зернобобові» #% поза #–#% (сайт; для одного поля — орієнтир)",
+"en": "share «Cereals and grain legumes» #% outside #–#% (site; for one field — a guide)"
+},
+"s0492": {
+"uk": "частка «Технічні, усього» #% поза #–#% (сайт; для одного поля — орієнтир)",
+"en": "share «Industrial crops, total» #% outside #–#% (site; for one field — a guide)"
+},
+"s0493": {
+"uk": "частка бобових #% (поточна #%)",
+"en": "legume share #% (current #%)"
+},
+"s0494": {
+"uk": "частка культур, що сушать ґрунт",
+"en": "share of crops that dry the soil"
+},
+"s0495": {
+"uk": "частка культур-«сушильників»: поточна #% — рекомендована #%",
+"en": "share of soil-drying crops: current #% — recommended #%"
+},
+"s0496": {
+"uk": "частка менших за піксель MODIS",
+"en": "share smaller than a MODIS pixel"
+},
+"s0497": {
+"uk": "частка ріллі під полями",
+"en": "share of arable land under fields"
+},
+"s0498": {
+"uk": "чер",
+"en": "Jun"
+},
+"s0499": {
+"uk": "черги на кордоні, фітосанітарний контроль, обмеження імпорту зерна окремими країнами ЄС; на залізниці — інша ширина колії, потрібне перевантаження",
+"en": "border queues, phytosanitary control, grain import restrictions in some EU countries; by rail — a different track gauge, transhipment needed"
+},
+"s0500": {
+"uk": "через #",
+"en": "after #"
+},
+"s0501": {
+"uk": "через ≥ #",
+"en": "after ≥ #"
+},
+"s0502": {
+"uk": "ще #",
+"en": "# more"
+},
+"s0503": {
+"uk": "що росло на полі — точка порівняння · історія: HLS # м, поле ##",
+"en": "what grew on the field — comparison point · history: HLS # m, field ##"
+},
+"s0504": {
+"uk": "що росло у # (HLS # м)",
+"en": "what grew in # (HLS # m)"
+},
+"s0505": {
+"uk": "щонайменше; беззмінних посівів у досліді немає",
+"en": "at least; there are no continuous plots in the trial"
+},
+"s0506": {
+"uk": "якщо повторювати цю сівозміну — порушення №#: § повертається через # р. (норма ≥ #), роки плану [#, #]",
+"en": "if this rotation is repeated — No. # violation: § returns after # yr (norm ≥ #), plan years [#, #]"
+},
+"s0507": {
+"uk": "якщо повторювати цю сівозміну — порушення №#: § повертається через # р. (норма ≥ #), роки плану [#]",
+"en": "if this rotation is repeated — No. # violation: § returns after # yr (norm ≥ #), plan years [#]"
+},
+"s0508": {
+"uk": "якщо повторювати цю сівозміну — порушення №#: § щороку (монокультура) (норма ≤ #), роки плану [#, #, #, #]",
+"en": "if this rotation is repeated — No. # violation: § every year (monoculture) (norm ≤ #), plan years [#, #, #, #]"
+},
+"s0509": {
+"uk": "якщо соняшнику не було (непідтверджені S/early: #, #, #): max_income: § → § → § → §; min_risk: § → § → § → §; balanced: § → § → § → §",
+"en": "if there was no sunflower (unconfirmed S/early: #, #, #): max_income: § → § → § → §; min_risk: § → § → § → §; balanced: § → § → § → §"
+},
+"s0510": {
+"uk": "якщо соняшнику не було (непідтверджені S/early: #, #, #, #, #): max_income: § → § → § → §; min_risk: § → § → § → §; balanced: § → § → § → §; water: § → § → § → §",
+"en": "if there was no sunflower (unconfirmed S/early: #, #, #, #, #): max_income: § → § → § → §; min_risk: § → § → § → §; balanced: § → § → § → §; water: § → § → § → §"
+},
+"s0511": {
+"uk": "ярова, зелена в серпні",
+"en": "spring, green in August"
+},
+"s0512": {
+"uk": "ярова, рано зібрана",
+"en": "spring, harvested early"
+},
+"s0513": {
+"uk": "ярі ·",
+"en": "spring ·"
+},
+"s0514": {
+"uk": "і",
+"en": "and"
+},
+"s0515": {
+"uk": "інтерполяція між #-пільною (# роки) і #-пільною (# років)",
+"en": "interpolation between the #-field (# years) and #-field (# years) rotation"
+},
+"s0516": {
+"uk": "історія поля невідома в # з # років — №# перевірено лише за відомими роками",
+"en": "field history unknown in # of # years — No. # checked only for known years"
+},
+"s0517": {
+"uk": "історія: HLS #–# (out/hls/mykolaiv_ndvi_seasons.csv (HLS # м, поле ##))",
+"en": "history: HLS #–# (out/hls/mykolaiv_ndvi_seasons.csv (HLS # m, field ##))"
+},
+"s0518": {
+"uk": "історія: HLS #–# (out/hls/odesa_ndvi_seasons.csv (HLS # м, поле ##))",
+"en": "history: HLS #–# (out/hls/odesa_ndvi_seasons.csv (HLS # m, field ##))"
+},
+"s0519": {
+"uk": "історія: HLS #–# (out/hls/poltava_ndvi_seasons.csv (HLS # м, поле ##))",
+"en": "history: HLS #–# (out/hls/poltava_ndvi_seasons.csv (HLS # m, field ##))"
+},
+"s0520": {
+"uk": "історія: HLS #–# (out/hls/vinnytsia_ndvi_seasons.csv (HLS # м, поле ##))",
+"en": "history: HLS #–# (out/hls/vinnytsia_ndvi_seasons.csv (HLS # m, field ##))"
+},
+"s0521": {
+"uk": "історія: HLS #–# (out/hls/volyn_ndvi_seasons.csv (HLS # м, поле ##))",
+"en": "history: HLS #–# (out/hls/volyn_ndvi_seasons.csv (HLS # m, field ##))"
+},
+"s0522": {
+"uk": "ґрунт: SoilGrids #.#, клас clay (шари до #.# м); текстура SoilGrids #.# (центроїд поля, шари до #.# м); θFC/θWP — середина діапазону Табл. #",
+"en": "soil: SoilGrids #.#, class clay (layers to #.# m); SoilGrids #.# texture (field centroid, layers to #.# m); θFC/θWP — middle of the Table # range"
+},
+"s0523": {
+"uk": "ґрунт: SoilGrids #.#, клас silt_loam (шари до #.# м); текстура SoilGrids #.# (центроїд поля, шари до #.# м); θFC/θWP — середина діапазону Табл. #",
+"en": "soil: SoilGrids #.#, class silt_loam (layers to #.# m); SoilGrids #.# texture (field centroid, layers to #.# m); θFC/θWP — middle of the Table # range"
+},
+"s0524": {
+"uk": "ґрунт: SoilGrids #.#, клас silty_clay (шари до #.# м); текстура SoilGrids #.# (центроїд поля, шари до #.# м); θFC/θWP — середина діапазону Табл. #",
+"en": "soil: SoilGrids #.#, class silty_clay (layers to #.# m); SoilGrids #.# texture (field centroid, layers to #.# m); θFC/θWP — middle of the Table # range"
+},
+"s0525": {
+"uk": "ґрунт: SoilGrids #.#, клас silty_clay_loam (шари до #.# м); текстура SoilGrids #.# (центроїд поля, шари до #.# м); θFC/θWP — середина діапазону Табл. #",
+"en": "soil: SoilGrids #.#, class silty_clay_loam (layers to #.# m); SoilGrids #.# texture (field centroid, layers to #.# m); θFC/θWP — middle of the Table # range"
+},
+"s0526": {
+"uk": "— кандидати-альтернативи для порівняння з фактичною сівозміною.",
+"en": "— candidate alternatives to compare with the actual rotation."
+},
+"s0527": {
+"uk": "— озима (зелене вже у квітні),",
+"en": "— winter (green already in April),"
+},
+"s0528": {
+"uk": "— перший рік «Збалансованої» (§ → § → § → §).",
+"en": "— first year of «Balanced» (§ → § → § → §)."
+},
+"s0529": {
+"uk": "— пізня ярова (пік у липні), ? — неоднозначно. MODIS NDVI, # м у точці пілота — лише для порівняння; рекомендація й поточна практика рахуються з HLS # м цього поля.",
+"en": "— late spring crop (peak in July), ? — ambiguous. MODIS NDVI, # m at the pilot point — for comparison only; the recommendation and current practice are computed from HLS # m of this field."
+},
+"s0530": {
+"uk": "№# комплекс",
+"en": "No. # fertilised"
+},
+"s0531": {
+"uk": "№# контроль",
+"en": "No. # control"
+},
+"s0532": {
+"uk": "№#: § # роки поспіль у році плану #; норма ≤ #",
+"en": "No. #: § # years in a row in plan year #; norm ≤ #"
+},
+"s0533": {
+"uk": "№#: § у році плану # — через # р. після посіву (рік плану #); норма ≥ #",
+"en": "No. #: § in plan year # — # yr after sowing (plan year #); norm ≥ #"
+},
+"s0534": {
+"uk": "≈ #–# грн/т з ПДВ (Укрвантаж АГРО, тиждень до #.#.#)",
+"en": "≈ #–# UAH/t incl. VAT (Ukrvantazh AGRO, week to #.#.#)"
+},
+"s0535": {
+"uk": "✓ так",
+"en": "✓ yes"
+},
+"s0536": {
+"uk": "✕ порушення",
+"en": "✕ violation"
+},
+"s0537": {
+"uk": "(у сухий бік # млн грн), не окупається. Поточна порушує №#. Достовірність: висока.",
+"en": "(dry side # M UAH), does not pay back. Current practice breaks No. #. Confidence: high."
+},
+"s0538": {
+"uk": "(у сухий бік # млн грн), не окупається. Поточна без порушень №#. Достовірність: середня.",
+"en": "(dry side # M UAH), does not pay back. Current practice has no No. # violations. Confidence: medium."
+},
+"s0539": {
+"uk": "(у сухий бік # млн грн), не окупається. Поточна порушує №#. Достовірність: середня.",
+"en": "(dry side # M UAH), does not pay back. Current practice breaks No. #. Confidence: medium."
+},
+"s0540": {
+"uk": "(у сухий бік # млн грн), не окупається. Поточна без порушень №#. Достовірність: низька.",
+"en": "(dry side # M UAH), does not pay back. Current practice has no No. # violations. Confidence: low."
+},
+"s0541": {
+"uk": "(у сухий бік # млн грн), не окупається. Поточна порушує №#. Достовірність: низька.",
+"en": "(dry side # M UAH), does not pay back. Current practice breaks No. #. Confidence: low."
+},
+"s0542": {
+"uk": "(у сухий бік # млн грн), окупається з #. Поточна порушує №#. Достовірність: висока.",
+"en": "(dry side # M UAH), pays back from #. Current practice breaks No. #. Confidence: high."
+},
+"s0543": {
+"uk": "(у сухий бік # млн грн), окупається з #. Поточна без порушень №#. Достовірність: середня.",
+"en": "(dry side # M UAH), pays back from #. Current practice has no No. # violations. Confidence: medium."
+},
+"s0544": {
+"uk": "(у сухий бік # млн грн), окупається з #. Поточна порушує №#. Достовірність: середня.",
+"en": "(dry side # M UAH), pays back from #. Current practice breaks No. #. Confidence: medium."
+},
+"s0545": {
+"uk": "(у сухий бік # млн грн), окупається з #. Поточна без порушень №#. Достовірність: низька.",
+"en": "(dry side # M UAH), pays back from #. Current practice has no No. # violations. Confidence: low."
+},
+"s0546": {
+"uk": "(у сухий бік # млн грн), окупається з #. Поточна порушує №#. Достовірність: низька.",
+"en": "(dry side # M UAH), pays back from #. Current practice breaks No. #. Confidence: low."
+},
+"s0547": {
+"uk": "(у сухий бік # тис. грн), не окупається; «§» (§ → § → § → §)",
+"en": "(dry side # thousand UAH), does not pay back; «§» (§ → § → § → §)"
+},
+"s0548": {
+"uk": "(у сухий бік # тис. грн), не окупається. Поточна без порушень №#. Достовірність: висока.",
+"en": "(dry side # thousand UAH), does not pay back. Current practice has no No. # violations. Confidence: high."
+},
+"s0549": {
+"uk": "(у сухий бік # тис. грн), не окупається. Поточна порушує №#. Достовірність: висока.",
+"en": "(dry side # thousand UAH), does not pay back. Current practice breaks No. #. Confidence: high."
+},
+"s0550": {
+"uk": "(у сухий бік # тис. грн), не окупається. Поточна без порушень №#. Достовірність: середня.",
+"en": "(dry side # thousand UAH), does not pay back. Current practice has no No. # violations. Confidence: medium."
+},
+"s0551": {
+"uk": "(у сухий бік # тис. грн), не окупається. Поточна порушує №#. Достовірність: середня.",
+"en": "(dry side # thousand UAH), does not pay back. Current practice breaks No. #. Confidence: medium."
+},
+"s0552": {
+"uk": "(у сухий бік # тис. грн), не окупається. Поточна без порушень №#. Достовірність: низька.",
+"en": "(dry side # thousand UAH), does not pay back. Current practice has no No. # violations. Confidence: low."
+},
+"s0553": {
+"uk": "(у сухий бік # тис. грн), не окупається. Поточна порушує №#. Достовірність: низька.",
+"en": "(dry side # thousand UAH), does not pay back. Current practice breaks No. #. Confidence: low."
+},
+"s0554": {
+"uk": "(у сухий бік # тис. грн), окупається з #.",
+"en": "(dry side # thousand UAH), pays back from #."
+},
+"s0555": {
+"uk": "(у сухий бік # тис. грн), окупається з #. Поточна порушує №#. Достовірність: висока.",
+"en": "(dry side # thousand UAH), pays back from #. Current practice breaks No. #. Confidence: high."
+},
+"s0556": {
+"uk": "(у сухий бік # тис. грн), окупається з #. Поточна без порушень №#. Достовірність: середня.",
+"en": "(dry side # thousand UAH), pays back from #. Current practice has no No. # violations. Confidence: medium."
+},
+"s0557": {
+"uk": "(у сухий бік # тис. грн), окупається з #. Поточна порушує №#. Достовірність: середня.",
+"en": "(dry side # thousand UAH), pays back from #. Current practice breaks No. #. Confidence: medium."
+},
+"s0558": {
+"uk": "(у сухий бік # тис. грн), окупається з #. Поточна без порушень №#. Достовірність: низька.",
+"en": "(dry side # thousand UAH), pays back from #. Current practice has no No. # violations. Confidence: low."
+},
+"s0559": {
+"uk": "(у сухий бік # тис. грн), окупається з #. Поточна порушує №#. Достовірність: низька.",
+"en": "(dry side # thousand UAH), pays back from #. Current practice breaks No. #. Confidence: low."
+},
+"s0560": {
+"uk": "(у сухий бік +# млн грн), не окупається.",
+"en": "(dry side +# M UAH), does not pay back."
+},
+"s0561": {
+"uk": "(у сухий бік +# млн грн), не окупається; «§» (§ → § → § → §)",
+"en": "(dry side +# M UAH), does not pay back; «§» (§ → § → § → §)"
+},
+"s0562": {
+"uk": "(у сухий бік +# млн грн), не окупається. Поточна без порушень №#. Достовірність: висока.",
+"en": "(dry side +# M UAH), does not pay back. Current practice has no No. # violations. Confidence: high."
+},
+"s0563": {
+"uk": "(у сухий бік +# млн грн), не окупається. Поточна порушує №#. Достовірність: висока.",
+"en": "(dry side +# M UAH), does not pay back. Current practice breaks No. #. Confidence: high."
+},
+"s0564": {
+"uk": "(у сухий бік +# млн грн), не окупається. Поточна без порушень №#. Достовірність: середня.",
+"en": "(dry side +# M UAH), does not pay back. Current practice has no No. # violations. Confidence: medium."
+},
+"s0565": {
+"uk": "(у сухий бік +# млн грн), не окупається. Поточна порушує №#. Достовірність: середня.",
+"en": "(dry side +# M UAH), does not pay back. Current practice breaks No. #. Confidence: medium."
+},
+"s0566": {
+"uk": "(у сухий бік +# млн грн), не окупається. Поточна без порушень №#. Достовірність: низька.",
+"en": "(dry side +# M UAH), does not pay back. Current practice has no No. # violations. Confidence: low."
+},
+"s0567": {
+"uk": "(у сухий бік +# млн грн), не окупається. Поточна порушує №#. Достовірність: низька.",
+"en": "(dry side +# M UAH), does not pay back. Current practice breaks No. #. Confidence: low."
+},
+"s0568": {
+"uk": "(у сухий бік +# млн грн), окупається з #. Поточна без порушень №#. Достовірність: висока.",
+"en": "(dry side +# M UAH), pays back from #. Current practice has no No. # violations. Confidence: high."
+},
+"s0569": {
+"uk": "(у сухий бік +# млн грн), окупається з #. Поточна порушує №#. Достовірність: висока.",
+"en": "(dry side +# M UAH), pays back from #. Current practice breaks No. #. Confidence: high."
+},
+"s0570": {
+"uk": "(у сухий бік +# млн грн), окупається з #. Поточна без порушень №#. Достовірність: середня.",
+"en": "(dry side +# M UAH), pays back from #. Current practice has no No. # violations. Confidence: medium."
+},
+"s0571": {
+"uk": "(у сухий бік +# млн грн), окупається з #. Поточна порушує №#. Достовірність: середня.",
+"en": "(dry side +# M UAH), pays back from #. Current practice breaks No. #. Confidence: medium."
+},
+"s0572": {
+"uk": "(у сухий бік +# млн грн), окупається з #. Поточна без порушень №#. Достовірність: низька.",
+"en": "(dry side +# M UAH), pays back from #. Current practice has no No. # violations. Confidence: low."
+},
+"s0573": {
+"uk": "(у сухий бік +# млн грн), окупається з #. Поточна порушує №#. Достовірність: низька.",
+"en": "(dry side +# M UAH), pays back from #. Current practice breaks No. #. Confidence: low."
+},
+"s0574": {
+"uk": "(у сухий бік +# тис. грн), не окупається.",
+"en": "(dry side +# thousand UAH), does not pay back."
+},
+"s0575": {
+"uk": "(у сухий бік +# тис. грн), не окупається; «§» (§ → § → § → §)",
+"en": "(dry side +# thousand UAH), does not pay back; «§» (§ → § → § → §)"
+},
+"s0576": {
+"uk": "(у сухий бік +# тис. грн), не окупається. Поточна без порушень №#. Достовірність: висока.",
+"en": "(dry side +# thousand UAH), does not pay back. Current practice has no No. # violations. Confidence: high."
+},
+"s0577": {
+"uk": "(у сухий бік +# тис. грн), не окупається. Поточна порушує №#. Достовірність: висока.",
+"en": "(dry side +# thousand UAH), does not pay back. Current practice breaks No. #. Confidence: high."
+},
+"s0578": {
+"uk": "(у сухий бік +# тис. грн), не окупається. Поточна без порушень №#. Достовірність: середня.",
+"en": "(dry side +# thousand UAH), does not pay back. Current practice has no No. # violations. Confidence: medium."
+},
+"s0579": {
+"uk": "(у сухий бік +# тис. грн), не окупається. Поточна порушує №#. Достовірність: середня.",
+"en": "(dry side +# thousand UAH), does not pay back. Current practice breaks No. #. Confidence: medium."
+},
+"s0580": {
+"uk": "(у сухий бік +# тис. грн), не окупається. Поточна без порушень №#. Достовірність: низька.",
+"en": "(dry side +# thousand UAH), does not pay back. Current practice has no No. # violations. Confidence: low."
+},
+"s0581": {
+"uk": "(у сухий бік +# тис. грн), не окупається. Поточна порушує №#. Достовірність: низька.",
+"en": "(dry side +# thousand UAH), does not pay back. Current practice breaks No. #. Confidence: low."
+},
+"s0582": {
+"uk": "(у сухий бік +# тис. грн), окупається з #. Поточна порушує №#. Достовірність: висока.",
+"en": "(dry side +# thousand UAH), pays back from #. Current practice breaks No. #. Confidence: high."
+},
+"s0583": {
+"uk": "(у сухий бік +# тис. грн), окупається з #. Поточна без порушень №#. Достовірність: середня.",
+"en": "(dry side +# thousand UAH), pays back from #. Current practice has no No. # violations. Confidence: medium."
+},
+"s0584": {
+"uk": "(у сухий бік +# тис. грн), окупається з #. Поточна порушує №#. Достовірність: середня.",
+"en": "(dry side +# thousand UAH), pays back from #. Current practice breaks No. #. Confidence: medium."
+},
+"s0585": {
+"uk": "(у сухий бік +# тис. грн), окупається з #. Поточна без порушень №#. Достовірність: низька.",
+"en": "(dry side +# thousand UAH), pays back from #. Current practice has no No. # violations. Confidence: low."
+},
+"s0586": {
+"uk": "(у сухий бік +# тис. грн), окупається з #. Поточна порушує №#. Достовірність: низька.",
+"en": "(dry side +# thousand UAH), pays back from #. Current practice breaks No. #. Confidence: low."
+},
+"s0587": {
+"uk": "Достовірність: середня.",
+"en": "Confidence: medium."
+},
+"s0588": {
+"uk": "Достовірність стратегій — середня достовірність.",
+"en": "Strategy confidence — medium."
+},
+"s0589": {
+"uk": "Достовірність стратегій — середня достовірність (окрім позначених на картці).",
+"en": "Strategy confidence — medium (except where marked on a card)."
+},
+"s0590": {
+"uk": "Достовірність: низька.",
+"en": "Confidence: low."
+},
+"s0591": {
+"uk": "Достовірність стратегій — низька достовірність.",
+"en": "Strategy confidence — low."
+},
+"s0592": {
+"uk": "Достовірність стратегій — низька достовірність (окрім позначених на картці).",
+"en": "Strategy confidence — low (except where marked on a card)."
+},
+"s0593": {
+"uk": "#: пік NDVI — (—)",
+"en": "#: NDVI peak — (—)"
+},
+"s0594": {
+"uk": "Усі стратегії — низька достовірність: дати сівби тимчасові (без джерела), поки R#/R# не дадуть календарі.",
+"en": "All strategies — low confidence: sowing dates are temporary (no source) until R#/R# provide calendars."
+},
+"s0595": {
+"uk": "Немає результату моделі",
+"en": "No model result"
+},
+"s0596": {
+"uk": "(рекомендація #: §, але різниця з поточною не рахується):",
+"en": "(recommendation #: §, but the difference from current is not computed):"
+},
+"s0597": {
+"uk": "Поточна практика з HLS: § → § → § → §.",
+"en": "Current practice from HLS: § → § → § → §."
+},
+"s0598": {
+"uk": "Field Shift Україна",
+"en": "Field Shift Ukraine"
+},
+"s0599": {
+"uk": "# полів · медіана # га · #% менші за піксель MODIS",
+"en": "# fields · median # ha · #% smaller than a MODIS pixel"
+},
+"s0600": {
+"uk": "§ · Лісостеп лівобережжя",
+"en": "§ · Left-Bank Forest-Steppe"
+},
+"s0601": {
+"uk": "§ · Лісостеп лівобережжя (частково)",
+"en": "§ · Left-Bank Forest-Steppe (partly)"
+},
+"s0602": {
+"uk": "NASA POWER · #.#°, #.#° · клітинка #°×#°",
+"en": "NASA POWER · #.#°, #.#° · cell #°×#°"
+},
+"s0603": {
+"uk": "§, § обл. · сухий степ",
+"en": "§, § oblast · dry steppe"
+},
+"s0604": {
+"uk": "§, § обл. · степ",
+"en": "§, § oblast · steppe"
+},
+"s0605": {
+"uk": "§, § обл. · лісостеп, схід",
+"en": "§, § oblast · forest-steppe, east"
+},
+"s0606": {
+"uk": "§, § обл. · лісостеп, захід",
+"en": "§, § oblast · forest-steppe, west"
+},
+"s0607": {
+"uk": "§ · §: # реальних полів — натисніть",
+"en": "§ · §: # real fields — click"
+},
+"s0608": {
+"uk": "§: # реальних полів — натисніть",
+"en": "§: # real fields — click"
+},
+"s0609": {
+"uk": "Поле ## · # га",
+"en": "Field ## · # ha"
+}
+}
+}

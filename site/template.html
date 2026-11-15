@@ -1,0 +1,1249 @@
+<title>Field Shift Україна</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: шапка → карта (2/3) + картка поля (1/3) → модель проти факту → альтернативи ННЦ → дані */
+:root{
+  --bg:#f3f5f2; --surface:#ffffff; --ink:#18221c; --muted:#5d6b62; --line:#d9e0da;
+  --land:#e7ece6; 
+  --accent:#2f7d4f;          /* хлорофіл */
+  --accent-soft:#2f7d4f1f;
+  --amber:#b7791f;           /* стерня, посуха */
+  --red:#c2412d; --blue:#2b6cb0;
+  --zone:#2f7d4f2e; --zone-part:#2f7d4f14;
+  --display:"Manrope",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+:root{--land-line:#a3b1a7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111713; --surface:#18201b; --ink:#e3ebe5; --muted:#97a69c; --line:#2b362f;
+  --land:#1d2721; --land-line:#4b5a50; --accent:#5fbf86; --accent-soft:#5fbf8626; --amber:#e0a84a;
+  --red:#ef7a64; --blue:#6aa7e8; --zone:#5fbf8638; --zone-part:#5fbf861a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111713; --surface:#18201b; --ink:#e3ebe5; --muted:#97a69c; --line:#2b362f;
+  --land:#1d2721; --land-line:#4b5a50; --accent:#5fbf86; --accent-soft:#5fbf8626; --amber:#e0a84a;
+  --red:#ef7a64; --blue:#6aa7e8; --zone:#5fbf8638; --zone-part:#5fbf861a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--body);margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(24px,3.2vw,34px);font-weight:800}
+h2{font-size:20px;font-weight:700;margin-bottom:6px}
+h3{font-size:15px;font-weight:700}
+.lede{color:var(--muted);max-width:68ch;margin:6px 0 0}
+.eyebrow{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:end;justify-content:space-between;margin-bottom:18px}
+#langsw{display:flex;gap:4px;order:-1;width:100%;justify-content:flex-end}
+#langsw button{font:600 12px var(--mono);padding:4px 10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer}
+#langsw button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.tag{font:500 12px var(--mono);color:var(--accent);background:var(--accent-soft);padding:4px 8px;border-radius:4px;white-space:nowrap}
+.grid{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;min-width:0}
+#mapbox{position:relative;padding:0;overflow:hidden}
+#map{display:block;width:100%;height:auto;aspect-ratio:1.45/1;cursor:grab;touch-action:none}
+#map:active{cursor:grabbing}
+.layers{display:flex;flex-wrap:wrap;gap:6px 14px;padding:10px 14px;border-top:1px solid var(--line);font-size:13px}
+.layers label{display:flex;gap:6px;align-items:center;cursor:pointer}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%}
+.mapnote{position:absolute;left:12px;top:10px;font:12px var(--mono);color:var(--muted);background:var(--surface);padding:3px 6px;border-radius:4px;border:1px solid var(--line)}
+.zoomer{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:4px}
+.zoomer button{width:30px;height:30px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;font:600 16px var(--body);cursor:pointer}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fieldtabs{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px}
+.fieldtabs button{font:500 13px var(--body);border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:4px 10px;cursor:pointer}
+.fieldtabs button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0 14px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.stat b{display:block;font:600 20px var(--mono);font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted)}
+.up{color:var(--red)} .down{color:var(--blue)}
+.section{margin-top:14px}
+.strip{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));gap:3px;margin-top:6px}
+.cell{font:500 11px var(--mono);text-align:center;padding:5px 0;border-radius:4px;background:var(--land);color:var(--muted)}
+.cell.W{background:var(--accent-soft);color:var(--accent)}
+.cell.S{background:color-mix(in srgb,var(--amber) 18%,transparent);color:var(--amber)}
+.cell small{display:block;font-size:10px;opacity:.8}
+.legend{font-size:12px;color:var(--muted);margin-top:4px}
+.risk{display:grid;grid-template-columns:110px minmax(0,1fr) 44px;gap:8px;align-items:center;font-size:13px;margin:6px 0}
+.bar{position:relative;height:12px;background:var(--land);border-radius:6px}
+.bar i{position:absolute;top:0;bottom:0;background:color-mix(in srgb,var(--accent) 35%,transparent);border-radius:6px}
+.bar em{position:absolute;top:-3px;width:3px;height:18px;background:var(--ink);border-radius:2px}
+.num{font:500 13px var(--mono);font-variant-numeric:tabular-nums;text-align:right}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.scroll{overflow-x:auto}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:16px}
+@media (max-width:900px){.two{grid-template-columns:minmax(0,1fr)}}
+.best td{font-weight:600}
+.note{font-size:12.5px;color:var(--muted);margin-top:8px}
+.callout{border-left:3px solid var(--amber);padding:6px 10px;margin-top:10px;font-size:13px;background:color-mix(in srgb,var(--amber) 8%,transparent);border-radius:0 6px 6px 0}
+#tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--surface);font:12px var(--body);padding:4px 7px;border-radius:4px;opacity:0;transition:opacity .1s;white-space:nowrap}
+svg text{fill:var(--muted);font:11px var(--mono)}
+
+/* реальні поля */
+#fmapbox{position:relative;padding:0;overflow:hidden}
+#fmap{display:block;width:100%;height:auto;aspect-ratio:1.15/1;cursor:grab;touch-action:none;background:var(--land)}
+.fp{stroke:var(--surface);stroke-width:.6;vector-effect:non-scaling-stroke;cursor:pointer}
+.fp.s{fill:color-mix(in srgb,var(--amber) 55%,transparent)}
+.fp.m{fill:color-mix(in srgb,var(--accent) 32%,transparent)}
+.fp.l{fill:color-mix(in srgb,var(--accent) 62%,transparent)}
+.fp:hover{stroke:var(--ink);stroke-width:1.2}
+.fp.sel{stroke:var(--ink);stroke-width:2.4}
+.fp.pilot{stroke:var(--red);stroke-width:2}
+.kv{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;font-size:13px;margin-top:8px}
+.kv span:nth-child(odd){color:var(--muted)}
+.kv span:nth-child(even){font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+.check{display:flex;gap:8px;align-items:flex-start;font-size:13px;margin:6px 0}
+.check b{font:600 12px var(--mono);min-width:18px;text-align:center}
+.ok{color:var(--accent)} .warn{color:var(--amber)} .bad{color:var(--red)}
+.btn{font:500 13px var(--body);border:1px solid var(--accent);background:var(--accent-soft);color:var(--accent);border-radius:6px;padding:6px 10px;cursor:pointer;margin-top:10px}
+.hist{margin-top:10px}
+.builder{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0}
+.builder select{font:13px var(--body);padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);max-width:132px}
+.builder .arr{color:var(--muted)}
+.presets{display:flex;flex-wrap:wrap;gap:6px}
+.presets button{font:500 12.5px var(--body);border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:4px 10px;cursor:pointer}
+.presets button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.cell.S.early{background:color-mix(in srgb,var(--red) 16%,transparent);color:var(--red)}
+.cell.F{background:var(--land);color:var(--muted)}
+.fp.y-W{fill:color-mix(in srgb,var(--accent) 70%,transparent)}
+.fp.y-S{fill:color-mix(in srgb,var(--amber) 60%,transparent)}
+.fp.y-Searly{fill:color-mix(in srgb,var(--red) 55%,transparent)}
+.fp.y-Slate{fill:color-mix(in srgb,var(--amber) 75%,transparent)}
+.fp.y-none{fill:color-mix(in srgb,var(--land-line) 35%,transparent)}
+.fmode{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:8px 14px;border-bottom:1px solid var(--line);font-size:13px}
+.fmode select{max-width:100%;min-width:0;font:13px var(--body);padding:3px 6px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)}
+.agree{font-size:12.5px;margin-top:6px}
+/* рекомендація (#plan) */
+.pnext{border:1px solid var(--accent);background:var(--accent-soft);border-radius:10px;padding:12px 14px;margin:4px 0 14px}
+.pnext b{display:block;font:800 26px/1.2 var(--display);color:var(--accent)}
+.pnext p{margin:4px 0 0;font-size:13.5px;max-width:80ch}
+.pnext .callout b{display:inline;font:700 13px var(--body);color:inherit}
+.pcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:10px}
+.pcard{border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;background:var(--surface);min-width:0;text-align:left;font:inherit;color:inherit;width:100%}
+.pcard[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.pcard.cur{border-color:var(--muted);background:color-mix(in srgb,var(--land) 60%,transparent)}
+.pcard.cur[aria-pressed="true"]{box-shadow:0 0 0 1px var(--muted)}
+.pcard h3{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:14px}
+.badge{font:500 11px var(--mono);padding:2px 6px;border-radius:4px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.badge.high{color:var(--accent);border-color:var(--accent)} .badge.medium{color:var(--amber);border-color:var(--amber)}
+.badge.viol{color:var(--surface);background:var(--red);border-color:var(--red)}
+.mach{font-size:12px;line-height:1.35;margin:4px 0 2px;padding:3px 6px;border-radius:4px;border:1px dashed var(--accent);color:var(--ink);overflow-wrap:anywhere}
+.mach.ok{border-color:var(--line);color:var(--muted)}
+table.routes td{vertical-align:top;font-size:13px}
+table.routes td:last-child{min-width:180px}
+@media (max-width:600px){table.routes thead{display:none}table.routes tr{display:block;border-bottom:1px solid var(--line);padding:6px 0}
+  table.routes td{display:block;text-align:left!important;border:0;padding:2px 0;min-width:0!important}
+  table.routes td[data-l]::before{content:attr(data-l) ": ";color:var(--muted)}}
+.pcard .strip{grid-template-columns:repeat(4,minmax(0,1fr))}
+.pcard .cell{font:500 10.5px/1.25 var(--body);padding:5px 2px;overflow-wrap:anywhere}
+.cell.L{background:color-mix(in srgb,var(--blue) 16%,transparent);color:var(--blue)}
+.cell.P{background:repeating-linear-gradient(135deg,var(--land) 0 4px,transparent 4px 8px);color:var(--muted);outline:1px solid var(--line);outline-offset:-1px}
+.pm{display:grid;grid-template-columns:minmax(0,1fr) 54px;gap:6px;align-items:center;margin-top:8px;font-size:12px}
+.pm .bar{height:10px;overflow:hidden}
+.pm .bar b{position:absolute;top:0;bottom:0;width:1px;background:var(--muted)}
+.pm .bar em{top:-1px;height:12px}
+.pm .bar i.neg{background:color-mix(in srgb,var(--red) 40%,transparent)}
+.neg{color:var(--red)}
+.pm-leg{display:flex;justify-content:space-between;gap:6px;font:11px var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.pm-leg .neg{color:var(--red)}
+.pdelta{font:500 11.5px var(--mono);margin-top:4px}
+.gantt{margin-top:8px}
+.gmonths,.grow{display:grid;grid-template-columns:150px minmax(0,1fr);gap:8px;align-items:center}
+.gmonths>div:last-child{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));font:10.5px var(--mono);color:var(--muted);text-align:center}
+.gtrack{position:relative;height:22px;background:repeating-linear-gradient(90deg,transparent 0 calc(100%/12 - 1px),var(--line) calc(100%/12 - 1px) calc(100%/12));background-color:var(--land);border-radius:4px;overflow:hidden}
+.gbar{position:absolute;top:3px;bottom:3px;border-radius:3px;font:500 10.5px/16px var(--body);padding:0 4px;white-space:nowrap;overflow:hidden;color:var(--surface)}
+.gbar.winter{background:var(--accent)} .gbar.spring{background:var(--amber)} .gbar.legume{background:var(--blue)}
+.gbar.fallow{background:repeating-linear-gradient(135deg,var(--land-line) 0 3px,transparent 3px 7px);color:var(--ink);outline:1px solid var(--land-line);outline-offset:-1px}
+.gbar.stub{outline:1.5px dashed var(--ink);outline-offset:-1.5px}
+.glab{font-size:12.5px;line-height:1.25;min-width:0}
+.glab small{display:block;color:var(--muted);font-size:11px}
+.grow{margin:4px 0}
+.gmonths i{font-style:normal}
+@media (max-width:560px){.gmonths i{display:none}.gmonths,.grow{grid-template-columns:minmax(0,1fr)}.gmonths>div:first-child{display:none}.grow{margin:8px 0;gap:3px}}
+.pdet details{border-top:1px solid var(--line);padding:6px 0}
+.pdet summary{cursor:pointer;font:700 14px var(--display);padding:4px 0}
+.pdet ul{margin:6px 0;padding-left:18px;font-size:13px}
+.pdet li{margin:3px 0;overflow-wrap:anywhere}
+.pgrp h4{margin:8px 0 0;font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.pdet details.more{border:none;padding:0 0 0 18px}
+.pdet details.more summary{font:500 12.5px var(--body);color:var(--accent)}
+details.mkt{border:1px solid var(--line);border-radius:8px;padding:6px 10px;margin:10px 0;font-size:13px;min-width:0}
+details.mkt>summary{cursor:pointer;font:700 14px var(--display);padding:4px 0}
+details.mkt h4{margin:10px 0 4px;font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+details.mkt details{border-top:1px solid var(--line);padding:4px 0}
+details.mkt details>summary{cursor:pointer;font:600 13.5px var(--body);padding:4px 0}
+details.mkt ul{margin:4px 0;padding-left:18px}
+details.mkt li,details.mkt p{overflow-wrap:anywhere;margin:3px 0}
+details.mkt td.n,details.mkt th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.mkt-src{font-size:11.5px;color:var(--muted);margin-top:8px;overflow-wrap:anywhere}
+.pm-y1{font:500 13px var(--mono);margin-top:2px;font-variant-numeric:tabular-nums}
+.demo{display:flex;gap:8px;align-items:center;font-size:13.5px;margin:0 0 12px;padding:8px 10px;border:1px dashed var(--amber);border-radius:8px;cursor:pointer}
+.prun{font:11.5px/1.5 var(--mono);color:var(--muted);margin-top:14px;overflow-wrap:anywhere}
+.pmoney-line{font-size:14px;line-height:1.45;margin:4px 0 6px}
+.pfsum{font-size:13px;line-height:1.45;margin:0 0 10px}
+.pmoney-line .neg,#pmenu .neg{color:var(--red,#b42318)}
+#pmenu td{vertical-align:top}
+#pmenu tr.cur td{background:var(--land)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div>
+    <div class="eyebrow">NASA Space Apps 2026 · Field Shift</div>
+    <h1>Клімат поля зсувається. Сівозміна теж має</h1>
+    <p class="lede">Пілотні поля, сітки даних NASA над Україною і базова модель водного стресу культур. Оберіть поле на карті, щоб побачити, як змінився його клімат, що на ньому росло і наскільки посуха б'є по врожаю.</p>
+  </div>
+  <span class="tag">прототип · дані NASA POWER, MODIS, SMAP</span>
+</header>
+
+<div class="grid">
+  <div class="panel" id="mapbox">
+    <svg id="map" role="img" aria-label="Карта України з пілотними полями і сітками даних"></svg>
+    <div class="mapnote" id="mapnote">Перетягуйте, щоб рухати; колесо — масштаб</div>
+    <div class="zoomer"><button id="zin" aria-label="Наблизити">+</button><button id="zout" aria-label="Віддалити">−</button><button id="zreset" aria-label="Скинути масштаб">⟲</button></div>
+    <div id="tip"></div>
+    <div class="layers">
+      <label><input type="checkbox" id="l-fields" checked> <span class="dot" style="background:var(--ink)"></span>Пілотні точки моделі</label>
+      <label><input type="checkbox" id="l-fgrid" checked> <span class="dot" style="background:color-mix(in srgb,var(--amber) 70%,transparent);border-radius:2px"></span>Поля NASA Harvest: <span id="fgrid-sel-wrap"><select id="fgrid-m" style="font:12.5px var(--body);border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink)"><option value="small">частка менших за піксель MODIS</option><option value="med">медіана площі</option><option value="share">частка ріллі під полями</option></select></span></label>
+      <label><input type="checkbox" id="l-win" checked> <span class="dot" style="background:transparent;outline:2px solid var(--red);border-radius:2px"></span>Вікна з реальними полями</label>
+      <label><input type="checkbox" id="l-power" checked> <span class="dot" style="background:var(--red)"></span>NASA POWER · <span id="n-power"></span> точок</label>
+      <label><input type="checkbox" id="l-smap"> <span class="dot" style="background:var(--blue)"></span>SMAP 9 км · <span id="n-smap"></span></label>
+      <label><input type="checkbox" id="l-zone" checked> <span class="dot" style="background:var(--zone);outline:1px solid var(--accent)"></span>Зона досліду ННЦ «ІЗ НААН»</label>
+    </div>
+  </div>
+
+  <aside class="panel" id="card" aria-live="polite">
+    <div class="eyebrow">Пілотне поле</div>
+    <div class="fieldtabs" id="tabs"></div>
+    <h2 id="f-name"></h2>
+    <div class="legend" id="f-meta"></div>
+
+    <div class="section">
+      <h3>Зсув клімату</h3>
+      <div class="legend">NASA POWER, 2016–2025 порівняно з 2001–2010</div>
+      <div class="stats" id="f-stats"></div>
+      <svg id="f-spark" viewBox="0 0 320 70" width="100%" aria-label="Річні опади 2001–2025"></svg>
+      <div class="legend">Річні опади, мм. Темні стовпці — роки нижче медіани.</div>
+    </div>
+
+    <div class="section">
+      <h3>Що росло в точці · MODIS 250 м (для порівняння)</h3>
+      <div class="strip" id="f-rot"></div>
+      <div class="legend"><b style="color:var(--accent)">О</b> — озима (зелене вже у квітні), <b style="color:var(--amber)">Я</b> — пізня ярова (пік у липні), ? — неоднозначно. MODIS NDVI, 250 м у точці пілота — лише для порівняння; рекомендація й поточна практика рахуються з HLS 30 м цього поля.</div>
+    </div>
+
+    <div class="section">
+      <h3>Ризик посухи для культур</h3>
+      <div class="legend">Відносний врожай за водним стресом, 2002–2025: смуга від сухого (P10) до вологого (P90) року, риска — типовий</div>
+      <div id="f-risk"></div>
+    </div>
+
+    <div class="section" id="f-eco-sec" hidden>
+      <h3>Випаровування з МКС (ECOSTRESS 70 м)</h3>
+      <div class="legend">ECOSTRESS — прилад NASA JPL на МКС; спостереження нерегулярні через орбіту МКС.</div>
+      <div class="fieldtabs eco-years" id="f-eco-y"></div>
+      <svg id="f-eco" viewBox="0 0 320 130" width="100%" aria-label="Випаровування: ECOSTRESS проти моделі"></svg>
+      <div class="legend" id="f-eco-leg"></div>
+    </div>
+    <div id="f-zone"></div>
+    <div id="f-plan"></div>
+  </aside>
+</div>
+
+<section class="panel" style="margin-top:16px" id="fields">
+  <div class="eyebrow">Реальні поля · NASA Harvest 2023</div>
+  <h2>Межі полів, на які накладаються дані</h2>
+  <p class="note" style="margin-top:0">Межі з набору NASA Harvest Ukraine Field Boundary Delineation 2023 (Sadeh et al., Scientific Data, 2025; CC BY 4.0), спрощені до ±4 м. Колір — розмір поля відносно пікселя MODIS (231 м ≈ 5,37 га) або що росло в обраний рік за HLS 30 м (пілот і 50 найбільших полів вікна). Сині точки — де ми беремо HLS 30 м NDVI. Червоний контур — пілотне поле моделі.</p>
+  <div class="fieldtabs" id="wtabs"></div>
+      <div class="fmode" style="padding:0 0 10px;border:none"><label for="fyear">Колір полів:</label>
+        <select id="fyear"><option value="size">розмір відносно пікселя MODIS</option></select>
+        <span class="legend" id="fyear-note" style="margin:0"></span></div>
+  <div class="pfsum" id="fsummary"></div>
+
+  <div class="grid">
+    <div class="panel" id="fmapbox" style="border:none">
+      <svg id="fmap" role="img" aria-label="Карта меж реальних полів у вікні навколо пілотної точки"></svg>
+      <div class="zoomer"><button id="fzin" aria-label="Наблизити">+</button><button id="fzout" aria-label="Віддалити">−</button><button id="fzreset" aria-label="Скинути масштаб">⟲</button></div>
+      <div class="layers" id="flegend"></div>
+    </div>
+    <aside id="fcard" aria-live="polite">
+      <div class="eyebrow">Поле</div>
+      <h2 id="fc-name">Оберіть поле на карті</h2>
+      <div class="kv" id="fc-kv"></div>
+      <div class="section"><h3>Які дані NASA вже прив'язані</h3><div id="fc-checks"></div></div>
+      <div class="section" id="fc-hls"></div>
+      <div id="fc-pilot"></div>
+      <div class="section"><h3>Розмір полів по всій області</h3>
+        <div class="legend" id="fc-ostats"></div>
+        <svg class="hist" id="fc-hist" viewBox="0 0 320 130" width="100%" aria-label="Розподіл полів за площею"></svg>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="panel" style="margin-top:16px" id="plan">
+  <div class="eyebrow">Рекомендація моделі · маржа, вода, норматив №164</div>
+  <h2>Що сіяти: рекомендація на 2027–2030</h2>
+  <div class="fieldtabs" id="ptabs" role="group" aria-label="Поле"></div>
+  <div id="pdemo"></div>
+  <div class="pnext" id="pnext"></div>
+  <div id="pmkt"></div>
+  <h3>Стратегії: маржа, тис. грн/га на рік</h3>
+  <div class="legend">Смуга — від сухого (P10) до вологого (P90) року за 25 роками погоди, риска — типовий рік (P50); від'ємне — червоним. Натисніть картку, щоб побачити календар і пояснення.</div>
+  <div class="note" id="pconf" style="margin:6px 0 0"></div>
+  <div class="pcards" id="pcards" style="margin-top:8px"></div>
+  <div class="note" id="pmach" style="margin:8px 0 0"></div>
+  <div class="section" id="pmoney-sec" style="margin-top:16px">
+    <h3 id="pmoney-title">Ефект у грошах</h3>
+    <div class="pmoney-line" id="pmoney-line"></div>
+    <svg id="pmoney" viewBox="0 0 360 170" width="100%" style="max-width:560px;display:block" aria-label="Накопичена маржа на полі: поточна і обрана стратегія"></svg>
+    <div class="legend" id="pmoney-leg"></div>
+  </div>
+  <div class="section" style="margin-top:16px">
+    <h3 id="pg-title">Календар</h3>
+    <div class="legend" id="pg-leg"></div>
+    <div class="gantt" id="pgantt"></div>
+  </div>
+  <div class="section" style="margin-top:16px">
+    <h3>Меню сценаріїв</h3>
+    <div class="legend">Фіксовані сівозміни, оцінені тією самою моделлю без пошуку (як поточна): маржа на полі за 4 роки 2027–2030, P10 / P50 / P90 за 25 роками погоди. Ротацію з 2–3 полів повторено по колу. Соняшник — з урахуванням насичення сівозміни (Полтавська ДСГДС). Культура без параметрів, т/га, ціни чи календаря — «немає даних», нічого не підставляємо.</div>
+    <div class="scroll"><table id="pmenu"></table></div>
+  </div>
+  <div class="pdet" id="pdet" style="margin-top:12px"></div>
+  <div class="prun" id="prun"></div>
+</section>
+
+<section class="panel" style="margin-top:16px" id="norms">
+  <div class="eyebrow">Норматив · постанова КМУ №164 від 11.02.2010</div>
+  <h2>Чи допускає норматив таку сівозміну</h2>
+  <p class="note" style="margin-top:0">Лісостеповий регіон (Карлівка, Калинівка). Строки повернення культури на поле — жорстке правило: стратегію, що його порушує, застосунок не пропонує, а для фактичної — показує порушення. Частки культур норматив задає для господарства загалом, тож для одного поля це лише попередження.</p>
+  <div class="presets" id="presets"></div>
+  <div class="builder" id="builder" aria-label="Сівозміна по роках"></div>
+  <div class="two" style="margin-top:4px">
+    <div><h3>Строки повернення</h3><div class="scroll"><table id="ret"></table></div></div>
+    <div><h3>Частки культур у сівозміні</h3><div id="shares"></div>
+      <p class="note">Межі часток для Лісостепу взято з правового дзеркала, де таблиця зламана: відповідність колонкам відновлено за порядком значень. Перед захистом звірити з zakon.rada.gov.ua.</p></div>
+  </div>
+  <p class="note">«Не менше ніж через N років» читаємо буквально: між двома посівами культури мають пройти щонайменше N інших років. Кукурудзу норматив дозволяє 2–3 роки поспіль. Для пшениці ярої та чорного пару окремого строку немає. Фактичну сівозміну пілотного поля перевіримо, коли HLS NDVI покаже культури, а не лише «озима/ярова».</p>
+</section>
+
+<div class="two">
+  <section class="panel">
+    <div class="eyebrow">Перевірка моделі</div>
+    <h2>Прогноз проти факту</h2>
+    <p class="note" style="margin-top:0">Обласна врожайність Держстату, 4 області × 3 культури × 4 роки (<span id="n-val"></span> пар). Рік, що перевіряється, не входив у калібрування.</p>
+    <div class="scroll"><table id="metrics"><thead><tr><th>Метод</th><th style="text-align:right">Помилка, %</th><th style="text-align:right">Порядок років, ρ</th></tr></thead><tbody></tbody></table></div>
+    <svg id="scatter" viewBox="0 0 420 300" width="100%" aria-label="Прогноз моделі проти фактичної врожайності"></svg>
+    <p class="note">Модель: FAO-56 (випаровування) + водний баланс ґрунту + коефіцієнт Ky. Календар сівби, Ky і запас вологи поки орієнтовні; спеку і заморозки не враховано.</p>
+  </section>
+
+  <section class="panel">
+    <div class="eyebrow">Альтернативи з досліду</div>
+    <h2>Органічні сівозміни ННЦ «ІЗ НААН»</h2>
+    <p class="note" style="margin-top:0">Стаціонарний дослід 2021–2025, чорнозем типовий, Лівобережний Лісостеп. Середнє за 5 років; значення з позначкою * пораховані командою з таблиць звіту.</p>
+    <div class="scroll"><table id="nnc"></table></div>
+    <div class="callout"><b>Компроміс «гроші проти води»:</b> комплексне удобрення дає +33–54% урожаю, але забирає більше вологи з ґрунту; гречка найприбутковіша і найбільш водомістка. Даних по окремих роках у звіті немає, тож діапазон «сухий / вологий рік» для цих сівозмін рахує наша модель.</div>
+    <p class="note">Мартинюк І. В., Цимбал Я. С. та ін. Теоретичні основи формування і функціонування короткоротаційних сівозмін за ведення органічного землеробства в умовах Лісостепу України. Вінниця: ТВОРИ, 2025.</p>
+  </section>
+</div>
+
+<section class="panel" style="margin-top:16px">
+  <div class="eyebrow">Роздільність даних</div>
+  <h2>Скільки точок кожного датасету припадає на область</h2>
+  <p class="note" style="margin-top:0">Точка — центр клітинки сітки. Погода NASA POWER — 7–16 точок на область, тобто клімат на рівні району; різницю між полями дають супутникові NDVI і ґрунт (250 м).</p>
+  <div class="scroll"><table id="counts"></table></div>
+</section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const D = __DATA__;
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmt = (v, s = true) => (s && v > 0 ? "+" : "") + String(v).replace("-", "−").replace(".", ",");
+
+// ---------- карта
+// geoBoundaries має «плоский» порядок обходу кілець; d3 рахує на сфері, тож перевертаємо кільця, якщо полігон «вивернутий»
+D.oblasts.features.forEach(f => {
+  if (d3.geoArea(f) > 2 * Math.PI) {
+    const rev = poly => poly.map(r => r.slice().reverse());
+    f.geometry.coordinates = f.geometry.type === "Polygon" ? rev(f.geometry.coordinates) : f.geometry.coordinates.map(rev);
+  }
+});
+const W = 900, H = 620;
+const svg = d3.select("#map").attr("viewBox", `0 0 ${W} ${H}`);
+const proj = d3.geoMercator().fitExtent([[16, 16], [W - 16, H - 16]], D.oblasts);
+const path = d3.geoPath(proj);
+const g = svg.append("g");
+const gOb = g.append("g"), gGrid = g.append("g"), gSmap = g.append("g"), gPow = g.append("g"), gFld = g.append("g");
+const tip = d3.select("#tip");
+function showTip(ev, html) {
+  const box = document.getElementById("mapbox").getBoundingClientRect();
+  tip.html(html).style("opacity", 1).style("left", (ev.clientX - box.left + 12) + "px").style("top", (ev.clientY - box.top + 12) + "px");
+}
+const hideTip = () => tip.style("opacity", 0);
+
+gOb.selectAll("path").data(D.oblasts.features).join("path")
+  .attr("d", path)
+  .attr("fill", d => d.properties.zone === "core" ? "var(--zone)" : d.properties.zone === "part" ? "var(--zone-part)" : "var(--land)")
+  .attr("data-zone", d => d.properties.zone)
+  .attr("stroke", "var(--land-line)").attr("stroke-width", .7).attr("vector-effect", "non-scaling-stroke")
+  .on("mousemove", (ev, d) => showTip(ev, d.properties.name + (d.properties.zone ? " · Лісостеп лівобережжя" + (d.properties.zone === "part" ? " (частково)" : "") : "")))
+  .on("mouseleave", hideTip);
+
+const pt = d => proj([d[0], d[1]]);
+gPow.selectAll("circle").data(D.power).join("circle")
+  .attr("cx", d => pt(d)[0]).attr("cy", d => pt(d)[1]).attr("r", 3.2).attr("fill", "var(--red)").attr("fill-opacity", .85)
+  .on("mousemove", (ev, d) => showTip(ev, `NASA POWER · ${d[1].toFixed(3)}°, ${d[0].toFixed(3)}° · клітинка 0,5°×0,625°`)).on("mouseleave", hideTip);
+gSmap.selectAll("circle").data(D.smap).join("circle")
+  .attr("cx", d => pt(d)[0]).attr("cy", d => pt(d)[1]).attr("r", .9).attr("fill", "var(--blue)").attr("fill-opacity", .7);
+gSmap.attr("display", "none");
+document.getElementById("n-power").textContent = D.power.length;
+document.getElementById("n-smap").textContent = D.smap.length.toLocaleString("uk-UA") + " точок";
+
+const fld = gFld.selectAll("g").data(D.fields).join("g").attr("class", "fld").style("cursor", "pointer")
+  .attr("transform", d => `translate(${proj([d.lon, d.lat])})`)
+  .on("click", (ev, d) => select(d.id))
+  .on("mousemove", (ev, d) => showTip(ev, `${d.name}, ${d.oblast} обл. · ${d.zone}`)).on("mouseleave", hideTip);
+fld.append("circle").attr("r", 9).attr("fill", "var(--surface)").attr("stroke", "var(--ink)").attr("stroke-width", 2);
+fld.append("circle").attr("class", "core").attr("r", 4).attr("fill", "var(--ink)");
+fld.append("text").attr("x", 13).attr("y", 4).text(d => d.name)
+  .style("font", "600 13px var(--body)").style("fill", "var(--ink)").style("paint-order", "stroke")
+  .style("stroke", "var(--surface)").style("stroke-width", "3px");
+
+const zoom = d3.zoom().scaleExtent([1, 14]).on("zoom", ev => {
+  g.attr("transform", ev.transform);
+  const k = ev.transform.k;
+  gPow.selectAll("circle").attr("r", 3.2 / Math.sqrt(k));
+  gSmap.selectAll("circle").attr("r", 1.4 / Math.sqrt(k));
+  gFld.selectAll("g").attr("transform", d => `translate(${proj([d.lon, d.lat])}) scale(${1 / k})`);
+});
+svg.call(zoom);
+d3.select("#zin").on("click", () => svg.transition().call(zoom.scaleBy, 1.6));
+d3.select("#zout").on("click", () => svg.transition().call(zoom.scaleBy, 1 / 1.6));
+d3.select("#zreset").on("click", () => svg.transition().call(zoom.transform, d3.zoomIdentity));
+
+const toggle = (id, sel) => document.getElementById(id).addEventListener("change", e => sel.attr("display", e.target.checked ? null : "none"));
+toggle("l-fields", gFld); toggle("l-power", gPow); toggle("l-smap", gSmap);
+document.getElementById("l-zone").addEventListener("change", e =>
+  gOb.selectAll("path").attr("fill", d => e.target.checked && d.properties.zone ? (d.properties.zone === "core" ? "var(--zone)" : "var(--zone-part)") : "var(--land)"));
+
+// ---------- сітка полів NASA Harvest (~11 км)
+const FG = D.fgrid;
+if (FG) {
+  const cells = gGrid.selectAll("path").data(FG.cells).join("path")
+    .attr("d", c => { const [i, j] = c, a = proj([j * FG.dlon, (i + 1) * FG.dlat]), b = proj([(j + 1) * FG.dlon, i * FG.dlat]);
+      return `M${a[0]},${a[1]}H${b[0]}V${b[1]}H${a[0]}Z`; })
+    .on("mousemove", (ev, c) => showTip(ev, `${c[2].toLocaleString("uk-UA")} полів · медіана ${String(c[3]).replace(".", ",")} га · ${Math.round(c[4] * 100)}% менші за піксель MODIS`))
+    .on("mouseleave", hideTip);
+  const SC = {
+    small: [c => c[4], d3.scaleSequential(d3.interpolateRgb("#f3e3c4", "#a8551c")).domain([0.2, 0.95])],
+    med: [c => c[3], d3.scaleSequentialLog(d3.interpolateRgb("#e9f2ea", "#1f5c37")).domain([1.5, 60]).clamp(true)],
+    share: [c => c[5], d3.scaleSequential(d3.interpolateRgb("#eef3ee", "#2f7d4f")).domain([0, 0.8]).clamp(true)],
+  };
+  const paint = () => { const [f, sc] = SC[document.getElementById("fgrid-m").value]; cells.attr("fill", c => sc(f(c))).attr("fill-opacity", .85); };
+  paint(); document.getElementById("fgrid-m").addEventListener("change", paint);
+  toggle("l-fgrid", gGrid);
+  d3.select("#mapnote").text(`Поля NASA Harvest: ${FG.n.toLocaleString("uk-UA")} у ${FG.oblasts.length} областях`);
+} else d3.select("#l-fgrid").node().closest("label").remove();
+
+// ---------- картка поля
+const tabs = d3.select("#tabs").selectAll("button").data(D.fields).join("button")
+  .attr("type", "button").attr("id", d => "tab-" + d.id).text(d => d.name).on("click", (ev, d) => select(d.id));
+
+function select(id) {
+  const f = D.fields.find(x => x.id === id);
+  tabs.attr("aria-pressed", d => d.id === id);
+  fld.select(".core").attr("fill", d => d.id === id ? "var(--accent)" : "var(--ink)");
+  fld.select("circle").attr("stroke", d => d.id === id ? "var(--accent)" : "var(--ink)");
+  d3.select("#f-name").text(`${f.name}, ${f.oblast} обл.`);
+  d3.select("#f-meta").text(`${f.zone} · ${f.lat.toFixed(4)}°, ${f.lon.toFixed(4)}° · висота ${f.elev} м (SRTM)`);
+  const c = f.climate;
+  d3.select("#f-stats").html(`
+    <div class="stat"><b class="${c.precip_d < 0 ? "up" : "down"}">${fmt(c.precip_d)} мм</b><span>опади за рік · зараз ${c.precip_now} мм</span></div>
+    <div class="stat"><b class="up">${fmt(c.hot_d)}</b><span>днів зі спекою ≥ 30 °C · зараз ${c.hot_now}</span></div>
+    <div class="stat"><b class="down">${fmt(c.frost_d)}</b><span>морозних днів за рік</span></div>
+    <div class="stat"><b class="up">${fmt(c.t_d)} °C</b><span>середня температура</span></div>`);
+  // спарклайн опадів
+  const s = c.series.filter(d => d.precip != null), sp = d3.select("#f-spark"); sp.selectAll("*").remove();
+  const x = d3.scaleBand().domain(s.map(d => d.year)).range([0, 320]).padding(.18);
+  const y = d3.scaleLinear().domain([0, d3.max(s, d => d.precip)]).range([56, 4]);
+  const med = d3.median(s, d => d.precip);
+  sp.selectAll("rect").data(s).join("rect").attr("x", d => x(d.year)).attr("width", x.bandwidth())
+    .attr("y", d => y(d.precip)).attr("height", d => 56 - y(d.precip)).attr("rx", 1.5)
+    .attr("fill", d => d.precip < med ? "var(--amber)" : "var(--land-line)")
+    .append("title").text(d => `${d.year}: ${d.precip} мм, спекотних днів ${d.hot}`);
+  sp.append("text").attr("x", 0).attr("y", 68).text(s[0].year);
+  sp.append("text").attr("x", 320).attr("y", 68).attr("text-anchor", "end").text(s[s.length - 1].year);
+  // сівозміна з NDVI
+  const lab = {W: "О", S: "Я", "?": "?"};
+  d3.select("#f-rot").html(f.rotation.map(r => `<div class="cell ${r.type === "?" ? "" : r.type}" title="${r.year}: пік NDVI ${r.peak} (${r.date})">${lab[r.type]}<small>${String(r.year).slice(2)}</small></div>`).join(""));
+  // ризик
+  d3.select("#f-risk").html(f.crops.map(k => `
+    <div class="risk"><span>${k.crop}</span>
+      <div class="bar" title="P10 ${k.p10} · P50 ${k.p50} · P90 ${k.p90}"><i style="left:${k.p10 * 100}%;width:${(k.p90 - k.p10) * 100}%"></i><em style="left:calc(${k.p50 * 100}% - 1px)"></em></div>
+      <span class="num">${Math.round(k.p50 * 100)}%</span></div>
+    <div class="legend" style="margin:-2px 0 6px 118px">найгірші роки: ${k.worst.join(", ")} · у сухий рік ${Math.round(k.p10 * 100)}%</div>`).join(""));
+  d3.select("#f-zone").html(f.oblast === "Полтавська"
+    ? `<div class="callout">Поле в зоні досліду ННЦ «ІЗ НААН». Органічні сівозміни <b>соя → пшениця яра → просо</b> і <b>соя → пшениця яра → гречка</b> — кандидати-альтернативи для порівняння з фактичною сівозміною.</div>` : "");
+  drawEco(id);
+  d3.select("#f-plan").html((D.strategies || {})[id] ? `<button class="btn" type="button" id="go-plan">Відкрити рекомендацію</button>` : "");
+  const gpl = document.getElementById("go-plan");
+  if (gpl) gpl.onclick = () => openPlan(id, true);
+  try { localStorage.setItem("fs-field", id); } catch (e) {}
+}
+// ECOSTRESS (МКС) проти ETa моделі — scripts/ecostress_compare.py → site/ecostress.json
+function drawEco(id, year) {
+  const E = ((D.ecostress || {}).fields || {})[id];
+  const yrs = E ? Object.keys(E.years).filter(y => E.years[y].eco.length) : [];
+  d3.select("#f-eco-sec").property("hidden", !yrs.length);
+  if (!yrs.length) return;
+  const best = yrs.reduce((a, y) => (E.years[y].n > E.years[a].n ? y : a), yrs[yrs.length - 1]);
+  const yr = yrs.includes(String(year)) ? String(year) : best, Y = E.years[yr];
+  d3.select("#f-eco-y").html(yrs.map(y => `<button type="button" aria-pressed="${y === yr}" data-y="${y}">${y}</button>`).join(""))
+    .selectAll("button").on("click", function () { drawEco(id, this.dataset.y); });
+  const W = 320, H = 130, m = {l: 22, r: 4, t: 6, b: 18};
+  const sv = d3.select("#f-eco"); sv.selectAll("*").remove();
+  const x = d3.scaleLinear().domain([0, 364]).range([m.l, W - m.r]);
+  const ymax = Math.max(4, d3.max(Y.model.filter(v => v != null)) || 0, d3.max(Y.eco, p => p[1]) || 0);
+  const y = d3.scaleLinear().domain([0, Math.ceil(ymax)]).range([H - m.b, m.t]);
+  const mstart = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+  sv.append("g").selectAll("text").data(mstart.filter((_, i) => i % 2 === 0)).join("text")
+    .attr("x", d => x(d)).attr("y", H - 4).text(d => ["січ", "бер", "трав", "лип", "вер", "лист"][mstart.indexOf(d) / 2]);   // MON/esc оголошено нижче (TDZ)
+  sv.append("g").selectAll("text").data(y.ticks(3)).join("text").attr("x", 0).attr("y", d => y(d) + 4).text(d => d);
+  sv.append("g").selectAll("line").data(y.ticks(3)).join("line").attr("x1", m.l).attr("x2", W - m.r)
+    .attr("y1", d => y(d)).attr("y2", d => y(d)).attr("stroke", "var(--line)");
+  sv.append("path").attr("fill", "none").attr("stroke", "var(--accent)").attr("stroke-width", 1.5)
+    .attr("d", d3.line().defined(v => v != null).x((_, i) => x(i)).y(v => y(v))(Y.model));
+  sv.append("g").selectAll("circle").data(Y.eco).join("circle").attr("cx", p => x(p[0])).attr("cy", p => y(p[1])).attr("r", 3)
+    .attr("fill", p => p[2] ? "var(--amber)" : "none").attr("stroke", "var(--amber)").attr("stroke-width", 1.2)
+    .append("title").text(p => `${p[1].toFixed(2)} мм/добу (ECOSTRESS) · модель ${Y.model[p[0]] != null ? Y.model[p[0]].toFixed(2) : "—"}${p[2] ? "" : " · проліт на світанку/в сутінках"}`);
+  const r = Y.r == null ? "—" : Y.r.toFixed(2).replace(".", ",");
+  d3.select("#f-eco-leg").html(`<span style="color:var(--accent)">━</span> ETa моделі, мм/добу (культура з HLS: ${String(Y.crop_uk).replace(/[&<>"]/g, "")}) · ` +
+    `<span style="color:var(--amber)">●</span> ECOSTRESS; ○ — проліт на світанку/в сутінках (не порівнюємо). ` +
+    `${yr}: n = ${Y.n} денних прольотів, кореляція r = ${r}.`);
+}
+
+let start = "karlivka_pl";
+try { start = localStorage.getItem("fs-field") || start; } catch (e) {}
+select(D.fields.some(f => f.id === start) ? start : "karlivka_pl");
+
+
+// ---------- реальні поля
+const WIN = D.windows || {};
+const fixWinding = f => {
+  if (d3.geoArea(f) > 2 * Math.PI) {
+    const rev = poly => poly.map(r => r.slice().reverse());
+    f.geometry.coordinates = f.geometry.type === "Polygon" ? rev(f.geometry.coordinates) : f.geometry.coordinates.map(rev);
+  }
+};
+Object.values(WIN).forEach(w => w.features.forEach(fixWinding));
+const nf = (v, k = 0) => Number(v).toLocaleString("uk-UA", {maximumFractionDigits: k, minimumFractionDigits: k});
+const sizeCls = ha => ha < 5.37 ? "s" : ha < 21.5 ? "m" : "l";
+
+// рамки вікон на загальній карті
+const gWin = g.insert("g", () => gFld.node());
+const winBox = Object.entries(WIN).map(([k, w]) => ({k, w, b: d3.geoBounds({type: "FeatureCollection", features: w.features})}));
+gWin.selectAll("rect").data(winBox).join("rect")
+  .attr("x", d => proj(d.b[0])[0]).attr("y", d => proj([d.b[0][0], d.b[1][1]])[1])
+  .attr("width", d => Math.max(4, proj(d.b[1])[0] - proj(d.b[0])[0])).attr("height", d => Math.max(4, proj(d.b[0])[1] - proj([d.b[0][0], d.b[1][1]])[1]))
+  .attr("fill", "none").attr("stroke", "var(--red)").attr("stroke-width", 2).attr("vector-effect", "non-scaling-stroke").style("cursor", "pointer")
+  .on("mousemove", (ev, d) => showTip(ev, `${d.w.title}: ${d.w.features.length} реальних полів — натисніть`)).on("mouseleave", hideTip)
+  .on("click", (ev, d) => { drawWindow(d.k); document.getElementById("fields").scrollIntoView({behavior: "smooth"}); });
+toggle("l-win", gWin);
+
+const fsvg = d3.select("#fmap").attr("viewBox", "0 0 600 520");
+const FW = 600, FH = 520;
+let fzoom, fsel = null;
+const wtabs = d3.select("#wtabs").selectAll("button").data(Object.keys(WIN)).join("button").attr("type", "button")
+  .text(k => `${WIN[k].title} · ${WIN[k].features.length} полів`).on("click", (ev, k) => drawWindow(k));
+
+function drawWindow(key) {
+  const w = WIN[key]; if (!w) return;
+  wtabs.attr("aria-pressed", k => k === key);
+  fsvg.selectAll("*").remove();
+  const fc = {type: "FeatureCollection", features: w.features};
+  const pr = d3.geoMercator().fitExtent([[12, 12], [FW - 12, FH - 12]], fc), pa = d3.geoPath(pr);
+  const gg = fsvg.append("g");
+  const paths = gg.append("g").selectAll("path").data(w.features).join("path").attr("d", pa)
+    .attr("class", d => `fp ${sizeCls(d.properties.ha)}${d.properties.pilot ? " pilot" : ""}`)
+    .on("click", (ev, d) => pick(d))
+    .on("mousemove", (ev, d) => {
+      const box = document.getElementById("fmapbox").getBoundingClientRect();
+      tipF.html(`Поле #${d.properties.id} · ${nf(d.properties.ha, 1)} га`).style("opacity", 1)
+        .style("left", (ev.clientX - box.left + 12) + "px").style("top", (ev.clientY - box.top + 12) + "px");
+    })
+    .on("mouseleave", () => tipF.style("opacity", 0));
+  const pts = Object.entries(w.hls_points || {}).flatMap(([id, ps]) => ps.map(p => ({id, p})));
+  const gp = gg.append("g").style("pointer-events", "none");
+  gp.selectAll("circle").data(pts).join("circle").attr("cx", d => pr(d.p)[0]).attr("cy", d => pr(d.p)[1]).attr("r", 2.4).attr("fill", "var(--blue)");
+  // масштабна лінійка 1 км
+  const c = pr.invert([FW / 2, FH / 2]), x0 = pr([c[0], c[1]])[0], x1 = pr([c[0] + 1 / (111.32 * Math.cos(c[1] * Math.PI / 180)), c[1]])[0];
+  const sb = fsvg.append("g").attr("transform", `translate(16,${FH - 18})`);
+  sb.append("rect").attr("width", x1 - x0).attr("height", 4).attr("fill", "var(--ink)");
+  sb.append("text").attr("y", -5).text("1 км");
+  fzoom = d3.zoom().scaleExtent([1, 30]).on("zoom", ev => {
+    gg.attr("transform", ev.transform);
+    gp.selectAll("circle").attr("r", 2.4 / Math.sqrt(ev.transform.k));
+    sb.select("rect").attr("width", (x1 - x0) * ev.transform.k);
+  });
+  fsvg.call(fzoom);
+  fsel = {key, w, paths, pr};
+  const ys = d3.select("#fyear"); ys.selectAll("option.y").remove();
+  (w.hls_years || []).forEach(y => ys.append("option").attr("class", "y").attr("value", y).text(`що росло у ${y} (HLS 30 м)`));
+  const PF = PORT[key];
+  if (PF) {
+    ys.append("option").attr("class", "y").attr("value", "rec").text(`рекомендація ${D.portfolio.plan_start_year} (модель)`);
+    ys.append("option").attr("class", "y").attr("value", "pot").text("потенціал: «Збалансована» − поточна, грн за 4 роки");
+    ys.append("option").attr("class", "y").attr("value", "pot_mi").text("потенціал: «Максимум маржі» − поточна, грн за 4 роки");
+  }
+  let keep = "size"; try { keep = localStorage.getItem("fs-year") || "size"; } catch (e) {}
+  ys.property("value", keep === "size" || (w.hls_years || []).includes(+keep) || (PF && ["rec", "pot", "pot_mi"].includes(keep)) ? keep : "size");
+  drawPortfolioSummary(key);
+  colorFields();
+  drawHist(w);
+  const start = w.features.find(f => f.properties.pilot) || w.features.reduce((a, b) => b.properties.ha > a.properties.ha ? b : a);
+  pick(start);
+  try { localStorage.setItem("fs-win", key); } catch (e) {}
+}
+const tipF = d3.select("#fmapbox").append("div").attr("id", "tipF").attr("style", "position:absolute;pointer-events:none;background:var(--ink);color:var(--surface);font:12px var(--body);padding:4px 7px;border-radius:4px;opacity:0;white-space:nowrap");
+d3.select("#fzin").on("click", () => fsvg.transition().call(fzoom.scaleBy, 1.8));
+d3.select("#fzout").on("click", () => fsvg.transition().call(fzoom.scaleBy, 1 / 1.8));
+d3.select("#fzreset").on("click", () => fsvg.transition().call(fzoom.transform, d3.zoomIdentity));
+
+const LEG_SIZE = `<span><span class="dot" style="background:color-mix(in srgb,var(--amber) 55%,transparent)"></span> менше 1 пікселя MODIS</span>
+  <span><span class="dot" style="background:color-mix(in srgb,var(--accent) 32%,transparent)"></span> 1–4 пікселі</span>
+  <span><span class="dot" style="background:color-mix(in srgb,var(--accent) 62%,transparent)"></span> понад 4 пікселі</span>
+  <span><span class="dot" style="background:var(--blue)"></span> точки HLS</span>`;
+const LEG_YEAR = `<span><span class="dot" style="background:color-mix(in srgb,var(--accent) 70%,transparent)"></span> озима / рання</span>
+  <span><span class="dot" style="background:color-mix(in srgb,var(--red) 55%,transparent)"></span> ярова, рано зібрана</span>
+  <span><span class="dot" style="background:color-mix(in srgb,var(--amber) 75%,transparent)"></span> ярова, зелена в серпні</span>
+  <span><span class="dot" style="background:color-mix(in srgb,var(--land-line) 35%,transparent)"></span> немає HLS</span>`;
+function yearCls(w, d, y) {
+  const h = (w.hls || {})[String(d.properties.id)];
+  const r = h && h.seasons.find(x => x[0] === y);
+  if (!r || r[1] === "?" || r[1] === "F") return "y-none";
+  return r[1] === "W" ? "y-W" : r[2] === "early" ? "y-Searly" : r[2] === "late" ? "y-Slate" : "y-S";
+}
+// ---------- портфель вікна (scripts/portfolio.py → site/portfolio.json): оптимізатор для 50 полів з HLS кожного вікна
+const PORT = (D.portfolio || {}).windows || {};
+const MX = D.market_export || null, MP = D.market_ports || null;   // «Куди продати» (mktHTML нижче)
+const pesc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;"}[c]));
+const CONF_PF = {high: "висока", medium: "середня", low: "низька"};
+const REC_COL = {winter_wheat: "var(--accent)", spring_wheat: "#8fb86b", maize: "var(--amber)", sunflower: "#d9b44a",
+  soybean: "var(--blue)", pea: "#86afe0", sugar_beet: "#a07cc0"};
+const pgrn = (v, sign) => {
+  if (v == null) return "—";
+  const a = Math.abs(v), sg = v < 0 ? "−" : sign && v > 0 ? "+" : "";
+  return sg + (a >= 1e6 ? `${nf(a / 1e6, 2)} млн грн` : `${nf(Math.round(a / 1000))} тис. грн`);
+};
+const pfRec = d => { const k = fsel && Object.keys(WIN).find(x => WIN[x] === fsel.w); return k && PORT[k] ? PORT[k].fields[String(d.properties.id)] : null; };
+function drawPortfolioSummary(key) {
+  const PF = PORT[key], box = d3.select("#fsummary");
+  if (!PF) { box.html(""); return; }
+  const s = PF.summary;
+  box.html(`<b>Портфель вікна (модель, ${s.n_fields} полів з HLS):</b> результат для ${s.n_ok} полів, ${nf(s.area_ok_ha, 0)} га з ${nf(s.area_ha, 0)} га; ` +
+    `поточна практика порушує №164 на <b>${s.share_viol_164 == null ? "—" : Math.round(s.share_viol_164 * 100) + "%"}</b> полів. ` +
+    `Потенціал за 4 роки проти поточної (сума полів): «Збалансована» <b>P50 ${pgrn(s.potential_p50_uah, true)}</b>, P10 ${pgrn(s.potential_p10_uah, true)} (плюс на ${s.n_positive_p50} з ${s.n_ok}); ` +
+    `«Максимум маржі» <b>P50 ${pgrn(s.potential_mi_p50_uah, true)}</b>, P10 ${pgrn(s.potential_mi_p10_uah, true)} (плюс на ${s.n_positive_mi_p50} з ${s.n_ok}` +
+    (s.n_mi_new_machinery != null ? `; нова техніка потрібна на ${s.n_mi_new_machinery} полях` : "") + `)` +
+    (s.potential_own_p50_uah != null ? `; «З наявною технікою» <b>P50 ${pgrn(s.potential_own_p50_uah, true)}</b> (техніку можна й орендувати)` : "") + `.` +
+    `<span class="legend" style="display:block">Сума P50 полів, не P50 суми: поля вікна мають спільну погоду. ` +
+    (s.n_late_winter_current ? `На ${s.n_late_winter_current} полях фактична практика має озиму після пізньої ярої — у моделі її сівба пізніша за рекомендовану, урожай поточної може бути занижено. ` : "") +
+    (s.n_no_data ? `Без результату — ${s.n_no_data} (сірі; причина — у картці поля).` : "Результат є для всіх полів.") + `</span>`);
+}
+function colorPortfolio(v) {
+  const recs = fsel.w.features.map(pfRec).filter(r => r && r.status === "ok");
+  const dk = v === "pot_mi" ? "mi_p50_field" : "delta_p50_field", sname = v === "pot_mi" ? "«Максимум маржі»" : "«Збалансована»";
+  if (v === "pot_mi") v = "pot";
+  const mx = d3.max(recs, r => Math.abs(r[dk] ?? 0)) || 1;
+  fsel.paths.attr("class", d => `fp${d.properties.pilot ? " pilot" : ""}${d === fsel.cur ? " sel" : ""}`)
+    .style("fill", d => {
+      const r = pfRec(d);
+      if (!r || (v === "pot" ? r.status !== "ok" : !r.next_season)) return "color-mix(in srgb,var(--land-line) 35%,transparent)";
+      if (v === "rec") return `color-mix(in srgb,${REC_COL[r.next_season] || "var(--muted)"} 75%,transparent)`;
+      if (r[dk] == null) return "color-mix(in srgb,var(--land-line) 35%,transparent)";
+      const k = Math.round(25 + 65 * Math.sqrt(Math.abs(r[dk]) / mx));
+      return `color-mix(in srgb,${r[dk] >= 0 ? "var(--accent)" : "var(--red)"} ${k}%,transparent)`;
+    });
+  const all = fsel.w.features.map(pfRec).filter(Boolean);
+  const grey = `<span><span class="dot" style="background:color-mix(in srgb,var(--land-line) 35%,transparent)"></span> немає результату моделі (поле поза 50 полями з HLS або без поточної / даних)</span>`;
+  if (v === "rec") {
+    const cnt = d3.rollup(all.filter(r => r.next_season), a => a.length, r => r.next_season);
+    d3.select("#flegend").html([...cnt].sort((a, b) => b[1] - a[1]).map(([c, n]) => {
+      const r = all.find(x => x.next_season === c);
+      return `<span><span class="dot" style="background:${REC_COL[c] || "var(--muted)"}"></span> ${pesc(r.next_season_uk)} · ${n}</span>`;
+    }).join("") + grey);
+    d3.select("#fyear-note").text(`перша культура «Збалансованої» стратегії, ${D.portfolio.plan_start_year}`);
+  } else {
+    d3.select("#flegend").html(`<span><span class="dot" style="background:var(--accent)"></span> ${sname} краща за поточну (P50, 4 роки)</span>
+      <span><span class="dot" style="background:var(--red)"></span> поточна краща</span><span>насиченість — розмір різниці, грн на поле</span>` + grey);
+    d3.select("#fyear-note").text(`${sname} − поточна за 4 роки, P50; максимум ${pgrn(mx)}`);
+  }
+}
+function colorFields() {
+  if (!fsel) return;
+  const v = d3.select("#fyear").property("value"), w = fsel.w;
+  try { localStorage.setItem("fs-year", v); } catch (e) {}
+  if (v === "rec" || v === "pot" || v === "pot_mi") { colorPortfolio(v); return; }
+  fsel.paths.style("fill", null);
+  fsel.paths.attr("class", d => `fp ${v === "size" ? sizeCls(d.properties.ha) : yearCls(w, d, +v)}${d.properties.pilot ? " pilot" : ""}${d === fsel.cur ? " sel" : ""}`);
+  d3.select("#flegend").html(v === "size" ? LEG_SIZE : LEG_YEAR);
+  if (v === "size") { d3.select("#fyear-note").text(""); return; }
+  const cnt = {W: 0, S: 0}; let n = 0;
+  Object.values(w.hls || {}).forEach(h => { const r = h.seasons.find(x => x[0] === +v); if (r && (r[1] === "W" || r[1] === "S")) { cnt[r[1]]++; n++; } });
+  d3.select("#fyear-note").text(n ? `${v}: озимих ${cnt.W}, ярових ${cnt.S} з ${n} полів з HLS` : "");
+}
+d3.select("#fyear").on("change", colorFields);
+
+function pick(f) {
+  const {w, paths} = fsel, p = f.properties;
+  fsel.cur = f; paths.classed("sel", d => d === f);
+  const same = key => w.features.filter(x => String(x.properties[key]) === String(p[key])).length;
+  const hp = (w.hls_points || {})[String(p.id)];
+  d3.select("#fc-name").text(`Поле #${p.id}${p.pilot ? " · пілот" : ""}`);
+  d3.select("#fc-kv").html(`
+    <span>Площа</span><span>${nf(p.ha, 1)} га</span>
+    <span>Пікселів MODIS 231 м (за площею)</span><span>≈ ${p.modis}</span>
+    <span>Пікселів HLS 30 м (за площею)</span><span>≈ ${nf(p.hls)}</span>
+    <span>Вузол NASA POWER</span><span>${p.pw[1]}° N, ${p.pw[0]}° E</span>
+    <span>Клітинка SMAP 9 км</span><span>${p.smap[0]} / ${p.smap[1]}</span>`);
+  const row = (cls, mark, html) => `<div class="check"><b class="${cls}">${mark}</b><span>${html}</span></div>`;
+  d3.select("#fc-checks").html([
+    row("warn", "≈", `Погода — спільна для <b>${same("pw")}</b> з ${w.features.length} полів вікна (клітинка POWER 0,5° × 0,625°): клімат району, не поля.`),
+    row("warn", "≈", `Волога ґрунту SMAP — спільна для <b>${same("smap")}</b> полів (клітинка 9 км).`),
+    p.modis >= 4 ? row("ok", "✓", `NDVI MODIS придатний: поле ≈ ${p.modis} пікселів, HLS дасть деталь усередині.`)
+                 : row("bad", "✕", `NDVI MODIS змішує це поле з сусідами (≈ ${p.modis} пікс.) — потрібен HLS 30 м.`),
+    (w.hls || {})[String(p.id)] ? row("ok", "✓", `HLS 30 м: є ряд NDVI ${w.hls_years[0]}–${w.hls_years[w.hls_years.length - 1]} (${hp ? hp.length : 5} точок за 45+ м від межі).`)
+       : hp ? row("ok", "✓", `HLS 30 м: у запиті AppEEARS, ${hp.length} точок за 45+ м від межі.`)
+       : row("warn", "…", `HLS 30 м: ще не запитано (зараз у запиті пілот і 50 найбільших полів області).`),
+  ].join(""));
+  drawHls(w, p);
+  d3.select("#fc-pilot").html(p.pilot && w.model_point
+    ? `<div class="callout">Це пілотне поле: для нього вже пораховані зсув клімату, сівозміна з NDVI і ризик посухи.<br><button class="btn" type="button" id="go-model">Відкрити модель поля</button></div>` : "");
+  const gm = document.getElementById("go-model");
+  if (gm) gm.onclick = () => { select(w.model_point); document.getElementById("card").scrollIntoView({behavior: "smooth"}); };
+  const wkey = Object.keys(WIN).find(k => WIN[k] === w);
+  const pr = PORT[wkey] ? PORT[wkey].fields[String(p.id)] : null;
+  if (PORT[wkey]) d3.select("#fc-pilot").append("div").attr("class", "callout").html(!pr
+    ? `Модель для цього поля не рахувалась: портфель — лише 50 найбільших полів вікна з рядом HLS (без історії поля немає поточної практики).`
+    : pr.status === "ok"
+      ? `<b>Модель, ${D.portfolio.plan_start_year}: ${pesc(pr.next_season_uk)}</b> — перший рік «Збалансованої» (${pesc(pr.balanced_uk.join(" → "))}).<br>` +
+        `Поточна практика з HLS: ${pesc((pr.current_uk || []).join(" → "))}.<br>` +
+        `За 4 роки проти поточної, на полі ${nf(pr.area_ha, 1)} га: «Збалансована» <b>${pgrn(pr.delta_p50_field, true)}</b> (у сухий бік ${pgrn(pr.delta_p10_field, true)})` +
+        `${pr.breakeven_year ? `, окупається з ${pr.breakeven_year}` : ", не окупається"}; ` +
+        `«Максимум маржі» (${pesc((pr.mi_uk || []).join(" → "))}) <b>${pgrn(pr.mi_p50_field, true)}</b> (у сухий бік ${pgrn(pr.mi_p10_field, true)})` +
+        `${pr.mi_breakeven_year ? `, окупається з ${pr.mi_breakeven_year}` : ", не окупається"}. ` +
+        `${pr.violations_164_now > 0 ? `<span class="badge viol">поточна порушує №164 (${pr.violations_164_now})</span>` : "Поточна без порушень №164."} Достовірність: ${pesc(CONF_PF[pr.conf] || pr.conf)}.` +
+        (pr.current_late_winter ? `<div class="legend">Озима в поточній сіється після пізньої ярої — у моделі пізніше за рекомендований строк, тож урожай поточної може бути занижено.</div>` : "")
+      : `<b>Немає результату моделі</b>${pr.next_season_uk ? ` (рекомендація ${D.portfolio.plan_start_year}: ${pesc(pr.next_season_uk)}, але різниця з поточною не рахується)` : ""}: ${pesc(pr.reason || "—")}`);
+  if (pr && pr.next_season)
+    d3.select("#fc-pilot").append("div").html(mktHTML(MP && MP.fields[`${wkey}:f${p.id}`] ? `${wkey}:f${p.id}` : null,
+      [{id: pr.next_season, uk: pr.next_season_uk}]));
+  const plan = Object.values(D.strategies || {}).find(q => q.window === wkey && String(q.fid) === String(p.id));
+  if (plan) {
+    d3.select("#fc-pilot").append("button").attr("class", "btn").attr("type", "button").text("Відкрити рекомендацію")
+      .on("click", () => openPlan(plan.id, true));
+  }
+}
+
+function drawHls(w, p) {
+  const h = (w.hls || {})[String(p.id)], box = d3.select("#fc-hls");
+  if (!h) { box.html(""); return; }
+  const lab = r => r[1] === "W" ? "О" : r[1] === "S" ? (r[2] === "early" ? "Яр" : r[2] === "late" ? "Яп" : "Я") : r[1] === "F" ? "–" : "?";
+  const cls = r => r[1] === "W" ? "W" : r[1] === "S" ? "S" + (r[2] === "early" ? " early" : "") : r[1] === "F" ? "F" : "";
+  const strip = rows => `<div class="strip" style="grid-template-columns:repeat(${rows.length},minmax(0,1fr))">` +
+    rows.map(r => `<div class="cell ${cls(r)}" title="${r[0]}: пік NDVI ${r[3] ?? "—"} (${r[4] ?? "—"})">${lab(r)}<small>${String(r[0]).slice(2)}</small></div>`).join("") + "</div>";
+  let html = `<h3>Що росло на полі · HLS 30 м</h3>${strip(h.seasons)}`;
+  // порівняння з MODIS для пілотного поля
+  const mf = p.pilot && w.model_point ? D.fields.find(x => x.id === w.model_point) : null;
+  if (mf) {
+    const mod = mf.rotation.map(r => [r.year, r.type, "", r.peak, r.date]);
+    html += `<div class="legend" style="margin-top:6px">MODIS 250 м у пілотній точці:</div>${strip(mod)}`;
+    let same = 0, both = 0, resolved = 0;
+    mod.forEach(m => { const x = h.seasons.find(r => r[0] === m[0]); if (!x) return;
+      if (m[1] === "?" && (x[1] === "W" || x[1] === "S")) resolved++;
+      if (m[1] !== "?" && (x[1] === "W" || x[1] === "S")) { both++; if (m[1] === x[1]) same++; } });
+    html += `<div class="agree">Збіг з MODIS: <b>${same} з ${both}</b> років; ще <b>${resolved}</b> «?» MODIS HLS визначив.</div>`;
+  }
+  html += `<svg id="fc-ts" viewBox="0 0 320 90" width="100%" aria-label="Ряд NDVI поля з HLS" style="margin-top:8px"></svg>
+    <div class="legend">О — озима/рання (зелена у квітні), Яр — ярова, зібрана рано (ймовірно соняшник або ярі зернові), Яп — ярова, зелена в серпні (ймовірно кукурудза або соя). Підтипи — гіпотеза за формою кривої, не культура.</div>`;
+  box.html(html);
+  if (!h.ts) return;
+  const sv = d3.select("#fc-ts"), t0 = Date.UTC(2016, 0, 1);
+  const pts = h.ts.map(([d, v]) => [new Date(t0 + d * 864e5), v]);
+  const x = d3.scaleUtc().domain(d3.extent(pts, d => d[0])).range([2, 318]), y = d3.scaleLinear().domain([0, 1]).range([76, 4]);
+  h.seasons.forEach(r => { if (r[1] !== "W" && r[1] !== "S") return;
+    sv.append("rect").attr("x", x(new Date(Date.UTC(r[0], 3, 1)))).attr("width", Math.max(1, x(new Date(Date.UTC(r[0], 8, 1))) - x(new Date(Date.UTC(r[0], 3, 1)))))
+      .attr("y", 4).attr("height", 72).attr("fill", r[1] === "W" ? "var(--accent-soft)" : "color-mix(in srgb,var(--amber) 10%,transparent)"); });
+  sv.append("path").datum(pts).attr("fill", "none").attr("stroke", "var(--ink)").attr("stroke-width", 1)
+    .attr("d", d3.line().x(d => x(d[0])).y(d => y(d[1])));
+  d3.utcYear.range(...x.domain()).forEach(d => sv.append("text").attr("x", x(d) + 2).attr("y", 88).style("font-size", "9px").text("'" + String(d.getUTCFullYear()).slice(2)));
+  sv.append("text").attr("x", 318).attr("y", 12).attr("text-anchor", "end").style("font-size", "9px").text("NDVI 0–1");
+}
+
+function drawHist(w) {
+  const s = w.stats, sv = d3.select("#fc-hist"); sv.selectAll("*").remove();
+  const lab = ["<1", "1–2", "2–5,4", "5,4–10", "10–21", "21–50", "50–100", "100–250", "250+"];
+  const bins = s.hist.map((n, i) => ({n, lab: lab[i], lo: s.edges[i]})).filter(b => b.n > 0);
+  const x = d3.scaleBand().domain(bins.map(b => b.lab)).range([0, 320]).padding(.15);
+  const y = d3.scaleLinear().domain([0, d3.max(bins, b => b.n)]).range([96, 6]);
+  sv.selectAll("rect").data(bins).join("rect").attr("x", b => x(b.lab)).attr("width", x.bandwidth())
+    .attr("y", b => y(b.n)).attr("height", b => 96 - y(b.n)).attr("rx", 2)
+    .attr("fill", b => b.lo < 5.37 ? "color-mix(in srgb,var(--amber) 70%,transparent)" : b.lo < 21.5 ? "color-mix(in srgb,var(--accent) 40%,transparent)" : "color-mix(in srgb,var(--accent) 70%,transparent)")
+    .append("title").text(b => `${b.lab} га: ${nf(b.n)} полів`);
+  sv.selectAll("text.l").data(bins).join("text").attr("class", "l").attr("x", b => x(b.lab) + x.bandwidth() / 2).attr("y", 112).attr("text-anchor", "middle").style("font-size", "9.5px").text(b => b.lab);
+  sv.append("text").attr("x", 160).attr("y", 127).attr("text-anchor", "middle").style("font-size", "10px").text("площа поля, га");
+  d3.select("#fc-ostats").html(`${nf(s.n)} полів, медіана <b>${nf(s.median, 1)} га</b>; <b>${nf(s.lt_modis, 1)}%</b> менші за 1 піксель MODIS. Площа полів ${nf(s.total_kha, 1)} тис. га.`);
+}
+let w0 = Object.keys(WIN)[0];
+try { const sv = localStorage.getItem("fs-win"); if (sv && WIN[sv]) w0 = sv; } catch (e) {}
+if (w0) drawWindow(w0); else d3.select("#fields").style("display", "none");
+
+// ---------- норматив №164
+const RET = {"Пшениця озима": 2, "Ячмінь": 1, "Гречка": 1, "Просо": 2, "Соя": 3, "Горох": 3, "Ріпак": 3, "Буряк цукровий": 3, "Соняшник": 7};
+const GROUP = {"Пшениця озима": "g", "Пшениця яра": "g", "Ячмінь": "g", "Кукурудза": "g", "Гречка": "g", "Просо": "g", "Соя": "g", "Горох": "g",
+  "Соняшник": "t", "Ріпак": "t", "Буряк цукровий": "t", "Чорний пар": "p"};
+const CROPS = Object.keys(GROUP);
+const LIM = [["Зернові та зернобобові", c => GROUP[c] === "g", 25, 95], ["Технічні, усього", c => GROUP[c] === "t", 5, 30],
+  ["Соняшник", c => c === "Соняшник", 5, 9], ["Ріпак", c => c === "Ріпак", 3, 5]];
+const PRESETS = [
+  ["ННЦ №1: соя → пшениця яра → просо", ["Соя", "Пшениця яра", "Просо"]],
+  ["ННЦ №2: соя → пшениця яра → гречка", ["Соя", "Пшениця яра", "Гречка"]],
+  ["Черкаська ДСГДС: соя → кукурудза × 2", ["Соя", "Кукурудза", "Кукурудза"]],
+  ["Пшениця → соняшник → кукурудза", ["Пшениця озима", "Соняшник", "Кукурудза"]],
+  ["Пшениця ↔ соняшник", ["Пшениця озима", "Соняшник"]],
+  ["8-пільна з соняшником", ["Горох", "Пшениця озима", "Кукурудза", "Ячмінь", "Соя", "Пшениця озима", "Кукурудза", "Соняшник"]],
+];
+const NSLOT = 8;
+const bld = d3.select("#builder");
+for (let i = 0; i < NSLOT; i++) {
+  if (i) bld.append("span").attr("class", "arr").text("→");
+  bld.append("select").attr("aria-label", `Рік ${i + 1}`).attr("data-i", i)
+    .html(`<option value="">${i < 2 ? "рік " + (i + 1) : "—"}</option>` + CROPS.map(c => `<option>${c}</option>`).join(""))
+    .on("change", () => { d3.selectAll("#presets button").attr("aria-pressed", false); checkRot(); });
+}
+d3.select("#presets").selectAll("button").data(PRESETS).join("button").attr("type", "button").text(d => d[0])
+  .on("click", (ev, d) => { setRot(d[1]); d3.selectAll("#presets button").attr("aria-pressed", x => x === d); });
+function setRot(r) { bld.selectAll("select").each(function (_, i) { this.value = r[i] || ""; }); checkRot(); }
+function checkRot() {
+  const r = []; bld.selectAll("select").each(function () { if (this.value) r.push(this.value); });
+  const n = r.length;
+  if (!n) { d3.select("#ret").html(""); d3.select("#shares").html(""); return; }
+  const rows = [];
+  [...new Set(r)].forEach(c => {
+    const pos = r.map((x, i) => x === c ? i : -1).filter(i => i >= 0);
+    if (c === "Кукурудза") {
+      let run = 0, best = 0;
+      for (let i = 0; i < 2 * n; i++) { run = r[i % n] === c ? run + 1 : 0; best = Math.max(best, Math.min(run, 2 * n)); }
+      const mono = pos.length === n;
+      rows.push([c, mono ? "щороку" : best === 1 ? "не поспіль" : `${best} роки поспіль`, "2–3 роки поспіль", mono || best > 3 ? "bad" : "ok"]);
+      return;
+    }
+    const gaps = pos.map((p, i) => ((pos[(i + 1) % pos.length] - p + n) % n || n) - 1);
+    const g = Math.min(...gaps), need = RET[c];
+    rows.push([c, g === 0 ? "щороку" : `через ${g}`, need == null ? "не нормується" : `через ≥ ${need}`, need == null ? "na" : g >= need ? "ok" : "bad"]);
+  });
+  const mk = {ok: ["ok", "✓ так"], bad: ["bad", "✕ порушення"], na: ["warn", "—"]};
+  d3.select("#ret").html(`<thead><tr><th>Культура</th><th>Повертається</th><th>Норма</th><th>Статус</th></tr></thead><tbody>` +
+    rows.map(([c, a, b, st]) => `<tr><td>${c}</td><td class="n" style="text-align:left">${a}</td><td>${b}</td><td class="${mk[st][0]}">${mk[st][1]}</td></tr>`).join("") + "</tbody>");
+  d3.select("#shares").html(LIM.map(([name, f, lo, hi]) => {
+    const v = Math.round(100 * r.filter(f).length / n), single = name === "Соняшник" || name === "Ріпак";
+    const st = single && v === 0 ? "na" : v >= lo && v <= hi ? "ok" : "warn";
+    return `<div class="check"><b class="${st === "na" ? "" : st}">${st === "ok" ? "✓" : st === "na" ? "·" : "!"}</b><span>${name}: <b>${v}%</b> · норма ${lo}–${hi}%${st === "na" ? " (не вирощується)" : v > hi ? " — забагато" : v < lo ? " — замало" : ""}</span></div>`;
+  }).join(""));
+}
+setRot(PRESETS[0][1]); d3.selectAll("#presets button").attr("aria-pressed", (x, i) => i === 0);
+
+// ---------- метрики і розсіювання
+document.getElementById("n-val").textContent = D.n_val;
+d3.select("#metrics tbody").selectAll("tr").data(D.metrics).join("tr").attr("class", (d, i) => i === 0 ? "best" : null)
+  .html(d => `<td>${d.name}</td><td class="n">${String(d.mape).replace(".", ",")}</td><td class="n">${String(d.rho).replace(".", ",")}</td>`);
+
+(function scatter() {
+  const sv = d3.select("#scatter"), m = {l: 40, r: 12, t: 12, b: 36}, w = 420, h = 300;
+  const max = Math.ceil(d3.max(D.scatter, d => Math.max(d.obs, d.pred)));
+  const x = d3.scaleLinear().domain([0, max]).range([m.l, w - m.r]), y = d3.scaleLinear().domain([0, max]).range([h - m.b, m.t]);
+  const ticks = d3.range(0, max + 1, 2);
+  sv.append("g").selectAll("line").data(ticks).join("line").attr("x1", m.l).attr("x2", w - m.r).attr("y1", y).attr("y2", y).attr("stroke", "var(--line)");
+  sv.append("g").selectAll("text").data(ticks).join("text").attr("x", m.l - 6).attr("y", d => y(d) + 4).attr("text-anchor", "end").text(d => d);
+  sv.append("g").selectAll("text").data(ticks).join("text").attr("x", x).attr("y", h - m.b + 16).attr("text-anchor", "middle").text(d => d);
+  sv.append("line").attr("x1", x(0)).attr("y1", y(0)).attr("x2", x(max)).attr("y2", y(max)).attr("stroke", "var(--muted)").attr("stroke-dasharray", "4 4");
+  sv.append("text").attr("x", (m.l + w - m.r) / 2).attr("y", h - 4).attr("text-anchor", "middle").text("факт, т/га (область)");
+  sv.append("text").attr("transform", `translate(11,${(m.t + h - m.b) / 2}) rotate(-90)`).attr("text-anchor", "middle").text("модель, т/га");
+  const col = {"Пшениця озима": "var(--accent)", "Кукурудза": "var(--amber)", "Соняшник": "var(--blue)"};
+  sv.append("g").selectAll("circle").data(D.scatter).join("circle").attr("cx", d => x(d.obs)).attr("cy", d => y(d.pred)).attr("r", 4.5)
+    .attr("fill", d => col[d.crop]).attr("fill-opacity", .85).append("title").text(d => `${d.crop}, ${d.oblast}, ${d.year}: факт ${d.obs}, модель ${d.pred}`);
+  const lg = sv.append("g").attr("transform", `translate(${m.l + 8},${m.t + 6})`);
+  Object.entries(col).forEach(([k, c], i) => { lg.append("circle").attr("cx", 4).attr("cy", i * 16).attr("r", 4).attr("fill", c); lg.append("text").attr("x", 13).attr("y", i * 16 + 4).text(k); });
+})();
+
+// ---------- рекомендація (#plan): site/strategies.json ← scripts/export_site_strategies.py
+const PLANS = D.strategies || {}, PDEMO = D.strategies_demo || {};
+const SNAME = {current: "Поточна практика", max_income: "Максимум маржі", min_risk: "Мінімум ризику",
+  balanced: "Збалансована", water: "Вода (степ)", own_machinery: "З наявною технікою"};
+const SHINT = {current: "що росло на полі — точка порівняння", max_income: "найвища маржа в типовий рік",
+  min_risk: "найкраща маржа в сухий рік", balanced: "маржа, вода і ґрунт разом — рекомендація",
+  water: "найбільше вологи на кінець ротації; пар дозволено",
+  own_machinery: "найвища маржа без нової техніки збирання"};
+const CONF = {high: "висока достовірність", medium: "середня достовірність", low: "низька достовірність"};
+const KCELL = {winter: "W", spring: "S", legume: "L", fallow: "P"};
+const MON = ["січ", "лют", "бер", "квіт", "трав", "черв", "лип", "серп", "вер", "жовт", "лист", "груд"];
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;"}[c]));
+const tis = v => v == null ? "—" : fmt((v / 1000).toFixed(1), false);
+let pState = {id: null, demo: false, sel: null};
+
+const ptabs = d3.select("#ptabs").selectAll("button").data(Object.values(PLANS)).join("button")
+  .attr("type", "button").text(p => p.name_uk).on("click", (ev, p) => openPlan(p.id));
+
+function openPlan(id, scroll) {
+  if (!PLANS[id]) return;
+  if (pState.id !== id) pState = {id, demo: false, sel: null};
+  drawPlan();
+  if (scroll) document.getElementById("plan").scrollIntoView({behavior: "smooth"});
+}
+
+function drawPlan() {
+  const base = PLANS[pState.id], demo = PDEMO[pState.id], P = pState.demo && demo ? demo : base;
+  ptabs.attr("aria-pressed", p => p.id === pState.id);
+  d3.select("#pdemo").html(demo ? `<label class="demo"><input type="checkbox" id="pdemo-cb"${pState.demo ? " checked" : ""}>
+    Демо: підтвердити, що соняшнику не було (${Object.keys(demo.history_confirmed).join(", ")})</label>` : "");
+  const cb = document.getElementById("pdemo-cb");
+  if (cb) cb.onchange = () => { pState.demo = cb.checked; drawPlan(); };
+  const n = P.next, neg = v => v != null && v < 0 ? "neg" : "";
+  d3.select("#pnext").html(n.crop
+    ? `<span class="eyebrow">Наступний сезон ${P.run.plan_start_year} · ${pesc(P.name_uk)}, ${pesc(P.oblast)} обл.${P.area_ha ? ` · ${nf(P.area_ha, 1)} га` : ""}</span>
+       <b>${pesc(n.crop_uk)}</b>${n.margin_y1 ? `<div class="pm-y1">Маржа першого року: P10 <span class="${neg(n.margin_y1.dry)}">${tis(n.margin_y1.dry)}</span> / P50 <span class="${neg(n.margin_y1.typical)}">${tis(n.margin_y1.typical)}</span> / P90 <span class="${neg(n.margin_y1.wet)}">${tis(n.margin_y1.wet)}</span>, тис. грн/га</div>` : ""}<p>${pesc(n.why)}</p>`
+    : `<b>Рекомендації немає</b><p>${pesc(n.why)}</p>`);
+  const S = P.strategies;
+  const risk = (S.find(s => s.name === "balanced") || {}).climate_risk;      // «маржа близька до нуля …» (D16)
+  if (risk)
+    d3.select("#pnext").append("div").attr("class", "callout").html(`<b>Ризик клімату:</b> ${pesc(risk)}`);
+  if (!S.some(s => s.name === pState.sel)) pState.sel = (S.find(s => s.name === "balanced") || S[0] || {}).name;
+  const all = S.flatMap(s => [s.m.m10, s.m.m50, s.m.m90]).filter(v => v != null);
+  const lo = Math.min(0, d3.min(all) ?? 0), hi = Math.max(0, d3.max(all) ?? 1);
+  const x = v => 100 * (v - lo) / ((hi - lo) || 1);
+  const baseBy = Object.fromEntries(base.strategies.map(s => [s.name, s]));
+  const confs = S.map(z => z.conf), common = confs.slice().sort((a, b) => confs.filter(v => v === b).length - confs.filter(v => v === a).length)[0];
+  d3.select("#pconf").html(common === "low"
+    ? "Усі стратегії — низька достовірність: дати сівби тимчасові (без джерела), поки R2/R3 не дадуть календарі."
+    : `Достовірність стратегій — ${CONF[common] || common}${confs.every(v => v === common) ? "" : " (окрім позначених на картці)"}.`);
+  const card = s => {
+    const m = s.m, top = m.m90 ?? m.m50;
+    const bar = m.m10 == null ? `<div class="legend">маржа не рахується</div>` : `
+      <div class="pm"><div class="bar" title="P10 ${tis(m.m10)} · P50 ${tis(m.m50)} · P90 ${tis(m.m90)} тис. грн/га">
+        ${lo < 0 ? `<b style="left:${x(0)}%"></b>` : ""}
+        ${m.m10 < 0 ? `<i class="neg" style="left:${x(m.m10)}%;width:${x(Math.min(0, top)) - x(m.m10)}%"></i>` : ""}
+        ${top > 0 ? `<i style="left:${x(Math.max(0, m.m10))}%;width:${x(top) - x(Math.max(0, m.m10))}%"></i>` : ""}
+        <em style="left:calc(${x(m.m50)}% - 1px)"></em></div>
+        <span class="num ${neg(m.m50)}">${tis(m.m50)}</span></div>
+      <div class="pm-leg"><span class="${neg(m.m10)}">сухий ${tis(m.m10)}</span><span class="${neg(m.m90)}">вологий ${tis(m.m90)}</span></div>`;
+    const b0 = baseBy[s.name], dd = pState.demo && b0 && b0.m.m50 != null && m.m50 != null ? m.m50 - b0.m.m50 : null;
+    return `<button type="button" class="pcard${s.name === "current" ? " cur" : ""}" data-n="${s.name}" aria-pressed="${s.name === pState.sel}">
+      <h3>${SNAME[s.name] || s.name}${s.conf !== common ? `<span class="badge ${s.conf}">${CONF[s.conf] || s.conf}</span>` : ""}${m.viol > 0 ? `<span class="badge viol">порушує №164 (${m.viol})</span>` : ""}</h3>
+      <div class="legend">${SHINT[s.name] || ""}${s.name === "current" && P.history_src ? ` · історія: ${esc(P.history_src.source)}, поле #${P.history_src.fid}` : ""}</div>
+      <div class="strip">${s.seq.map((c, i) => `<div class="cell ${KCELL[(s.cal[i] || {}).kind] || ""}" title="${P.run.plan_start_year + i}: ${pesc(c)}">${pesc(c)}<small>${String(P.run.plan_start_year + i).slice(2)}</small></div>`).join("")}</div>
+      ${s.mach && s.name !== "current" ? (s.mach.text ? `<div class="mach">${pesc(s.mach.text)}</div>` : `<div class="mach ok">наявної техніки достатньо</div>`) : ""}
+      ${bar}${m.fallow_nc ? `<div class="legend">пар без витрат — маржа завищена</div>` : ""}
+      ${dd != null ? `<div class="pdelta ${dd < 0 ? "neg" : "ok"}">демо: ${dd >= 0 ? "+" : "−"}${tis(Math.abs(dd))} тис. до основної (${pesc(b0.seq.join(" → "))})</div>` : ""}
+    </button>`;
+  };
+  const order = ["current", "max_income", "min_risk", "balanced", "water", "own_machinery"];
+  d3.select("#pcards").html(order.map(k => S.find(s => s.name === k)).filter(Boolean).map(card).join(""))
+    .selectAll(".pcard").on("click", function () { pState.sel = this.dataset.n; drawPlan(); });
+  const mc = (S.find(z => z.mach) || {}).mach, own = S.find(z => z.name === "own_machinery");
+  d3.select("#pmach").html(mc ? `<b>Техніка для збирання.</b> Наявну техніку визначено з того, що росло на полі за HLS 2021–2025
+    (культуру з космосу не видно — це припущення, підтвердіть): ${mc.owned_flags.length ? pesc(mc.owned_flags.map(f => f.replace(/^\d{4}: /, "")).filter((v, i, a) => a.indexOf(v) === i).join("; ")) : "немає даних"}.
+    ${own ? `Картка «${SNAME.own_machinery}» — найкраща за маржею сівозміна без нової техніки${own.vs && own.vs.d_field ? `: ${own.vs.d_field.p50 >= 0 ? "+" : "−"}${nf(Math.abs(own.vs.d_field.p50) / 1e6, 2)} млн грн за 4 роки до поточної (P50)` : ""}.` : "Сівозміни без нової техніки серед допустимих немає."}
+    Бейдж «потрібна нова техніка» — обмеження, а не заборона: техніку можна взяти в оренду або замовити послугу збирання.` : "");
+  const s = S.find(z => z.name === pState.sel);
+  d3.select("#pmkt").html(mktHTML(P.id, [{id: n.crop, uk: n.crop_uk}, ...(s ? s.crops.map((c, i) => ({id: c, uk: s.seq[i]})) : [])]));
+  drawGantt(P, s);
+  drawDetails(P, s);
+  drawMoney(P, s);
+  drawMenu(P);
+  const r = P.run;
+  d3.select("#prun").html(`Зріз цін: ${pesc(r.prices_snapshot)} · витрати: ${pesc(r.cost_column)} (${r.cost_year}) · ранжування: ${pesc(r.ranking_mode)} · commit моделі: ${pesc(r.model_commit)}<br>
+    Модель: FAO-56 + водний баланс + Ky; ціни й витрати — Держстат 2025; дохід без субсидій і податків.`);
+}
+
+function drawGantt(P, s) {
+  if (!s) { d3.select("#pgantt").html(""); return; }
+  const y0 = P.run.plan_start_year, K = s.cal.length;
+  const day = d => (Date.parse(d + "T00:00:00Z") - Date.UTC(y0, 0, 1)) / 864e5;
+  const items = s.cal.map(c => ({...c, a: c.sow_date ? day(c.sow_date) : null, b: c.harvest_date ? day(c.harvest_date) : null}));
+  items.forEach((c, i) => {                  // пар: від збирання попередньої культури до сівби наступної
+    if (c.kind !== "fallow") return;
+    c.a = i && items[i - 1].b != null ? items[i - 1].b + 1 : 365 * i;
+    const nx = items.slice(i + 1).find(z => z.a != null);
+    c.b = nx ? nx.a - 1 : 365 * K;
+  });
+  const rows = d3.range(K).map(r => ({year: y0 + r, bars: []}));
+  items.forEach(c => {
+    if (c.a == null || c.b == null) return;
+    for (let r = 0; r < K; r++) {
+      const r0 = 365 * r, a = Math.max(c.a, r0), b = Math.min(c.b, r0 + 365);
+      if (b > a) rows[r].bars.push({c, l: 100 * (a - r0) / 365, w: 100 * (b - a) / 365});
+    }
+  });
+  const crop = c => s.seq[c.year - 1];
+  const stub = s.cal.some(c => c.stub);
+  const dm = v => v.split("-").reverse().join(".");
+  d3.select("#pg-title").text(`Календар: ${SNAME[s.name] || s.name}`);
+  d3.select("#pg-leg").html(`<span style="color:var(--accent)">■</span> озимі · <span style="color:var(--amber)">■</span> ярі · <span style="color:var(--blue)">■</span> бобові · ▨ чорний пар${stub ? " · пунктир — дата-заглушка (календар зони без джерела)" : ""}${s.cal.some(c => c.sow_range) ? ". Ярі сіються щороку, коли ґрунт прогрівся до порогу: дата — медіана 25 років, у дужках — розкид P10–P90" : ""}. Озимі року ${y0} сіються восени ${y0 - 1}.`);
+  d3.select("#pgantt").html(`<div class="gmonths"><div></div><div>${MON.map(m => `<span>${m.slice(0, 3)}<i>${m.slice(3)}</i></span>`).join("")}</div></div>` +
+    rows.map((r, i) => {
+      const c = s.cal[i];
+      return `<div class="grow"><div class="glab">${r.year} · ${pesc(crop(c))}<small>${c.sow ? `сівба ${dm(c.sow)}${c.sow_range ? ` (${dm(c.sow_range[0])}–${dm(c.sow_range[1])})` : ""} → збирання ${dm(c.harvest)}` : "без культури"}${c.stub ? " · дата-заглушка" : ""}</small></div>
+        <div class="gtrack">${r.bars.map(z => `<div class="gbar ${z.c.kind}${z.c.stub ? " stub" : ""}" style="left:${z.l}%;width:${z.w}%" title="${pesc(crop(z.c))}${z.c.stub ? " · дата-заглушка" : ""}">${z.w > 16 ? pesc(crop(z.c)) : ""}</div>`).join("")}</div></div>`;
+    }).join(""));
+}
+
+function drawDetails(P, s) {
+  if (!s) { d3.select("#pdet").html(""); return; }
+  const li = a => `<ul>${a.map(v => `<li>${pesc(v)}</li>`).join("")}</ul>`;
+  const blocks = [], w = s.why_not_repeat;
+  if (w) {
+    const f = (r, v) => r.metric === "violations_164" ? v : Math.round(v * 100) + "%";
+    blocks.push(`<details open><summary>Чому не повторювати поточну</summary>
+      <div class="scroll"><table><thead><tr><th></th><th style="text-align:right">поточна</th><th style="text-align:right">${pesc(SNAME[w.compare_with] || w.compare_with)}</th></tr></thead><tbody>
+      ${w.rows.map(r => `<tr><td>${pesc(r.label)}</td><td class="n${r.metric === "violations_164" && r.current > 0 ? " bad" : ""}">${f(r, r.current)}</td><td class="n">${f(r, r.recommended)}</td></tr>`).join("")}
+      </tbody></table></div>${li(w.lines)}</details>`);
+  }
+  blocks.push(`<details${w ? "" : " open"}><summary>Чому ця стратегія</summary><p style="font-size:13px;margin:6px 0">${pesc(s.why)}</p>${s.violations ? li(s.violations) : ""}</details>`);
+  if (s.benefits.length) blocks.push(`<details><summary>Порівняно з поточною</summary>${li(s.benefits)}</details>`);
+  const G = s.gap_groups || [], nG = d3.sum(G, g => g.items.length);
+  blocks.push(`<details><summary>Обмеження і прапорці (${nG})</summary>` +
+    G.map(g => `<div class="pgrp"><h4>${pesc(g.group)} · ${g.items.length}</h4>${li(g.items.slice(0, 5))}` +
+      (g.items.length > 5 ? `<details class="more"><summary>ще ${g.items.length - 5}</summary>${li(g.items.slice(5))}</details>` : "") + `</div>`).join("") +
+    (s.prof.length ? `<div class="legend">Рентабельність за Держстатом:</div>${li(s.prof)}` : "") + `</details>`);
+  blocks.push(`<details><summary>Що перевірити агроному</summary>${li(P.agronomist)}` +
+    (P.no_data.length ? `<div class="legend">Без даних для т/га (у стратегіях не брали участі): ${pesc(P.no_data.join(", "))}</div>` : "") +
+    `<div class="legend">Джерела:</div>${li(P.data)}</details>`);
+  d3.select("#pdet").html(blocks.join(""));
+}
+
+// ---------- «Куди продати» (D23–D26): scripts/market_export.py, scripts/market_ports.py → site/market.json
+function mktHTML(fieldKey, crops) {
+  if (!MX || !MP) return "";
+  crops = [...new Map(crops.filter(c => c.id && c.id !== "fallow").map(c => [c.id, c])).values()];
+  if (!crops.length) return "";
+  const F = MP.fields[fieldKey], cap = t => t.charAt(0).toUpperCase() + t.slice(1);
+  const fmt = (v, k = 0) => v == null ? "—" : nf(v, k);
+  const src = new Set(["Держстат: зовнішня торгівля товарами за країнами (SDMX), 2021–2024"]);
+  let h = "";
+  if (F && F.routes) {                            // 3 альтернативні маршрути збуту (D28): без ваг і балів
+    const road = F.routes.some(r => r.distance_type === "road");
+    h += `<h4>Куди везти: 3 варіанти</h4><p>${pesc(MP.routes_note)}.</p>
+      <div class="scroll"><table class="routes"><thead><tr><th>Маршрут</th><th class="n">Відстань</th><th>Тариф</th><th>Ризики</th></tr></thead><tbody>` +
+      F.routes.map(r => `<tr><td><b>${pesc(r.name_uk)}</b><br>${pesc(r.point_uk)}${r.point_note ? ` <span class="legend">(${pesc(r.point_note)})</span>` : ""}</td>
+        <td class="n" data-l="Відстань">${fmt(r.km)} км <span class="legend">${pesc(r.distance_label)}</span></td>
+        <td data-l="Тариф">${pesc(r.tariff_text)}</td>
+        <td data-l="Ризики">${pesc(r.risk)}${r.route === "danube" && r.distance_type === "road" && F.oblast !== "odesa" ? `; маршрут OSRM може проходити через Молдову; кордон і черги не враховано` : ""}</td></tr>`).join("") +
+      `</tbody></table></div>`;
+    if (!road) h += `<div class="legend">${pesc(MP.straight_note)}</div>`;
+    src.add("координати портів і пунктів пропуску — Вікіпедія");
+    src.add(road ? "відстань дорогою — OSRM (дані OpenStreetMap)" : "відстань по прямій — розрахунок за координатами");
+    const T = (MP.tariffs || {})[F.oblast];
+    if (T) src.add(`тариф — ${T.source}`);
+  }
+  h += crops.map((c, i) => {
+    const prods = (MX.crop_products[c.id] || []).map(p => MX.products[p]).filter(Boolean);
+    const note = MX.crop_notes[c.id];
+    let b = note ? `<p>${pesc(note)}</p>` : "";
+    b += prods.map(p => `<h4>${pesc(cap(p.name_uk))} · УКТЗЕД ${String(p.uktzed).padStart(4, "0")}</h4>
+      <p>Куди йде українська продукція, ${p.year}: усього ${fmt(p.total.value_musd)} млн дол., ${fmt(p.total.volume_mt, 2)} млн т, ≈ ${fmt(p.total.price_usd_t)} дол./т.</p>
+      <div class="scroll"><table><thead><tr><th>Країна</th><th class="n">Частка</th><th class="n">тис. т</th><th class="n">дол./т</th></tr></thead><tbody>
+      ${p.top.map(t => `<tr><td>${pesc(t.country_uk)}</td><td class="n">${fmt(t.share_pct, 1)}%</td><td class="n">${fmt(t.volume_kt)}</td><td class="n">${fmt(t.price_usd_t)}</td></tr>`).join("")}
+      </tbody></table></div>
+      <div class="legend">Топ-5 разом — ${fmt(p.top_share_pct, 1)}% вартості. Експорт усього, млн дол.: ${p.series.map(r => `${r.year} — ${fmt(r.value_musd)}`).join("; ")}.${p.note ? ` ${pesc(cap(p.note))}.` : ""}</div>`).join("");
+    const B = (MP.basis || {})[c.id];
+    if (B) {
+      b += `<h4>Порт проти елеватора</h4><p>${pesc(B.text)}</p>`;
+      if (B.status === "ok") {
+        src.add("ціни CPT порт і EXW елеватор — Електронна зернова біржа (graintrade.com.ua)");
+        const T = F && (MP.tariffs || {})[F.oblast];
+        if (T) b += `<div class="legend">Ціни — на ${B.date.split("-").reverse().join(".")}, тариф — ${pesc(T.period)}: дати різні.</div>`;
+      }
+    }
+    return `<details${i === 0 ? " open" : ""}><summary>${pesc(c.uk)}</summary>${b}</details>`;
+  }).join("");
+  h += `<div class="mkt-src">Джерела: ${pesc([...src].join("; "))}. Логістику в маржу стратегій не враховано.</div>`;
+  return `<details class="mkt"><summary>Куди продати · ${pesc(crops.map(c => c.uk).join(", "))}</summary>${h}</details>`;
+}
+
+// ---------- ефект у грошах і меню сценаріїв (optimize: metrics.money / vs_current, presets)
+const grn = (v, sign) => {
+  if (v == null) return "—";
+  const a = Math.abs(v), sg = v < 0 ? "−" : sign && v > 0 ? "+" : "";
+  return sg + (a >= 1e6 ? `${nf(a / 1e6, 2)} млн грн` : `${nf(Math.round(a / 1000))} тис. грн`);
+};
+const VIOL164 = `<span class="badge viol">поточна порушує №164</span>`;
+
+function drawMoney(P, s) {
+  const S = P.strategies, cur = S.find(z => z.name === "current");
+  const t = s && s.name !== "current" ? s : S.find(z => z.name === "balanced");
+  const sec = d3.select("#pmoney-sec"), sv = d3.select("#pmoney");
+  sv.selectAll("*").remove();
+  if (!cur || !t || !cur.money || !t.money || !t.vs || !P.area_ha) {
+    sec.select("#pmoney-line").html(`Маржа не рахується (немає цін або поточної практики) — ефекту в гривнях не показуємо.${cur && cur.m.viol > 0 ? " " + VIOL164 : ""}`);
+    sec.select("#pmoney-leg").html(""); return;
+  }
+  const v = t.vs, a = P.area_ha, y1 = v.years[0][2] * a;
+  d3.select("#pmoney-title").text(`Ефект у грошах: ${SNAME[t.name] || t.name} проти поточної`);
+  const honest = v.d_field.p50 < 0 && v.cur_viol
+    ? `<div style="margin-top:4px">Поточна заробляє більше на <b>${grn(-v.d_field.p50)}</b> за 4 роки, але порушує №164` +
+      (P.run.sf_effect ? `; втрата від хвороб врахована за дослідом Полтавської ДСГДС (насичення сівозміни соняшником: урожай ×0,80–0,90).` : ".") + `</div>` : "";
+  d3.select("#pmoney-line").html(`<b>За 4 роки: ${grn(v.d_field.p50, true)}</b> на полі ${nf(a, 1)} га (у сухий бік, P10: ${grn(v.d_field.p10, true)}); ` +
+    `рік 1: <b class="${y1 < 0 ? "neg" : ""}">${grn(y1, true)}</b>. ` +
+    (v.breakeven ? `Окупається з ${v.breakeven}.` : `За 4 роки не окупається.`) +
+    (v.drawdown ? ` Гірша за поточну в ${v.drawdowns.join(", ")}.` : "") + (v.cur_viol ? " " + VIOL164 : "") + honest);
+  const W = 360, H = 170, m = {l: 56, r: 14, t: 8, b: 20}, y0 = P.run.plan_start_year;
+  const pts = z => [[y0 - 1, 0, 0, 0], ...z.money.years];
+  const C0 = pts(cur), T0 = pts(t);
+  const vals = [...C0, ...T0].flatMap(r => r.slice(1)).filter(x => x != null);
+  const x = d3.scaleLinear().domain([y0 - 1, y0 + C0.length - 2]).range([m.l, W - m.r]);
+  const y = d3.scaleLinear().domain([Math.min(0, d3.min(vals)), Math.max(0, d3.max(vals))]).nice(4).range([H - m.b, m.t]);
+  sv.append("g").selectAll("line").data(y.ticks(4)).join("line").attr("x1", m.l).attr("x2", W - m.r)
+    .attr("y1", d => y(d)).attr("y2", d => y(d)).attr("stroke", d => d === 0 ? "var(--muted)" : "var(--line)");
+  sv.append("g").selectAll("text").data(y.ticks(4)).join("text").attr("x", m.l - 4).attr("y", d => y(d) + 4)
+    .attr("text-anchor", "end").text(d => d === 0 ? "0" : Math.abs(d) >= 1e6 ? `${nf(d / 1e6, 1)} млн` : `${nf(d / 1000)} тис`);
+  sv.append("g").selectAll("text").data(C0.map(r => r[0])).join("text").attr("x", d => x(d)).attr("y", H - 4)
+    .attr("text-anchor", "middle").text(d => d === y0 - 1 ? "старт" : d);
+  sv.append("path").attr("fill", "var(--accent)").attr("opacity", .15)
+    .attr("d", d3.area().x(r => x(r[0])).y0(r => y(r[1])).y1(r => y(r[3]))(T0));
+  const ln = (D_, col, dash) => sv.append("path").attr("fill", "none").attr("stroke", col).attr("stroke-width", 2)
+    .attr("stroke-dasharray", dash || null).attr("d", d3.line().x(r => x(r[0])).y(r => y(r[2]))(D_));
+  ln(C0, "var(--muted)", "4 3");
+  ln(T0, "var(--accent)");
+  [[C0, "var(--muted)"], [T0, "var(--accent)"]].forEach(([D_, col]) => sv.append("g").selectAll("circle").data(D_.slice(1)).join("circle")
+    .attr("cx", r => x(r[0])).attr("cy", r => y(r[2])).attr("r", 2.5).attr("fill", col)
+    .append("title").text(r => `${r[0]}: накопичено ${grn(r[2])} (P10 ${grn(r[1])} · P90 ${grn(r[3])})`));
+  d3.select("#pmoney-leg").html(`<span style="color:var(--muted)">╌</span> поточна практика (P50) · <span style="color:var(--accent)">━</span> ${esc(SNAME[t.name] || t.name)} (P50), смуга — від сухого (P10) до вологого (P90) сценарію. ` +
+    `Накопичена маржа на полі, грн; рахується окремо в кожному з 25 років погоди, тож P50 суми ≠ сума P50 по роках.` +
+    (t.money.fallow_nc || cur.money.fallow_nc ? " Пар — без витрат (маржа завищена)." : ""));
+}
+
+function drawMenu(P) {
+  const cur = P.strategies.find(z => z.name === "current"), L = P.presets || [];
+  if (!L.length) { d3.select("#pmenu").html(""); return; }
+  const tri = t => t ? `${grn(t[0])} / <b>${grn(t[1])}</b> / ${grn(t[2])}` : "—";
+  const row = (name, seq, money, vs, viol, moist, note, cls) => `<tr class="${cls || ""}"><td>${esc(name)}<div class="legend">${esc(seq.join(" → "))}</div></td>
+    <td class="n">${money ? tri(money.total_field) : "—"}</td><td class="n ${vs && vs.d_field.p50 < 0 ? "neg" : ""}">${vs ? grn(vs.d_field.p50, true) : "—"}</td>
+    <td class="${viol > 0 ? "bad" : viol === 0 ? "ok" : ""}">${viol == null ? "—" : viol > 0 ? `✕ ${viol}` : "✓"}</td>
+    <td class="n">${moist == null ? "—" : Math.round(moist * 100) + "%"}</td><td class="legend" style="min-width:180px">${note}</td></tr>`;
+  const head = `<thead><tr><th>Сценарій</th><th style="text-align:right">Маржа на полі за 4 роки, P10 / P50 / P90</th><th style="text-align:right">до поточної, P50</th><th>№164</th><th style="text-align:right">волога на кінець</th><th>Примітка</th></tr></thead>`;
+  const body = (cur ? [row("Поточна практика", cur.seq, cur.money, null, cur.m.viol, cur.m.moist, cur.m.viol > 0 ? "поточна порушує №164" : "точка порівняння", "cur")] : [])
+    .concat(L.map(p => row(p.name, p.seq, p.money, p.vs, p.viol, p.moist,
+      p.status === "ok" ? esc(p.plan_note) + (p.viol > 0 ? ` · ${esc(p.viol_list.join("; "))}` : "")
+        : `<b>немає даних:</b> ${esc(p.reasons.join("; "))}`)));
+  d3.select("#pmenu").html(head + `<tbody>${body.join("")}</tbody>`);
+}
+
+if (Object.keys(PLANS).length) {
+  let ps = "karlivka_pl";
+  try { ps = localStorage.getItem("fs-field") || ps; } catch (e) {}
+  openPlan(PLANS[ps] ? ps : Object.keys(PLANS)[0]);
+} else d3.select("#plan").remove();
+
+// ---------- ННЦ
+const NNC = [
+  ["Показник", "№1 контроль", "№1 комплекс", "№2 контроль", "№2 комплекс"],
+  ["Урожай соя / пшениця яра, т/га", "1,28 / 2,71", "1,82 / 3,78", "1,30 / 2,47", "1,83 / 3,62"],
+  ["3-тя культура, т/га", "просо 2,83", "просо 3,76", "гречка 1,13", "гречка 1,74"],
+  ["Валовий дохід, тис. грн/га на рік*", "35,3", "48,5", "31,0", "45,8"],
+  ["Вода з ґрунту 0–100 см за ротацію, мм*", "231", "291", "274", "316"],
+  ["Загальні витрати води за ротацію, мм*", "903", "963", "946", "988"],
+  ["Дохід на 100 мм води, тис. грн*", "11,7", "15,1", "9,9", "13,9"],
+];
+d3.select("#nnc").html(`<thead><tr>${NNC[0].map((h, i) => `<th${i ? ' style="text-align:right"' : ""}>${h}</th>`).join("")}</tr></thead><tbody>` +
+  NNC.slice(1).map(r => `<tr>${r.map((v, i) => i ? `<td class="n">${v}</td>` : `<td>${v}</td>`).join("")}</tr>`).join("") + "</tbody>");
+
+// ---------- кількість точок
+if (D.grid_counts) {
+  const rows = D.grid_counts.slice().sort((a, b) => a.region.localeCompare(b.region, "uk"));
+  d3.select("#counts").html(`<thead><tr><th>Область</th><th style="text-align:right">POWER 0,5°</th><th style="text-align:right">SMAP 9 км</th><th style="text-align:right">ERA5-Land 0,1°</th><th style="text-align:right">IMERG 0,1°</th><th style="text-align:right">CHIRPS 0,05°</th></tr></thead><tbody>` +
+    rows.map(r => `<tr><td>${r.region}</td><td class="n">${r.power}</td><td class="n">${r.smap}</td><td class="n">${r.era5land}</td><td class="n">${r.imerg}</td><td class="n">${r.chirps.toLocaleString("uk-UA")}</td></tr>`).join("") + "</tbody>");
+}
+
+// ---------- мова: EN за замовчуванням, перемикач EN | UA (site/i18n.json; сторінка рендериться українською, шар перекладає текст)
+(function () {
+  const I = __I18N__;
+  const NAMES = Object.entries(I.names).sort((a, b) => b[0].length - a[0].length);
+  const NAME_RE = new RegExp("(?<![\\p{L}])(?:" + NAMES.map(([k]) => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ")(?![\\p{L}])", "gu");
+  const NAME_EN = new Map(NAMES);
+  const STR = new Map(Object.values(I.strings).map(v => [v.uk, v.en]));
+  const CYR = /[А-Яа-яІіЇїЄєҐґ]/;
+  const NUM_RE = /[−-]?\d[\d   ]*(?:,\d+)?/g;
+  const numEn = s => s.replace(/(\d),(\d)/g, "$1.$2").replace(/(\d)[   ](?=\d{3}(?!\d))/g, "$1,").replace(/−/g, "−");
+  const norm = core => {                  // ключ: назви → §, числа → #
+    const names = [], nums = [];
+    let k = core.replace(NAME_RE, m => { names.push(m); return "§"; });
+    k = k.replace(NUM_RE, m => { const t = m.replace(/[   ]+$/, ""); nums.push(t); return "#" + m.slice(t.length); });
+    return {k, names, nums};
+  };
+  const miss = new Set();
+  const tr = s => {
+    if (!CYR.test(s)) return numEn(s);
+    const lead = s.match(/^\s*/)[0], trail = s.match(/\s*$/)[0], core = s.trim();
+    if (STR.has(core)) return lead + STR.get(core) + trail;
+    const {k, names, nums} = norm(core);
+    const en = STR.get(k);
+    if (en == null) { miss.add(k); return s; }
+    let ni = 0, mi = 0;
+    return lead + en.replace(/[§#]/g, c => c === "§" ? NAME_EN.get(names[ni++]) ?? "" : numEn(nums[mi++] ?? "")) + trail;
+  };
+  const ATTRS = ["title", "aria-label", "placeholder"];
+  let lang = "en", busy = false;
+  try { lang = localStorage.getItem("fs-lang") === "uk" ? "uk" : "en"; } catch (e) { /* без сховища — EN */ }
+  const doNode = n => {
+    if (n.nodeType === 3) {
+      if (!n.nodeValue.trim()) return;
+      const p = n.parentNode && n.parentNode.nodeName;
+      if (p === "SCRIPT" || p === "STYLE") return;
+      if (n.__uk == null || (n.nodeValue !== n.__en)) { n.__uk = n.nodeValue; n.__en = null; }
+      if (lang === "en") { n.__en = tr(n.__uk); if (n.nodeValue !== n.__en) n.nodeValue = n.__en; }
+      else if (n.nodeValue !== n.__uk) n.nodeValue = n.__uk;
+    } else if (n.nodeType === 1) {
+      for (const a of ATTRS) if (n.hasAttribute(a)) {
+        const key = "__uk_" + a, cur = n.getAttribute(a);
+        if (n[key] == null || cur !== n[key + "_en"]) n[key] = cur;
+        const v = lang === "en" ? tr(n[key]) : n[key];
+        n[key + "_en"] = lang === "en" ? v : null;
+        if (cur !== v) n.setAttribute(a, v);
+      }
+      if (n.nodeName === "SCRIPT" || n.nodeName === "STYLE") return;
+      for (const c of n.childNodes) doNode(c);
+    }
+  };
+  const apply = root => { busy = true; try { doNode(root); } finally { busy = false; } };
+  const ukTitle = document.title;
+  const setLang = l => {
+    lang = l;
+    try { localStorage.setItem("fs-lang", l); } catch (e) { /* ігноруємо */ }
+    document.documentElement.lang = l;
+    document.title = l === "en" ? (STR.get(ukTitle) || ukTitle) : ukTitle;
+    document.querySelectorAll("#langsw button").forEach(b => b.setAttribute("aria-pressed", b.dataset.l === l));
+    apply(document.body);
+  };
+  const hdr = document.querySelector("header");
+  const sw = document.createElement("div");
+  sw.id = "langsw"; sw.setAttribute("role", "group");
+  sw.innerHTML = `<button type="button" data-l="en">EN</button><button type="button" data-l="uk">UA</button>`;
+  sw.querySelectorAll("button").forEach(b => b.__fixed = true);
+  hdr.insertBefore(sw, hdr.firstChild);
+  sw.addEventListener("click", e => { const b = e.target.closest("button"); if (b) setLang(b.dataset.l); });
+  new MutationObserver(ms => {
+    if (busy) return;
+    busy = true;
+    try { for (const m of ms) { if (m.type === "characterData") doNode(m.target); else { m.addedNodes.forEach(doNode); if (m.type === "attributes") doNode(m.target); } } }
+    finally { busy = false; }
+  }).observe(document.body, {subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: ATTRS});
+  window.__i18n = {tr, norm, miss, setLang, get lang() { return lang; }};
+  setLang(lang);
+})();
+</script>

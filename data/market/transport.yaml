@@ -1,0 +1,4 @@
+# Заповнюють люди (ТЗ A4). Кожне значення — {value, source}. TODO → модуль ринку вимкнено.
+tariff_uah_t_km: {value: TODO, source: TODO}   # тариф авто, грн/(т·км)
+fixed_uah_t:     {value: TODO, source: TODO}   # фіксована ставка, грн/т
+road_factor:     {value: TODO, source: TODO}   # дорога/пряма; виміряти на 5–10 маршрутах

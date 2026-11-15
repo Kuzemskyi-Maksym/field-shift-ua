@@ -1,0 +1,9 @@
+# Тваринництво (ТЗ A5). Заповнюють люди; кожне число — {value, source}. TODO → канал «корм» вимкнено.
+species:
+  pig:
+    feed_conversion_kg_feed_per_kg_gain: {value: TODO, source: TODO}
+    liveweight_price_uah_kg: {value: TODO, source: TODO}
+    carcass_yield: {value: TODO, source: TODO}
+    max_share_in_ration: {}        # {crop_id: {value: 0..1, source}}
+feed_values: {}                    # {crop_id: {me_mj_kg: {value, source}, cp_pct: {value, source}}}
+non_feed_costs: {value: TODO, source: TODO, note: "без них — «валовий дохід від м'яса, без витрат на утримання»"}

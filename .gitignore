@@ -1,0 +1,20 @@
+data/fields/
+*.npz
+*.zip
+out/hls/*/
+out/fields/*.html
+out/fields/*_window.geojson
+__pycache__/
+.pytest_cache/
+.cache/
+*.pyc
+.ipynb_checkpoints/
+# AppEEARS task ids: local run state, not data
+out/hls/tasks.json
+out/ecostress/tasks.json
+# crash dumps
+*.stackdump
+# raw archives
+*.tar
+*.tar.gz
+*.7z

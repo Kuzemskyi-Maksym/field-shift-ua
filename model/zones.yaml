@@ -1,0 +1,18 @@
+# Поле → зона (для календаря crops.yaml) і назва області для Держстату.
+# Зона за областю — ЗАГЛУШКА (області перетинають межі зон); дозволена лише з --allow-stubs.
+sources:
+  STUB_NO_SOURCE: "заглушка без джерела — зона за областю пілота, лише для прототипу до 13.11.2026"
+  DERZHSTAT_NAMES: "назви областей як у data/raw/yield/derzhstat_yield.csv"
+
+oblasts:
+  odesa:     {name_uk: Одеська,      zone: steppe,        zone_src: STUB_NO_SOURCE}
+  mykolaiv:  {name_uk: Миколаївська, zone: steppe,        zone_src: STUB_NO_SOURCE}
+  poltava:   {name_uk: Полтавська,   zone: forest_steppe, zone_src: STUB_NO_SOURCE}
+  vinnytsia: {name_uk: Вінницька,    zone: forest_steppe, zone_src: STUB_NO_SOURCE}
+  volyn:     {name_uk: Волинська,    zone: polissia,      zone_src: STUB_NO_SOURCE}
+
+pilots:   # baseline_model.POINTS → область і полігон NASA Harvest (out/fields/<oblast>_fields_stats.csv, колонка pilot)
+  berezivka_od: {oblast: odesa, fid: 16903}
+  arbuzynka_mk: {oblast: mykolaiv, fid: 3297}
+  karlivka_pl: {oblast: poltava, fid: 20905}
+  kalynivka_vn: {oblast: vinnytsia, fid: 1821}

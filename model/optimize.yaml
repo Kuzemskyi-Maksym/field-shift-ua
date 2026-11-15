@@ -1,0 +1,51 @@
+# Налаштування оптимізатора (ТЗ A7). Ваги — значення повзунків фермера за замовчуванням (UI), не агрономічні числа.
+sources:
+  MODEL_CONV: "модельна умовність / значення UI за замовчуванням; перевіряється в reports/sensitivity"
+  TZ_A3: "ТЗ A3 (з відхиленням — див. docs/decisions.md D1)"
+
+today: "2026-11-12"       # дата розрахунку: озимі року 1 з датою сівби до неї — лише якщо фермер підтвердив посів
+plan_start_year: 2027     # перший сезон плану (урожай 2027); погода 2001–2025 — сценарії
+current_max_lag_years: 1  # історія, що закінчується раніше plan_start_year − 2, — прапорець «історія до <рік>» (поточну не відкидаємо)
+current_max_unknown_years: 2  # скільки невідомих («?») років поточної практики розгалужувати W/S (≤ 4 варіанти)
+taw_discrepancy_flag_frac: 0.25   # MODEL_CONV: розбіжність TAW Т19 vs SoilGrids > 25% → питання агроному
+years: 4                  # довжина плану K (3–4)
+quantiles: {dry: 10, typical: 50, wet: 90}   # «сухий/типовий/вологий» — перцентилі розподілу за 25 роками погоди
+prices_file: data/raw/prices_derzhstat.csv    # ціни Держстату зі зрізами (snapshot); UUB/EGB — data/raw/prices_candidates.csv (чутливість)
+prices_snapshot: DSSU_2025                    # основний зріз: середнє по 5 областях пілотів, 2025
+prices_by_oblast: false                       # true → зріз DSSU_2025_<oblast> поля; відсутні культури — fallback на prices_snapshot
+prices_oblast_pattern: "DSSU_2025_{oblast}"
+costs_file: data/raw/costs_derzhstat.csv     # витрати Держстату (підприємства), культура × область × рік
+cost_year: 2025                               # витрати на га — ФІКСОВАНІ, року cost_year, області поля (D15)
+cost_column: full_cost_uah_ha                 # full_cost_uah_ha (основне: повна собівартість, вкл. реалізацію/доставку — D16) | prod_cost_uah_ha (чутливість)
+profitability_year: 2025                     # рядок «рентабельність … за Держстатом, 2025» в explain (D15)
+cost_outlier_factor: 2                        # рішення 12.11: >×2 від медіани по 5 областях → медіана з прапорцем
+yield_file: data/raw/yield/derzhstat_yield.csv   # усі категорії господарств; підприємства — derzhstat_yield_enterprises.csv (чутливість)
+yx_calibration: A         # A (як v0, основне), C (P90 obs/rel, чутливість); B (ТЗ A3) — лише у звіті
+# Ранжування (--rank): auto → money (т/га × ціна) → feed_energy/feed_protein (джерело в livestock.yaml) → none.
+# yield_index — лише явно, «ранжування без цін — демо механіки» (Ya/Yx між культурами не порівнюється).
+
+# Чорний пар (D16): витрат на пар з джерелом немає → у цих стратегіях пар заборонений
+fallow_forbidden_in: [max_income, min_risk, balanced]   # пар лишається лише у «water»
+# 4-та стратегія «water» — лише для зон зі списку: Парето (волога на кінець ротації ↑, маржа P10 ↑), бал з вагами нижче
+water_strategy_zones: [steppe]
+water_weights: {src: MODEL_CONV, end_moisture: 0.5, value_p10: 0.5}
+
+# «Маржа близька до нуля»: margin_p50 ≤ частка × income_p50 і margin_p10 < 0 → перший пункт gaps (MODEL_CONV)
+near_zero_margin_frac: 0.1
+# Ефект насичення сівозміни соняшником (D20, rules.yaml prev_effect.sunflower_return, KOHAN2016): множник урожаю соняшнику
+# за роками між посівами — у всіх стратегіях, поточній і пресетах; історія — гілка плану. false — чутливість «без ефекту».
+sunflower_return_effect: true
+# Прапорці логістики культур (у per_year.flags)
+crop_logistics_flags:
+  sugar_beet: "логістика: потрібен цукровий завод у радіусі доставки; витрати доставки — у повній собівартості Держстату середні по області"
+
+# Ваги збалансованої стратегії (сума не обов'язково 1; критерії нормуються 0..1 по фронту Парето)
+weights:
+  src: MODEL_CONV
+  income_p50: 0.3          # або індекс врожаю P50, якщо цін немає
+  income_p10: 0.3
+  water: 0.2               # мін. дефіцит ETc−ETa і макс. запас вологи на кінець ротації (порівну)
+  soil: 0.2                # частка бобових ↑, дні голого поля ↓, частка культур, що сушать ґрунт ↓ (порівну)
+
+# Обмеження фермера за замовчуванням (порожні); для конкретного поля — data/fields/<field>.yaml
+farmer_defaults: {forbidden: [], no_machinery_for: [], no_machinery: [], min_share: {}, max_share: {}, sown_winter_crop: null}

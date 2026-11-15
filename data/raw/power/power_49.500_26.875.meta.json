@@ -1,0 +1,74 @@
+{
+ "requested": {
+  "lat": 49.5,
+  "lon": 26.875
+ },
+ "returned_geometry": {
+  "type": "Point",
+  "coordinates": [
+   26.875,
+   49.5,
+   308.91
+  ]
+ },
+ "params": [
+  "T2M",
+  "T2M_MAX",
+  "T2M_MIN",
+  "PRECTOTCORR",
+  "RH2M",
+  "WS2M",
+  "ALLSKY_SFC_SW_DWN",
+  "T2MDEW"
+ ],
+ "params_missing": [],
+ "units": {
+  "T2M": "C",
+  "T2M_MAX": "C",
+  "T2M_MIN": "C",
+  "PRECTOTCORR": "mm/day",
+  "RH2M": "%",
+  "WS2M": "m/s",
+  "ALLSKY_SFC_SW_DWN": "MJ/m^2/day",
+  "T2MDEW": "C"
+ },
+ "longnames": {
+  "T2M": "Temperature at 2 Meters",
+  "T2M_MAX": "Temperature at 2 Meters Maximum",
+  "T2M_MIN": "Temperature at 2 Meters Minimum",
+  "PRECTOTCORR": "Precipitation Corrected",
+  "RH2M": "Relative Humidity at 2 Meters",
+  "WS2M": "Wind Speed at 2 Meters",
+  "ALLSKY_SFC_SW_DWN": "All Sky Surface Shortwave Downward Irradiance",
+  "T2MDEW": "Dew/Frost Point at 2 Meters"
+ },
+ "header": {
+  "title": "NASA/POWER Source Native Resolution Daily Data",
+  "api": {
+   "version": "v2.10.3",
+   "name": "POWER Daily API"
+  },
+  "fill_value": -999.0,
+  "time_standard": "LST",
+  "start": "20010101",
+  "end": "20251231"
+ },
+ "sources": [
+  "MERRA2",
+  "SYN1DEG",
+  "POWER"
+ ],
+ "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M%2CT2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CRH2M%2CWS2M%2CALLSKY_SFC_SW_DWN%2CT2MDEW&community=AG&latitude=49.5&longitude=26.875&start=20010101&end=20251231&format=JSON",
+ "fetched_utc": "2026-11-12T15:35:13+00:00",
+ "nan_share": {
+  "T2M": 0.0,
+  "T2M_MAX": 0.0,
+  "T2M_MIN": 0.0,
+  "PRECTOTCORR": 0.0,
+  "RH2M": 0.0,
+  "WS2M": 0.0,
+  "ALLSKY_SFC_SW_DWN": 0.0,
+  "T2MDEW": 0.0
+ },
+ "flag": "погода — клітинка POWER ~50 км, клімат району, не поля"
+}

@@ -1,0 +1,398 @@
+field,model_id,date,y,doy0,crop,hls,eco,model,daytime,solar_hour,apr_sep
+Березівка,berezivka_od,2018-08-04,2018,215,sunflower,S early,2.149,1.62,True,15.74,True
+Березівка,berezivka_od,2018-08-06,2018,217,sunflower,S early,0.938,1.237,True,15.61,True
+Березівка,berezivka_od,2018-08-08,2018,219,sunflower,S early,0.0,1.335,False,18.73,True
+Березівка,berezivka_od,2018-08-11,2018,222,sunflower,S early,1.317,0.962,False,17.73,True
+Березівка,berezivka_od,2018-08-14,2018,225,sunflower,S early,1.407,0.81,True,16.74,True
+Березівка,berezivka_od,2018-08-21,2018,232,sunflower,S early,2.183,0.195,True,13.89,True
+Березівка,berezivka_od,2019-01-31,2019,30,winter_wheat,W,0.0,0.106,True,16.14,False
+Березівка,berezivka_od,2019-02-02,2019,32,winter_wheat,W,0.0,0.141,True,16.03,False
+Березівка,berezivka_od,2019-02-16,2019,46,winter_wheat,W,0.439,0.261,True,10.46,False
+Березівка,berezivka_od,2019-02-19,2019,49,winter_wheat,W,0.575,0.335,True,9.49,False
+Березівка,berezivka_od,2020-04-14,2020,103,sunflower,S early,1.211,1.301,True,10.91,True
+Березівка,berezivka_od,2020-04-23,2020,112,sunflower,S early,0.844,1.786,False,7.03,True
+Березівка,berezivka_od,2020-06-28,2020,178,sunflower,S early,0.979,2.627,False,5.04,True
+Березівка,berezivka_od,2020-09-29,2020,271,sunflower,S early,0.914,0.477,True,16.34,True
+Березівка,berezivka_od,2021-06-18,2021,168,winter_wheat,W,2.741,3.591,True,13.09,True
+Березівка,berezivka_od,2021-08-14,2021,225,winter_wheat,W,1.312,1.696,True,13.96,True
+Березівка,berezivka_od,2021-08-18,2021,229,winter_wheat,W,2.058,1.583,True,12.41,True
+Березівка,berezivka_od,2021-08-21,2021,232,winter_wheat,W,2.012,1.614,True,11.68,True
+Березівка,berezivka_od,2021-08-25,2021,236,winter_wheat,W,1.212,1.216,True,10.14,True
+Березівка,berezivka_od,2021-10-02,2021,274,winter_wheat,W,0.516,1.017,True,14.86,False
+Березівка,berezivka_od,2021-12-11,2021,344,winter_wheat,W,0.418,0.474,True,15.23,False
+Березівка,berezivka_od,2022-02-10,2022,40,sunflower,S early,0.926,0.489,True,10.61,False
+Березівка,berezivka_od,2022-04-05,2022,94,sunflower,S early,1.824,0.985,True,13.14,True
+Березівка,berezivka_od,2022-04-24,2022,113,sunflower,S early,0.0,1.167,False,5.88,True
+Березівка,berezivka_od,2022-04-26,2022,115,sunflower,S early,1.94,1.33,True,9.13,True
+Березівка,berezivka_od,2022-08-01,2022,212,sunflower,S early,0.908,0.555,True,14.58,True
+Березівка,berezivka_od,2022-08-03,2022,214,sunflower,S early,0.86,0.714,False,17.81,True
+Березівка,berezivka_od,2022-08-13,2022,224,sunflower,S early,1.974,0.688,True,14.54,True
+Березівка,berezivka_od,2022-08-14,2022,225,sunflower,S early,0.948,0.822,True,13.73,True
+Березівка,berezivka_od,2022-08-19,2022,230,sunflower,S early,2.455,1.315,True,8.06,True
+Березівка,berezivka_od,2022-08-29,2022,240,sunflower,S early,1.985,1.199,True,8.06,True
+Березівка,berezivka_od,2022-10-21,2022,293,sunflower,S early,0.597,0.524,True,11.06,False
+Березівка,berezivka_od,2022-10-29,2022,301,sunflower,S early,0.464,0.729,False,7.88,False
+Березівка,berezivka_od,2022-12-25,2022,358,sunflower,S early,0.052,0.235,True,9.39,False
+Арбузинка,arbuzynka_mk,2018-07-30,2018,210,maize,S late,0.0,3.638,False,18.51,True
+Арбузинка,arbuzynka_mk,2018-07-31,2018,211,maize,S late,1.369,3.805,False,17.64,True
+Арбузинка,arbuzynka_mk,2018-08-08,2018,219,maize,S late,0.0,2.374,False,18.77,True
+Арбузинка,arbuzynka_mk,2018-08-11,2018,222,maize,S late,1.516,1.873,False,17.77,True
+Арбузинка,arbuzynka_mk,2018-08-12,2018,223,maize,S late,3.382,1.575,True,13.71,True
+Арбузинка,arbuzynka_mk,2018-08-19,2018,230,maize,S late,4.001,1.104,True,10.86,True
+Арбузинка,arbuzynka_mk,2018-08-27,2018,238,maize,S late,2.155,0.686,False,7.14,True
+Арбузинка,arbuzynka_mk,2018-08-30,2018,241,maize,S late,0.545,0.594,False,6.14,True
+Арбузинка,arbuzynka_mk,2018-09-02,2018,244,maize,S late,1.374,0.51,True,8.37,True
+Арбузинка,arbuzynka_mk,2018-09-05,2018,247,maize,S late,1.043,0.372,False,7.39,True
+Арбузинка,arbuzynka_mk,2019-02-16,2019,46,maize,S late,0.49,0.618,True,10.51,False
+Арбузинка,arbuzynka_mk,2019-02-17,2019,47,maize,S late,0.367,0.854,True,9.67,False
+Арбузинка,arbuzynka_mk,2019-02-20,2019,50,maize,S late,0.266,0.531,True,8.71,False
+Арбузинка,arbuzynka_mk,2019-12-20,2019,353,maize,S late,0.0,0.364,True,8.32,False
+Арбузинка,arbuzynka_mk,2020-04-14,2020,103,winter_wheat,W,0.471,1.155,True,10.96,True
+Арбузинка,arbuzynka_mk,2020-04-23,2020,112,winter_wheat,W,0.93,2.678,False,7.07,True
+Арбузинка,arbuzynka_mk,2020-06-28,2020,178,winter_wheat,W,0.781,3.448,False,5.09,True
+Арбузинка,arbuzynka_mk,2021-03-28,2021,86,maize,S late,0.0,2.047,False,17.57,False
+Арбузинка,arbuzynka_mk,2021-06-24,2021,174,maize,S late,1.988,4.64,False,6.77,True
+Арбузинка,arbuzynka_mk,2021-08-14,2021,225,maize,S late,3.574,3.153,True,14.01,True
+Арбузинка,arbuzynka_mk,2021-08-18,2021,229,maize,S late,3.388,2.45,True,12.46,True
+Арбузинка,arbuzynka_mk,2021-08-21,2021,232,maize,S late,2.946,2.669,True,11.72,True
+Арбузинка,arbuzynka_mk,2021-10-02,2021,274,maize,S late,1.051,0.883,True,14.91,False
+Арбузинка,arbuzynka_mk,2021-12-11,2021,344,maize,S late,0.0,0.435,True,15.27,False
+Арбузинка,arbuzynka_mk,2022-02-10,2022,40,winter_wheat,W,0.322,0.165,True,10.66,False
+Арбузинка,arbuzynka_mk,2022-04-24,2022,113,winter_wheat,W,0.0,2.26,False,5.92,True
+Арбузинка,arbuzynka_mk,2022-04-26,2022,115,winter_wheat,W,0.471,2.505,False,5.94,True
+Арбузинка,arbuzynka_mk,2022-04-26,2022,115,winter_wheat,W,2.58,2.505,True,9.17,True
+Арбузинка,arbuzynka_mk,2022-04-27,2022,116,winter_wheat,W,1.945,2.344,True,8.37,True
+Арбузинка,arbuzynka_mk,2022-08-19,2022,230,winter_wheat,W,1.595,1.825,True,8.11,True
+Арбузинка,arbuzynka_mk,2022-08-24,2022,235,winter_wheat,W,0.0,2.761,False,5.67,True
+Арбузинка,arbuzynka_mk,2022-08-29,2022,240,winter_wheat,W,2.105,1.742,True,8.11,True
+Арбузинка,arbuzynka_mk,2022-10-19,2022,291,winter_wheat,W,1.241,1.093,True,11.09,False
+Арбузинка,arbuzynka_mk,2022-10-21,2022,293,winter_wheat,W,0.678,1.037,True,11.11,False
+Арбузинка,arbuzynka_mk,2022-10-25,2022,297,winter_wheat,W,0.143,0.604,True,9.51,False
+Арбузинка,arbuzynka_mk,2022-10-29,2022,301,winter_wheat,W,0.256,1.416,False,7.92,False
+Арбузинка,arbuzynka_mk,2022-12-23,2022,356,winter_wheat,W,0.14,0.109,True,9.42,False
+Арбузинка,arbuzynka_mk,2023-01-26,2023,25,maize,S late,0.0,0.403,True,16.51,False
+Арбузинка,arbuzynka_mk,2023-02-02,2023,32,maize,S late,0.248,0.472,True,14.06,False
+Арбузинка,arbuzynka_mk,2023-02-04,2023,34,maize,S late,0.297,0.492,True,12.44,False
+Арбузинка,arbuzynka_mk,2023-02-07,2023,37,maize,S late,0.391,0.577,True,11.66,False
+Арбузинка,arbuzynka_mk,2023-02-08,2023,38,maize,S late,0.374,0.456,True,10.86,False
+Арбузинка,arbuzynka_mk,2023-02-22,2023,52,maize,S late,0.526,0.896,True,9.27,False
+Арбузинка,arbuzynka_mk,2023-04-24,2023,113,maize,S late,2.18,0.839,True,9.56,True
+Арбузинка,arbuzynka_mk,2023-11-06,2023,309,maize,S late,0.0,1.055,False,23.36,False
+Карлівка,karlivka_pl,2019-02-08,2019,38,sunflower,S early,0.022,0.27,True,14.42,False
+Карлівка,karlivka_pl,2019-02-09,2019,39,sunflower,S early,0.059,0.191,True,13.55,False
+Карлівка,karlivka_pl,2019-02-10,2019,40,sunflower,S early,0.0,0.241,True,12.7,False
+Карлівка,karlivka_pl,2019-02-13,2019,43,sunflower,S early,0.212,0.316,True,11.73,False
+Карлівка,karlivka_pl,2019-02-15,2019,45,sunflower,S early,0.269,0.237,True,11.63,False
+Карлівка,karlivka_pl,2019-02-17,2019,47,sunflower,S early,0.035,0.354,True,9.92,False
+Карлівка,karlivka_pl,2019-02-17,2019,47,sunflower,S early,0.141,0.354,True,13.15,False
+Карлівка,karlivka_pl,2019-02-18,2019,48,sunflower,S early,0.336,0.377,True,10.67,False
+Карлівка,karlivka_pl,2019-02-19,2019,49,sunflower,S early,0.06,0.439,True,9.8,False
+Карлівка,karlivka_pl,2019-02-20,2019,50,sunflower,S early,0.126,0.386,True,8.95,False
+Карлівка,karlivka_pl,2019-02-20,2019,50,sunflower,S early,0.189,0.386,True,12.18,False
+Карлівка,karlivka_pl,2019-02-21,2019,51,sunflower,S early,0.376,0.567,True,11.32,False
+Карлівка,karlivka_pl,2019-02-27,2019,57,sunflower,S early,0.43,0.482,True,9.4,False
+Карлівка,karlivka_pl,2019-06-12,2019,162,sunflower,S early,4.209,7.906,True,12.27,True
+Карлівка,karlivka_pl,2019-06-19,2019,169,sunflower,S early,2.985,5.801,True,12.95,True
+Карлівка,karlivka_pl,2019-12-18,2019,351,sunflower,S early,0.061,0.281,True,10.18,False
+Карлівка,karlivka_pl,2020-04-04,2020,93,maize,S late,0.316,0.444,False,17.45,True
+Карлівка,karlivka_pl,2020-04-06,2020,95,maize,S late,0.388,0.49,False,17.5,True
+Карлівка,karlivka_pl,2020-07-06,2020,186,maize,S late,1.775,6.832,False,5.43,True
+Карлівка,karlivka_pl,2020-10-05,2020,277,maize,S late,0.308,0.875,True,16.77,False
+Карлівка,karlivka_pl,2020-10-23,2020,295,maize,S late,0.0,1.039,False,7.3,False
+Карлівка,karlivka_pl,2020-12-02,2020,335,maize,S late,0.0,0.715,True,14.88,False
+Карлівка,karlivka_pl,2021-06-24,2021,174,maize,S late,2.554,3.927,False,7.02,True
+Карлівка,karlivka_pl,2021-06-25,2021,175,maize,S late,2.067,5.035,False,6.25,True
+Карлівка,karlivka_pl,2021-08-29,2021,240,maize,S late,1.919,2.052,False,7.32,True
+Карлівка,karlivka_pl,2021-10-01,2021,273,maize,S late,1.238,0.797,True,15.95,False
+Карлівка,karlivka_pl,2021-10-02,2021,274,maize,S late,1.358,0.751,True,15.17,False
+Карлівка,karlivka_pl,2021-10-15,2021,287,maize,S late,0.723,0.334,True,9.73,False
+Карлівка,karlivka_pl,2021-12-02,2021,335,maize,S late,0.0,0.338,True,14.55,False
+Карлівка,karlivka_pl,2021-12-10,2021,343,maize,S late,0.153,0.44,True,14.7,False
+Карлівка,karlivka_pl,2021-12-14,2021,347,maize,S late,0.051,0.404,True,9.92,False
+Карлівка,karlivka_pl,2022-02-05,2022,35,maize,S late,0.0,0.201,True,13.32,False
+Карлівка,karlivka_pl,2022-02-10,2022,40,maize,S late,0.0,0.31,True,10.92,False
+Карлівка,karlivka_pl,2022-02-15,2022,45,maize,S late,0.393,0.606,True,11.73,False
+Карлівка,karlivka_pl,2022-02-18,2022,48,maize,S late,0.0,0.523,False,7.72,False
+Карлівка,karlivka_pl,2022-04-07,2022,96,maize,S late,1.006,2.611,True,16.68,True
+Карлівка,karlivka_pl,2022-04-21,2022,110,maize,S late,0.87,1.395,True,10.22,True
+Карлівка,karlivka_pl,2022-04-24,2022,113,maize,S late,0.399,1.517,False,6.18,True
+Карлівка,karlivka_pl,2022-04-24,2022,113,maize,S late,1.905,1.517,True,9.42,True
+Карлівка,karlivka_pl,2022-04-25,2022,114,maize,S late,2.183,2.672,True,8.6,True
+Карлівка,karlivka_pl,2022-04-27,2022,116,maize,S late,0.0,0.734,False,5.38,True
+Карлівка,karlivka_pl,2022-04-27,2022,116,maize,S late,0.924,0.734,True,8.62,True
+Карлівка,karlivka_pl,2022-05-28,2022,147,maize,S late,0.25,1.163,True,16.6,True
+Карлівка,karlivka_pl,2022-06-04,2022,154,maize,S late,2.299,2.465,False,17.43,True
+Карлівка,karlivka_pl,2022-06-12,2022,162,maize,S late,2.834,3.54,True,10.98,True
+Карлівка,karlivka_pl,2022-06-25,2022,175,maize,S late,2.802,3.939,True,8.58,True
+Карлівка,karlivka_pl,2022-06-29,2022,179,maize,S late,2.954,6.223,False,7.0,True
+Карлівка,karlivka_pl,2022-07-31,2022,211,maize,S late,0.0,4.663,False,18.92,True
+Карлівка,karlivka_pl,2022-08-05,2022,216,maize,S late,1.775,4.955,True,13.25,True
+Карлівка,karlivka_pl,2022-08-24,2022,235,maize,S late,0.039,3.198,False,5.92,True
+Карлівка,karlivka_pl,2022-09-30,2022,272,maize,S late,0.729,0.751,True,15.33,True
+Карлівка,karlivka_pl,2022-10-08,2022,280,maize,S late,1.326,0.743,True,12.12,False
+Карлівка,karlivka_pl,2022-10-16,2022,288,maize,S late,0.826,1.267,True,8.9,False
+Карлівка,karlivka_pl,2022-10-17,2022,289,maize,S late,0.801,1.103,True,11.32,False
+Карлівка,karlivka_pl,2022-10-19,2022,291,maize,S late,0.698,1.097,True,8.1,False
+Карлівка,karlivka_pl,2022-12-05,2022,338,maize,S late,0.291,0.23,True,12.87,False
+Карлівка,karlivka_pl,2022-12-16,2022,349,maize,S late,0.0,0.224,True,8.85,False
+Карлівка,karlivka_pl,2023-01-30,2023,29,maize,S late,0.341,0.296,True,15.13,False
+Карлівка,karlivka_pl,2023-02-06,2023,36,maize,S late,0.125,0.346,True,12.7,False
+Карлівка,karlivka_pl,2023-02-07,2023,37,maize,S late,0.243,0.344,True,11.9,False
+Карлівка,karlivka_pl,2023-02-22,2023,52,maize,S late,0.174,0.659,True,9.53,False
+Карлівка,karlivka_pl,2023-02-24,2023,54,maize,S late,0.0,0.813,False,7.93,False
+Карлівка,karlivka_pl,2023-04-10,2023,99,maize,S late,1.603,2.49,True,14.62,True
+Карлівка,karlivka_pl,2023-04-16,2023,105,maize,S late,2.431,2.387,True,11.42,True
+Карлівка,karlivka_pl,2023-04-27,2023,116,maize,S late,0.494,0.629,False,7.37,True
+Карлівка,karlivka_pl,2023-08-02,2023,213,maize,S late,3.508,5.142,True,13.98,True
+Карлівка,karlivka_pl,2023-08-07,2023,218,maize,S late,3.295,4.761,True,14.8,True
+Карлівка,karlivka_pl,2023-09-24,2023,266,maize,S late,0.084,1.184,False,17.27,True
+Карлівка,karlivka_pl,2023-12-13,2023,346,maize,S late,0.0,0.125,True,10.02,False
+Карлівка,karlivka_pl,2024-11-28,2024,331,winter_wheat,W,0.51,0.315,True,14.35,False
+Карлівка,karlivka_pl,2025-04-02,2025,91,maize,S late,1.446,0.742,True,12.82,True
+Карлівка,karlivka_pl,2025-06-03,2025,153,maize,S late,1.747,5.543,True,12.28,True
+Карлівка,karlivka_pl,2025-10-05,2025,277,maize,S late,0.655,0.579,True,14.73,False
+Карлівка,karlivka_pl,2025-11-25,2025,328,maize,S late,0.0,0.515,True,14.93,False
+Калинівка,kalynivka_vn,2018-08-05,2018,216,winter_wheat,W,1.314,1.573,True,16.35,True
+Калинівка,kalynivka_vn,2018-08-08,2018,219,winter_wheat,W,0.0,1.702,False,18.6,True
+Калинівка,kalynivka_vn,2018-08-12,2018,223,winter_wheat,W,1.394,1.522,True,13.51,True
+Калинівка,kalynivka_vn,2018-08-12,2018,223,winter_wheat,W,1.207,1.522,True,16.73,True
+Калинівка,kalynivka_vn,2018-08-15,2018,226,winter_wheat,W,2.925,2.09,True,12.51,True
+Калинівка,kalynivka_vn,2018-08-15,2018,226,winter_wheat,W,1.141,2.09,True,15.73,True
+Калинівка,kalynivka_vn,2018-08-22,2018,233,winter_wheat,W,1.358,1.47,True,12.9,True
+Калинівка,kalynivka_vn,2018-08-24,2018,235,winter_wheat,W,1.815,3.061,True,9.55,True
+Калинівка,kalynivka_vn,2018-08-25,2018,236,winter_wheat,W,2.694,2.96,True,8.68,True
+Калинівка,kalynivka_vn,2018-08-25,2018,236,winter_wheat,W,2.026,2.96,True,11.9,True
+Калинівка,kalynivka_vn,2018-09-04,2018,246,winter_wheat,W,2.022,2.868,True,8.05,True
+Калинівка,kalynivka_vn,2019-02-02,2019,32,maize,S late,0.0,0.193,True,15.9,False
+Калинівка,kalynivka_vn,2019-02-10,2019,40,maize,S late,0.0,0.218,True,13.86,False
+Калинівка,kalynivka_vn,2019-02-18,2019,48,maize,S late,0.076,0.4,True,13.45,False
+Калинівка,kalynivka_vn,2019-02-19,2019,49,maize,S late,0.229,0.396,True,9.36,False
+Калинівка,kalynivka_vn,2019-02-22,2019,52,maize,S late,0.302,0.394,True,11.63,False
+Калинівка,kalynivka_vn,2019-02-25,2019,55,maize,S late,0.524,0.461,True,10.66,False
+Калинівка,kalynivka_vn,2019-10-02,2019,274,maize,S late,1.032,0.905,True,16.55,False
+Калинівка,kalynivka_vn,2019-12-18,2019,351,maize,S late,0.259,0.217,True,12.96,False
+Калинівка,kalynivka_vn,2020-04-03,2020,92,sunflower,S early,0.0,0.883,False,17.8,True
+Калинівка,kalynivka_vn,2020-04-06,2020,95,sunflower,S early,0.727,0.808,False,17.06,True
+Калинівка,kalynivka_vn,2020-04-20,2020,109,sunflower,S early,1.138,0.702,True,9.26,True
+Калинівка,kalynivka_vn,2020-04-20,2020,109,sunflower,S early,1.193,0.702,True,9.28,True
+Калинівка,kalynivka_vn,2020-05-01,2020,120,sunflower,S early,0.0,0.837,False,5.36,True
+Калинівка,kalynivka_vn,2020-06-11,2020,161,sunflower,S early,2.974,4.096,True,15.25,True
+Калинівка,kalynivka_vn,2020-06-15,2020,165,sunflower,S early,3.125,3.611,True,13.68,True
+Калинівка,kalynivka_vn,2020-06-19,2020,169,sunflower,S early,2.093,4.043,True,12.1,True
+Калинівка,kalynivka_vn,2020-07-06,2020,186,sunflower,S early,0.89,5.488,False,5.0,True
+Калинівка,kalynivka_vn,2020-12-27,2020,360,sunflower,S early,0.0,-0.015,True,9.11,False
+Калинівка,kalynivka_vn,2021-02-20,2021,50,maize,S late,0.0,0.266,True,8.11,False
+Калинівка,kalynivka_vn,2021-04-28,2021,117,maize,S late,0.54,1.982,False,5.85,True
+Калинівка,kalynivka_vn,2021-06-20,2021,170,maize,S late,3.364,2.807,True,11.36,True
+Калинівка,kalynivka_vn,2021-07-28,2021,208,maize,S late,2.281,5.416,False,17.55,True
+Калинівка,kalynivka_vn,2021-08-22,2021,233,maize,S late,2.207,2.874,False,7.51,True
+Калинівка,kalynivka_vn,2021-08-22,2021,233,maize,S late,1.656,2.874,True,10.75,True
+Калинівка,kalynivka_vn,2021-10-01,2021,273,maize,S late,0.938,1.121,True,15.51,False
+Калинівка,kalynivka_vn,2021-10-02,2021,274,maize,S late,1.447,1.093,True,14.73,False
+Калинівка,kalynivka_vn,2022-03-29,2022,87,winter_wheat,W,1.061,0.741,False,17.01,False
+Калинівка,kalynivka_vn,2022-04-14,2022,103,winter_wheat,W,1.291,0.893,True,13.83,True
+Калинівка,kalynivka_vn,2022-04-18,2022,107,winter_wheat,W,0.825,0.595,True,12.21,True
+Калинівка,kalynivka_vn,2022-04-20,2022,109,winter_wheat,W,0.544,0.741,True,8.98,True
+Калинівка,kalynivka_vn,2022-04-20,2022,109,winter_wheat,W,0.398,0.741,True,10.58,True
+Калинівка,kalynivka_vn,2022-04-26,2022,115,winter_wheat,W,0.0,0.989,False,5.76,True
+Калинівка,kalynivka_vn,2022-04-27,2022,116,winter_wheat,W,2.054,1.218,True,8.18,True
+Калинівка,kalynivka_vn,2022-06-14,2022,164,winter_wheat,W,3.121,5.41,True,13.76,True
+Калинівка,kalynivka_vn,2022-06-18,2022,168,winter_wheat,W,4.31,5.278,True,12.16,True
+Калинівка,kalynivka_vn,2022-07-25,2022,205,winter_wheat,W,0.928,1.724,False,18.48,True
+Калинівка,kalynivka_vn,2022-07-30,2022,210,winter_wheat,W,1.013,1.785,True,16.05,True
+Калинівка,kalynivka_vn,2022-08-18,2022,229,winter_wheat,W,3.039,2.469,True,11.96,True
+Калинівка,kalynivka_vn,2022-08-19,2022,230,winter_wheat,W,2.186,2.435,False,7.93,True
+Калинівка,kalynivka_vn,2022-10-12,2022,284,winter_wheat,W,0.903,1.099,True,11.7,False
+Калинівка,kalynivka_vn,2022-12-14,2022,347,winter_wheat,W,0.072,0.083,True,10.01,False
+Калинівка,kalynivka_vn,2023-01-26,2023,25,maize,S late,0.0,0.392,True,16.33,False
+Калинівка,kalynivka_vn,2023-01-30,2023,29,maize,S late,0.151,0.552,True,14.7,False
+Калинівка,kalynivka_vn,2023-02-08,2023,38,maize,S late,0.239,0.209,True,13.9,False
+Калинівка,kalynivka_vn,2023-02-13,2023,43,maize,S late,0.0,0.334,True,9.88,False
+Калинівка,kalynivka_vn,2023-03-30,2023,88,maize,S late,0.705,1.759,True,16.5,False
+Калинівка,kalynivka_vn,2023-04-24,2023,113,maize,S late,1.189,2.592,False,6.13,True
+Калинівка,kalynivka_vn,2023-04-24,2023,113,maize,S late,2.482,2.592,True,9.36,True
+Калинівка,kalynivka_vn,2023-08-27,2023,238,maize,S late,2.989,1.673,True,8.01,True
+Калинівка,kalynivka_vn,2023-10-04,2023,276,maize,S late,0.0,0.534,True,16.9,False
+Калинівка,kalynivka_vn,2023-12-24,2023,357,maize,S late,0.0,0.208,True,8.7,False
+Калинівка,kalynivka_vn,2024-07-16,2024,196,maize,S late,0.0,4.317,False,19.83,True
+Калинівка,kalynivka_vn,2025-02-19,2025,49,maize,S late,0.0,0.432,False,6.81,False
+Волинь #3735,volyn_f3735,2018-07-29,2018,209,maize,S late,0.191,4.778,False,18.92,True
+Волинь #3735,volyn_f3735,2018-08-04,2018,215,maize,S late,1.4,5.046,True,16.95,True
+Волинь #3735,volyn_f3735,2018-08-08,2018,219,maize,S late,2.968,5.523,True,15.1,True
+Волинь #3735,volyn_f3735,2018-08-08,2018,219,maize,S late,1.046,5.523,False,18.32,True
+Волинь #3735,volyn_f3735,2018-08-10,2018,221,maize,S late,3.212,6.365,True,14.97,True
+Волинь #3735,volyn_f3735,2018-08-12,2018,223,maize,S late,2.093,4.9,True,16.45,True
+Волинь #3735,volyn_f3735,2018-08-13,2018,224,maize,S late,2.712,4.799,True,13.97,True
+Волинь #3735,volyn_f3735,2018-08-19,2018,230,maize,S late,1.765,3.679,True,13.6,True
+Волинь #3735,volyn_f3735,2018-08-20,2018,231,maize,S late,2.908,4.033,True,11.13,True
+Волинь #3735,volyn_f3735,2018-08-21,2018,232,maize,S late,2.431,4.052,True,10.27,True
+Волинь #3735,volyn_f3735,2018-08-24,2018,235,maize,S late,2.387,4.042,True,9.28,True
+Волинь #3735,volyn_f3735,2018-08-25,2018,236,maize,S late,2.232,2.539,True,8.42,True
+Волинь #3735,volyn_f3735,2018-08-25,2018,236,maize,S late,2.605,2.539,True,11.62,True
+Волинь #3735,volyn_f3735,2018-08-28,2018,239,maize,S late,0.0,2.074,False,7.43,True
+Волинь #3735,volyn_f3735,2018-08-29,2018,240,maize,S late,1.437,2.19,True,9.77,True
+Волинь #3735,volyn_f3735,2018-09-01,2018,243,maize,S late,2.234,2.643,True,8.78,True
+Волинь #3735,volyn_f3735,2019-02-10,2019,40,maize,S late,0.483,0.416,True,13.6,False
+Волинь #3735,volyn_f3735,2019-02-11,2019,41,maize,S late,0.156,0.391,True,12.73,False
+Волинь #3735,volyn_f3735,2019-02-15,2019,45,maize,S late,0.286,0.371,True,14.13,False
+Волинь #3735,volyn_f3735,2019-02-17,2019,47,maize,S late,0.55,0.588,True,10.82,False
+Волинь #3735,volyn_f3735,2019-02-18,2019,48,maize,S late,0.445,0.552,True,9.95,False
+Волинь #3735,volyn_f3735,2019-02-22,2019,52,maize,S late,0.566,1.008,True,11.35,False
+Волинь #3735,volyn_f3735,2019-02-24,2019,54,maize,S late,0.018,0.764,True,8.03,False
+Волинь #3735,volyn_f3735,2019-02-25,2019,55,maize,S late,0.701,0.598,True,10.38,False
+Волинь #3735,volyn_f3735,2019-06-06,2019,156,maize,S late,2.337,2.232,True,14.88,True
+Волинь #3735,volyn_f3735,2019-06-14,2019,164,maize,S late,2.608,4.071,True,14.73,True
+Волинь #3735,volyn_f3735,2019-06-17,2019,167,maize,S late,1.736,3.487,True,13.87,True
+Волинь #3735,volyn_f3735,2019-08-29,2019,240,maize,S late,0.0,2.885,False,6.13,True
+Волинь #3735,volyn_f3735,2019-10-09,2019,281,maize,S late,0.873,0.547,True,13.83,False
+Волинь #3735,volyn_f3735,2019-10-18,2019,290,maize,S late,0.725,1.026,True,13.0,False
+Волинь #3735,volyn_f3735,2019-10-20,2019,292,maize,S late,0.698,1.111,True,9.77,False
+Волинь #3735,volyn_f3735,2019-10-22,2019,294,maize,S late,0.7,0.733,True,11.38,False
+Волинь #3735,volyn_f3735,2019-10-24,2019,296,maize,S late,0.658,0.938,True,8.15,False
+Волинь #3735,volyn_f3735,2019-10-25,2019,297,maize,S late,0.0,0.816,False,7.33,False
+Волинь #3735,volyn_f3735,2019-10-26,2019,298,maize,S late,0.705,0.723,True,9.75,False
+Волинь #3735,volyn_f3735,2019-12-17,2019,350,maize,S late,0.236,0.087,True,10.28,False
+Волинь #3735,volyn_f3735,2019-12-17,2019,350,maize,S late,0.202,0.087,True,13.5,False
+Волинь #3735,volyn_f3735,2019-12-18,2019,351,maize,S late,0.358,0.17,True,12.7,False
+Волинь #3735,volyn_f3735,2019-12-25,2019,358,maize,S late,0.035,0.255,True,10.27,False
+Волинь #3735,volyn_f3735,2020-02-05,2020,35,sunflower,S early,0.738,0.7,True,14.48,False
+Волинь #3735,volyn_f3735,2020-04-05,2020,94,sunflower,S early,0.266,1.276,False,17.58,True
+Волинь #3735,volyn_f3735,2020-04-17,2020,106,sunflower,S early,0.986,1.536,True,12.98,True
+Волинь #3735,volyn_f3735,2020-04-20,2020,109,sunflower,S early,0.758,1.122,True,9.0,True
+Волинь #3735,volyn_f3735,2020-04-21,2020,110,sunflower,S early,0.953,1.332,True,11.43,True
+Волинь #3735,volyn_f3735,2020-04-23,2020,112,sunflower,S early,1.309,2.009,True,8.22,True
+Волинь #3735,volyn_f3735,2020-04-29,2020,118,sunflower,S early,1.208,1.113,True,8.28,True
+Волинь #3735,volyn_f3735,2020-06-09,2020,159,sunflower,S early,2.025,2.146,True,13.33,True
+Волинь #3735,volyn_f3735,2020-06-11,2020,161,sunflower,S early,2.809,3.161,True,14.98,True
+Волинь #3735,volyn_f3735,2020-06-13,2020,163,sunflower,S early,3.45,3.335,True,11.77,True
+Волинь #3735,volyn_f3735,2020-06-15,2020,165,sunflower,S early,2.298,2.132,True,11.8,True
+Волинь #3735,volyn_f3735,2020-06-17,2020,167,sunflower,S early,2.726,2.544,True,10.18,True
+Волинь #3735,volyn_f3735,2020-06-18,2020,168,sunflower,S early,2.482,3.548,True,12.62,True
+Волинь #3735,volyn_f3735,2020-06-26,2020,176,sunflower,S early,3.812,4.987,True,9.47,True
+Волинь #3735,volyn_f3735,2020-06-28,2020,178,sunflower,S early,2.293,3.897,False,6.27,True
+Волинь #3735,volyn_f3735,2020-06-29,2020,179,sunflower,S early,0.824,4.314,False,5.45,True
+Волинь #3735,volyn_f3735,2020-06-30,2020,180,sunflower,S early,1.989,4.043,False,7.88,True
+Волинь #3735,volyn_f3735,2020-07-29,2020,209,sunflower,S early,0.0,3.216,False,19.25,True
+Волинь #3735,volyn_f3735,2020-08-08,2020,219,sunflower,S early,1.478,5.068,True,16.17,True
+Волинь #3735,volyn_f3735,2020-08-10,2020,221,sunflower,S early,2.857,4.157,True,12.97,True
+Волинь #3735,volyn_f3735,2020-08-16,2020,227,sunflower,S early,2.003,4.267,True,13.05,True
+Волинь #3735,volyn_f3735,2020-08-20,2020,231,sunflower,S early,2.496,1.858,True,11.48,True
+Волинь #3735,volyn_f3735,2020-08-28,2020,239,sunflower,S early,1.015,1.289,True,8.37,True
+Волинь #3735,volyn_f3735,2020-10-05,2020,277,sunflower,S early,1.451,1.05,True,16.07,False
+Волинь #3735,volyn_f3735,2020-10-24,2020,296,sunflower,S early,0.0,0.781,False,7.4,False
+Волинь #3735,volyn_f3735,2020-12-03,2020,336,sunflower,S early,0.0,0.306,True,14.98,False
+Волинь #3735,volyn_f3735,2020-12-15,2020,348,sunflower,S early,0.0,0.141,True,13.53,False
+Волинь #3735,volyn_f3735,2020-12-16,2020,349,sunflower,S early,0.0,0.163,True,12.73,False
+Волинь #3735,volyn_f3735,2020-12-23,2020,356,sunflower,S early,0.0,0.118,True,10.4,False
+Волинь #3735,volyn_f3735,2020-12-27,2020,360,sunflower,S early,0.0,0.014,True,8.85,False
+Волинь #3735,volyn_f3735,2021-02-09,2021,39,winter_wheat,W,0.0,0.073,True,14.93,False
+Волинь #3735,volyn_f3735,2021-02-16,2021,46,winter_wheat,W,0.0,0.069,True,9.38,False
+Волинь #3735,volyn_f3735,2021-02-16,2021,46,winter_wheat,W,0.127,0.069,True,12.62,False
+Волинь #3735,volyn_f3735,2021-02-20,2021,50,winter_wheat,W,0.0,0.11,False,7.85,False
+Волинь #3735,volyn_f3735,2021-02-21,2021,51,winter_wheat,W,0.144,0.12,True,10.28,False
+Волинь #3735,volyn_f3735,2021-03-30,2021,88,winter_wheat,W,1.367,0.369,False,17.15,False
+Волинь #3735,volyn_f3735,2021-03-31,2021,89,winter_wheat,W,1.501,0.67,True,16.35,False
+Волинь #3735,volyn_f3735,2021-04-28,2021,117,winter_wheat,W,0.0,1.921,False,5.57,True
+Волинь #3735,volyn_f3735,2021-04-29,2021,118,winter_wheat,W,1.024,1.214,False,6.38,True
+Волинь #3735,volyn_f3735,2021-05-26,2021,145,winter_wheat,W,1.186,4.351,False,17.93,True
+Волинь #3735,volyn_f3735,2021-06-03,2021,153,winter_wheat,W,1.694,4.237,False,18.07,True
+Волинь #3735,volyn_f3735,2021-06-15,2021,165,winter_wheat,W,2.313,5.025,True,13.43,True
+Волинь #3735,volyn_f3735,2021-06-19,2021,169,winter_wheat,W,3.308,5.851,True,10.27,True
+Волинь #3735,volyn_f3735,2021-06-20,2021,170,winter_wheat,W,1.693,5.273,True,11.08,True
+Волинь #3735,volyn_f3735,2021-06-23,2021,173,winter_wheat,W,4.653,6.066,True,8.72,True
+Волинь #3735,volyn_f3735,2021-06-24,2021,174,winter_wheat,W,3.715,6.088,True,9.53,True
+Волинь #3735,volyn_f3735,2021-06-27,2021,177,winter_wheat,W,2.937,4.875,True,8.8,True
+Волинь #3735,volyn_f3735,2021-06-28,2021,178,winter_wheat,W,2.494,5.43,True,8.0,True
+Волинь #3735,volyn_f3735,2021-07-27,2021,207,winter_wheat,W,3.685,2.088,False,18.07,True
+Волинь #3735,volyn_f3735,2021-08-02,2021,213,winter_wheat,W,2.057,1.126,True,16.57,True
+Волинь #3735,volyn_f3735,2021-08-10,2021,221,winter_wheat,W,2.468,2.719,True,15.1,True
+Волинь #3735,volyn_f3735,2021-08-22,2021,233,winter_wheat,W,1.469,2.472,True,10.47,True
+Волинь #3735,volyn_f3735,2021-08-26,2021,237,winter_wheat,W,2.087,2.026,True,8.95,True
+Волинь #3735,volyn_f3735,2021-10-05,2021,277,winter_wheat,W,1.226,2.081,True,15.32,False
+Волинь #3735,volyn_f3735,2021-10-09,2021,281,winter_wheat,W,0.836,1.481,True,15.38,False
+Волинь #3735,volyn_f3735,2021-10-21,2021,293,winter_wheat,W,0.0,1.932,False,7.53,False
+Волинь #3735,volyn_f3735,2021-10-25,2021,297,winter_wheat,W,0.465,0.896,True,9.23,False
+Волинь #3735,volyn_f3735,2021-10-29,2021,301,winter_wheat,W,0.0,0.698,False,7.7,False
+Волинь #3735,volyn_f3735,2021-12-03,2021,336,winter_wheat,W,0.052,0.22,True,14.67,False
+Волинь #3735,volyn_f3735,2021-12-18,2021,351,winter_wheat,W,0.0,0.22,True,9.27,False
+Волинь #3735,volyn_f3735,2021-12-20,2021,353,winter_wheat,W,0.0,0.294,True,10.93,False
+Волинь #3735,volyn_f3735,2022-02-04,2022,34,maize,S late,0.0,0.258,True,15.02,False
+Волинь #3735,volyn_f3735,2022-02-19,2022,49,maize,S late,0.4,1.952,True,11.03,False
+Волинь #3735,volyn_f3735,2022-03-29,2022,87,maize,S late,0.831,1.547,True,16.75,False
+Волинь #3735,volyn_f3735,2022-04-20,2022,109,maize,S late,0.694,1.217,True,8.7,True
+Волинь #3735,volyn_f3735,2022-04-30,2022,119,maize,S late,0.007,1.2,False,7.1,True
+Волинь #3735,volyn_f3735,2022-05-26,2022,145,maize,S late,0.661,1.052,False,17.48,True
+Волинь #3735,volyn_f3735,2022-05-28,2022,147,maize,S late,0.678,0.966,False,17.5,True
+Волинь #3735,volyn_f3735,2022-06-07,2022,157,maize,S late,2.245,2.025,True,15.92,True
+Волинь #3735,volyn_f3735,2022-06-10,2022,160,maize,S late,2.334,2.284,True,15.12,True
+Волинь #3735,volyn_f3735,2022-06-14,2022,164,maize,S late,2.639,2.353,True,10.27,True
+Волинь #3735,volyn_f3735,2022-06-15,2022,165,maize,S late,1.658,2.499,True,12.68,True
+Волинь #3735,volyn_f3735,2022-06-18,2022,168,maize,S late,2.532,2.893,True,11.9,True
+Волинь #3735,volyn_f3735,2022-06-22,2022,172,maize,S late,2.784,3.258,True,10.3,True
+Волинь #3735,volyn_f3735,2022-06-26,2022,176,maize,S late,2.743,4.589,True,8.68,True
+Волинь #3735,volyn_f3735,2022-06-29,2022,179,maize,S late,0.0,5.208,False,4.67,True
+Волинь #3735,volyn_f3735,2022-06-30,2022,180,maize,S late,2.97,5.958,False,7.1,True
+Волинь #3735,volyn_f3735,2022-07-04,2022,184,maize,S late,1.058,5.226,False,5.5,True
+Волинь #3735,volyn_f3735,2022-07-25,2022,205,maize,S late,1.48,6.061,False,18.22,True
+Волинь #3735,volyn_f3735,2022-07-27,2022,207,maize,S late,1.334,4.798,False,18.22,True
+Волинь #3735,volyn_f3735,2022-07-30,2022,210,maize,S late,2.087,5.341,True,15.78,True
+Волинь #3735,volyn_f3735,2022-08-07,2022,218,maize,S late,1.623,4.802,True,15.77,True
+Волинь #3735,volyn_f3735,2022-08-14,2022,225,maize,S late,2.095,3.696,True,13.32,True
+Волинь #3735,volyn_f3735,2022-08-18,2022,229,maize,S late,2.594,5.015,True,11.68,True
+Волинь #3735,volyn_f3735,2022-08-22,2022,233,maize,S late,0.0,4.019,False,6.83,True
+Волинь #3735,volyn_f3735,2022-08-25,2022,236,maize,S late,1.271,5.006,False,6.02,True
+Волинь #3735,volyn_f3735,2022-08-26,2022,237,maize,S late,2.634,4.666,True,8.45,True
+Волинь #3735,volyn_f3735,2022-10-10,2022,282,maize,S late,1.127,0.547,True,11.42,False
+Волинь #3735,volyn_f3735,2022-10-12,2022,284,maize,S late,1.208,0.471,True,11.43,False
+Волинь #3735,volyn_f3735,2022-10-14,2022,286,maize,S late,1.089,0.366,True,13.03,False
+Волинь #3735,volyn_f3735,2022-12-06,2022,339,maize,S late,0.027,0.209,True,12.95,False
+Волинь #3735,volyn_f3735,2023-02-03,2023,33,maize,S late,0.0,0.435,True,14.4,False
+Волинь #3735,volyn_f3735,2023-02-06,2023,36,maize,S late,0.005,0.212,True,13.62,False
+Волинь #3735,volyn_f3735,2023-02-06,2023,36,maize,S late,0.0,0.212,True,15.23,False
+Волинь #3735,volyn_f3735,2023-02-07,2023,37,maize,S late,0.0,0.304,True,14.42,False
+Волинь #3735,volyn_f3735,2023-02-08,2023,38,maize,S late,0.154,0.209,True,13.62,False
+Волинь #3735,volyn_f3735,2023-02-09,2023,39,maize,S late,0.014,0.284,True,14.43,False
+Волинь #3735,volyn_f3735,2023-02-11,2023,41,maize,S late,0.061,0.406,True,11.22,False
+Волинь #3735,volyn_f3735,2023-02-13,2023,43,maize,S late,0.186,0.238,True,9.62,False
+Волинь #3735,volyn_f3735,2023-02-14,2023,44,maize,S late,0.23,0.336,True,12.02,False
+Волинь #3735,volyn_f3735,2023-02-15,2023,45,maize,S late,0.163,0.562,True,9.6,False
+Волинь #3735,volyn_f3735,2023-02-17,2023,47,maize,S late,0.0,0.52,True,11.22,False
+Волинь #3735,volyn_f3735,2023-02-22,2023,52,maize,S late,0.396,0.557,True,8.82,False
+Волинь #3735,volyn_f3735,2023-03-29,2023,87,maize,S late,0.704,1.195,False,17.03,False
+Волинь #3735,volyn_f3735,2023-03-30,2023,88,maize,S late,0.351,1.177,True,16.23,False
+Волинь #3735,volyn_f3735,2023-03-31,2023,89,maize,S late,1.475,1.11,True,15.43,False
+Волинь #3735,volyn_f3735,2023-04-20,2023,109,maize,S late,1.615,2.287,False,7.48,True
+Волинь #3735,volyn_f3735,2023-04-23,2023,112,maize,S late,1.517,0.842,False,6.67,True
+Волинь #3735,volyn_f3735,2023-04-24,2023,113,maize,S late,0.046,0.787,False,5.87,True
+Волинь #3735,volyn_f3735,2023-04-24,2023,113,maize,S late,1.865,0.787,True,9.08,True
+Волинь #3735,volyn_f3735,2023-04-28,2023,117,maize,S late,1.413,0.633,False,7.45,True
+Волинь #3735,volyn_f3735,2023-06-04,2023,154,maize,S late,0.868,2.128,True,16.85,True
+Волинь #3735,volyn_f3735,2023-06-23,2023,173,maize,S late,3.633,3.772,True,9.45,True
+Волинь #3735,volyn_f3735,2023-08-11,2023,222,maize,S late,2.082,3.477,True,10.83,True
+Волинь #3735,volyn_f3735,2023-08-16,2023,227,maize,S late,3.067,4.841,True,11.7,True
+Волинь #3735,volyn_f3735,2023-08-19,2023,230,maize,S late,2.543,5.05,True,10.93,True
+Волинь #3735,volyn_f3735,2023-10-03,2023,275,maize,S late,1.134,1.067,True,14.18,False
+Волинь #3735,volyn_f3735,2023-10-08,2023,280,maize,S late,1.104,0.788,True,15.0,False
+Волинь #3735,volyn_f3735,2023-10-12,2023,284,maize,S late,0.82,1.561,True,13.38,False
+Волинь #3735,volyn_f3735,2023-11-23,2023,326,maize,S late,0.0,0.363,False,19.0,False
+Волинь #3735,volyn_f3735,2024-04-28,2024,117,maize,S late,1.708,0.957,False,6.8,True
+Волинь #3735,volyn_f3735,2024-08-19,2024,230,maize,S late,3.331,2.52,True,9.87,True
+Волинь #3735,volyn_f3735,2024-10-08,2024,280,maize,S late,1.166,1.336,True,14.12,False
+Волинь #3735,volyn_f3735,2024-10-12,2024,284,maize,S late,1.049,1.248,True,12.52,False
+Волинь #3735,volyn_f3735,2024-10-16,2024,288,maize,S late,0.91,0.941,True,10.92,False
+Волинь #3735,volyn_f3735,2024-10-23,2024,295,maize,S late,0.0,1.119,False,6.88,False
+Волинь #3735,volyn_f3735,2024-10-24,2024,296,maize,S late,0.0,0.779,False,7.68,False
+Волинь #3735,volyn_f3735,2024-12-15,2024,348,maize,S late,0.0,0.32,True,11.13,False
+Волинь #3735,volyn_f3735,2025-02-09,2025,39,maize,S late,0.377,0.369,True,13.0,False
+Волинь #3735,volyn_f3735,2025-02-21,2025,51,maize,S late,0.0,0.569,True,8.17,False
+Волинь #3735,volyn_f3735,2025-04-12,2025,101,maize,S late,1.825,2.164,True,12.22,True
+Волинь #3735,volyn_f3735,2025-04-24,2025,113,maize,S late,1.484,0.902,False,7.43,True
+Волинь #3735,volyn_f3735,2025-05-20,2025,139,maize,S late,1.024,1.113,False,17.97,True
+Волинь #3735,volyn_f3735,2025-06-20,2025,170,maize,S late,2.149,5.149,True,9.12,True
+Волинь #3735,volyn_f3735,2025-06-24,2025,174,maize,S late,1.509,5.671,False,7.5,True
+Волинь #3735,volyn_f3735,2025-08-08,2025,219,maize,S late,1.981,4.288,True,13.55,True
+Волинь #3735,volyn_f3735,2025-08-19,2025,230,maize,S late,4.082,2.37,True,9.48,True
+Волинь #3735,volyn_f3735,2025-11-27,2025,330,maize,S late,0.0,0.249,True,14.23,False
+Волинь #3735,volyn_f3735,2025-12-02,2025,335,maize,S late,0.0,0.255,True,15.12,False
+Волинь #3735,volyn_f3735,2025-12-08,2025,341,maize,S late,0.17,0.186,True,10.33,False
+Волинь #3735,volyn_f3735,2025-12-13,2025,346,maize,S late,0.026,0.41,True,11.18,False

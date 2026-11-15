@@ -1,0 +1,43 @@
+{
+ "requested": {
+  "lat": 51.0,
+  "lon": 25.0
+ },
+ "returned_geometry": {
+  "type": "Point",
+  "coordinates": [
+   25.0,
+   51.0,
+   192.83
+  ]
+ },
+ "params": [
+  "TSOIL1",
+  "T2M"
+ ],
+ "units": {
+  "TSOIL1": "C",
+  "T2M": "C"
+ },
+ "definition": "TSOIL1: The estimate of soil temperatures at layer 1; 0.018 to 0.0988 m depth (POWER parameter manager, community=AG)",
+ "header": {
+  "title": "NASA/POWER Source Native Resolution Daily Data",
+  "api": {
+   "version": "v2.10.3",
+   "name": "POWER Daily API"
+  },
+  "fill_value": -999.0,
+  "time_standard": "LST",
+  "start": "20010101",
+  "end": "20251231"
+ },
+ "sources": [
+  "MERRA2"
+ ],
+ "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=TSOIL1%2CT2M&community=AG&latitude=51.0&longitude=25.0&start=20010101&end=20251231&format=JSON",
+ "fetched_utc": "2026-11-12T23:28:52+00:00",
+ "nan_share": {
+  "TSOIL1": 0.0,
+  "T2M": 0.0
+ }
+}

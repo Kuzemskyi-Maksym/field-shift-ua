@@ -1,0 +1,452 @@
+{
+ "47.10342,30.67162->odesa": {
+  "road_km": 114.7,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.671618,47.103423;30.74444444,46.50361111?overview=false"
+ },
+ "47.10342,30.67162->chornomorsk": {
+  "road_km": 124.6,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.671618,47.103423;30.65944444,46.32888889?overview=false"
+ },
+ "47.10342,30.67162->pivdennyi": {
+  "road_km": 109.4,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.671618,47.103423;31.02580556,46.61683333?overview=false"
+ },
+ "47.10342,30.67162->izmail": {
+  "road_km": 332.7,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.671618,47.103423;28.79736111,45.33911111?overview=false"
+ },
+ "47.10342,30.67162->reni": {
+  "road_km": 389.7,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.671618,47.103423;28.29027778,45.42083333?overview=false"
+ },
+ "47.99798,31.36438->odesa": {
+  "road_km": 206.0,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.364381,47.997982;30.74444444,46.50361111?overview=false"
+ },
+ "47.99798,31.36438->chornomorsk": {
+  "road_km": 283.1,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.364381,47.997982;30.65944444,46.32888889?overview=false"
+ },
+ "47.99798,31.36438->pivdennyi": {
+  "road_km": 196.6,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.364381,47.997982;31.02580556,46.61683333?overview=false"
+ },
+ "47.99798,31.36438->izmail": {
+  "road_km": 491.2,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.364381,47.997982;28.79736111,45.33911111?overview=false"
+ },
+ "47.99798,31.36438->reni": {
+  "road_km": 548.2,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.364381,47.997982;28.29027778,45.42083333?overview=false"
+ },
+ "49.36623,35.01317->odesa": {
+  "road_km": 578.1,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.013165,49.366228;30.74444444,46.50361111?overview=false"
+ },
+ "49.36623,35.01317->chornomorsk": {
+  "road_km": 600.8,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.013165,49.366228;30.65944444,46.32888889?overview=false"
+ },
+ "49.36623,35.01317->pivdennyi": {
+  "road_km": 541.4,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.013165,49.366228;31.02580556,46.61683333?overview=false"
+ },
+ "49.36623,35.01317->izmail": {
+  "road_km": 814.6,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.013165,49.366228;28.79736111,45.33911111?overview=false"
+ },
+ "49.36623,35.01317->reni": {
+  "road_km": 871.6,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.013165,49.366228;28.29027778,45.42083333?overview=false"
+ },
+ "49.62192,28.68889->odesa": {
+  "road_km": 461.3,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.68889,49.621918;30.74444444,46.50361111?overview=false"
+ },
+ "49.62192,28.68889->chornomorsk": {
+  "road_km": 471.1,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.68889,49.621918;30.65944444,46.32888889?overview=false"
+ },
+ "49.62192,28.68889->pivdennyi": {
+  "road_km": 499.8,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.68889,49.621918;31.02580556,46.61683333?overview=false"
+ },
+ "49.62192,28.68889->izmail": {
+  "road_km": 569.8,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.68889,49.621918;28.79736111,45.33911111?overview=false"
+ },
+ "49.62192,28.68889->reni": {
+  "road_km": 581.4,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.68889,49.621918;28.29027778,45.42083333?overview=false"
+ },
+ "49.36425,35.03645->odesa": {
+  "road_km": 580.2,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.03645,49.36425;30.74444444,46.50361111?overview=false"
+ },
+ "49.36425,35.03645->chornomorsk": {
+  "road_km": 602.9,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.03645,49.36425;30.65944444,46.32888889?overview=false"
+ },
+ "49.36425,35.03645->pivdennyi": {
+  "road_km": 543.5,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.03645,49.36425;31.02580556,46.61683333?overview=false"
+ },
+ "49.36425,35.03645->izmail": {
+  "road_km": 816.7,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.03645,49.36425;28.79736111,45.33911111?overview=false"
+ },
+ "49.36425,35.03645->reni": {
+  "road_km": 873.7,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.03645,49.36425;28.29027778,45.42083333?overview=false"
+ },
+ "50.89379,24.74321->odesa": {
+  "road_km": 871.8,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.74321,50.89379;30.74444444,46.50361111?overview=false"
+ },
+ "50.89379,24.74321->chornomorsk": {
+  "road_km": 881.6,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.74321,50.89379;30.65944444,46.32888889?overview=false"
+ },
+ "50.89379,24.74321->pivdennyi": {
+  "road_km": 910.3,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.74321,50.89379;31.02580556,46.61683333?overview=false"
+ },
+ "50.89379,24.74321->izmail": {
+  "road_km": 1089.8,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.74321,50.89379;28.79736111,45.33911111?overview=false"
+ },
+ "50.89379,24.74321->reni": {
+  "road_km": 846.9,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.74321,50.89379;28.29027778,45.42083333?overview=false"
+ },
+ "49.62116,28.70577->odesa": {
+  "road_km": 465.0,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.70577,49.62116;30.74444444,46.50361111?overview=false"
+ },
+ "49.62116,28.70577->chornomorsk": {
+  "road_km": 474.8,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.70577,49.62116;30.65944444,46.32888889?overview=false"
+ },
+ "49.62116,28.70577->pivdennyi": {
+  "road_km": 503.5,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.70577,49.62116;31.02580556,46.61683333?overview=false"
+ },
+ "49.62116,28.70577->izmail": {
+  "road_km": 573.5,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.70577,49.62116;28.79736111,45.33911111?overview=false"
+ },
+ "49.62116,28.70577->reni": {
+  "road_km": 585.0,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.70577,49.62116;28.29027778,45.42083333?overview=false"
+ },
+ "47.99203,31.37339->odesa": {
+  "road_km": 208.9,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.37339,47.99203;30.74444444,46.50361111?overview=false"
+ },
+ "47.99203,31.37339->chornomorsk": {
+  "road_km": 286.0,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.37339,47.99203;30.65944444,46.32888889?overview=false"
+ },
+ "47.99203,31.37339->pivdennyi": {
+  "road_km": 199.6,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.37339,47.99203;31.02580556,46.61683333?overview=false"
+ },
+ "47.99203,31.37339->izmail": {
+  "road_km": 494.2,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.37339,47.99203;28.79736111,45.33911111?overview=false"
+ },
+ "47.99203,31.37339->reni": {
+  "road_km": 551.1,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.37339,47.99203;28.29027778,45.42083333?overview=false"
+ },
+ "47.11795,30.66304->odesa": {
+  "road_km": 112.6,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.66304,47.11795;30.74444444,46.50361111?overview=false"
+ },
+ "47.11795,30.66304->chornomorsk": {
+  "road_km": 122.4,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.66304,47.11795;30.65944444,46.32888889?overview=false"
+ },
+ "47.11795,30.66304->pivdennyi": {
+  "road_km": 110.4,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.66304,47.11795;31.02580556,46.61683333?overview=false"
+ },
+ "47.11795,30.66304->izmail": {
+  "road_km": 330.6,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.66304,47.11795;28.79736111,45.33911111?overview=false"
+ },
+ "47.11795,30.66304->reni": {
+  "road_km": 387.5,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.66304,47.11795;28.29027778,45.42083333?overview=false"
+ },
+ "50.77806,24.73581->odesa": {
+  "road_km": 854.4,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.73581,50.77806;30.74444444,46.50361111?overview=false"
+ },
+ "50.77806,24.73581->chornomorsk": {
+  "road_km": 864.3,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.73581,50.77806;30.65944444,46.32888889?overview=false"
+ },
+ "50.77806,24.73581->pivdennyi": {
+  "road_km": 892.9,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.73581,50.77806;31.02580556,46.61683333?overview=false"
+ },
+ "50.77806,24.73581->izmail": {
+  "road_km": 1072.4,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.73581,50.77806;28.79736111,45.33911111?overview=false"
+ },
+ "50.77806,24.73581->reni": {
+  "road_km": 819.3,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.73581,50.77806;28.29027778,45.42083333?overview=false"
+ },
+ "47.10342,30.67162->yahodyn": {
+  "road_km": 890.5,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.671618,47.103423;23.82805556,51.19277778?overview=false"
+ },
+ "47.10342,30.67162->shehyni": {
+  "road_km": 816.0,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.671618,47.103423;22.97277778,49.79888889?overview=false"
+ },
+ "47.10342,30.67162->uzhhorod": {
+  "road_km": 955.1,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.671618,47.103423;22.295,48.62388889?overview=false"
+ },
+ "47.10342,30.67162->chop": {
+  "road_km": 956.0,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.671618,47.103423;22.21194444,48.43083333?overview=false"
+ },
+ "47.99798,31.36438->yahodyn": {
+  "road_km": 828.2,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.364381,47.997982;23.82805556,51.19277778?overview=false"
+ },
+ "47.99798,31.36438->shehyni": {
+  "road_km": 753.8,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.364381,47.997982;22.97277778,49.79888889?overview=false"
+ },
+ "47.99798,31.36438->uzhhorod": {
+  "road_km": 892.9,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.364381,47.997982;22.295,48.62388889?overview=false"
+ },
+ "47.99798,31.36438->chop": {
+  "road_km": 893.8,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.364381,47.997982;22.21194444,48.43083333?overview=false"
+ },
+ "49.36623,35.01317->yahodyn": {
+  "road_km": 924.3,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.013165,49.366228;23.82805556,51.19277778?overview=false"
+ },
+ "49.36623,35.01317->shehyni": {
+  "road_km": 1018.1,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.013165,49.366228;22.97277778,49.79888889?overview=false"
+ },
+ "49.36623,35.01317->uzhhorod": {
+  "road_km": 1180.5,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.013165,49.366228;22.295,48.62388889?overview=false"
+ },
+ "49.36623,35.01317->chop": {
+  "road_km": 1197.0,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.013165,49.366228;22.21194444,48.43083333?overview=false"
+ },
+ "49.62192,28.68889->yahodyn": {
+  "road_km": 477.7,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.68889,49.621918;23.82805556,51.19277778?overview=false"
+ },
+ "49.62192,28.68889->shehyni": {
+  "road_km": 485.6,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.68889,49.621918;22.97277778,49.79888889?overview=false"
+ },
+ "49.62192,28.68889->uzhhorod": {
+  "road_km": 624.7,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.68889,49.621918;22.295,48.62388889?overview=false"
+ },
+ "49.62192,28.68889->chop": {
+  "road_km": 625.5,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.68889,49.621918;22.21194444,48.43083333?overview=false"
+ },
+ "50.77806,24.73581->yahodyn": {
+  "road_km": 97.6,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.73581,50.77806;23.82805556,51.19277778?overview=false"
+ },
+ "50.77806,24.73581->shehyni": {
+  "road_km": 206.6,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.73581,50.77806;22.97277778,49.79888889?overview=false"
+ },
+ "50.77806,24.73581->uzhhorod": {
+  "road_km": 380.3,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.73581,50.77806;22.295,48.62388889?overview=false"
+ },
+ "50.77806,24.73581->chop": {
+  "road_km": 413.8,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.73581,50.77806;22.21194444,48.43083333?overview=false"
+ },
+ "49.36425,35.03645->yahodyn": {
+  "road_km": 926.4,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.03645,49.36425;23.82805556,51.19277778?overview=false"
+ },
+ "49.36425,35.03645->shehyni": {
+  "road_km": 1020.2,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.03645,49.36425;22.97277778,49.79888889?overview=false"
+ },
+ "49.36425,35.03645->uzhhorod": {
+  "road_km": 1182.6,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.03645,49.36425;22.295,48.62388889?overview=false"
+ },
+ "49.36425,35.03645->chop": {
+  "road_km": 1199.1,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/35.03645,49.36425;22.21194444,48.43083333?overview=false"
+ },
+ "50.89379,24.74321->yahodyn": {
+  "road_km": 102.5,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.74321,50.89379;23.82805556,51.19277778?overview=false"
+ },
+ "50.89379,24.74321->shehyni": {
+  "road_km": 222.5,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.74321,50.89379;22.97277778,49.79888889?overview=false"
+ },
+ "50.89379,24.74321->uzhhorod": {
+  "road_km": 396.2,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.74321,50.89379;22.295,48.62388889?overview=false"
+ },
+ "50.89379,24.74321->chop": {
+  "road_km": 429.7,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/24.74321,50.89379;22.21194444,48.43083333?overview=false"
+ },
+ "49.62116,28.70577->yahodyn": {
+  "road_km": 487.3,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.70577,49.62116;23.82805556,51.19277778?overview=false"
+ },
+ "49.62116,28.70577->shehyni": {
+  "road_km": 489.2,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.70577,49.62116;22.97277778,49.79888889?overview=false"
+ },
+ "49.62116,28.70577->uzhhorod": {
+  "road_km": 628.4,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.70577,49.62116;22.295,48.62388889?overview=false"
+ },
+ "49.62116,28.70577->chop": {
+  "road_km": 629.2,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/28.70577,49.62116;22.21194444,48.43083333?overview=false"
+ },
+ "47.99203,31.37339->yahodyn": {
+  "road_km": 831.2,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.37339,47.99203;23.82805556,51.19277778?overview=false"
+ },
+ "47.99203,31.37339->shehyni": {
+  "road_km": 756.8,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.37339,47.99203;22.97277778,49.79888889?overview=false"
+ },
+ "47.99203,31.37339->uzhhorod": {
+  "road_km": 895.9,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.37339,47.99203;22.295,48.62388889?overview=false"
+ },
+ "47.99203,31.37339->chop": {
+  "road_km": 896.7,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/31.37339,47.99203;22.21194444,48.43083333?overview=false"
+ },
+ "47.11795,30.66304->yahodyn": {
+  "road_km": 888.3,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.66304,47.11795;23.82805556,51.19277778?overview=false"
+ },
+ "47.11795,30.66304->shehyni": {
+  "road_km": 813.9,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.66304,47.11795;22.97277778,49.79888889?overview=false"
+ },
+ "47.11795,30.66304->uzhhorod": {
+  "road_km": 953.0,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.66304,47.11795;22.295,48.62388889?overview=false"
+ },
+ "47.11795,30.66304->chop": {
+  "road_km": 953.8,
+  "date": "2026-11-15",
+  "url": "https://router.project-osrm.org/route/v1/driving/30.66304,47.11795;22.21194444,48.43083333?overview=false"
+ }
+}

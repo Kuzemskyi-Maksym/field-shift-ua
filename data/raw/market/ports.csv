@@ -1,0 +1,6 @@
+port_id,name_uk,lat,lon,source_url
+odesa,Одеса,46.50361111,30.74444444,https://en.wikipedia.org/wiki/Port_of_Odesa
+chornomorsk,Чорноморськ,46.32888889,30.65944444,https://en.wikipedia.org/wiki/Port_of_Chornomorsk
+pivdennyi,Південний,46.61683333,31.02580556,https://uk.wikipedia.org/wiki/Морський_торговельний_порт_«Південний»
+izmail,Ізмаїл,45.33911111,28.79736111,https://en.wikipedia.org/wiki/Port_of_Izmail
+reni,Рені,45.42083333,28.29027778,https://uk.wikipedia.org/wiki/Ренійський_морський_торговельний_порт

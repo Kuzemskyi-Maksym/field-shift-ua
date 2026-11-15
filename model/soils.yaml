@@ -1,0 +1,97 @@
+# Field Shift — властивості ґрунту для водного балансу.
+# Читає: model/crops.py (валідатор) і симулятор (TAW, Kc голого ґрунту).
+#
+# Текстуру ґрунту поля НЕ задаємо за замовчуванням: це вхід профілю поля
+# (SoilGrids / дані фермера). Без неї — прапорець «текстуру ґрунту не підтверджено».
+
+sources:
+  FAO56_T19: "FAO-56, Table 19 — Typical soil water characteristics (θFC, θWP, REW, TEW at Ze=0.10 m). https://www.fao.org/4/X0490E/x0490e0c.htm"
+  FAO56_EQ82: "FAO-56, Eq. 82: TAW = 1000 (θFC − θWP) Zr. https://www.fao.org/4/X0490E/x0490e0e.htm"
+  FAO56_A7: "FAO-56, Annex 7, Eq. 7-1…7-10 і параметри для Fig. 29/30a/30b. https://www.fao.org/4/X0490E/x0490e0o.htm"
+  FAO56_EQ59: "FAO-56, Eq. 59 — інтерполяція Kc_ini між Fig. 29 (≤10 мм) і Fig. 30 (≥40 мм) за глибиною зволоження. https://www.fao.org/4/X0490E/x0490e0b.htm"
+  USTF_NRCS2017: "Buness, Schad, Rau (TUM), The Ultimate Soil Texture Flow Chart, 11.01.2022 — табл. «Texture classes, according to NRCS Soil Survey Manual (2017)». https://wrb.isric.org/files/The_Ultimate_Soil_Texture_Flow_Chart_2022-01-11.pdf"
+  ISRIC_SG2: "SoilGrids 2.0 (ISRIC), WCS maps.isric.org; одиниці й коефіцієнти — https://docs.isric.org/globaldata/soilgrids/SoilGrids_faqs_01.html"
+  MODEL_CONV: "модельна умовність (не агрономічне/економічне число з джерела); прапорець у результатах, перевіряється в reports/sensitivity"
+  FAO56_EQ7_7: "FAO-56 Annex 7, Eq. 7-7: t_w = L / (n_w + 0.5); події <0.2·ET0 ігнорують, сусідні дні — одна подія"
+  FAO56_T22_FN2: "FAO-56, Table 22, прим. 2 / розд. 8: p = p_T22 + 0.04 (5 − ETc), 0.1 ≤ p ≤ 0.8. https://www.fao.org/4/X0490E/x0490e0e.htm"
+
+rules_of_choice:
+  theta: "У Табл. 19 θ дано діапазонами; беремо середину і в sensitivity перевіряємо межі."
+
+# Table 19: [min, max] (м³/м³ для θ; мм для REW). У рядку Silty clay у джерелі
+# надруковано «0-30 - 0.42» — читаємо як 0.30–0.42 (друкарська помилка, позначено).
+textures:
+  sand:             {theta_fc: [0.07, 0.17], theta_wp: [0.02, 0.07], rew_mm: [2, 7],  src: FAO56_T19}
+  loamy_sand:       {theta_fc: [0.11, 0.19], theta_wp: [0.03, 0.10], rew_mm: [4, 8],  src: FAO56_T19}
+  sandy_loam:       {theta_fc: [0.18, 0.28], theta_wp: [0.06, 0.16], rew_mm: [6, 10], src: FAO56_T19}
+  loam:             {theta_fc: [0.20, 0.30], theta_wp: [0.07, 0.17], rew_mm: [8, 10], src: FAO56_T19}
+  silt_loam:        {theta_fc: [0.22, 0.36], theta_wp: [0.09, 0.21], rew_mm: [8, 11], src: FAO56_T19}
+  silt:             {theta_fc: [0.28, 0.36], theta_wp: [0.12, 0.22], rew_mm: [8, 11], src: FAO56_T19}
+  silty_clay_loam:  {theta_fc: [0.30, 0.37], theta_wp: [0.17, 0.24], rew_mm: [8, 11], src: FAO56_T19}
+  silty_clay:       {theta_fc: [0.30, 0.42], theta_wp: [0.17, 0.29], rew_mm: [8, 12], src: FAO56_T19, note: "у джерелі «0-30 - 0.42»"}
+  clay:             {theta_fc: [0.32, 0.40], theta_wp: [0.20, 0.24], rew_mm: [8, 12], src: FAO56_T19}
+
+# Annex 7: параметри, що відтворюють Fig. 29 / 30a / 30b (Kc голого ґрунту, Kc_ini).
+bare_soil_kc:
+  src: FAO56_A7
+  eso_factor: 1.15            # Eq. 7-1: Eso = 1.15 ET0
+  kc_ini_max: 1.15            # «limited to Kc ini ≤ 1.15»
+  light_depth_mm: 10          # Fig. 29: light infiltration (<10 mm)
+  large_depth_mm: 40          # Fig. 30: large infiltration (≥40 mm)
+  min_event_frac_et0: 0.2     # «wetting events of less than 0.2 ET0 can be ignored»
+  fig29:  {tew_cor: 10, rew_cor: {min: 2.5, coef: 6, max: 7}}           # REW = min(max(2.5, 6/ET0^0.5), 7)
+  fig30a: {tew_cor: {max: 15, coef: 7},  rew_cor: {max: 6}}             # coarse: TEW = min(15, 7 ET0^0.5); REW = min(6, TEW−0.01)
+  fig30b: {tew_cor: {max: 28, coef: 13}, rew_cor: {max: 9}}             # medium/fine: TEW = min(28, 13 ET0^0.5); REW = min(9, TEW−0.01)
+  coarse_textures: [sand, loamy_sand, sandy_loam]
+  note: "Перевірено на прикладі 7-1: Fig. 30a → 0.75 (збіг з джерелом). Fig. 29 → 0.53, а в джерелі надруковано 0.57 (розбіжність прикладу; формула 7-3 звірена з зображенням рівняння)."
+
+depletion_adjust:
+  src: FAO56_T22_FN2
+  coef: 0.04
+  etc_ref_mm: 5
+  p_min: 0.1
+  p_max: 0.8
+
+# ---------------------------------------------------------------- SoilGrids → клас USDA → Табл. 19
+# Клас текстури: таблиця «Texture classes, according to NRCS Soil Survey Manual (2017)» у
+# Buness, Schad, Rau (TUM), The Ultimate Soil Texture Flow Chart, 11.01.2022,
+# https://wrb.isric.org/files/The_Ultimate_Soil_Texture_Flow_Chart_2022-01-11.pdf
+# Кожен клас — один або кілька «прямокутників» (рядків таблиці); extra — додаткові критерії.
+usda_texture:
+  src: USTF_NRCS2017
+  classes:
+    sand:            [{sand: ">85", silt: "<15", clay: "<10", extra: ["silt+1.5*clay<15"]}]
+    loamy_sand:      [{sand: ">70,<=90", silt: "<30", clay: "<15", extra: ["silt+1.5*clay>=15", "silt+2*clay<30"]}]
+    silt:            [{sand: "<=20", silt: ">=80", clay: "<12"}]
+    silt_loam:       [{sand: "<=50", silt: ">=50,<80", clay: "<27"},
+                      {sand: "<=8", silt: ">=80,<=88", clay: ">=12,<=20"}]
+    sandy_loam:      [{sand: ">52,<=85", silt: "<=48", clay: "<20", extra: ["silt+2*clay>=30"]},
+                      {sand: ">43,<=52", silt: ">=41,<50", clay: "<7"}]
+    loam:            [{sand: ">23,<=52", silt: ">=28,<50", clay: ">=7,<27"}]
+    sandy_clay_loam: [{sand: ">45,<=80", silt: "<28", clay: ">=20,<35"}]
+    silty_clay_loam: [{sand: "<=20", silt: ">40,<=73", clay: ">=27,<40"}]
+    clay_loam:       [{sand: ">20,<=45", silt: ">15,<53", clay: ">=27,<40"}]
+    sandy_clay:      [{sand: ">45,<=65", silt: "<20", clay: ">=35,<55"}]
+    silty_clay:      [{sand: "<=20", silt: ">=40,<=60", clay: ">=40,<=60"}]
+    clay:            [{sand: "<=45", silt: "<40", clay: ">=40"}]
+  # Табл. 19 FAO-56 не має sandy_clay_loam, clay_loam, sandy_clay → TAW для них: TODO (прапорець).
+  fao_t19_missing: [sandy_clay_loam, clay_loam, sandy_clay]
+
+soilgrids:
+  src: ISRIC_SG2
+  conversion_factor: {clay: 10, sand: 10, silt: 10, wv0033: 10, wv1500: 10}
+  layers_cm: [[0, 5], [5, 15], [15, 30], [30, 60], [60, 100], [100, 200]]
+  depth_labels: ["0-5cm", "5-15cm", "15-30cm", "30-60cm", "60-100cm", "100-200cm"]
+  sum_tolerance_pct: 3    # sand+silt+clay SoilGrids може не давати рівно 100 → нормуємо, понад допуск — прапорець
+
+# ---------------------------------------------------------------- умовності симулятора сівозміни
+simulation:
+  src: MODEL_CONV
+  initial_dr_frac: 0.0          # виснаження на 1 січня року перед ротацією: профіль на ПВ (умовність; baseline v0 мав 0.5 за 60 днів до сівби)
+  bare_kc_window_days: 30       # Kc голого ґрунту (Annex 7) рахується для послідовних вікон ≤30 днів у межах проміжку без культури
+  fallow_plan_year_end: "07-31" # межа «року плану» для чорного пару (пар триває від попередньої межі до 31.07 року плану)
+  fallow_first_zr_m: 1.0
+  fallow_first_p: 0.5           # p для Ks голого ґрунту, якщо пар — перший рік (далі — p попередньої культури)        # Zr для TAW, якщо пар — перший рік ротації (далі пар успадковує TAW попередньої культури)
+  carryover: "fraction"         # при зміні Zr/TAW між культурами зберігається ЧАСТКА виснаження Dr/TAW (рівномірний профіль)
+  drop_feb29: true              # 29 лютого вилучено, щоб 25 стартових років мали однаковий календар (вектор по роках)
+  season_cache_round_mm: 5      # кеш сезону: стартовий Dr округлюється до 5 мм (вузол і ґрунт — в об'єкті симулятора; рішення 12.11)              # 29 лютого вилучено, щоб 25 стартових років мали однаковий календар (вектор по роках)

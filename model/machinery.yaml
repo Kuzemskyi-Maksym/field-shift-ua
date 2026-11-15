@@ -1,0 +1,63 @@
+# Техніка для збирання: які групи техніки потрібні культурам (правка 1, фідбек менторів; docs/decisions.md D27).
+# Обмеження, не заборона: техніку можна взяти в оренду або замовити послугу збирання.
+# Джерела — сторінки виробника, що для культури є окремий тип жатки/машини. Що зерновою жаткою НЕ можна збирати
+# кукурудзу/соняшник, виробник прямо не пише — це висновок команди з наявності окремих жаток (прапорець для агронома).
+# Перевірено 15.11.2026.
+
+history_years: 5          # «наявна техніка» = групи культур поточної практики з HLS за останні N років (2021–2025)
+
+groups:
+  grain_header:
+    name_uk: "зернозбиральний комбайн із зерновою жаткою"
+    crops: [winter_wheat, spring_wheat, winter_barley, spring_barley, rye, oats, soybean, pea, chickpea, winter_rapeseed]
+    source: "CLAAS, жатки для комбайнів (CONVIO, MAXFLEX)"
+    source_url: "https://www.claas.com/en-us/agricultural-machinery/combine-harvesters/combine-headers"
+    quote: "CONVIO: «crops such as grains, rapeseed and legumes»; MAXFLEX: «The unique multicrop capability for grain and soybeans»"
+    flags: ["горох і нут — «legumes» у джерелі без назви культури; ріпак — потрібні ріпакові ножі/подовжений стіл (опція)"]
+  corn_header:
+    name_uk: "кукурудзяна жатка"
+    crops: [maize]
+    source: "CLAAS, жатки для комбайнів (ROVIO 5)"
+    source_url: "https://www.claas.com/en-us/agricultural-machinery/combine-harvesters/combine-headers"
+    quote: "«The ROVIO 5 corn header»"
+  sunflower_header:
+    name_uk: "соняшникова жатка"
+    crops: [sunflower]
+    source: "CLAAS, прес-реліз SUNSPEED, 15.07.2025"
+    source_url: "https://www.claas.com/en-gb/press/press-releases/2025-07-15-sunspeed"
+    quote: "«three new SUNSPEED headers with working widths from 7.50 to 11.90 metres for row-independent sunflower harvesting»"
+  beet_complex:
+    name_uk: "бурякозбиральний комплекс"
+    crops: [sugar_beet]
+    source: "ROPA, техніка для збирання цукрового буряку"
+    source_url: "https://www.ropa-maschinenbau.de/en/products/#rubenroder"
+    quote: "«The Tiger 6S is ROPA's most powerful and innovative machine for sugar beet harvesting»"
+  silage:
+    name_uk: "кормозбиральний комбайн (силос)"
+    crops: [maize_silage]
+    source: "CLAAS ORBIS — жатка для кормозбиральних комбайнів JAGUAR"
+    source_url: "https://www.claas.com/en-us/agricultural-machinery/forage-harvesters/orbis"
+    quote: "жатка ORBIS для JAGUAR (кукурудза на силос); сторінку переглянуто лише в результатах пошуку"
+    flags: ["джерело перевірено лише через пошук, сторінку не відкривали"]
+  # культури без підтвердженої групи
+  other_unknown:
+    name_uk: "техніка для сорго, проса, льону, люцерни"
+    crops: [sorghum, millet, flax, alfalfa, green_manure]
+    source: "припущення команди, потребує перевірки агрономом"
+
+no_harvest: [black_fallow]   # чорний пар техніки збирання не потребує
+
+# HLS не розрізняє культури: клас сезону → група техніки (прапорець «з HLS, не підтверджено»).
+hls_map:
+  W: {group: grain_header, flag: "озимі → зернова жатка"}
+  S_late: {group: corn_header, flag: "пізні ярі (схоже на кукурудзу) → кукурудзяна жатка"}
+  S_early: {group: sunflower_header, flag: "ранні ярі (можливо соняшник) → соняшникова жатка можлива"}
+  S_: {group: sunflower_header, flag: "ярі без уточнення (можливо соняшник) → соняшникова жатка можлива"}
+  F: {group: null}
+
+# Базова комплектація: будь-яка культура, яку збирають комбайном (HLS W або S будь-якого підтипу), → зернова жатка наявна.
+# Спеціальна техніка — лише кукурудзяна, соняшникова жатки і бурякозбиральний комплекс.
+combine_base:
+  classes: [W, S]
+  group: grain_header
+  flag: "припущення команди: зернова жатка — базова комплектація комбайна, потребує перевірки агрономом"

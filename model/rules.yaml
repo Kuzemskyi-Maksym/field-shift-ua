@@ -1,0 +1,111 @@
+# Field Shift — жорсткі правила сівозміни (ТЗ A6). Читає: model/rules.py (фільтр оптимізатора).
+#
+# Норматив №164 у ЛІНІЙНОМУ варіанті (історія поля + план) — фільтр.
+# Циклічна перевірка плану (як checkRot на сайті) — НЕ фільтр, а прапорець.
+# «Не менше ніж через N років» читаємо буквально: між посівами щонайменше N ІНШИХ років
+# (gap = кількість років строго між посівами), як на сайті.
+
+sources:
+  KMU164: "Постанова КМУ №164 від 11.02.2010, примітка до нормативів (звірено з kodeksy.com.ua; офіційний текст zakon.rada.gov.ua ще не звірено)"
+  SITE_LIM: "site/template.html LIM (джерело норм часток — TODO звірити з №164)"
+  SITE_GROUP: "site/template.html GROUP (g — зернові та зернобобові, t — технічні)"
+  DECISION: "рішення команди 12.11.2026 (див. note)"
+  TODO: "TODO — джерело не знайдено"
+  KOHAN2016: "Кохан А.В., Лень О.І., Цилюрик О.І. Наслідки насичення сівозмін соняшником // Науково-технічний бюлетень Інституту олійних культур НААН, 2016, вип. 23, с. 131–136 (Полтавська ДСГДС, Лівобережний Лісостеп, дослід 1999–2016). https://dspace.dsau.dp.ua/items/6cef06ca-a6fe-4849-b056-daa2c1edfe7d"
+  STUB_NO_SOURCE: "заглушка без джерела — лише для прототипу до 13.11.2026"
+
+# kind: return    — повернення не раніше ніж через years років (norm_group: культури, що рахуються як одна)
+#       maize_run — не більше max_consecutive років поспіль (рахується по run_group)
+#       none      — не нормується (прапорець)
+norm164:
+  rye:             {kind: return, years: 1, norm_group: rye, source: KMU164, name_uk: Жито озиме}
+  winter_barley:   {kind: return, years: 1, norm_group: barley, source: KMU164, name_uk: Ячмінь озимий,
+                    flag: "норма №164 для ячменю застосована спільно (озимий + ярий)",
+                    note: "norm_group barley: озимий і ярий ячмінь — один вид; ячмінь після ячменю = повтор (рішення DECISION, консервативно)"}
+  spring_barley:   {kind: return, years: 1, norm_group: barley, source: KMU164, name_uk: Ячмінь ярий,
+                    flag: "норма №164 для ячменю застосована спільно (озимий + ярий)"}
+  oats:            {kind: return, years: 1, norm_group: oats, source: KMU164, name_uk: Овес}
+  buckwheat:       {kind: return, years: 1, norm_group: buckwheat, source: KMU164, name_uk: Гречка, note: "немає в crops.yaml; лише для порту сайту"}
+  winter_wheat:    {kind: return, years: 2, norm_group: winter_wheat, source: KMU164, name_uk: Пшениця озима}
+  potato:          {kind: return, years: 2, norm_group: potato, source: KMU164, name_uk: Картопля, note: "немає в crops.yaml"}
+  millet:          {kind: return, years: 2, norm_group: millet, source: KMU164, name_uk: Просо}
+  soybean:         {kind: return, years: 3, norm_group: soybean, source: KMU164, name_uk: Соя,
+                    note: "зернобобові перевіряються ПО КУЛЬТУРІ, не групою (соя після гороху не порушення) — питання агроному"}
+  pea:             {kind: return, years: 3, norm_group: pea, source: KMU164, name_uk: Горох}
+  chickpea:        {kind: return, years: 3, norm_group: chickpea, source: KMU164, name_uk: Нут}
+  alfalfa:         {kind: return, years: 3, norm_group: alfalfa, source: KMU164, name_uk: Люцерна, note: "багаторічні бобові трави"}
+  sugar_beet:      {kind: return, years: 3, norm_group: beet, source: KMU164, name_uk: Буряк цукровий, note: "у №164 — буряк цукровий і кормовий (одна група)"}
+  winter_rapeseed: {kind: return, years: 3, norm_group: rapeseed, source: KMU164, name_uk: Ріпак озимий, note: "у №164 — ріпак озимий і ярий (одна група)"}
+  flax:            {kind: return, years: 5, norm_group: flax, source: KMU164, name_uk: Льон}
+  sunflower:       {kind: return, years: 7, norm_group: sunflower, source: KMU164, name_uk: Соняшник}
+  maize:           {kind: maize_run, max_consecutive: 3, run_group: maize, source: KMU164, name_uk: Кукурудза, note: "№164: «2–3 роки поспіль»"}
+  maize_silage:    {kind: maize_run, max_consecutive: 3, run_group: maize, source: KMU164, name_uk: Кукурудза на силос,
+                    flag: "правило для кукурудзи застосовано до силосної",
+                    note: "run_group maize: зернова і силосна рахуються разом — норма стосується виду (DECISION)"}
+  spring_wheat:    {kind: none, source: DECISION, name_uk: Пшениця яра, flag: "пшениця яра: №164 не нормує"}
+  sorghum:         {kind: none, source: DECISION, name_uk: Сорго, flag: "сорго: №164 не нормує"}
+  black_fallow:    {kind: none, source: DECISION, name_uk: Чорний пар, flag: "чорний пар: №164 не нормує"}
+  green_manure:    {kind: none, source: DECISION, name_uk: Сидерат, flag: "сидерат: №164 не нормує"}
+
+# Історія поля з HLS (out/hls/*_ndvi_seasons.csv: c ∈ W/S/F/?, sub ∈ early/late/'' лише для S).
+# HLS не розрізняє культури: непідтверджений рік = невідомий. S/early → «можливо соняшник» → 2 гілки.
+history:
+  maybe_sunflower: {c: S, sub: [early, ""], source: DECISION,
+                    note: "appeears_hls.py: early = пік до 20.07 і суха в серпні; '' = підтип не визначено → консервативно «можливо соняшник» (рішення 12.11)"}
+  # «Поточна» стратегія: HLS не знає культур → припущення за класом, лише для демонстрації, підтверджує фермер.
+  current_guess:
+    source: STUB_NO_SOURCE
+    flag: "поточна стратегія — припущення за класами HLS (W→пшениця озима, S/early і S/''→соняшник, S/late→кукурудза, F→пар), потребує підтвердження фермера"
+    map: {W: winter_wheat, S_early: sunflower, S_: sunflower, S_late: maize, F: black_fallow}
+  branching: "Для правила соняшнику (повернення ≥7) обмежує лише ОСТАННІЙ попередній посів, тож 2 гілки точні: «жоден S/early-рік не соняшник» і «соняшник в останньому S/early-році»."
+
+# Матриця попередників НААН по зонах: good | acceptable | bad. Каркас — заповнюють R2/R3.
+predecessors:
+  mode: penalty          # penalty | filter — як трактувати «bad»
+  source: TODO
+  # Правило-каркас (рішення 12.11): бобові після бобових — поганий попередник. Джерело заповнять R2/R3.
+  group_rules:
+    - {prev_group: legume, crop_group: legume, class: bad, source: TODO, note: "бобові після бобових; №164 не порушує (норма по культурі)"}
+  steppe: {}             # {попередник: {культура: good|acceptable|bad}}
+  forest_steppe: {}
+  polissia: {}
+
+# Множник врожаю за попередником. Відсутня пара → 1.0 з прапорцем «ефект попередника не враховано».
+prev_effect:
+  source: TODO
+  values: {}             # {попередник: {культура: {value: x, source: ...}}}
+  # Ефект насичення сівозміни соняшником (D20): множник урожаю соняшнику за кількістю років між посівами (gap — як у №164,
+  # роки строго між посівами). Дослід Полтавської ДСГДС 1999–2016: максимум 2,76 т/га у 7-пільній (14,3 % соняшнику);
+  # на 18-й рік зниження 0,55 т/га у 2-пільній (повернення через 1 рік) і 0,27 т/га у 3-пільній (через 2 роки).
+  sunflower_return:
+    source: KOHAN2016
+    crop: sunflower
+    base_t_ha: 2.76                 # 7-пільна, 14,3 % соняшнику (gap 6) — без зниження
+    loss_t_ha: {1: 0.55, 2: 0.27}   # gap 1 (2-пільна), gap 2 (3-пільна)
+    gap0_as: 1                      # поспіль (gap 0) — як gap 1, прапорець «щонайменше»
+    no_effect_gap: 6                # gap ≥ 6 → 1,0
+    interpolate: [3, 5]             # gap 3–5 — лінійно між gap 2 і gap 6, прапорець «інтерполяція»
+    local_zones: [forest_steppe]    # дослід — Лівобережний Лісостеп
+    flags:
+      gap0: "щонайменше; беззмінних посівів у досліді немає"
+      interp: "інтерполяція між 3-пільною (2 роки) і 7-пільною (6 років)"
+      zone: "ефект для Лісостепу; для Степу й Полісся застосовано без локального досліду"
+      unknown: "попередній посів соняшнику в історії невідомий — множник 1,0"
+
+# Частки культур у структурі посівів (сайт). Для ОДНОГО поля 3–4 роки частки 5–9% недосяжні
+# (1 з 4 = 25%), тому за замовчуванням — прапорець, не фільтр.
+shares:
+  mode: flag             # flag | filter
+  groups:
+    cereals_legumes: {name_uk: "Зернові та зернобобові", lo: 25, hi: 95, source: SITE_LIM,
+                      crops: [winter_wheat, spring_wheat, winter_barley, spring_barley, maize, buckwheat, millet, soybean, pea],
+                      crops_source: SITE_GROUP}
+    technical:       {name_uk: "Технічні, усього", lo: 5, hi: 30, source: SITE_LIM,
+                      crops: [sunflower, winter_rapeseed, sugar_beet], crops_source: SITE_GROUP}
+    sunflower:       {name_uk: "Соняшник", lo: 5, hi: 9, source: SITE_LIM, crops: [sunflower], crops_source: SITE_GROUP}
+    rapeseed:        {name_uk: "Ріпак", lo: 3, hi: 5, source: SITE_LIM, crops: [winter_rapeseed], crops_source: SITE_GROUP}
+
+# Техніка: яка техніка потрібна для яких культур. Каркас; фермер може прямо вказати no_machinery_for.
+machinery:
+  source: TODO
+  needs: {}              # {machine_id: [crop_id, ...]}
