@@ -298,6 +298,7 @@ details.mkt td.n,details.mkt th.n{text-align:right;font-variant-numeric:tabular-
   <div class="note" id="pconf" style="margin:6px 0 0"></div>
   <div class="pcards" id="pcards" style="margin-top:8px"></div>
   <div class="note" id="pmach" style="margin:8px 0 0"></div>
+  <div class="note" id="ppest" style="margin:8px 0 0"></div>
   <div class="section" id="pmoney-sec" style="margin-top:16px">
     <h3 id="pmoney-title">Ефект у грошах</h3>
     <div class="pmoney-line" id="pmoney-line"></div>
@@ -744,6 +745,7 @@ function pick(f) {
   if (pr && pr.next_season)
     d3.select("#fc-pilot").append("div").html(mktHTML(MP && MP.fields[`${wkey}:f${p.id}`] ? `${wkey}:f${p.id}` : null,
       [{id: pr.next_season, uk: pr.next_season_uk}]));
+  if (pr) d3.select("#fc-pilot").append("div").attr("class", "note").html(pestHTML(`${wkey}:f${p.id}`));
   const plan = Object.values(D.strategies || {}).find(q => q.window === wkey && String(q.fid) === String(p.id));
   if (plan) {
     d3.select("#fc-pilot").append("button").attr("class", "btn").attr("type", "button").text("Відкрити рекомендацію")
@@ -925,6 +927,24 @@ function hireSources(S) {
     `; чи входить пальне — у джерелах не вказано. Оцінка за ринковими цінами послуг; фактична ціна залежить від регіону й домовленості.`;
 }
 
+// D30: умови для ґрунтових шкідників (site/pests.json ← scripts/pest_risk.py): лише дні у вікні порогу з джерела і тренд
+function pestHTML(key) {
+  const PS = D.pests;
+  if (!PS || !PS.fields[key]) return "";
+  return Object.entries(PS.fields[key]).map(([k, v]) => {
+    const P = PS.pests[k];
+    let t = `<b>Умови для ґрунтових шкідників.</b> ${pesc(P.name_uk)}: `;
+    if (v.status !== "ok") t += `немає даних температури ґрунту (NASA POWER TSOIL1) для вузла цього поля.`;
+    else {
+      const last = v.years[v.years.length - 1], tr = v.trend_days_per_decade;
+      t += `днів у квітні–червні з температурою ґрунту ${P.tmin_c}–${P.tmax_c} °C (NASA POWER TSOIL1): ${last[0]} — ${last[1]}; ` +
+        `середнє ${P.years[0]}–${P.years[1]} — ${nf(v.mean, 1)}; тренд ${tr >= 0 ? "+" : "−"}${nf(Math.abs(tr), 1)} дн. за 10 років.`;
+    }
+    return t + `<br>Індикатор умов для шкідника, а не прогноз чисельності. Точність дадуть проби ґрунту й обліки на полі — наступний крок.` +
+      `<br>Поріг — <a href="${pesc(P.source_url)}" target="_blank" rel="noopener">University of Idaho Extension</a> (2023); у джерелі глибина не вказана, TSOIL1 — шар 2–10 см.`;
+  }).join("<br>");
+}
+
 function drawPlan() {
   const base = PLANS[pState.id], demo = PDEMO[pState.id], P = pState.demo && demo ? demo : base;
   ptabs.attr("aria-pressed", p => p.id === pState.id);
@@ -974,6 +994,7 @@ function drawPlan() {
   d3.select("#pcards").html(order.map(k => S.find(s => s.name === k)).filter(Boolean).map(card).join(""))
     .selectAll(".pcard").on("click", function () { pState.sel = this.dataset.n; drawPlan(); });
   const mc = (S.find(z => z.mach) || {}).mach, own = S.find(z => z.name === "own_machinery");
+  d3.select("#ppest").html(pestHTML(P.id));
   d3.select("#pmach").html(mc ? `<b>Техніка для збирання.</b> Наявну техніку визначено з того, що росло на полі за HLS 2021–2025
     (культуру з космосу не видно — це припущення, підтвердіть): ${mc.owned_flags.length ? pesc(mc.owned_flags.map(f => f.replace(/^\d{4}: /, "")).filter((v, i, a) => a.indexOf(v) === i).join("; ")) : "немає даних"}.
     ${own ? `Картка «${SNAME.own_machinery}» — найкраща за маржею сівозміна без нової техніки${own.vs && own.vs.d_field ? `: ${own.vs.d_field.p50 >= 0 ? "+" : "−"}${nf(Math.abs(own.vs.d_field.p50) / 1e6, 2)} млн грн за 4 роки до поточної (P50)` : ""}.` : "Сівозміни без нової техніки серед допустимих немає."}

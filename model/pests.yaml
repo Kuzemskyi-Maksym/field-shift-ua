@@ -1,0 +1,18 @@
+# Ґрунтові шкідники: пороги умов активності з джерела (D30). Без порогу з джерела шкідник не додається.
+# Індикатор умов для шкідника, а не прогноз чисельності.
+pests:
+  wireworm:
+    name_uk: "дротяники (личинки коваликів)"
+    name_en: "wireworms (click-beetle larvae)"
+    crops: [maize, sunflower, sugar_beet, winter_wheat, spring_wheat, soybean, pea]
+    crops_note: "у джерелі — загалом для польових культур (картопля, зернові); перелік наших культур — припущення команди"
+    var: TSOIL1                    # NASA POWER, шар 1 (≈ 2–10 см); у джерелі — температура ґрунту, глибина не вказана
+    tmin_c: 10                     # 50 °F
+    tmax_c: 27                     # 80 °F
+    months: [4, 5, 6]
+    years: [2016, 2025]
+    levels: null                   # меж «низький/середній/високий» у джерелі немає → лише кількість днів і тренд
+    source: "Wickwar D., Wenninger E. J. Wireworms. University of Idaho Extension IPM, 2023"
+    source_url: "https://www.uidaho.edu/extension/food/ipm/ag-pests/wireworms"
+    quote: "at soil temperatures of 50-55°F (10-13°C) … larvae move within about 3 inches (8 cm) of the soil surface to feed … As the season progresses and soil temperatures increase to 80 degrees Fahrenheit (27°C) and above, larvae move deeper in the soil"
+    checked: "2026-11-15"

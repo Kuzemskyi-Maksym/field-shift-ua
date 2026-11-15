@@ -264,7 +264,8 @@
 "кукурудзяна жатка": "corn header",
 "соняшникова жатка": "sunflower header",
 "бурякозбиральний комплекс": "sugar-beet harvester",
-"кормозбиральний комбайн (силос)": "forage harvester (silage)"
+"кормозбиральний комбайн (силос)": "forage harvester (silage)",
+"дротяники (личинки коваликів)": "wireworms (click-beetle larvae)"
 },
 "strings": {
 "s0000": {
@@ -2734,6 +2735,34 @@
 "s0616": {
 "uk": "Зріз цін: DSSU_# · витрати: full_cost_uah_ha (#) · ранжування: margin · commit моделі:",
 "en": "Price snapshot: DSSU_# · costs: full_cost_uah_ha (#) · ranking: margin · model commit:"
+},
+"s0617": {
+"uk": "Умови для ґрунтових шкідників.",
+"en": "Conditions for soil pests."
+},
+"s0618": {
+"uk": "§: днів у квітні–червні з температурою ґрунту #–# °C (NASA POWER TSOIL#): # — #; середнє #–# — #; тренд +# дн. за # років.",
+"en": "§: days in April–June with soil temperature #–# °C (NASA POWER TSOIL#): # — #; mean #–# — #; trend +# days per # years."
+},
+"s0619": {
+"uk": "§: днів у квітні–червні з температурою ґрунту #–# °C (NASA POWER TSOIL#): # — #; середнє #–# — #; тренд # дн. за # років.",
+"en": "§: days in April–June with soil temperature #–# °C (NASA POWER TSOIL#): # — #; mean #–# — #; trend # days per # years."
+},
+"s0620": {
+"uk": "§: немає даних температури ґрунту (NASA POWER TSOIL#) для вузла цього поля.",
+"en": "§: no soil temperature data (NASA POWER TSOIL#) for this field's node."
+},
+"s0621": {
+"uk": "Індикатор умов для шкідника, а не прогноз чисельності. Точність дадуть проби ґрунту й обліки на полі — наступний крок.",
+"en": "An indicator of conditions for the pest, not a forecast of its numbers. Soil samples and field counts will give accuracy — the next step."
+},
+"s0622": {
+"uk": "Поріг —",
+"en": "Threshold —"
+},
+"s0623": {
+"uk": "(#); у джерелі глибина не вказана, TSOIL# — шар #–# см.",
+"en": "(#); the source does not state the depth, TSOIL# is the #–# cm layer."
 }
 }
 }

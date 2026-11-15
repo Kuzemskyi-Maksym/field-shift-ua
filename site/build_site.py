@@ -141,10 +141,10 @@ else:
 fg = os.path.join(os.path.dirname(os.path.abspath(DST)), "fields_grid.json")
 if os.path.exists(fg):
     data["fgrid"] = json.load(open(fg, encoding="utf-8"))
-for sj in ("strategies.json", "ecostress.json", "portfolio.json", "market.json"):   # export_site_strategies, ecostress_compare, portfolio, market_*
+for sj in ("strategies.json", "ecostress.json", "portfolio.json", "market.json", "pests.json"):   # export_site_strategies, ecostress_compare, portfolio, market_*, pest_risk
     if os.path.exists(sj := os.path.join(os.path.dirname(os.path.abspath(DST)), sj)):
         data.update({k: v for k, v in json.load(open(sj, encoding="utf-8")).items()
-                     if k in ("strategies", "strategies_demo", "ecostress", "portfolio", "market_export", "market_ports")})
+                     if k in ("strategies", "strategies_demo", "ecostress", "portfolio", "market_export", "market_ports", "pests")})
 json.dump(data, open(DST, "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
 print("ok", DST, round(len(json.dumps(data)) / 1024), "KB; metrics:", metrics)
 
