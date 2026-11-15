@@ -1,0 +1,18 @@
+# D31: які наші культури найчастіше шкодять тварини — лише якісно, з джерелом; без грошей і відсотків втрат на сайті.
+# Тварина без перевіреного джерела не додається (олені — джерела з перевірною цитатою за таймбокс не знайдено).
+animals:
+  wild_boar:
+    name_uk: "дикі кабани"
+    crops: [maize, winter_rapeseed]
+    source: "Węgorek P., Herka W., Dolata F. The impact of environmental changes on the biology and ethology of wild boar in the agricultural landscape. Journal of Plant Protection Research, 2025, 65(4), 455–464"
+    source_url: "https://www.plantprotection.pl/The-impact-of-environmental-changes-on-the-biology-and-ethology-of-wild-boar-in-the,205205,0,2.html"
+    quote: "wild boars cause the greatest damage to rapeseed and maize crops"
+    date: "2025"
+  rodents:
+    name_uk: "мишоподібні гризуни"
+    crops: [winter_wheat, winter_barley, rye, winter_rapeseed]
+    source: "Держпродспоживслужба: Львівщина — фітосанітарний моніторинг заселення озимих культур мишоподібними гризунами"
+    source_url: "https://dpss.gov.ua/news/lvivshchyna-fitosanitarnyi-monitorynh-zaselennia-ozymykh-kultur-myshopodibnymy-hryzunamy"
+    quote: "знижувати врожайність озимих зернових, озимого ріпаку та багаторічних трав"
+    date: "2025-02-28"
+forest_proximity: "немає шару лісу в репозиторії; відкритий ESA WorldCover 10 м можна завантажити без логіна, але не за 15 хв для всіх вікон — не робили"

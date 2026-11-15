@@ -145,6 +145,10 @@ for sj in ("strategies.json", "ecostress.json", "portfolio.json", "market.json",
     if os.path.exists(sj := os.path.join(os.path.dirname(os.path.abspath(DST)), sj)):
         data.update({k: v for k, v in json.load(open(sj, encoding="utf-8")).items()
                      if k in ("strategies", "strategies_demo", "ecostress", "portfolio", "market_export", "market_ports", "pests")})
+wl = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(DST))), "data", "raw", "wildlife_damage.yaml")   # D31
+if os.path.exists(wl):
+    import yaml
+    data["wildlife"] = yaml.safe_load(open(wl, encoding="utf-8"))["animals"]
 json.dump(data, open(DST, "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
 print("ok", DST, round(len(json.dumps(data)) / 1024), "KB; metrics:", metrics)
 
