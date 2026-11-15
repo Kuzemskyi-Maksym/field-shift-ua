@@ -1,30 +1,24 @@
 <title>Field Shift Україна</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: шапка → карта (2/3) + картка поля (1/3) → модель проти факту → альтернативи ННЦ → дані */
 :root{
-  --bg:#f3f5f2; --surface:#ffffff; --ink:#18221c; --muted:#5d6b62; --line:#d9e0da;
-  --land:#e7ece6; 
-  --accent:#2f7d4f;          /* хлорофіл */
-  --accent-soft:#2f7d4f1f;
-  --amber:#b7791f;           /* стерня, посуха */
-  --red:#c2412d; --blue:#2b6cb0;
-  --zone:#2f7d4f2e; --zone-part:#2f7d4f14;
-  --display:"Manrope",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+  /* редизайн: тло завжди темно-зелене, тож палітра одна (темна) */
+  --bg:#2f4211; --surface:#161b16; --ink:#e6ede4; --muted:#a3b19f; --line:#3c4a38;
+  --land:#232b22; --land-line:#566552;
+  --accent:#7fcf8e;          /* хлорофіл */
+  --accent-soft:#7fcf8e24;
+  --amber:#e3ae55;           /* стерня, посуха */
+  --red:#f08470; --blue:#7cb3ee;
+  --zone:#7fcf8e38; --zone-part:#7fcf8e1a;
+  --win:rgba(20,24,20,.72); --win-line:rgba(214,230,200,.22); --cut:12px;
+  --font:"Segoe UI Variable Text","Segoe UI Variable","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+  --display:var(--font); --body:var(--font); --mono:var(--font);
+  --grass:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55 .09' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .62 0 0 0 0 .78 0 0 0 0 .32 0 0 0 .32 -.11'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  color-scheme:dark;
 }
-:root{--land-line:#a3b1a7}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#111713; --surface:#18201b; --ink:#e3ebe5; --muted:#97a69c; --line:#2b362f;
-  --land:#1d2721; --land-line:#4b5a50; --accent:#5fbf86; --accent-soft:#5fbf8626; --amber:#e0a84a;
-  --red:#ef7a64; --blue:#6aa7e8; --zone:#5fbf8638; --zone-part:#5fbf861a; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#111713; --surface:#18201b; --ink:#e3ebe5; --muted:#97a69c; --line:#2b362f;
-  --land:#1d2721; --land-line:#4b5a50; --accent:#5fbf86; --accent-soft:#5fbf8626; --amber:#e0a84a;
-  --red:#ef7a64; --blue:#6aa7e8; --zone:#5fbf8638; --zone-part:#5fbf861a; color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--body);margin:0}
+body{background-color:var(--bg);background-image:var(--grass),linear-gradient(165deg,#2b3a10 0%,#354a12 100%);background-attachment:fixed;background-size:260px 260px,100% 100%;color:var(--ink);font:15px/1.55 var(--body);font-variant-numeric:tabular-nums;margin:0;min-height:100vh}
 .wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
 h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
 h1{font-size:clamp(24px,3.2vw,34px);font-weight:800}
@@ -33,9 +27,10 @@ h3{font-size:15px;font-weight:700}
 .lede{color:var(--muted);max-width:68ch;margin:6px 0 0}
 .eyebrow{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:end;justify-content:space-between;margin-bottom:18px}
-#langsw{display:flex;gap:4px;order:-1;width:100%;justify-content:flex-end}
-#langsw button{font:600 12px var(--mono);padding:4px 10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer}
-#langsw button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+#langsw{display:flex;gap:8px;position:absolute;top:0;right:0}
+#langsw button{width:40px;height:40px;border-radius:50%;border:1px solid rgba(236,242,228,.7);background:transparent;color:#eef3e8;font:600 13px/1 var(--font);letter-spacing:.02em;cursor:pointer;padding:0;transition:background .15s,color .15s}
+#langsw button:hover{background:rgba(236,242,228,.12)}
+#langsw button[aria-pressed="true"]{background:#eef3e8;border-color:#eef3e8;color:#1d2614}
 .tag{font:500 12px var(--mono);color:var(--accent);background:var(--accent-soft);padding:4px 8px;border-radius:4px;white-space:nowrap}
 .grid{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:16px;align-items:start}
 @media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}}
@@ -188,17 +183,60 @@ details.mkt td.n,details.mkt th.n{text-align:right;font-variant-numeric:tabular-
 .pmoney-line .neg,#pmenu .neg{color:var(--red,#b42318)}
 #pmenu td{vertical-align:top}
 #pmenu tr.cur td{background:var(--land)}
+
+/* ---------- редизайн (гілка design): лише вигляд */
+header{position:relative;align-items:flex-start;padding-right:104px;margin-bottom:20px}
+.brand{font:700 13px/1.25 var(--font);letter-spacing:.14em;text-transform:uppercase;color:#eef3e8}
+.brand span{display:block;font-weight:500;letter-spacing:.02em;text-transform:none;font-size:15px;color:#d5e0cd;margin-top:2px}
+header h1{margin-top:14px;color:#f3f7ef}
+/* вікна: скошені кути (верхній лівий і нижній правий), напівпрозорий темний фон, розмиття */
+.panel,.pcard,details.mkt,.pnext{position:relative;border:0!important;border-radius:0!important;
+  clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
+.panel{background:var(--win);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.panel::before,.pcard::before,details.mkt::before,.pnext::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;background:var(--win-line);
+  clip-path:polygon(evenodd,var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut),var(--cut) 0,
+    calc(var(--cut) + .42px) 1px,1px calc(var(--cut) + .42px),1px calc(100% - 1px),calc(100% - var(--cut) - .42px) calc(100% - 1px),calc(100% - 1px) calc(100% - var(--cut) - .42px),calc(100% - 1px) 1px,calc(var(--cut) + .42px) 1px)}
+.panel .panel{background:none;-webkit-backdrop-filter:none;backdrop-filter:none;clip-path:none}
+.panel .panel::before{display:none}
+.pcard,details.mkt,.pnext{--cut:9px}
+.pcard{background:rgba(255,255,255,.035)}
+.pcard.cur{background:rgba(255,255,255,.06)}
+.pcard[aria-pressed="true"],.pcard.cur[aria-pressed="true"]{box-shadow:none;background:rgba(127,207,142,.1)}
+.pcard[aria-pressed="true"]::before{background:var(--accent)}
+.pcard.cur[aria-pressed="true"]::before{background:var(--muted)}
+details.mkt{background:rgba(255,255,255,.03)}
+.pnext{background:var(--accent-soft)}
+.pnext::before{background:color-mix(in srgb,var(--accent) 70%,transparent)}
+/* шрифт: без моноширинного; числа — табличні */
+svg text{font:11px var(--font);font-variant-numeric:tabular-nums}
+.eyebrow{font:600 11px/1.3 var(--font);letter-spacing:.1em}
+th{font:600 11px var(--font)}
+.mapnote,.zoomer button,#tip,#tipF{background:rgba(16,20,16,.88)}
+#tip,#tipF{color:var(--ink)!important;border:1px solid var(--win-line)}
+.zoomer button{border-color:var(--win-line)}
+select,.builder select,.fmode select{background:#1b211a;color:var(--ink)}
+.fieldtabs button[aria-pressed="true"]{color:#14200f}
+.badge.viol{color:#fff}
+/* опис під вікном */
+.below{margin:10px 2px 0;color:#d2dccb;font-size:13px;max-width:none}
+.grid+.below{margin-top:12px}
+/* футер «Info» */
+footer.info{margin-top:28px;padding:14px 16px;font-size:11.5px;line-height:1.55;color:#c7d3bf;background:rgba(14,18,13,.55);clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
+footer.info h2{font:600 11px/1 var(--font);letter-spacing:.12em;text-transform:uppercase;color:#e6ede4;margin:0 0 8px}
+footer.info .prun{margin:6px 0 0;font:inherit;color:inherit}
+footer.info .mkt-src{margin:6px 0 0;font-size:inherit;color:inherit}
+footer.info a{color:var(--accent)}
+a{color:var(--accent)}
+@media (max-width:600px){header{padding-right:0;padding-top:52px}#langsw{top:0;right:0}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
 <div class="wrap">
 <header>
   <div>
-    <div class="eyebrow">NASA Space Apps 2026 · Field Shift</div>
+    <div class="brand">NASA Space Apps 2026<span>Project "Field Shift"</span></div>
     <h1>Клімат поля зсувається. Сівозміна теж має</h1>
-    <p class="lede">Пілотні поля, сітки даних NASA над Україною і базова модель водного стресу культур. Оберіть поле на карті, щоб побачити, як змінився його клімат, що на ньому росло і наскільки посуха б'є по врожаю.</p>
   </div>
-  <span class="tag">прототип · дані NASA POWER, MODIS, SMAP</span>
 </header>
 
 <div class="grid">
@@ -225,10 +263,10 @@ details.mkt td.n,details.mkt th.n{text-align:right;font-variant-numeric:tabular-
 
     <div class="section">
       <h3>Зсув клімату</h3>
-      <div class="legend">NASA POWER, 2016–2025 порівняно з 2001–2010</div>
       <div class="stats" id="f-stats"></div>
       <svg id="f-spark" viewBox="0 0 320 70" width="100%" aria-label="Річні опади 2001–2025"></svg>
       <div class="legend">Річні опади, мм. Темні стовпці — роки нижче медіани.</div>
+      <div class="legend">NASA POWER, 2016–2025 порівняно з 2001–2010</div>
     </div>
 
     <div class="section">
@@ -239,26 +277,26 @@ details.mkt td.n,details.mkt th.n{text-align:right;font-variant-numeric:tabular-
 
     <div class="section">
       <h3>Ризик посухи для культур</h3>
-      <div class="legend">Відносний врожай за водним стресом, 2002–2025: смуга від сухого (P10) до вологого (P90) року, риска — типовий</div>
       <div id="f-risk"></div>
+      <div class="legend">Відносний врожай за водним стресом, 2002–2025: смуга від сухого (P10) до вологого (P90) року, риска — типовий</div>
     </div>
 
     <div class="section" id="f-eco-sec" hidden>
       <h3>Випаровування з МКС (ECOSTRESS 70 м)</h3>
-      <div class="legend">ECOSTRESS — прилад NASA JPL на МКС; спостереження нерегулярні через орбіту МКС.</div>
       <div class="fieldtabs eco-years" id="f-eco-y"></div>
       <svg id="f-eco" viewBox="0 0 320 130" width="100%" aria-label="Випаровування: ECOSTRESS проти моделі"></svg>
       <div class="legend" id="f-eco-leg"></div>
+      <div class="legend">ECOSTRESS — прилад NASA JPL на МКС; спостереження нерегулярні через орбіту МКС.</div>
     </div>
     <div id="f-zone"></div>
     <div id="f-plan"></div>
   </aside>
 </div>
+<p class="note below">Пілотні поля, сітки даних NASA над Україною і базова модель водного стресу культур. Оберіть поле на карті, щоб побачити, як змінився його клімат, що на ньому росло і наскільки посуха б'є по врожаю.</p>
 
 <section class="panel" style="margin-top:16px" id="fields">
   <div class="eyebrow">Реальні поля · NASA Harvest 2023</div>
   <h2>Межі полів, на які накладаються дані</h2>
-  <p class="note" style="margin-top:0">Межі з набору NASA Harvest Ukraine Field Boundary Delineation 2023 (Sadeh et al., Scientific Data, 2025; CC BY 4.0), спрощені до ±4 м. Колір — розмір поля відносно пікселя MODIS (231 м ≈ 5,37 га) або що росло в обраний рік за HLS 30 м (пілот і 50 найбільших полів вікна). Сині точки — де ми беремо HLS 30 м NDVI. Червоний контур — пілотне поле моделі.</p>
   <div class="fieldtabs" id="wtabs"></div>
       <div class="fmode" style="padding:0 0 10px;border:none"><label for="fyear">Колір полів:</label>
         <select id="fyear"><option value="size">розмір відносно пікселя MODIS</option></select>
@@ -284,6 +322,7 @@ details.mkt td.n,details.mkt th.n{text-align:right;font-variant-numeric:tabular-
       </div>
     </aside>
   </div>
+  <p class="note below">Межі з набору NASA Harvest Ukraine Field Boundary Delineation 2023 (Sadeh et al., Scientific Data, 2025; CC BY 4.0), спрощені до ±4 м. Колір — розмір поля відносно пікселя MODIS (231 м ≈ 5,37 га) або що росло в обраний рік за HLS 30 м (пілот і 50 найбільших полів вікна). Сині точки — де ми беремо HLS 30 м NDVI. Червоний контур — пілотне поле моделі.</p>
 </section>
 
 <section class="panel" style="margin-top:16px" id="plan">
@@ -294,9 +333,9 @@ details.mkt td.n,details.mkt th.n{text-align:right;font-variant-numeric:tabular-
   <div class="pnext" id="pnext"></div>
   <div id="pmkt"></div>
   <h3>Стратегії: маржа, тис. грн/га на рік</h3>
-  <div class="legend">Смуга — від сухого (P10) до вологого (P90) року за 25 роками погоди, риска — типовий рік (P50); від'ємне — червоним. Натисніть картку, щоб побачити календар і пояснення.</div>
   <div class="note" id="pconf" style="margin:6px 0 0"></div>
   <div class="pcards" id="pcards" style="margin-top:8px"></div>
+  <div class="legend">Смуга — від сухого (P10) до вологого (P90) року за 25 роками погоди, риска — типовий рік (P50); від'ємне — червоним. Натисніть картку, щоб побачити календар і пояснення.</div>
   <div class="note" id="pmach" style="margin:8px 0 0"></div>
   <div class="note" id="ppest" style="margin:8px 0 0"></div>
   <div class="section" id="pmoney-sec" style="margin-top:16px">
@@ -307,24 +346,23 @@ details.mkt td.n,details.mkt th.n{text-align:right;font-variant-numeric:tabular-
   </div>
   <div class="section" style="margin-top:16px">
     <h3 id="pg-title">Календар</h3>
-    <div class="legend" id="pg-leg"></div>
     <div class="gantt" id="pgantt"></div>
+    <div class="legend" id="pg-leg"></div>
   </div>
   <div class="section" style="margin-top:16px">
     <h3>Меню сценаріїв</h3>
-    <div class="legend">Фіксовані сівозміни, оцінені тією самою моделлю без пошуку (як поточна): маржа на полі за 4 роки 2027–2030, P10 / P50 / P90 за 25 роками погоди. Ротацію з 2–3 полів повторено по колу. Соняшник — з урахуванням насичення сівозміни (Полтавська ДСГДС). Культура без параметрів, т/га, ціни чи календаря — «немає даних», нічого не підставляємо.</div>
     <div class="scroll"><table id="pmenu"></table></div>
+    <div class="legend">Фіксовані сівозміни, оцінені тією самою моделлю без пошуку (як поточна): маржа на полі за 4 роки 2027–2030, P10 / P50 / P90 за 25 роками погоди. Ротацію з 2–3 полів повторено по колу. Соняшник — з урахуванням насичення сівозміни (Полтавська ДСГДС). Культура без параметрів, т/га, ціни чи календаря — «немає даних», нічого не підставляємо.</div>
   </div>
   <div class="pdet" id="pdet" style="margin-top:12px"></div>
-  <div class="prun" id="prun"></div>
 </section>
 
 <section class="panel" style="margin-top:16px" id="norms">
   <div class="eyebrow">Норматив · постанова КМУ №164 від 11.02.2010</div>
   <h2>Чи допускає норматив таку сівозміну</h2>
-  <p class="note" style="margin-top:0">Лісостеповий регіон (Карлівка, Калинівка). Строки повернення культури на поле — жорстке правило: стратегію, що його порушує, застосунок не пропонує, а для фактичної — показує порушення. Частки культур норматив задає для господарства загалом, тож для одного поля це лише попередження.</p>
   <div class="presets" id="presets"></div>
   <div class="builder" id="builder" aria-label="Сівозміна по роках"></div>
+  <p class="note">Лісостеповий регіон (Карлівка, Калинівка). Строки повернення культури на поле — жорстке правило: стратегію, що його порушує, застосунок не пропонує, а для фактичної — показує порушення. Частки культур норматив задає для господарства загалом, тож для одного поля це лише попередження.</p>
   <div class="two" style="margin-top:4px">
     <div><h3>Строки повернення</h3><div class="scroll"><table id="ret"></table></div></div>
     <div><h3>Частки культур у сівозміні</h3><div id="shares"></div>
@@ -337,17 +375,17 @@ details.mkt td.n,details.mkt th.n{text-align:right;font-variant-numeric:tabular-
   <section class="panel">
     <div class="eyebrow">Перевірка моделі</div>
     <h2>Прогноз проти факту</h2>
-    <p class="note" style="margin-top:0">Обласна врожайність Держстату, 4 області × 3 культури × 4 роки (<span id="n-val"></span> пар). Рік, що перевіряється, не входив у калібрування.</p>
     <div class="scroll"><table id="metrics"><thead><tr><th>Метод</th><th style="text-align:right">Помилка, %</th><th style="text-align:right">Порядок років, ρ</th></tr></thead><tbody></tbody></table></div>
     <svg id="scatter" viewBox="0 0 420 300" width="100%" aria-label="Прогноз моделі проти фактичної врожайності"></svg>
+    <p class="note">Обласна врожайність Держстату, 4 області × 3 культури × 4 роки (<span id="n-val"></span> пар). Рік, що перевіряється, не входив у калібрування.</p>
     <p class="note">Модель: FAO-56 (випаровування) + водний баланс ґрунту + коефіцієнт Ky. Календар сівби, Ky і запас вологи поки орієнтовні; спеку і заморозки не враховано.</p>
   </section>
 
   <section class="panel">
     <div class="eyebrow">Альтернативи з досліду</div>
     <h2>Органічні сівозміни ННЦ «ІЗ НААН»</h2>
-    <p class="note" style="margin-top:0">Стаціонарний дослід 2021–2025, чорнозем типовий, Лівобережний Лісостеп. Середнє за 5 років; значення з позначкою * пораховані командою з таблиць звіту.</p>
     <div class="scroll"><table id="nnc"></table></div>
+    <p class="note">Стаціонарний дослід 2021–2025, чорнозем типовий, Лівобережний Лісостеп. Середнє за 5 років; значення з позначкою * пораховані командою з таблиць звіту.</p>
     <div class="callout"><b>Компроміс «гроші проти води»:</b> комплексне удобрення дає +33–54% урожаю, але забирає більше вологи з ґрунту; гречка найприбутковіша і найбільш водомістка. Даних по окремих роках у звіті немає, тож діапазон «сухий / вологий рік» для цих сівозмін рахує наша модель.</div>
     <p class="note">Мартинюк І. В., Цимбал Я. С. та ін. Теоретичні основи формування і функціонування короткоротаційних сівозмін за ведення органічного землеробства в умовах Лісостепу України. Вінниця: ТВОРИ, 2025.</p>
   </section>
@@ -356,9 +394,16 @@ details.mkt td.n,details.mkt th.n{text-align:right;font-variant-numeric:tabular-
 <section class="panel" style="margin-top:16px">
   <div class="eyebrow">Роздільність даних</div>
   <h2>Скільки точок кожного датасету припадає на область</h2>
-  <p class="note" style="margin-top:0">Точка — центр клітинки сітки. Погода NASA POWER — 7–16 точок на область, тобто клімат на рівні району; різницю між полями дають супутникові NDVI і ґрунт (250 м).</p>
   <div class="scroll"><table id="counts"></table></div>
+  <p class="note">Точка — центр клітинки сітки. Погода NASA POWER — 7–16 точок на область, тобто клімат на рівні району; різницю між полями дають супутникові NDVI і ґрунт (250 м).</p>
 </section>
+
+<footer class="info" id="info">
+  <h2>Info</h2>
+  <div>прототип · дані NASA POWER, MODIS, SMAP</div>
+  <div class="prun" id="prun"></div>
+  <div id="info-src"></div>
+</footer>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
@@ -1223,6 +1268,15 @@ if (D.grid_counts) {
   d3.select("#counts").html(`<thead><tr><th>Область</th><th style="text-align:right">POWER 0,5°</th><th style="text-align:right">SMAP 9 км</th><th style="text-align:right">ERA5-Land 0,1°</th><th style="text-align:right">IMERG 0,1°</th><th style="text-align:right">CHIRPS 0,05°</th></tr></thead><tbody>` +
     rows.map(r => `<tr><td>${r.region}</td><td class="n">${r.power}</td><td class="n">${r.smap}</td><td class="n">${r.era5land}</td><td class="n">${r.imerg}</td><td class="n">${r.chirps.toLocaleString("uk-UA")}</td></tr>`).join("") + "</tbody>");
 }
+
+// ---------- редизайн: джерела ринку — у футер «Info» (лише переміщення вузла; текст і логіка ті самі)
+(function () {
+  const box = document.getElementById("pmkt"), dst = document.getElementById("info-src");
+  if (!box || !dst) return;
+  const move = () => { const src = box.querySelector(".mkt-src"); if (src) dst.replaceChildren(src); };
+  move();
+  new MutationObserver(move).observe(box, {childList: true, subtree: true});
+})();
 
 // ---------- мова: EN за замовчуванням, перемикач EN | UA (site/i18n.json; сторінка рендериться українською, шар перекладає текст)
 (function () {
@@ -4283,14 +4337,20 @@ if (D.grid_counts) {
   const ATTRS = ["title", "aria-label", "placeholder"];
   let lang = "en", busy = false;
   try { lang = localStorage.getItem("fs-lang") === "uk" ? "uk" : "en"; } catch (e) { /* без сховища — EN */ }
+  const CAP = "h1,h2,h3,h4,.eyebrow,.legend,.note,summary,.below";        // заголовки й підписи
+  const NOCAP = "table,#tip,#tipF,svg,footer,.kv,.pm-leg,.pdelta,.pm-y1";   // числа, тултіпи з даними, таблиці, службове
+  const isCap = n => { const e = n.parentElement; return !!e && !!e.closest(CAP) && !e.closest(NOCAP); };
+  const undot = v => v.replace(/ · /g, ", ");
   const doNode = n => {
     if (n.nodeType === 3) {
       if (!n.nodeValue.trim()) return;
       const p = n.parentNode && n.parentNode.nodeName;
       if (p === "SCRIPT" || p === "STYLE") return;
       if (n.__uk == null || (n.nodeValue !== n.__en)) { n.__uk = n.nodeValue; n.__en = null; }
-      if (lang === "en") { n.__en = tr(n.__uk); if (n.nodeValue !== n.__en) n.nodeValue = n.__en; }
-      else if (n.nodeValue !== n.__uk) n.nodeValue = n.__uk;
+      let v = lang === "en" ? tr(n.__uk) : n.__uk;
+      if (v.includes(" · ") && isCap(n)) v = undot(v);
+      n.__en = v;                                   // те, що показано; __uk лишається вихідним
+      if (n.nodeValue !== v) n.nodeValue = v;
     } else if (n.nodeType === 1) {
       for (const a of ATTRS) if (n.hasAttribute(a)) {
         const key = "__uk_" + a, cur = n.getAttribute(a);
@@ -4316,7 +4376,7 @@ if (D.grid_counts) {
   const hdr = document.querySelector("header");
   const sw = document.createElement("div");
   sw.id = "langsw"; sw.setAttribute("role", "group");
-  sw.innerHTML = `<button type="button" data-l="en">EN</button><button type="button" data-l="uk">UA</button>`;
+  sw.innerHTML = `<button type="button" data-l="uk">UA</button><button type="button" data-l="en">EN</button>`;
   sw.querySelectorAll("button").forEach(b => b.__fixed = true);
   hdr.insertBefore(sw, hdr.firstChild);
   sw.addEventListener("click", e => { const b = e.target.closest("button"); if (b) setLang(b.dataset.l); });
