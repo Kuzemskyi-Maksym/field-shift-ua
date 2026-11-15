@@ -224,6 +224,14 @@ select,.builder select,.fmode select{background:#1b211a;color:var(--ink)}
 .grid+.below{margin-top:12px}
 .col{min-width:0}
 .col>.panel+.below{margin-top:10px}
+.top .col>.win{margin-top:16px}
+.win>h3{margin-bottom:6px}
+#f-eco{display:block}
+@media (max-width:900px){
+  .grid.top .col{display:contents}
+  .grid.top #mapbox{order:1}.grid.top .col>.below{order:2;margin-top:-6px}.grid.top #card{order:3}
+  .grid.top #f-risk-win{order:4;margin-top:0}.grid.top #f-eco-sec{order:5;margin-top:0}
+}
 .fsizes{margin:14px 0 0}
 /* футер «Info» */
 footer.info{margin-top:28px;padding:14px 16px;font-size:11.5px;line-height:1.55;color:#c7d3bf;background:rgba(14,18,13,.55);clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
@@ -244,7 +252,7 @@ a{color:var(--accent)}
   </div>
 </header>
 
-<div class="grid">
+<div class="grid top">
   <div class="col">
   <div class="panel" id="mapbox">
     <svg id="map" role="img" aria-label="Карта України з пілотними полями і сітками даних"></svg>
@@ -261,8 +269,16 @@ a{color:var(--accent)}
     </div>
   </div>
   <p class="note below">Пілотні поля, сітки даних NASA над Україною і базова модель водного стресу культур. Оберіть поле на карті, щоб побачити, як змінився його клімат, що на ньому росло і наскільки посуха б'є по врожаю.</p>
+  <section class="panel win" id="f-eco-sec" hidden>
+    <h3>Випаровування з МКС (ECOSTRESS 70 м)</h3>
+    <div class="fieldtabs eco-years" id="f-eco-y"></div>
+    <svg id="f-eco" viewBox="0 0 320 130" width="100%" aria-label="Випаровування: ECOSTRESS проти моделі"></svg>
+    <div class="legend" id="f-eco-leg"></div>
+    <div class="legend">ECOSTRESS — прилад NASA JPL на МКС; спостереження нерегулярні через орбіту МКС.</div>
+  </section>
   </div>
 
+  <div class="col">
   <aside class="panel" id="card" aria-live="polite">
     <div class="eyebrow">Пілотне поле</div>
     <div class="fieldtabs" id="tabs"></div>
@@ -283,22 +299,15 @@ a{color:var(--accent)}
       <div class="legend"><b style="color:var(--accent)">О</b> — озима (зелене вже у квітні), <b style="color:var(--amber)">Я</b> — пізня ярова (пік у липні), ? — неоднозначно. MODIS NDVI, 250 м у точці пілота — лише для порівняння; рекомендація й поточна практика рахуються з HLS 30 м цього поля.</div>
     </div>
 
-    <div class="section">
-      <h3>Ризик посухи для культур</h3>
-      <div id="f-risk"></div>
-      <div class="legend">Відносний врожай за водним стресом, 2002–2025: смуга від сухого (P10) до вологого (P90) року, риска — типовий</div>
-    </div>
-
-    <div class="section" id="f-eco-sec" hidden>
-      <h3>Випаровування з МКС (ECOSTRESS 70 м)</h3>
-      <div class="fieldtabs eco-years" id="f-eco-y"></div>
-      <svg id="f-eco" viewBox="0 0 320 130" width="100%" aria-label="Випаровування: ECOSTRESS проти моделі"></svg>
-      <div class="legend" id="f-eco-leg"></div>
-      <div class="legend">ECOSTRESS — прилад NASA JPL на МКС; спостереження нерегулярні через орбіту МКС.</div>
-    </div>
     <div id="f-zone"></div>
     <div id="f-plan"></div>
   </aside>
+  <section class="panel win" id="f-risk-win">
+    <h3>Ризик посухи для культур</h3>
+    <div id="f-risk"></div>
+    <div class="legend">Відносний врожай за водним стресом, 2002–2025: смуга від сухого (P10) до вологого (P90) року, риска — типовий</div>
+  </section>
+  </div>
 </div>
 
 <section class="panel" style="margin-top:16px" id="fields">
@@ -561,8 +570,9 @@ function drawEco(id, year) {
   const yr = yrs.includes(String(year)) ? String(year) : best, Y = E.years[yr];
   d3.select("#f-eco-y").html(yrs.map(y => `<button type="button" aria-pressed="${y === yr}" data-y="${y}">${y}</button>`).join(""))
     .selectAll("button").on("click", function () { drawEco(id, this.dataset.y); });
-  const W = 320, H = 130, m = {l: 22, r: 4, t: 6, b: 18};
   const sv = d3.select("#f-eco"); sv.selectAll("*").remove();
+  const W = Math.max(320, Math.round((sv.node().getBoundingClientRect().width || 320) / 1.25)), H = 130, m = {l: 22, r: 4, t: 6, b: 18};
+  sv.attr("viewBox", `0 0 ${W} ${H}`);
   const x = d3.scaleLinear().domain([0, 364]).range([m.l, W - m.r]);
   const ymax = Math.max(4, d3.max(Y.model.filter(v => v != null)) || 0, d3.max(Y.eco, p => p[1]) || 0);
   const y = d3.scaleLinear().domain([0, Math.ceil(ymax)]).range([H - m.b, m.t]);

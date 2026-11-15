@@ -60,6 +60,13 @@ counts = pd.read_csv(f"{OUT}/ukraine_points_by_region.csv") if __import__("os").
 
 sim = pd.read_csv(f"{OUT}/model/sim_yearly.csv")
 val = pd.read_csv(f"{OUT}/model/validation.csv")
+# «Наша модель» = поточна модель (model/simulate.py, калібрування A) з reports/step3_validation.md, ті самі 48 пар;
+# validation.csv — baseline v0 (baseline_model.py): з нього лишаються базові лінії pred_clim і pred_rain
+s3 = pd.read_csv(f"{OUT}/model/step3_validation.csv")
+s3 = s3[s3.variant == "нові параметри (повна модель)"][["point", "crop", "year", "predA"]]
+val = val.merge(s3, on=["point", "crop", "year"], how="left", validate="one_to_one")
+assert val.predA.notna().all() and len(val) == 48, "step3_validation.csv не покриває всі пари валідації"
+val["pred_model"] = val.predA.round(2)
 ndvi = pd.read_csv(NDVI)
 
 fields = []
